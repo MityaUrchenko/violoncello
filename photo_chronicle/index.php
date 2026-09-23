@@ -10,7 +10,7 @@ $APPLICATION->IncludeComponent(
     'photo_chronicle',
     [
         'IBLOCK_TYPE' => 'content',
-        'IBLOCK_ID' => 5,
+        'IBLOCK_ID' => 6,
         'NEWS_COUNT' => 20,
         'SORT_BY1' => 'ACTIVE_FROM',
         'SORT_ORDER1' => 'DESC',
