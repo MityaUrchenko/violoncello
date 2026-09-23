@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Афиша — Всероссийская виолончельная академия</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body class="page">
+<header class="header">
+    <div class="header__container">
+        <a href="index.html" class="header__logo">
+            <img src="/assets/images/logo.svg" alt="Всероссийская виолончельная академия" class="header__logo-img">
+        </a>
+
+        <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+        </button>
+
+        <nav class="header__nav">
+            <ul class="header__menu">
+                <li class="header__menu-item"><a href="index.html#academy" class="header__menu-link">Академия</a></li>
+                <li class="header__menu-item"><a href="afisha.html" class="header__menu-link">Афиша</a></li>
+                <li class="header__menu-item"><a href="index.html#projects" class="header__menu-link">Наши проекты</a></li>
+                <li class="header__menu-item"><a href="index.html#media" class="header__menu-link">Медиацентр</a></li>
+                <li class="header__menu-item"><a href="index.html#community" class="header__menu-link">Сообщество</a></li>
+                <li class="header__menu-item"><a href="index.html#students" class="header__menu-link">Слушателям</a></li>
+            </ul>
+            <div class="header__actions">
+                <a href="#" class="header__lang">EN</a>
+                <a href="#support" class="header__support btn btn--primary">ПОДДЕРЖАТЬ АКАДЕМИЮ</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="main">
+    <!-- Afisha Hero -->
+    <section class="hero-secondary">
+        <div class="hero-secondary__bg">
+            <img src="/assets/images/afisha-hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
+        </div>
+        <div class="hero-secondary__content">
+            <h1 class="hero-secondary__title">Афиша</h1>
+            <p class="hero-secondary__subtitle">Концерты, мастер-классы, лекции, конкурсы и специальные мероприятия Академии</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="afisha-filters">
+        <div class="section__container">
+            <div class="afisha-filters__types">
+                <button type="button" class="afisha-filters__tab afisha-filters__tab--active">ВСЕ ТИПЫ</button>
+                <button type="button" class="afisha-filters__tab">КОНЦЕРТЫ</button>
+                <button type="button" class="afisha-filters__tab">ФЕСТИВАЛИ</button>
+                <button type="button" class="afisha-filters__tab">МАСТЕР-КЛАССЫ</button>
+                <button type="button" class="afisha-filters__tab">ЛЕКЦИИ</button>
+                <button type="button" class="afisha-filters__tab">КОНКУРСЫ</button>
+                <button type="button" class="afisha-filters__tab">КОНФЕРЕНЦИИ</button>
+            </div>
+            <div class="afisha-filters__types afisha-filters__types--secondary">
+                <button type="button" class="afisha-filters__tab">ОБРАЗОВАТЕЛЬНЫЕ ПРОГРАММЫ</button>
+                <button type="button" class="afisha-filters__tab">СПЕЦИАЛЬНЫЕ МЕРОПРИЯТИЯ</button>
+            </div>
+            <div class="afisha-filters__row">
+                <div class="afisha-filters__dropdowns">
+                    <button type="button" class="afisha-filters__dropdown">Дата <span class="afisha-filters__caret">▾</span></button>
+                    <button type="button" class="afisha-filters__dropdown">Город <span class="afisha-filters__caret">▾</span></button>
+                    <button type="button" class="afisha-filters__dropdown">Проект <span class="afisha-filters__caret">▾</span></button>
+                    <button type="button" class="afisha-filters__dropdown">Участники <span class="afisha-filters__caret">▾</span></button>
+                </div>
+                <button type="button" class="afisha-filters__reset">Сбросить фильтры</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events grid -->
+    <section class="events afisha-events">
+        <div class="section__container">
+            <div class="events__grid">
+                <article class="event-card">
+                    <div class="event-card__image">
+                        <img src="/assets/images/event1.jpg" alt="Вечер камерной музыки">
+                    </div>
+                    <div class="event-card__body">
+                        <p class="event-card__meta">14 августа • Большой зал</p>
+                        <h3 class="event-card__title">Вечер камерной музыки</h3>
+                        <p class="event-card__desc">Произведения Баха, Шостаковича, Рахманинова в исполнении солистов Академии.</p>
+                    </div>
+                    <div class="event-card__actions">
+                        <a href="#" class="event-card__link">Подробнее</a>
+                        <a href="#" class="btn btn--primary btn--sm">Билеты</a>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-card__image">
+                        <img src="/assets/images/event2.jpg" alt="Открытая репетиция">
+                    </div>
+                    <div class="event-card__body">
+                        <p class="event-card__meta">21 августа • Малый зал</p>
+                        <h3 class="event-card__title">Открытая репетиция</h3>
+                        <p class="event-card__desc">Наблюдайте за работой участников академии и задавайте вопросы педагогам.</p>
+                    </div>
+                    <div class="event-card__actions">
+                        <a href="#" class="event-card__link">Подробнее</a>
+                        <a href="#" class="btn btn--primary btn--sm">Билеты</a>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-card__image">
+                        <img src="/assets/images/event3.jpg" alt="Мастер-классы 2026">
+                    </div>
+                    <div class="event-card__body">
+                        <p class="event-card__meta">3 — 14 августа • Летняя резиденция</p>
+                        <h3 class="event-card__title">Мастер-классы 2026</h3>
+                        <p class="event-card__desc">Десять дней интенсивной работы с педагогами академии, ансамблевые репетиции и завершающий концерт в Кремле.</p>
+                    </div>
+                    <div class="event-card__actions">
+                        <a href="#" class="event-card__link">Подробнее</a>
+                        <a href="#" class="btn btn--outline-sm">Условия отбора</a>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-card__image">
+                        <img src="/assets/images/event4.jpg" alt="Лекция: история виолончели">
+                    </div>
+                    <div class="event-card__body">
+                        <p class="event-card__meta">28 сентября • Онлайн</p>
+                        <h3 class="event-card__title">Лекция: история виолончели</h3>
+                        <p class="event-card__desc">Открытая лекция для широкой аудитории.</p>
+                    </div>
+                    <div class="event-card__actions">
+                        <a href="#" class="event-card__link">Подробнее</a>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-card__image">
+                        <img src="/assets/images/event5.jpg" alt="ВВА в регионах: Казань">
+                    </div>
+                    <div class="event-card__body">
+                        <p class="event-card__meta">5 октября • Казань</p>
+                        <h3 class="event-card__title">ВВА в регионах: Казань</h3>
+                        <p class="event-card__desc">Гастрольный концерт молодых лауреатов.</p>
+                    </div>
+                    <div class="event-card__actions">
+                        <a href="#" class="event-card__link">Подробнее</a>
+                        <a href="#" class="btn btn--primary btn--sm">Билеты</a>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <div class="event-card__image">
+                        <img src="/assets/images/event6.jpg" alt="Финал конкурса VIVACELLO">
+                    </div>
+                    <div class="event-card__body">
+                        <p class="event-card__meta">18 октября • Москва</p>
+                        <h3 class="event-card__title">Финал конкурса VIVACELLO</h3>
+                        <p class="event-card__desc">Молодые виолончелисты со всей России.</p>
+                    </div>
+                    <div class="event-card__actions">
+                        <a href="#" class="event-card__link">Подробнее</a>
+                        <a href="#" class="btn btn--primary btn--sm">Билеты</a>
+                    </div>
+                </article>
+            </div>
+
+            <nav class="afisha-pagination" aria-label="Пагинация">
+                <a href="#" class="afisha-pagination__item afisha-pagination__item--active">1</a>
+                <a href="#" class="afisha-pagination__item">2</a>
+                <a href="#" class="afisha-pagination__item">3</a>
+            </nav>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__top">
+            <div class="footer__brand">
+                <a href="index.html" class="footer__logo">
+                    <img src="/assets/images/logo.svg" alt="Всероссийская виолончельная академия" class="footer__logo-img">
+                </a>
+                <div class="footer__socials">
+                    <a href="#" class="footer__social" aria-label="VK">
+                        <img src="/assets/images/vk2.svg" alt="">
+                    </a>
+                    <a href="#" class="footer__social" aria-label="Rutube">
+                        <img src="/assets/images/rutube2.svg" alt="">
+                    </a>
+                    <a href="#" class="footer__social" aria-label="YouTube">
+                        <img src="/assets/images/youtube2.svg" alt="">
+                    </a>
+                    <a href="#" class="footer__social" aria-label="Dzen">
+                        <img src="/assets/images/dzen2.svg" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer__nav">
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Академия</h4>
+                    <ul class="footer__list">
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Педагоги</a></li>
+                        <li><a href="#">Документы</a></li>
+                        <li><a href="#">Концерты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Слушателям</h4>
+                    <ul class="footer__list">
+                        <li><a href="#">Поступление</a></li>
+                        <li><a href="#">Обучение</a></li>
+                        <li><a href="#">Стипендии</a></li>
+                        <li><a href="#">Частые вопросы</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Сообщество</h4>
+                    <ul class="footer__list">
+                        <li><a href="#">Участники</a></li>
+                        <li><a href="#">Выпускники</a></li>
+                        <li><a href="#">Попечители</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Афиша</h4>
+                    <ul class="footer__list">
+                        <li><a href="afisha.html">Все события</a></li>
+                        <li><a href="#">Мастер-классы</a></li>
+                        <li><a href="#">Концерты</a></li>
+                        <li><a href="#">Фестивали</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Проекты</h4>
+                    <ul class="footer__list">
+                        <li><a href="#">Текущие проекты</a></li>
+                        <li><a href="#">Архив проектов</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Медиацентр</h4>
+                    <ul class="footer__list">
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#">Статьи</a></li>
+                        <li><a href="#">Фото</a></li>
+                        <li><a href="#">Видео</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p class="footer__copy">© 2026 ВСЕРОССИЙСКАЯ ВИОЛОНЧЕЛЬНАЯ АКАДЕМИЯ</p>
+            <a href="#" class="footer__policy">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

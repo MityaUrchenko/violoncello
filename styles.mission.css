@@ -1,0 +1,331 @@
+/* ============================================================
+   styles.mission.css — НОВЫЕ классы для страницы
+   «Наша миссия и ценности»
+   ------------------------------------------------------------
+   Подключается ПОСЛЕ styles.css и styles.about.css.
+   styles.css не правится. styles.about.css подключается, потому
+   что в нём уже живут общие для раздела вещи, которые правила
+   велят переиспользовать, а не дублировать:
+   .about-lightbox* (лайтбокс фотополосы) и .mission-life--about.
+   Здесь — только то, чего нет ни в styles.css, ни в styles.about.css.
+   ============================================================ */
+
+/* ---------- Герой ---------- */
+
+/* Базовый .hero-secondary тянется по контенту; нужна высота
+   первого экрана — как на принятой странице «Об Академии»
+   (.hero-secondary--about). Хлебная крошка не выводится: на
+   «Об Академии» её убрали как дубль H1. */
+.hero-secondary--mission {
+  min-height: 620px;
+}
+
+/* ---------- Вводная часть (7 абзацев без заголовка) ---------- */
+
+/* Фото полосой НАД текстом: в md вводная часть — 7 абзацев,
+   в базовом двухколоночном .about-intro__grid рядом с ними
+   оставалась бы пустая колонка высотой больше 1000 px.
+   Тот же приём, что .about-people__photo на «Об Академии»,
+   но как элемент существующего блока .about-intro. */
+.about-intro__photo {
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.about-intro__photo img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  /* кроп по верхней части кадра, чтобы не срезать головы */
+  object-position: center 28%;
+}
+
+/* Мера строки для прозы на всю ширину контейнера (1440 px даёт
+   ~150 знаков в строке — не читается). Колонку текста центруем
+   под фотополосой. В две колонки текст не ставим: абзацы разной
+   длины дают рваные строки. */
+.about-intro--mission .about-intro__text {
+  max-width: 76ch;
+  margin: 0 auto;
+}
+
+.about-intro--mission .academy-mission__text + .academy-mission__text {
+  margin-top: 1.25rem;
+}
+
+/* ---------- «Наши ценности» ---------- */
+
+/* Секция — существующий тёмный .about-directions.
+   Модификатор нужен только для нижнего отступа: следом идёт
+   фотополоса .mission-life со своими 5rem сверху. */
+.about-directions--values {
+  padding-bottom: 3rem;
+}
+
+/* Раскладка по умолчанию — «строками»: в каждой строке
+   заголовок пункта слева, его 3–5 абзацев справа.
+   Карточка 1/4 ширины (.academy-sections__grid) такой объём
+   текста не вмещает, а полная ширина контейнера ломает меру.
+   Карточки остаются ПРЯМЫМИ детьми сетки, иначе сбивается
+   нумерация :nth-child(8n+…) для card_line_*.svg. */
+.about-directions__grid--values {
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-bottom: 0;
+}
+
+.about-directions__grid--values .academy-section-card--value {
+  grid-row: auto;
+  grid-template-rows: none;
+  display: grid;
+  grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
+  gap: 1rem 3rem;
+  align-items: start;
+  min-height: 0;
+  padding: 2.5rem 0;
+  background: transparent;
+  border-radius: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: visible;
+}
+
+/* Наведение базовой карточки перекрашивает её в #981B2F —
+   для блока прозы, который ничем не является ссылкой, это лишнее. */
+.about-directions__grid--values .academy-section-card--value:hover {
+  background: transparent;
+  color: #fff;
+}
+
+/* Левая колонка пункта: заголовок и кадр к нему.
+   Фото уходит в узкую колонку под заголовок, а не рядом с текстом:
+   абзацев 3–4, и половинный кадр оставлял бы под собой пустоту. */
+.academy-section-card--value .academy-section-card__aside {
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+}
+
+.academy-section-card__media {
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.academy-section-card__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  /* кроп по верхней части кадра, чтобы не срезать головы */
+  object-position: center 30%;
+}
+
+/* Заголовок пункта. Номер «1.», «2.» … оставлен внутри
+   заголовка, как в md, отдельным элементом не выносится —
+   в инфоблоке это одно поле NAME. */
+.academy-section-card--value .academy-section-card__title {
+  margin: 0;
+  font-family: 'Cormorant Unicase', serif;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.25;
+  color: #fff;
+}
+
+.academy-section-card--value .academy-section-card__body {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 76ch;
+}
+
+/* Проза на тёмном фоне — существующий .about-directions__card-text;
+   для длинного текста нужен более свободный интерлиньяж. */
+.about-directions__grid--values .about-directions__card-text {
+  line-height: 1.65;
+  flex-grow: 0;
+}
+
+/* Декоративная линия карточки в раскладке «строками» не нужна:
+   роль разделителя играет border-top блока. */
+.about-directions__grid--values .academy-section-card__line {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .about-directions__grid--values .academy-section-card--value {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 2rem 0;
+  }
+
+  /* Кадр не на всю ширину экрана — иначе он спорит с фотополосой. */
+  .about-directions__grid--values .academy-section-card__media {
+    max-width: 480px;
+  }
+}
+
+/* --- Альтернатива 1: «карточки в две колонки» ---
+   Тот же HTML, другой модификатор сетки. Фирменная карточка
+   #6A1321 с линией card_line_*.svg внизу. */
+.about-directions__grid--cards {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 0;
+}
+
+.about-directions__grid--cards .academy-section-card--value {
+  grid-row: auto;
+  grid-template-rows: none;
+  grid-template-columns: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 0;
+  padding: 1.75rem 1.75rem 0;
+}
+
+.about-directions__grid--cards .academy-section-card--value:hover {
+  background: #6A1321;
+  color: #fff;
+}
+
+.about-directions__grid--cards .academy-section-card__title {
+  margin: 0;
+  font-family: 'Cormorant Unicase', serif;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.25;
+}
+
+.about-directions__grid--cards .academy-section-card__body {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-directions__grid--cards .academy-section-card__aside {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-directions__grid--cards .academy-section-card__line {
+  margin-top: auto;
+}
+
+@media (max-width: 767px) {
+  .about-directions__grid--cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Альтернатива 2: «раскрывающийся список» ---
+   Тот же HTML. Видны только заголовки, абзацы раскрываются
+   по клику: страница становится обозримой, но текст скрыт. */
+.about-directions__grid--accordion {
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-bottom: 0;
+}
+
+.about-directions__grid--accordion .academy-section-card--value {
+  grid-row: auto;
+  grid-template-rows: none;
+  grid-template-columns: none;
+  display: block;
+  min-height: 0;
+  padding: 1.5rem 0;
+  background: transparent;
+  border-radius: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  overflow: visible;
+}
+
+.about-directions__grid--accordion .academy-section-card--value:hover {
+  background: transparent;
+  color: #fff;
+}
+
+.about-directions__grid--accordion .academy-section-card__title {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  font-family: 'Cormorant Unicase', serif;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.25;
+  color: #fff;
+}
+
+/* Указатель «раскрыто/закрыто» — рисуется рамкой, без текста,
+   чтобы на странице не появлялось слов, которых нет в md. */
+.about-directions__grid--accordion .academy-section-card__title::after {
+  content: '';
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  transform: rotate(45deg) translateY(-3px);
+  transition: transform 0.25s ease;
+}
+
+.about-directions__grid--accordion .academy-section-card--value.is-open .academy-section-card__title::after {
+  transform: rotate(225deg) translateY(-3px);
+}
+
+.about-directions__grid--accordion .academy-section-card__body {
+  display: none;
+  gap: 1.25rem;
+  max-width: 76ch;
+  padding-top: 1.25rem;
+}
+
+.about-directions__grid--accordion .academy-section-card--value.is-open .academy-section-card__body {
+  display: grid;
+}
+
+.about-directions__grid--accordion .academy-section-card__line {
+  display: none;
+}
+
+/* В раскрывающемся списке кадр прячется вместе с текстом. */
+.about-directions__grid--accordion .academy-section-card__media {
+  display: none;
+}
+
+.about-directions__grid--accordion .academy-section-card--value.is-open .academy-section-card__media {
+  display: block;
+  max-width: 480px;
+  margin-top: 1.25rem;
+}
+
+/* ---------- Фотополоса ---------- */
+
+/* Фотополоса идёт сразу за тёмной секцией ценностей — свой
+   верхний отступ убираем, у секции выше он уже есть. */
+.mission-life--mission {
+  padding-top: 3rem;
+}
+
+/* Кадры открываются во весь экран: курсор как на «Об Академии».
+   Сами классы лайтбокса .about-lightbox* берутся из styles.about.css. */
+.mission-life--mission .mission-life__item {
+  cursor: zoom-in;
+}
+
+/* ---------- «К чему мы стремимся» ---------- */
+
+/* В md здесь 3 абзаца — фото допустимо рядом с текстом,
+   работает базовый .about-structure__grid. Модификатор нужен,
+   чтобы текст выравнивался по верху фотографии, а не по центру:
+   абзацы выше, чем кадр 3:2. */
+.about-structure--goal .about-structure__grid {
+  align-items: start;
+}
+
+.about-structure--goal .academy-mission__text + .academy-mission__text {
+  margin-top: 1.25rem;
+}

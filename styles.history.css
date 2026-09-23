@@ -1,0 +1,338 @@
+/* ============================================================
+   styles.history.css — НОВЫЕ классы для страницы «История Академии»
+   ------------------------------------------------------------
+   Подключается ПОСЛЕ styles.css и styles.about.css.
+   styles.css не правится. styles.about.css нужен ради общих для
+   раздела вещей, которые правила велят переиспользовать:
+   .about-lightbox* (лайтбокс фотополосы) и .mission-life__item--wide
+   (панорамный кадр). Здесь — только то, чего нет ни в styles.css,
+   ни в styles.about.css.
+   ============================================================ */
+
+/* ---------- Герой ---------- */
+
+/* Базовый .hero-secondary тянется по контенту; нужна высота первого
+   экрана — как на принятых страницах («Об Академии», «Миссия и
+   ценности»). Хлебная крошка не выводится: убрана как дубль H1. */
+.hero-secondary--history {
+  min-height: 620px;
+}
+
+/* ---------- Вводный абзац ---------- */
+
+/* В md перед первым «##» один абзац — по правилу фото ставится
+   рядом с текстом (до 3 абзацев), работает базовый .about-intro__grid.
+   Модификатор нужен только чтобы короткий абзац стоял по центру
+   высоты кадра, а не прижимался к его верху. */
+.about-intro--history .about-intro__grid {
+  align-items: center;
+}
+
+/* ---------- Текст главы (вне слайдера) ---------- */
+
+/* Светлая глава — существующая секция .academy-mission (#fff).
+   У неё в styles.css асимметричный отступ 5rem/3rem, из-за которого
+   главы до и после слайдера шли бы разным ритмом. */
+.academy-mission--chapter {
+  padding: 5rem 0;
+}
+
+/* «Всё началось с сообщества» идёт сразу за вводным блоком и читается
+   с ним как одно вступление — верхний отступ уменьшен. */
+.about-intro--history + .academy-mission--chapter {
+  padding-top: 1.5rem;
+}
+
+/* Текст главы — на всю ширину блока. */
+.history-chapter__text {
+  max-width: none;
+}
+
+/* Между абзацами в styles.css отступа нет ни у .academy-mission__text
+   (светлая глава), ни у .about-directions__card-text (тёмная). */
+.history-chapter__text p + p {
+  margin-top: 1.25rem;
+}
+
+/* Проза на тёмном фоне — существующий .about-directions__card-text.
+   Он рассчитан на 2–3 строки внутри карточки: сброшены растяжка
+   по флексу и нижний отступ, интерлиньяж свободнее для длинного текста. */
+.history-chapter__text .about-directions__card-text {
+  flex-grow: 0;
+  margin-bottom: 0;
+  line-height: 1.65;
+}
+
+/* ---------- Слайдер годов ---------- */
+
+/* Годовые главы (2022–2026) — слайды одного слайдера на тёмной сцене:
+   вся история обозрима, а каждый год читается как отдельный блок.
+   Главы «Всё началось с сообщества» и «Историю Академии создают люди»
+   года в заголовке не имеют и остаются обычными светлыми секциями
+   до и после слайдера. */
+.history-slider {
+  padding: 5rem 0;
+  background: #111;
+}
+
+/* Навигация: одна изогнутая фирменная линия с точками годов
+   и стрелки по краям. */
+.history-slider__nav {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Копия шкалы под слайдом: дочитав год, можно листать дальше не
+   возвращаясь наверх. Кривая отражена по вертикали — линия «обнимает»
+   блок сверху и снизу. */
+.history-slider__nav--bottom {
+  margin-bottom: 0;
+  margin-top: 3.5rem;
+}
+
+.history-slider__line {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* Линия и годы — один inline-svg: подписи и точки стоят на кривой
+   ровно там, где посчитаны (viewBox 1200×160, точки в x = 120, 360,
+   600, 840, 1080 и y с кривой M0 120 C400 40 800 40 1200 120).
+   min-width держит подписи читаемыми на узком экране — линия
+   прокручивается по горизонтали. */
+.history-slider__svg {
+  display: block;
+  width: 100%;
+  min-width: 720px;
+  height: auto;
+}
+
+.history-slider__path {
+  fill: none;
+  stroke: #F6E9EB;
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.history-slider__mark {
+  cursor: pointer;
+}
+
+/* Прозрачный круг увеличивает зону клика по точке года. */
+.history-slider__hit {
+  fill: transparent;
+}
+
+.history-slider__dot {
+  fill: var(--mark-fill, rgba(246, 233, 235, 0.45));
+  transform: scale(var(--mark-scale, 1));
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.history-slider__mark text {
+  font-family: 'Cormorant Unicase', serif;
+  font-weight: 500;
+  fill: var(--mark-text, rgba(255, 255, 255, 0.6));
+  transition: fill 0.3s ease;
+}
+
+.history-slider__mark:hover {
+  --mark-fill: #fff;
+  --mark-text: #fff;
+  --mark-scale: 1.4;
+}
+
+/* Активный год — по индексу в data-active (ставит JS слайдера). */
+.history-slider__line[data-active="1"] .history-slider__mark--1,
+.history-slider__line[data-active="2"] .history-slider__mark--2,
+.history-slider__line[data-active="3"] .history-slider__mark--3,
+.history-slider__line[data-active="4"] .history-slider__mark--4,
+.history-slider__line[data-active="5"] .history-slider__mark--5 {
+  --mark-fill: #fff;
+  --mark-text: #fff;
+  --mark-scale: 2;
+}
+
+/* Стрелки — той же клавиатуры, что кнопки лайтбокса в styles.about.css. */
+.history-slider__arrow {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.history-slider__arrow:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Слайды: неактивные выводятся из потока, поэтому высота секции
+   всегда равна высоте открытого года (у 2025-го текста в три раза
+   больше, чем у 2022-го). */
+.history-slider__viewport {
+  position: relative;
+}
+
+.history-slider__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(28px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.history-slider__viewport[data-active="1"] .history-slider__slide:nth-child(1),
+.history-slider__viewport[data-active="2"] .history-slider__slide:nth-child(2),
+.history-slider__viewport[data-active="3"] .history-slider__slide:nth-child(3),
+.history-slider__viewport[data-active="4"] .history-slider__slide:nth-child(4),
+.history-slider__viewport[data-active="5"] .history-slider__slide:nth-child(5) {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+}
+
+/* Крупный год в слайде. Заголовок остаётся одним H2 со словами как
+   в md («2023. Первая Всероссийская…») — год лишь набран крупно
+   и вынесен в левую колонку, нового текста не появляется. */
+.history-chapter__title {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  gap: 0 2.5rem;
+  align-items: baseline;
+  margin: 0;
+}
+
+/* Базовый .section__header — флекс со space-between: в нём
+   двухколоночный заголовок сжимался по содержанию и имя главы
+   рвалось по словам. */
+.history-slider__slide .section__header {
+  display: block;
+  margin-bottom: 2.5rem;
+}
+
+.history-chapter__year {
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  line-height: 0.85;
+  color: #F6E9EB;
+}
+
+.history-chapter__name {
+  display: block;
+}
+
+/* ---------- Фотополоса внутри слайда ---------- */
+
+/* Полоса кадров года живёт внутри слайда, а не отдельной секцией
+   .mission-life: кадры принадлежат своему году. */
+.history-chapter__gallery {
+  margin-top: 3rem;
+}
+
+/* Кадры открываются во весь экран (классы .about-lightbox*
+   из styles.about.css). */
+.history-chapter__gallery .mission-life__item {
+  cursor: zoom-in;
+}
+
+/* Кадр на две колонки сетки: в 2025 году фотографий 10 — на 4 колонки
+   они не делятся, а одного панорамного .mission-life__item--wide
+   (21:9 на всю ширину) для двух лишних кадров мало. Два кадра 16:9
+   закрывают нижний ряд без дырок. */
+.mission-life__item--half {
+  grid-column: span 2;
+  aspect-ratio: 16 / 9;
+}
+
+/* Панорамный кадр кропается по верхней части: у --wide в
+   styles.about.css сдвиг -35px подобран под другой кадр. */
+.history-chapter__gallery .mission-life__item--wide img {
+  object-position: center 30%;
+}
+
+@media (max-width: 991px) {
+  .history-slider__nav {
+    gap: 0.75rem;
+  }
+
+  .history-slider__arrow {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .history-chapter__title {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  /* На одной колонке «половинные» кадры становятся обычными. */
+  .mission-life__item--half {
+    grid-column: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ---------- Переключатели раскладки (только макет) ----------
+   На сервер уходит принятый вариант: проявление слайда и полоса
+   под текстом года. Правила ниже нужны, чтобы в макете можно было
+   посмотреть альтернативы, не переписывая разметку. */
+
+/* Слайд входит сдвигом слева, а не проявлением на месте. */
+.history-page--slide-shift .history-slider__slide {
+  transform: translateX(-80px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.history-page--slide-shift .history-slider__viewport[data-active="1"] .history-slider__slide:nth-child(1),
+.history-page--slide-shift .history-slider__viewport[data-active="2"] .history-slider__slide:nth-child(2),
+.history-page--slide-shift .history-slider__viewport[data-active="3"] .history-slider__slide:nth-child(3),
+.history-page--slide-shift .history-slider__viewport[data-active="4"] .history-slider__slide:nth-child(4),
+.history-page--slide-shift .history-slider__viewport[data-active="5"] .history-slider__slide:nth-child(5) {
+  transform: none;
+}
+
+/* Слайды живут внутри `.section__container` секции и свой контейнер
+   используют только как колонку — без второго ограничения ширины
+   и без двойного бокового паддинга. */
+.history-slider__slide .section__container {
+  display: flex;
+  flex-direction: column;
+  max-width: none;
+  padding: 0;
+}
+
+.history-page--gallery-top .history-chapter__text {
+  order: 2;
+}
+
+.history-page--gallery-top .history-chapter__gallery {
+  order: 1;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+/* Лайтбокс отключён — курсор не обещает увеличение. */
+.history-page--no-zoom .history-chapter__gallery .mission-life__item {
+  cursor: default;
+}
