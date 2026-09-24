@@ -1,0 +1,42 @@
+name: Deploy to server
+
+# Когда запускать
+on:
+  push:
+    branches:
+      - main          # только при пуше в main
+  workflow_dispatch:  # можно запустить вручную из вкладки Actions
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest   # виртуальная машина GitHub
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.0   # готовый action для SSH
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22                        # если SSH на другом порту — меняем
+          script: |
+            set -e                        # остановиться при любой ошибке
+            cd ${{ secrets.DEPLOY_PATH }}
+            
+            echo "=== Начало деплоя $(date) ==="
+            
+            # Получаем последние изменения
+            git fetch origin main
+            
+            # Жёстко приводим к состоянию main (удаляет локальные правки)
+            git reset --hard origin/main
+            
+            # Опционально: очистка кэша Bitrix
+            # if [ -d "bitrix/cache" ]; then
+            #   rm -rf bitrix/cache/*
+            #   rm -rf bitrix/managed_cache/*
+            #   echo "Кэш Bitrix очищен"
+            # fi
+            
+            echo "=== Деплой завершён ==="
+            git log -1 --oneline
