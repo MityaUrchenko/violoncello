@@ -1,0 +1,511 @@
+<?php
+require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog_before.php';
+$APPLICATION->SetAdditionalCSS('/styles.about.css');
+$APPLICATION->SetAdditionalCSS('/styles.faq.css');
+$APPLICATION->AddHeadScript('/assets/js/about.js');
+$APPLICATION->AddHeadScript('/assets/js/faq.js');
+require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
+$APPLICATION->SetTitle('Часто задаваемые вопросы');
+$APPLICATION->SetPageProperty('title', 'Часто задаваемые вопросы — Всероссийская виолончельная академия');
+?>
+<section class="hero-secondary hero-secondary--faq">
+      <div class="hero-secondary__bg">
+        <img src="/assets/images/faq-hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true" />
+      </div>
+      <div class="hero-secondary__content">
+        <h1 class="hero-secondary__title">Часто задаваемые вопросы</h1>
+      </div>
+    </section>
+
+    <section class="about-intro faq-group">
+      <div class="section__container">
+        <div class="section__header">
+          <h2 class="section__title">Музыкантам, которые хотят участвовать в проектах</h2>
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Как принять участие в проектах Академии?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Следите за объявлениями об открытых прослушиваниях и наборах в конкретные проекты. Они публикуются на сайте Академии, в сообществе «<a href="https://vk.ru/violoncello_music" class="faq-item__link" target="_blank" rel="noopener">ВКонтакте</a>» и в <a href="https://t.me/russiancelloacademy" class="faq-item__link" target="_blank" rel="noopener">Telegram</a>. В каждом объявлении указаны условия участия и порядок подачи заявки.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Нужно ли обязательно проходить открытые прослушивания?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Порядок участия зависит от проекта. Помимо открытых прослушиваний, могут проводиться отдельные наборы и отборы. Условия одного проекта не распространяются автоматически на остальные.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Какой уровень подготовки необходим? Есть ли возрастные ограничения?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Единых требований для всех проектов нет. Возраст участников, необходимый уровень подготовки и другие условия определяются форматом и задачами конкретной программы.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Можно ли участвовать, если я живу не в Москве?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Да. Музыканты могут подавать заявки независимо от места жительства. При выборе проекта необходимо учитывать его формат, место проведения и даты.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Нужно ли оплачивать участие?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Участие музыкантов во всех проектах Виолончельной академии бесплатное.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Можно ли отправить резюме, если сейчас нет открытого набора?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Заявки музыкантов рассматриваются в рамках объявленных прослушиваний и наборов в конкретные проекты. Академия не осуществляет постоянный менеджмент артистов.</p>
+                <p class="faq-item__text">Если вы хотите предложить совместный проект, информация о таких обращениях представлена в разделе «<a href="/sotrudnichestvo" class="faq-item__link">Сотрудничество</a>».</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Можно ли участвовать только в одном проекте?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Да. Сотрудничество может ограничиваться одним проектом или продолжаться в разных форматах. Некоторые музыканты регулярно участвуют в деятельности Академии, другие присоединяются к отдельным программам. Условия совместной работы определяются в каждом случае отдельно.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Что происходит после открытых прослушиваний?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Прослушивания позволяют музыкантам представить себя и познакомиться с Академией, а её команде — познакомиться с исполнителями для возможных совместных проектов.</p>
+                <p class="faq-item__text">Предложения зависят от конкретного музыканта и задач Академии. Приглашение может касаться одного или нескольких проектов и поступить как по итогам прослушиваний, так и позднее. Участие в прослушиваниях не гарантирует приглашения в конкретную программу.</p>
+                <p class="faq-item__text">Подробнее — на странице «<a href="/otkrytye-proslushivaniya" class="faq-item__link">Открытые прослушивания</a>».</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Я играю на другом инструменте. Могу ли я участвовать?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Да. В совместных проектах Академии участвуют пианисты и музыканты других специальностей. Для них также могут быть доступны отдельные образовательные мероприятия. Возможность участия зависит от конкретного проекта.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Где узнать об условиях занятий в репетитории и пользования инструментами фонда?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Информация об этих направлениях представлена на отдельных страницах — «<a href="/repetitoriy" class="faq-item__link">Репетиторий</a>» и «<a href="/instrumentalnyy-fond" class="faq-item__link">Инструментальный фонд</a>».</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Академия работает круглый год или только во время ежегодной Всероссийской виолончельной академии?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Виолончельная академия ведёт деятельность в течение всего года. Концерты, образовательные программы, медиапроекты, исследовательская и издательская работа составляют разные направления её деятельности. Ежегодная Всероссийская виолончельная академия — один из её проектов.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about-directions faq-group faq-group--dark">
+      <div class="section__container">
+        <div class="section__header">
+          <h2 class="section__title section__title--light">Слушателям и посетителям мероприятий</h2>
+        </div>
+
+        <div class="faq-list faq-list--light">
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Я редко бываю на концертах классической музыки. Подойдут ли мне мероприятия Академии?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Да. Для посещения концертов не требуется специальная музыкальная подготовка. Выбрать событие можно по программе, составу исполнителей или описанию в афише. Мероприятия Академии адресованы как профессиональному сообществу, так и широкому кругу слушателей.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">С чего начать знакомство с виолончельным искусством?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Можно посетить концерт, посмотреть записи выступлений или обратиться к просветительским материалам Академии. Для знакомства с инструментом у нас есть отдельная страница в разделе “<a href="/slushatelyam" class="faq-item__link">Слушателям</a>”</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Где посмотреть ближайшие концерты и мероприятия?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Актуальные события представлены в разделе «<a href="/afisha" class="faq-item__link">Афиша</a>». В анонсах указаны программа, участники, дата и место проведения, а также условия посещения.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Можно ли прийти на мероприятие, если я не связан с Академией?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Да. Концерты и другие открытые мероприятия могут посещать все заинтересованные слушатели. Условия посещения указаны в анонсе конкретного события.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Как узнать, нужен ли билет или предварительная регистрация?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Эта информация размещается в анонсе мероприятия. Условия могут различаться в зависимости от события и площадки. Бесплатное участие музыкантов в проектах не означает свободного входа на все концерты.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Можно ли посетить мастер-класс в качестве слушателя?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Такая возможность предусмотрена на отдельных мастер-классах. Информация о доступе слушателей и порядке регистрации публикуется в объявлении о мероприятии.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Можно ли посмотреть концерт, если я не смог прийти?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Для некоторых мероприятий Академия организует трансляции или публикует записи. Ссылки размещаются на сайте и в официальных сообществах. Наличие записи или трансляции зависит от конкретного события.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="faq-gallery">
+          <div class="mission-life__grid">
+            <div class="mission-life__item"><img src="/assets/images/faq-life1.jpg" alt="Слушатели на концерте Академии" /></div>
+            <div class="mission-life__item"><img src="/assets/images/faq-life2.jpg" alt="Зрительный зал перед началом концерта" /></div>
+            <div class="mission-life__item"><img src="/assets/images/faq-life3.jpg" alt="Публика в зале во время выступления" /></div>
+            <div class="mission-life__item"><img src="/assets/images/faq-life4.jpg" alt="Выступление на сцене" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-intro faq-group">
+      <div class="section__container">
+        <div class="section__header">
+          <h2 class="section__title">Любителям игры на виолончели</h2>
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Я занимаюсь виолончелью для себя. Есть ли у Академии что-то для меня?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Да. Любителям адресованы концерты, открытые мероприятия, лекции и просветительские материалы. Академия также развивает специальные образовательные курсы и проекты для любителей игры на виолончели.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Как узнать о курсах и проектах для любителей?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Следите за объявлениями на сайте и в официальных сообществах Академии. В описании каждой программы указывается, кому она адресована, как устроены занятия и какая подготовка необходима.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Нужно ли участвовать в проектах Академии, чтобы смотреть лекции и знакомиться с её материалами?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Нет. Материалы, опубликованные в открытом доступе, доступны независимо от участия в проектах. Можно смотреть лекции и записи выступлений, читать публикации и знакомиться с виолончельным искусством в удобном темпе.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about-directions faq-group faq-group--dark">
+      <div class="section__container">
+        <div class="section__header">
+          <h2 class="section__title section__title--light">Педагогам, студентам и исследователям</h2>
+        </div>
+
+        <div class="faq-list faq-list--light">
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Где найти материалы по истории виолончельного исполнительства?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Этой теме посвящён лекционный цикл «История виолончельного исполнительства» с Татьяной Лукашиной. В нём рассматриваются развитие виолончельного искусства, исполнительские школы и деятельность выдающихся музыкантов.</p>
+                <p class="faq-item__text">Выпуски представлены в открытом доступе. Подробнее — на странице проекта.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Где можно читать публикации о виолончельной культуре?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Одно из направлений издательской деятельности Академии — CelloЖурнал, посвящённый виолончельной культуре. Информация о выпусках, электронной и печатной версиях представлена на странице журнала.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Есть ли у Академии проекты, связанные с профессиональной литературой?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Да. Среди издательских проектов — переиздание четырёхтомного труда Льва Гинзбурга под научной редакцией Татьяны Лукашиной.</p>
+                <p class="faq-item__text">Информация об издании представлена в разделе, посвящённом исследовательской и издательской деятельности Академии.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Где узнать о нотных изданиях и переложениях?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Академия готовит сборники переложений на основе нотного архива Анатолия Павловича Никитина, переданного ей в июне 2026 года.</p>
+                <p class="faq-item__text">Информация о работе с архивом и подготовке сборников представлена на соответствующей странице сайта.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Какие материалы можно изучать дистанционно?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Онлайн представлены лекции и просветительские видеопроекты, записи выступлений, журнал и другие публикации. Академия также развивает образовательные видеокурсы.</p>
+                <p class="faq-item__text">Содержание и условия доступа указаны на страницах соответствующих проектов.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="faq-gallery">
+          <div class="mission-life__grid">
+            <div class="mission-life__item"><img src="/assets/images/faq-life5.jpg" alt="Занятие с педагогом Академии" /></div>
+            <div class="mission-life__item"><img src="/assets/images/faq-life6.jpg" alt="Беседа с музыкантами на сцене" /></div>
+            <div class="mission-life__item"><img src="/assets/images/faq-life7.jpg" alt="Ансамбль виолончелистов на репетиции" /></div>
+            <div class="mission-life__item"><img src="/assets/images/faq-life8.jpg" alt="Работа виолончелистов в классе" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-intro faq-group">
+      <div class="section__container">
+        <div class="section__header">
+          <h2 class="section__title">Родителям юных музыкантов</h2>
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Может ли мой ребёнок участвовать в проектах Академии?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Возможность участия зависит от возраста, подготовки ребёнка и условий конкретного проекта. Общего возрастного ограничения для всей деятельности Академии нет. Перед подачей заявки необходимо ознакомиться с требованиями выбранной программы.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Как понять, подходит ли ребёнку конкретная программа?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Ориентируйтесь на описание проекта: кому он адресован, каков формат занятий и какие требования предъявляются к участникам. Если после ознакомления остаются вопросы, воспользуйтесь контактами, указанными в объявлении, или разделом «<a href="/kontakty" class="faq-item__link">Контакты</a>».</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about-directions faq-group faq-group--dark">
+      <div class="section__container">
+        <div class="section__header">
+          <h2 class="section__title section__title--light">Авторам проектов, партнёрам и представителям СМИ</h2>
+        </div>
+
+        <div class="faq-list faq-list--light">
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Можно ли предложить Академии собственный проект?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Академия рассматривает предложения, связанные с направлениями её деятельности. Информация о возможностях сотрудничества и порядке обращения представлена в разделе «<a href="/sotrudnichestvo" class="faq-item__link">Сотрудничество</a>».</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Куда направить запрос на интервью или материалы о деятельности Академии?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Для обращений представителей СМИ используйте контактную информацию в разделе «<a href="/kontakty" class="faq-item__link">Контакты</a>». В запросе укажите издание или площадку, тему обращения и предполагаемые сроки.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about-intro faq-group">
+      <div class="section__container">
+        <div class="section__header">
+          <h2 class="section__title">Новости и связь с Академией</h2>
+        </div>
+
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Где следить за новыми проектами, наборами и публикациями?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">На сайте Виолончельной академии, в официальном сообществе «<a href="https://vk.ru/violoncello_music" class="faq-item__link" target="_blank" rel="noopener">ВКонтакте</a>» и в <a href="https://t.me/russiancelloacademy" class="faq-item__link" target="_blank" rel="noopener">Telegram</a>. Здесь публикуются объявления об участии, анонсы мероприятий и новости проектов.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span class="faq-item__q-text">Что делать, если я не нашёл ответа на свой вопрос?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                <p class="faq-item__text">Обратитесь к команде Академии через раздел «<a href="/kontakty" class="faq-item__link">Контакты</a>». Если вопрос касается конкретного проекта, укажите его название, чтобы обращение можно было направить ответственному сотруднику.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'; ?>

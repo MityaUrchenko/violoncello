@@ -210,6 +210,43 @@ ul {
   color: #fff;
 }
 
+.header__menu-item {
+  position: relative;
+}
+
+.header__submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  padding: 0.75rem 0;
+  margin: 0;
+  list-style: none;
+  background: #2a1216;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  z-index: 120;
+}
+
+.header__menu-item--parent:hover > .header__submenu,
+.header__menu-item--parent:focus-within > .header__submenu {
+  display: block;
+}
+
+.header__submenu-link {
+  display: block;
+  padding: 0.45rem 1rem;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+.header__submenu-link:hover,
+.header__submenu-item.is-active .header__submenu-link {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
 .header__actions {
   display: flex;
   align-items: center;
@@ -803,6 +840,21 @@ ul {
     font-size: 1.0625rem;
   }
 
+  .header__submenu {
+    position: static;
+    display: block;
+    min-width: 0;
+    padding: 0.35rem 0 0.35rem 0.75rem;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .header__submenu-link {
+    white-space: normal;
+    padding: 0.35rem 0;
+    font-size: 0.9rem;
+  }
+
   .header__actions {
     flex-direction: column;
     align-items: flex-start;
@@ -1327,17 +1379,85 @@ ul {
 }
 
 .afisha-filters__tab {
+  display: inline-block;
   padding: 0.5rem 1rem;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  text-decoration: none;
   background: #f5f0f1;
   color: #981B2F;
   border: none;
   border-radius: 2px;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
+}
+
+.afisha-filters__dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2px;
+}
+
+.afisha-filters__dropdown select {
+  border: none;
+  background: transparent;
+  color: #1a1a1a;
+  font-size: 0.875rem;
+  text-transform: none;
+  letter-spacing: 0;
+  padding: 0;
+  cursor: pointer;
+  min-width: 8rem;
+}
+
+.afisha-filters__reset {
+  background: none;
+  border: none;
+  color: #981B2F;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: none;
+}
+
+.afisha-events__empty {
+  margin: 0 0 2rem;
+  color: #666;
+}
+
+.afisha-pagination {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.afisha-pagination a,
+.afisha-pagination span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.5rem;
+  color: #981B2F;
+  text-decoration: none;
+}
+
+.afisha-pagination .afisha-pagination__item--active,
+.afisha-pagination span {
+  font-weight: 600;
 }
 
 .afisha-filters__tab--active {
@@ -1366,28 +1486,10 @@ ul {
   gap: 1.25rem;
 }
 
-.afisha-filters__dropdown {
-  background: none;
-  border: none;
-  color: #1a1a1a;
-  cursor: pointer;
-  padding: 0;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 2px;
-}
-
 .afisha-filters__caret {
   font-size: 0.7em;
   margin-left: 0.2rem;
   opacity: 0.7;
-}
-
-.afisha-filters__reset {
-  background: none;
-  border: none;
-  color: #981B2F;
-  cursor: pointer;
-  padding: 0;
 }
 
 .afisha-filters__reset:hover {

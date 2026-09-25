@@ -1,0 +1,330 @@
+<?php
+require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog_before.php';
+$APPLICATION->SetAdditionalCSS('/styles.about.css');
+$APPLICATION->SetAdditionalCSS('/styles.institute.css');
+$APPLICATION->AddHeadScript('/assets/js/about.js');
+$APPLICATION->AddHeadScript('/assets/js/institute.js');
+require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
+$APPLICATION->SetTitle('Институт исследований и методологии');
+$APPLICATION->SetPageProperty('title', 'Институт исследований и методологии — Всероссийская виолончельная академия');
+?>
+<section class="hero-secondary hero-secondary--institute">
+      <div class="hero-secondary__bg">
+        <img src="/assets/images/institute-hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true" />
+      </div>
+      <div class="hero-secondary__content">
+        <h1 class="hero-secondary__title">Институт исследований и методологии виолончельного искусства</h1>
+      </div>
+    </section>
+
+    <section class="about-intro about-intro--institute">
+      <div class="section__container">
+        <div class="about-intro__grid">
+          <div class="about-intro__image">
+            <img src="/assets/images/institute-photo.jpg" alt="Сотрудники Института исследований и методологии виолончельного искусства" />
+          </div>
+          <div class="about-intro__text institute-text">
+            <p class="academy-mission__text"><strong>Институт исследований и методологии виолончельного искусства</strong> — исследовательское и научно-методическое подразделение Всероссийской виолончельной академии. Его работа посвящена изучению истории виолончели, сохранению исполнительского и педагогического наследия, развитию методики преподавания и подготовке профессиональных изданий.</p>
+            <p class="academy-mission__text">Институт связывает исследовательскую деятельность с практикой исполнения и обучения. Работа с архивами, переиздание фундаментальных трудов, подготовка нотных сборников, видеолекций и журнала помогают сохранять накопленные знания и делать их доступными современным музыкантам.</p>
+            <p class="academy-mission__text">Исследовательские и издательские проекты развивались в Академии ещё до оформления института как отдельного подразделения. Его создание объединило эту работу в постоянное направление с собственной командой и долгосрочной программой.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="institute-toc" aria-label="Содержание страницы">
+      <div class="section__container">
+        <svg class="institute-divider institute-toc__line institute-divider--2" viewBox="0 0 346 10" preserveAspectRatio="none" aria-hidden="true"><path class="institute-divider__path" d="M345.029 0.748338C254.553 6.98936 138.055 11.6056 0.0292969 6.35601"></path></svg>
+        <div class="institute-toc__grid">
+
+          <div class="institute-toc__group">
+            <a class="institute-toc__title" href="#inst-mission"><span class="institute-toc__num">01</span>Миссия и задачи</a>
+          </div>
+
+          <div class="institute-toc__group">
+            <a class="institute-toc__title" href="#inst-projects"><span class="institute-toc__num">02</span>Реализуемые проекты</a>
+            <ul class="institute-toc__list">
+              <li><a href="#project-ginzburg">Переиздание «Истории виолончельного искусства» Льва Гинзбурга</a></li>
+              <li><a href="#project-lectures">Цикл лекций «История виолончельного исполнительства»</a></li>
+              <li><a href="#project-archive">Нотный архив Анатолия Павловича Никитина</a></li>
+              <li><a href="#project-journal">CelloЖурнал</a></li>
+              <li><a href="#project-editions">Методические и нотные издания</a></li>
+            </ul>
+          </div>
+
+          <div class="institute-toc__group">
+            <a class="institute-toc__title" href="#inst-program"><span class="institute-toc__num">03</span>Долгосрочная программа</a>
+            <ul class="institute-toc__list">
+              <li><a href="#program-sources">Исторические исследования и работа с источниками</a></li>
+              <li><a href="#program-method">Развитие методики преподавания</a></li>
+              <li><a href="#program-lectures">Лекции, семинары и образовательные программы</a></li>
+              <li><a href="#program-translations">Переводы и профессиональный обмен знаниями</a></li>
+            </ul>
+          </div>
+
+          <div class="institute-toc__group">
+            <a class="institute-toc__title" href="#inst-team"><span class="institute-toc__num">04</span>Команда института</a>
+            <ul class="institute-toc__list">
+              <li><a href="#team-lukashina">Татьяна Алексеевна Лукашина</a></li>
+              <li><a href="#team-ushakova">Анастасия Ушакова</a></li>
+              <li><a href="#team-alekseeva">Елена Алексеева</a></li>
+              <li><a href="#team-mansyreva">Любовь Мансырева</a></li>
+            </ul>
+          </div>
+
+        </div>
+        <button class="institute-toc__fab" type="button" aria-label="Содержание страницы" aria-expanded="false">
+          <span class="institute-toc__fab-line"></span>
+          <span class="institute-toc__fab-line"></span>
+          <span class="institute-toc__fab-line"></span>
+        </button>
+      </div>
+    </nav>
+
+    <section class="academy-mission academy-mission--institute" id="inst-mission">
+      <div class="section__container">
+        <div class="section__header">
+          <h2 class="section__title">Миссия и задачи</h2>
+        </div>
+        <div class="institute-text">
+          <p class="academy-mission__text">Миссия института — сохранять, осмыслять и развивать знания о виолончельном искусстве, обеспечивая преемственность между поколениями исполнителей, педагогов и исследователей.</p>
+          <p class="academy-mission__text">История инструмента существует в книгах и нотах, архивных документах, исполнительских традициях и личном опыте музыкантов. Часть этого наследия широко известна, другая остаётся в рукописях, редких изданиях и частных собраниях. Институт работает над тем, чтобы ценные материалы становились доступными для изучения, преподавания и исполнения.</p>
+          <p class="academy-mission__text"><strong>Основные задачи института</strong>:</p>
+          <ul class="institute-list">
+            <li class="academy-mission__text">— сохранение и исследование исторического, исполнительского и педагогического наследия;</li>
+            <li class="academy-mission__text">— систематизация нотных, текстовых и архивных источников;</li>
+            <li class="academy-mission__text">— изучение виолончельных школ и подходов к преподаванию;</li>
+            <li class="academy-mission__text">— подготовка исследовательских, методических и нотных изданий;</li>
+            <li class="academy-mission__text">— развитие образовательных и просветительских проектов;</li>
+            <li class="academy-mission__text">— поддержка профессионального обмена знаниями и вовлечение молодых музыкантов в исследовательскую работу.</li>
+          </ul>
+          <p class="academy-mission__text">Деятельность института адресована исполнителям, преподавателям, студентам и учащимся, исследователям, а также всем, кто интересуется виолончелью и её историей.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-directions institute-projects" id="inst-projects">
+      <div class="section__container">
+        <div class="section__header">
+          <h2 class="section__title section__title--light">Реализуемые проекты</h2>
+        </div>
+
+        <article class="institute-block" id="project-ginzburg">
+          <h3 class="about-directions__subtitle institute-block__title">Переиздание «Истории виолончельного искусства» Льва Гинзбурга</h3>
+          <div class="institute-block__body">
+            <div class="institute-text">
+              <p class="about-directions__card-text">Одним из крупных издательских проектов Академии стало переиздание четырёхтомного труда Льва Гинзбурга «История виолончельного искусства», подготовленное совместно с издательством «Музыка». Презентация издания состоялась в марте 2026 года.</p>
+              <p class="about-directions__card-text">Этот фундаментальный русскоязычный труд охватывает историю виолончельного искусства и служит важным источником для исполнителей, преподавателей, студентов и исследователей. Проект позволил вновь сделать его доступным заинтересованным читателям в научно отредактированном виде.</p>
+              <p class="about-directions__card-text">Академия инициировала переиздание, организовала научную редактуру, участвовала в подготовке издания, его презентации и распространении.</p>
+              <p class="about-directions__card-text">Научным редактором выступила Татьяна Алексеевна Лукашина. Подготовка четырёхтомника потребовала подробной проверки текста и иллюстративного материала. В ходе работы были исправлены фактические ошибки и неточности, уточнены имена, даты, сведения и атрибуции, проверены иллюстрации и подписи к ним. Идеологически обусловленные оценки и формулировки были пересмотрены; издание дополнено редакторскими комментариями и уточнениями.</p>
+              <p class="about-directions__card-text">Существенной частью проекта стало распространение книг. Комплекты передавались библиотекам, музыкальным школам, деятелям культуры и искусства, организациям-партнёрам, а также слушателям и участникам ежегодной Всероссийской виолончельной академии. Эта работа помогла расширить доступ к профессиональной литературе и поддержать интерес к истории инструмента.</p>
+            </div>
+            <div class="institute-block__media">
+              <div class="institute-block__shot"><img src="/assets/images/institute-life1.jpg" alt="Тома переиздания «Истории виолончельного искусства» Льва Гинзбурга" /></div>
+              <div class="institute-block__shot"><img src="/assets/images/institute-life2.jpg" alt="Передача комплектов переиздания участникам Всероссийской виолончельной академии" /></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="institute-block" id="project-lectures">
+          <svg class="institute-divider institute-divider--light institute-divider--1" viewBox="0 0 344 50" preserveAspectRatio="none" aria-hidden="true"><path class="institute-divider__path" d="M343.613 34.6311C240.139 30.0406 125.035 19.8512 0.113281 0.741314"></path></svg>
+          <h3 class="about-directions__subtitle institute-block__title">Цикл лекций «История виолончельного исполнительства»</h3>
+          <div class="institute-block__body">
+            <div class="institute-text">
+              <p class="about-directions__card-text">«История виолончельного исполнительства» — просветительский цикл видеолекций Татьяны Алексеевны Лукашиной.</p>
+              <p class="about-directions__card-text">Цикл раскрывает историю виолончельного искусства через личности исполнителей и педагогов, их творческий путь, художественные принципы и вклад в развитие профессии. Такой подход позволяет проследить, как менялись представления о возможностях инструмента, складывались исполнительские традиции и передавался педагогический опыт.</p>
+              <p class="about-directions__card-text">В течение сезона 2025–2026 вышло 20 выпусков. Все видеолекции находятся в открытом доступе.</p>
+              <p class="about-directions__card-text">Цикл адресован профессиональным музыкантам, преподавателям, студентам и широкой аудитории. Он даёт возможность последовательно знакомиться с историей исполнительства и дополнять практические занятия пониманием культурного и профессионального контекста.</p>
+              <p class="about-directions__card-text">В сезоне 2026–2027 запланирован второй сезон — ещё 20 выпусков. Он продолжит рассказ об истории виолончели через исполнителей и педагогов.</p>
+            </div>
+            <div class="institute-block__media">
+              <div class="institute-block__shot"><img src="/assets/images/institute-life3.jpg" alt="Титульный кадр видеоцикла «История виолончельного исполнительства»" /></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="institute-block" id="project-archive">
+          <svg class="institute-divider institute-divider--light institute-divider--3" viewBox="0 0 348 44" preserveAspectRatio="none" aria-hidden="true"><path class="institute-divider__path" d="M0.0546875 14.8429C109.868 6.67136 177.227 -3.11728 192.95 2.32036C211.501 8.73612 171.655 26.0337 192.95 35.9209C212.215 44.8657 272.076 43.6526 347.055 37.534"></path></svg>
+          <h3 class="about-directions__subtitle institute-block__title">Нотный архив Анатолия Павловича Никитина</h3>
+          <div class="institute-block__body">
+            <div class="institute-text">
+              <p class="about-directions__card-text">В июне 2026 года Всероссийской виолончельной академии выпала честь стать хранителем нотного архива Анатолия Павловича Никитина. Мы благодарим его дочь Ирину Анатольевну Никитину и супругу Нину Павловну за доверие и передачу материалов.</p>
+              <p class="about-directions__card-text">Это событие стало продолжением сотрудничества с семьёй музыканта: состоявшаяся в марте 2026 года ежегодная Всероссийская виолончельная академия носила имя Анатолия Павловича Никитина. Работа с архивом стала следующим шагом в сохранении и популяризации его наследия.</p>
+              <p class="about-directions__card-text">Академии переданы оригиналы нотных рукописей и материалов. На их основе институт готовит сборники авторских переложений и обработок Никитина из избранного репертуара его виолончельного ансамбля.</p>
+              <p class="about-directions__card-text">В настоящее время ведутся нотный набор, сверка и редактура. Работа с первоисточниками позволяет внимательно изучить авторский текст и подготовить материалы к дальнейшему использованию музыкантами.</p>
+              <p class="about-directions__card-text">Проект направлен на сохранение творческого наследия Никитина и расширение доступного репертуара для виолончельных ансамблей. Будущие издания познакомят молодых исполнителей с его авторскими работами и дадут возможность продолжить их жизнь в современной ансамблевой практике.</p>
+            </div>
+            <div class="institute-block__media">
+              <div class="institute-block__shot"><img src="/assets/images/institute-life4.jpg" alt="Работа с нотным архивом Анатолия Павловича Никитина" /></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="institute-block institute-block--text" id="project-journal">
+          <svg class="institute-divider institute-divider--light institute-divider--4" viewBox="0 0 348 45" preserveAspectRatio="none" aria-hidden="true"><path class="institute-divider__path" d="M347.066 0.742344C258.689 13.4516 115.142 33.5818 0.0664062 43.8909"></path></svg>
+          <h3 class="about-directions__subtitle institute-block__title">CelloЖурнал</h3>
+          <div class="institute-block__body">
+            <div class="institute-text">
+              <p class="about-directions__card-text">CelloЖурнал — новый ежеквартальный издательский проект Академии, который готовится в рамках деятельности института.</p>
+              <p class="about-directions__card-text">Журнал посвящён виолончельной культуре во всём её многообразии: истории и современной исполнительской жизни, педагогике, репертуару, инструментам и людям, формирующим профессиональную среду.</p>
+              <p class="about-directions__card-text">В его содержание входят:</p>
+              <ul class="institute-list">
+                <li class="about-directions__card-text">— исследования, исторические и авторские статьи;</li>
+                <li class="about-directions__card-text">— методические материалы для педагогов и исполнителей;</li>
+                <li class="about-directions__card-text">— интервью с преподавателями, признанными исполнителями и молодыми музыкантами;</li>
+                <li class="about-directions__card-text">— диалоги с инструментальными мастерами;</li>
+                <li class="about-directions__card-text">— обзоры репертуара, нотных и книжных изданий;</li>
+                <li class="about-directions__card-text">— материалы об инструментах и уходе за ними;</li>
+                <li class="about-directions__card-text">— обзоры событий современной виолончельной жизни;</li>
+                <li class="about-directions__card-text">— рубрика для детей;</li>
+                <li class="about-directions__card-text">— эксклюзивные нотные публикации.</li>
+              </ul>
+              <p class="about-directions__card-text">CelloЖурнал объединяет профессиональные материалы с текстами, доступными более широкому кругу читателей. Его задача — поддерживать обмен опытом, представлять разные взгляды на исполнительство и преподавание, знакомить аудиторию с наследием и современной жизнью виолончели.</p>
+              <p class="about-directions__card-text">Первый номер готовится к выходу в конце сентября 2026 года. В сезоне 2026–2027 запланированы четыре выпуска: сентябрь и декабрь 2026 года, март и июнь 2027 года.</p>
+              <p class="about-directions__card-text">Журнал будет выходить в печатной и электронной версиях. Обе версии будут бесплатными.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="institute-block institute-block--text" id="project-editions">
+          <svg class="institute-divider institute-divider--light institute-divider--2" viewBox="0 0 346 10" preserveAspectRatio="none" aria-hidden="true"><path class="institute-divider__path" d="M345.029 0.748338C254.553 6.98936 138.055 11.6056 0.0292969 6.35601"></path></svg>
+          <h3 class="about-directions__subtitle institute-block__title">Методические и нотные издания</h3>
+          <div class="institute-block__body">
+            <div class="institute-text">
+              <p class="about-directions__card-text">В работе института находятся методические пособия, учебные сборники и нотные издания. Их подготовка связана с практическими потребностями исполнителей, преподавателей и учащихся.</p>
+              <p class="about-directions__card-text">Это направление включает разработку и редактуру учебных материалов, работу с репертуаром, переложениями и исполнительскими редакциями. Конкретные темы и состав готовящихся изданий будут представлены по мере их подготовки.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="about-structure institute-program" id="inst-program">
+      <div class="section__container">
+        <div class="section__header">
+          <h2 class="section__title">Долгосрочная программа</h2>
+        </div>
+
+        <article class="institute-block institute-block--text" id="program-sources">
+          <h3 class="academy-mission__title institute-block__title">Исторические исследования и работа с источниками</h3>
+          <div class="institute-block__body">
+            <div class="institute-text">
+              <p class="academy-mission__text">Институт рассматривает изучение истории виолончельного искусства как постоянное направление работы. В круг его интересов входят исполнительские и педагогические школы, развитие репертуара, наследие музыкантов и взаимосвязи между различными традициями.</p>
+              <p class="academy-mission__text">Долгосрочная программа предусматривает работу с рукописями, редкими изданиями, архивными документами и другими источниками, подготовку исследований, исторических и биографических публикаций.</p>
+              <p class="academy-mission__text">Особое значение имеет возвращение в профессиональный оборот материалов, которые ранее оставались малоизвестными или труднодоступными.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="institute-block institute-block--text" id="program-method">
+          <svg class="institute-divider institute-divider--3" viewBox="0 0 348 44" preserveAspectRatio="none" aria-hidden="true"><path class="institute-divider__path" d="M0.0546875 14.8429C109.868 6.67136 177.227 -3.11728 192.95 2.32036C211.501 8.73612 171.655 26.0337 192.95 35.9209C212.215 44.8657 272.076 43.6526 347.055 37.534"></path></svg>
+          <h3 class="academy-mission__title institute-block__title">Развитие методики преподавания</h3>
+          <div class="institute-block__body">
+            <div class="institute-text">
+              <p class="academy-mission__text">Методическое направление предполагает изучение и сопоставление педагогических подходов, осмысление опыта преподавателей и подготовку материалов, полезных в ежедневной работе.</p>
+              <p class="academy-mission__text">В перспективе — развитие серий учебных пособий, сборников упражнений, гамм и этюдов, методических комментариев и рекомендаций по работе с репертуаром.</p>
+              <p class="academy-mission__text">При подготовке материалов учитываются разные этапы и цели обучения: первые занятия, профессиональное образование, самостоятельная работа и любительское музицирование. Важная задача — помогать педагогам и учащимся осознанно выбирать подходы к обучению с учётом конкретных потребностей.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="institute-block institute-block--text" id="program-lectures">
+          <svg class="institute-divider institute-divider--1" viewBox="0 0 344 50" preserveAspectRatio="none" aria-hidden="true"><path class="institute-divider__path" d="M343.613 34.6311C240.139 30.0406 125.035 19.8512 0.113281 0.741314"></path></svg>
+          <h3 class="academy-mission__title institute-block__title">Лекции, семинары и образовательные программы</h3>
+          <div class="institute-block__body">
+            <div class="institute-text">
+              <p class="academy-mission__text">В долгосрочную программу входит разработка лекций, семинаров и курсов по истории виолончельного искусства, исполнительству и педагогике.</p>
+              <p class="academy-mission__text">Они будут адресованы преподавателям музыкальных школ, школ искусств, училищ и колледжей, студентам, начинающим педагогическую деятельность, специалистам, работающим со взрослыми любителями, а также самим учащимся и всем интересующимся.</p>
+              <p class="academy-mission__text">Образовательное направление призвано связывать результаты исследований с практическими вопросами: работой над произведением, выбором учебного материала, пониманием исполнительских традиций и развитием педагогических навыков.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="institute-block institute-block--text" id="program-translations">
+          <svg class="institute-divider institute-divider--4" viewBox="0 0 348 45" preserveAspectRatio="none" aria-hidden="true"><path class="institute-divider__path" d="M347.066 0.742344C258.689 13.4516 115.142 33.5818 0.0664062 43.8909"></path></svg>
+          <h3 class="academy-mission__title institute-block__title">Переводы и профессиональный обмен знаниями</h3>
+          <div class="institute-block__body">
+            <div class="institute-text">
+              <p class="academy-mission__text">Перспективное направление деятельности — перевод, комментирование и адаптация зарубежных исследовательских и методических материалов для русскоязычной аудитории.</p>
+              <p class="academy-mission__text">Знакомство с разными школами и профессиональными подходами расширяет возможности для сопоставления идей, обсуждения педагогического опыта и развития собственных исследований.</p>
+              <p class="academy-mission__text">Институт также стремится создавать условия для участия молодых музыкантов в исследовательской и авторской работе — от изучения источников до подготовки статей, учебных материалов и публикаций.</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="team institute-team" id="inst-team">
+      <div class="section__container">
+        <div class="section__header">
+          <h2 class="section__title section__title--light">Команда института</h2>
+        </div>
+        <div class="team__grid">
+
+          <article class="team-card team-card--institute" id="team-lukashina">
+            <div class="team-card__avatar">
+              <img src="/assets/images/institute-person1.jpg" alt="Татьяна Алексеевна Лукашина" />
+            </div>
+            <div class="team-card__text">
+              <h3 class="team-card__name">Татьяна Алексеевна Лукашина</h3>
+              <p class="team-card__role"><em>Научный руководитель института</em></p>
+              <div class="institute-text">
+                <p class="about-directions__card-text">Виолончелистка, лауреат международных конкурсов, автор научно-методических изданий, в том числе в цифровом формате. Доцент кафедры «Ансамбль» Государственного музыкально-педагогического института имени М. М. Ипполитова-Иванова.</p>
+                <p class="about-directions__card-text">В Московской государственной консерватории имени П. И. Чайковского ведёт курсы лекций «История виолончельного искусства» и «Методика обучения игре на виолончели».</p>
+                <p class="about-directions__card-text">Определяет научные и методические направления института, руководит работой сотрудников, осуществляет содержательную и научную проверку материалов. Участвует в работе с авторами и содержанием CelloЖурнала, разрабатывает собственные исследования и учебные материалы.</p>
+                <p class="about-directions__card-text">Научный редактор переиздания четырёхтомной «Истории виолончельного искусства» Льва Гинзбурга, лектор видеоцикла «История виолончельного исполнительства».</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="team-card team-card--institute" id="team-ushakova">
+            <div class="team-card__avatar">
+              <img src="/assets/images/institute-person2.jpg" alt="Анастасия Ушакова" />
+            </div>
+            <div class="team-card__text">
+              <h3 class="team-card__name">Анастасия Ушакова</h3>
+              <p class="team-card__role"><em>Основатель Виолончельной академии и куратор института</em></p>
+              <div class="institute-text">
+                <p class="about-directions__card-text">Основатель и художественный руководитель Виолончельной академии. Занимается развитием профессиональной среды для виолончелистов, образовательных, концертных, издательских и просветительских проектов.</p>
+                <p class="about-directions__card-text">Курирует развитие института как исследовательского и научно-методического направления Академии, определяет стратегические приоритеты, инициирует проекты и выстраивает партнёрства.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="team-card team-card--institute" id="team-alekseeva">
+            <div class="team-card__avatar">
+              <img src="/assets/images/institute-person3.jpg" alt="Елена Алексеева" />
+            </div>
+            <div class="team-card__text">
+              <h3 class="team-card__name">Елена Алексеева</h3>
+              <p class="team-card__role"><em>Сотрудник института</em></p>
+              <div class="institute-text">
+                <p class="about-directions__card-text">Музыкант-мультиинструменталист, исполнительница на виолончели, виоле да гамба и барочной виолончели.</p>
+                <p class="about-directions__card-text">С отличием окончила Московскую государственную консерваторию имени П. И. Чайковского. Ассистент-стажёр факультета исторического и современного исполнительского искусства в классе профессора А. А. Спиридонова.</p>
+                <p class="about-directions__card-text">Сотрудничает с исполнителями старинной музыки, среди которых Марина Катаржнова, Дарья Борковская, Назар Кожухарь, Феликс Антипов, Константин Щенников-Архаров, Диана Кривенко, Николай Мартынов, Анастасия Бондарева и Ольга Матиева.</p>
+                <p class="about-directions__card-text">В 2025 году преподавала виолончель и методику в Музыкальном училище имени Гнесиных. В настоящее время ведёт классы ансамбля и виолончели, заведует струнным отделом Детской музыкальной школы имени Г. В. Свиридова.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="team-card team-card--institute" id="team-mansyreva">
+            <div class="team-card__avatar">
+              <img src="/assets/images/institute-person4.jpg" alt="Любовь Мансырева" />
+            </div>
+            <div class="team-card__text">
+              <h3 class="team-card__name">Любовь Мансырева</h3>
+              <p class="team-card__role"><em>Сотрудник института</em></p>
+              <div class="institute-text">
+                <p class="about-directions__card-text">Выпускница Московской государственной консерватории имени П. И. Чайковского.</p>
+                <p class="about-directions__card-text">Преподаёт в Детской музыкальной школе имени Л. Бетховена и Вальдорфской школе «Путь зерна». Работает артистом-музыкантом в театре «Сатирикон» и Московском драматическом театре имени М. Н. Ермоловой.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'; ?>
