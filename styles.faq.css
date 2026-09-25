@@ -1,0 +1,279 @@
+/* ============================================================
+   styles.faq.css — НОВЫЕ классы для страницы
+   «Часто задаваемые вопросы»
+   ------------------------------------------------------------
+   Подключается ПОСЛЕ styles.css и styles.about.css.
+   styles.css не правится. styles.about.css — общий для раздела,
+   тоже не правится: странице он нужен ради .about-lightbox*
+   (кадры полос открываются во весь экран).
+   Здесь только то, чего нет ни в styles.css, ни в styles.about.css.
+   ============================================================ */
+
+/* ---------- Герой ---------- */
+
+/* Базовый .hero-secondary тянется по контенту; нужна высота первого
+   экрана — как на принятых страницах раздела.
+   Хлебная крошка не выводится: убрана как дубль H1. */
+.hero-secondary--faq {
+  min-height: 620px;
+}
+
+/* Кадр героя — ансамбль виолончелей на сцене. Герой намного шире
+   исходных 3:2, поэтому при object-fit: cover остаётся средняя полоса
+   высоты: 44% оставляет в кадре музыкантов целиком.
+   в макете поправку можно подвигать техническим ползунком
+   (он пишет inline-стиль и в серверную страницу не попадает).
+   Принятое значение — со сдвигом −160px (кадр поднят выше,
+   выбрано заказчиком ползунком в макете). */
+.hero-secondary--faq .hero-secondary__bg-img {
+  object-position: center calc(44% - 160px);
+}
+
+/* ---------- Группа вопросов ---------- */
+
+/* Фоны и отступы дают существующие .about-intro (#fff)
+   и .about-directions (#111); класс нужен как область действия
+   списка спойлеров и чтобы не переопределять их на весь сайт.
+   Заголовок группы отделяется от списка так же, как на принятых
+   страницах раздела. */
+.faq-group .section__header {
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- Список спойлеров ---------- */
+
+/* Список во всю ширину контейнера, элементы разделены линиями.
+   Ни аккордеона, ни спойлеров в styles.css нет — это новые классы. */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(17, 17, 17, 0.12);
+}
+
+/* Вопрос — кнопка во всю ширину: попасть по ней проще, чем по строке,
+   и состояние читается скринридером через aria-expanded.
+   Сбрасываем оформление кнопки браузера. */
+.faq-item__q {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1.5rem 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  color: #111;
+  transition: color 0.3s ease;
+}
+
+.faq-item__q:hover {
+  color: #981B2F;
+}
+
+.faq-item__q-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Значок «плюс» из двух линий: рисуется бордюрами, чтобы не тянуть
+   иконочный шрифт и не заводить svg на каждый из 32 вопросов.
+   При открытом ответе вертикальная линия поворачивается и гаснет —
+   остаётся минус. Угол и прозрачность — из переменных состояния
+   (см. .faq-item__a ниже). */
+.faq-item__icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 0.35rem;
+}
+
+.faq-item__icon::before,
+.faq-item__icon::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.faq-item__icon::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  transform: translateY(-50%);
+}
+
+.faq-item__icon::after {
+  left: 50%;
+  top: 0;
+  width: 1.5px;
+  height: 100%;
+  transform: translateX(-50%) rotate(var(--faq-rot, 0deg));
+  opacity: var(--faq-op, 1);
+}
+
+/* Мягкое раскрытие: max-height от 0 до точной высоты ответа.
+   Высоту ставит скрипт inline-стилем прямо на .faq-item__a
+   (переход max-height браузер проигрывает только при смене самого
+   свойства — от смены css-переменной он не срабатывает).
+   Значок берёт состояние из переменных --faq-rot и --faq-op,
+   которые скрипт пишет на .faq-item.
+   grid-template-rows: 0fr → 1fr не подходит: в блоке с auto-высотой
+   1fr разрешается в 0px и ответ не раскрывается. */
+.faq-item__a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+/* Внутренняя обёртка нужна, чтобы отступы абзацев не влияли
+   на измеренную высоту и не давали рывок в конце перехода. */
+.faq-item__a-inner {
+  overflow: hidden;
+}
+
+/* Текст ответа — той же гарнитуры и размера, что проза сайта
+   (.academy-mission__text), но в спойлере ему нужен свой нижний
+   отступ и отступ между абзацами. */
+.faq-item__text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.faq-item__text + .faq-item__text {
+  margin-top: 1rem;
+}
+
+/* Ссылки внутри ответа. Готовый `.section__link` не подходит:
+   он рассчитан на отдельную строку-ссылку рядом с заголовком
+   секции, а здесь ссылка стоит внутри абзаца и наследует
+   его размер и интерлиньяж. Подчёркивание — бордюром, как
+   у `.section__link`, чтобы подчёрк не резал выносные элементы букв. */
+.faq-item__link {
+  color: #981B2F;
+  border-bottom: 1px solid rgba(152, 27, 47, 0.45);
+  transition: border-color 0.3s ease;
+}
+
+.faq-item__link:hover {
+  color: #981B2F;
+  border-bottom-color: #981B2F;
+}
+
+.faq-item__a-inner .faq-item__text:last-child {
+  margin-bottom: 1.75rem;
+}
+
+/* ---------- Список на тёмном фоне ---------- */
+
+/* Группы чередуются по фону (#fff / #111), поэтому у списка есть
+   светлый вариант: инверсия линий и цвета текста.
+   Цвет активного вопроса на тёмном — #F6E9EB (как фирменный светлый
+   в styles.about.css), бордовый #981B2F на #111 не читается. */
+.faq-list--light {
+  border-top-color: rgba(255, 255, 255, 0.18);
+}
+
+.faq-list--light .faq-item {
+  border-bottom-color: rgba(255, 255, 255, 0.18);
+}
+
+.faq-list--light .faq-item__q {
+  color: #fff;
+}
+
+.faq-list--light .faq-item__q:hover {
+  color: #F6E9EB;
+}
+
+.faq-list--light .faq-item__text {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Ссылка в ответе на тёмном фоне: бордовый #981B2F на #111
+   не читается, поэтому светлый фирменный #F6E9EB. */
+.faq-list--light .faq-item__link {
+  color: #F6E9EB;
+  border-bottom-color: rgba(246, 233, 235, 0.45);
+}
+
+.faq-list--light .faq-item__link:hover {
+  color: #F6E9EB;
+  border-bottom-color: #F6E9EB;
+}
+
+/* ---------- Полосы кадров ---------- */
+
+/* Полоса живёт внутри группы вопросов, а не отдельной секцией
+   .mission-life: иначе между списком и его фоном вставала бы
+   секция другого цвета. Сама сетка — существующие
+   .mission-life__grid / __item. */
+.faq-gallery {
+  margin-top: 3.5rem;
+}
+
+/* Кадры открываются во весь экран (классы .about-lightbox*
+   из styles.about.css). */
+.faq-gallery .mission-life__item {
+  cursor: zoom-in;
+}
+
+/* ---------- Лайтбокс ---------- */
+
+/* Только для макета: в .dc.html кадр лайтбокса выводится фоном на div
+   (литерал src с холом браузер грузит ещё при разборе файла и получает
+   404), а фон на div не наследует размеры <img>.
+   На сервере лайтбокс собирает assets/js/about.js — там обычный <img>,
+   и это правило не используется. */
+.faq-lightbox__shot {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* ---------- Переключатели раскладки (тот же HTML) ---------- */
+
+/* Заголовок группы — в левой колонке, список справа.
+   Вариант для широких экранов: 32 вопроса подряд читаются легче,
+   когда видно, к какой группе относится список. */
+@media (min-width: 1000px) {
+  .faq-page--side-heads .faq-group .section__container {
+    display: grid;
+    grid-template-columns: minmax(0, 20rem) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .faq-page--side-heads .faq-group .section__header {
+    margin-bottom: 0;
+  }
+
+  .faq-page--side-heads .faq-gallery {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- Адаптив ---------- */
+
+@media (max-width: 768px) {
+  .faq-item__q {
+    gap: 1rem;
+    padding: 1.25rem 0;
+  }
+
+  .faq-item__q-text {
+    font-size: 1rem;
+  }
+}

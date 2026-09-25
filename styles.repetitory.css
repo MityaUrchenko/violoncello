@@ -1,0 +1,179 @@
+/* ============================================================
+   styles.repetitory.css — НОВЫЕ классы для страницы
+   «Закрытый репетиторий Виолончельной академии»
+   ------------------------------------------------------------
+   Подключается ПОСЛЕ styles.css и styles.about.css.
+   styles.css не правится. styles.about.css — общий для раздела,
+   тоже не правится: странице он нужен ради .about-lightbox*
+   (кадры полос открываются во весь экран).
+   Здесь только то, чего нет ни в styles.css, ни в styles.about.css.
+   ============================================================ */
+
+/* ---------- Герой ---------- */
+
+/* Базовый .hero-secondary тянется по контенту; нужна высота первого
+   экрана — как на принятых страницах раздела.
+   Хлебная крошка не выводится: убрана как дубль H1. */
+.hero-secondary--repetitory {
+  min-height: 620px;
+}
+
+/* Кадр героя — камерный зал Академии с ансамблем. Герой намного шире
+   исходных 3:2, поэтому при object-fit: cover остаётся средняя полоса
+   высоты: 46% оставляет в кадре музыкантов и рояль, базовый center
+   срезал первый ряд.
+   В макете поправку можно подвигать техническим ползунком
+   (он пишет inline-стиль и в серверную страницу не попадает). */
+.hero-secondary--repetitory .hero-secondary__bg-img {
+  object-position: center calc(46% - 0px);
+}
+
+/* Кадр героя светлый (белые стены и светлый пол сцены), и базового
+   затемнения .hero-secondary__bg::after (0.5 → 0.1) для белого
+   заголовка не хватало. Тот же градиент, плотнее. */
+.hero-secondary--repetitory .hero-secondary__bg::after {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.28) 100%);
+}
+
+/* Заголовок страницы длинный (шесть слов) — на широком экране он
+   растягивался почти во всю ширину героя и наезжал на правый край.
+   Базовый .hero-secondary__title ограничения ширины не имеет. */
+.hero-secondary--repetitory .hero-secondary__title {
+  max-width: 24ch;
+}
+
+/* ---------- Проза страницы ---------- */
+
+/* Текст блока — на всю ширину своей колонки. */
+.repetitory-text {
+  max-width: none;
+}
+
+/* Между абзацами в styles.css отступа нет ни у .academy-mission__text
+   (светлые секции), ни у .about-directions__card-text (тёмные). */
+.repetitory-text p + p {
+  margin-top: 1.25rem;
+}
+
+/* Проза на тёмном фоне — существующий .about-directions__card-text.
+   Он рассчитан на 2–3 строки внутри карточки: сброшены растяжка
+   по флексу и нижний отступ, интерлиньяж свободнее для длинного
+   текста. */
+.repetitory-text .about-directions__card-text {
+  flex-grow: 0;
+  margin-bottom: 0;
+  line-height: 1.65;
+}
+
+/* ---------- Светлые секции с заголовком ---------- */
+
+/* Секции «Место встречи музыкантов» и «Резидентство и посещение»
+   стоят на существующей .about-intro (фон #fff, padding 5rem 0):
+   в styles.css это единственная светлая секция с такими отступами,
+   но её .section__header по умолчанию не отделён от контента
+   настолько, насколько нужно при заголовке над сеткой. */
+.repetitory-meet .section__header,
+.repetitory-residency .section__header {
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- Полосы кадров ---------- */
+
+/* Полоса живёт внутри своей смысловой секции, а не отдельной секцией
+   .mission-life: кадры относятся к тексту, рядом с которым стоят,
+   и между текстом и его кадрами не должен вставать фон другой секции.
+   Сама сетка — существующие .mission-life__grid / __item. */
+.repetitory-gallery {
+  margin-top: 3rem;
+}
+
+/* Кадры открываются во весь экран (классы .about-lightbox*
+   из styles.about.css). */
+.repetitory-gallery .mission-life__item {
+  cursor: zoom-in;
+}
+
+/* Полоса из двух кадров («События и проекты»): базовая сетка — четыре
+   колонки, два кадра 4:3 в ней выглядели бы обрезками строки.
+   Два кадра 16:9 на всю ширину — принятый в проекте вариант
+   для неполной полосы. */
+.repetitory-gallery--pair .mission-life__grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.repetitory-gallery--pair .mission-life__item {
+  aspect-ratio: 16 / 9;
+}
+
+/* ---------- Кадр рядом с текстом ---------- */
+
+/* Сетка «кадр + текст» — существующая .about-structure__grid.
+   Кадры приходят в 3:2, сетка их не кадрирует, поэтому пропорция
+   задаётся здесь: иначе в одной секции кадр выше текста,
+   в другой ниже. */
+.repetitory-meet .about-structure__image img,
+.repetitory-events .about-structure__image img,
+.repetitory-residency .about-structure__image img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* Вводный блок: два абзаца, поэтому кадр стоит рядом с текстом
+   (существующий .about-intro__grid). Своей пропорции у
+   .about-intro__image нет. */
+.about-intro--repetitory .about-intro__image img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* ---------- Лайтбокс ---------- */
+
+/* Только для макета: в .dc.html кадр лайтбокса выводится фоном на div
+   (литерал src с холом браузер грузит ещё при разборе файла и получает
+   404), а фон на div не наследует размеры <img>.
+   На сервере лайтбокс собирает assets/js/about.js — там обычный <img>,
+   и это правило не используется. */
+.repetitory-lightbox__shot {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* ---------- Переключатели раскладки (тот же HTML) ---------- */
+
+/* Полоса кадров — над текстом секции, а не под ним. */
+.repetitory-page--gallery-top .repetitory-work .repetitory-text,
+.repetitory-page--gallery-top .repetitory-meet .about-structure__grid,
+.repetitory-page--gallery-top .repetitory-events .about-structure__grid {
+  order: 2;
+}
+
+.repetitory-page--gallery-top .repetitory-gallery {
+  order: 1;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+.repetitory-page--gallery-top .repetitory-work .section__container,
+.repetitory-page--gallery-top .repetitory-meet .section__container,
+.repetitory-page--gallery-top .repetitory-events .section__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.repetitory-page--gallery-top .section__header {
+  order: 0;
+}
+
+/* Кадр рядом с текстом — полосой под текстом, а не слева от него. */
+.repetitory-page--media-below .about-structure__grid,
+.repetitory-page--media-below .about-intro__grid {
+  grid-template-columns: 1fr;
+}
+
+.repetitory-page--media-below .about-structure__image,
+.repetitory-page--media-below .about-intro__image {
+  order: 2;
+}

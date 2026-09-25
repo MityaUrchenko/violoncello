@@ -1,0 +1,327 @@
+/* ============================================================
+   styles.team.css — НОВЫЕ классы для страницы
+   «Руководство и команда»
+   ------------------------------------------------------------
+   Подключается ПОСЛЕ styles.css и styles.about.css.
+   styles.css не правится. styles.about.css — общий для раздела,
+   тоже не правится. Здесь только то, чего нет ни в styles.css,
+   ни в styles.about.css.
+   ============================================================ */
+
+/* ---------- Герой ---------- */
+
+/* Герой — групповой портрет команды из папки раздела
+   (`team-hero.jpg`). Базовый .hero-secondary тянется по контенту,
+   нужна высота первого экрана — как на `--about`, `--mission`,
+   `--history`, `--institute`. Хлебной крошки нет — дубль H1. */
+.hero-secondary--team {
+  min-height: 620px;
+}
+
+/* Лица в кадре стоят в верхней трети снимка: базовый
+   `object-position: center right` у .hero-secondary__bg-img
+   уводил группу за правый край. */
+.hero-secondary--team .hero-secondary__bg-img {
+  object-position: center 35%;
+}
+
+/* Фирменная кривая под героем (`hero_line_2.svg` в `.hero-secondary:after`)
+   отражена по горизонтали: та же линия, другой поворот — страница
+   не повторяет дословно герой соседних разделов. Сама линия опущена
+   на половину своей высоты: её верхний изгиб иначе поднимался
+   до середины кадра и резал группу по лицам. Секция с `overflow: hidden`,
+   так что нижний, почти горизонтальный хвост линии просто уходит за край. */
+.hero-secondary--team:after {
+  transform: scaleX(-1) translateY(50%);
+}
+
+/* ---------- Проза страницы ---------- */
+
+/* Текст блока — на всю ширину контейнера. */
+.team-text {
+  max-width: none;
+}
+
+/* Между абзацами в styles.css отступа нет ни у
+   .academy-mission__text (светлые секции), ни у
+   .about-directions__card-text (тёмные). */
+.team-text p + p {
+  margin-top: 1.25rem;
+}
+
+/* Проза на тёмном фоне — существующий .about-directions__card-text.
+   Он рассчитан на 2–3 строки внутри карточки: сброшены растяжка
+   по флексу и нижний отступ, интерлиньяж свободнее для длинного
+   текста (у Анастасии Ушаковой 16 абзацев). */
+.team-text .about-directions__card-text {
+  flex-grow: 0;
+  margin-bottom: 0;
+  line-height: 1.65;
+}
+
+/* Вводный блок — четыре абзаца без заголовка и без фотографии
+   (кадров, кроме портретов, в папке раздела нет), поэтому
+   базовая сетка .about-intro__grid не нужна: текст идёт
+   на всю ширину контейнера. */
+.about-intro--team .team-text {
+  column-gap: 3rem;
+}
+
+/* ---------- Блок руководителя ---------- */
+
+/* Карточка Анастасии Ушаковой — та же .team-card, но портрет
+   крупнее (в секции он один, и это первый портрет страницы)
+   и стоит у верхнего края: базовый .team-card центрирует его
+   по высоте карточки, рассчитанной на контакты в две строки,
+   а здесь рядом 16 абзацев. */
+.team-lead .team-card {
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.team-lead .team-card__avatar {
+  width: 300px;
+  height: 300px;
+}
+
+/* Имя руководителя — единственный заголовок секции, поэтому
+   набран крупнее имён в карточках команды. */
+.team-lead .team-card__name {
+  font-family: 'Cormorant Unicase', serif;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.1;
+}
+
+/* ---------- Карточки людей ---------- */
+
+/* Текстовая колонка карточки — flex-элемент, которому нужен
+   min-width: 0, иначе длинные слова растягивают колонку. */
+.team-card__text {
+  min-width: 0;
+}
+
+/* Базовый .team-card центрирует портрет по высоте карточки.
+   В карточках этой страницы от 1 до 6 строк текста, и портрет
+   должен стоять у верхнего края — так макушки на портретах
+   строки оказываются на одной высоте. */
+.team-card--person {
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* У .team__grid в styles.css gap: 2rem — он рассчитан на карточки
+   с контактами в две строки. Здесь в карточке до 6 строк анкеты
+   или 5 абзацев биографии, и при таком отступе портрет нижнего
+   ряда встаёт вплотную к тексту верхнего. */
+.team-people .team__grid {
+  row-gap: 4.5rem;
+}
+
+/* Должность идёт сразу под именем, дальше — анкета или биография. */
+.team-card--person .team-card__role {
+  color: #F6E9EB;
+  margin-bottom: 1.25rem;
+}
+
+/* ---------- Светлая секция с карточками ---------- */
+
+/* «Проектная команда» стоит между двумя тёмными секциями, поэтому
+   она светлая. Готовая секция с карточками в styles.css только
+   тёмная (.team, #111), а .team-card__name жёстко белый —
+   нужен светлый вариант тех же карточек. Фонов на странице
+   по-прежнему два: #fff и #111. */
+.team-light {
+  padding: 5rem 0;
+  background: #fff;
+  color: #1a1a1a;
+}
+
+.team-light .team-card__name {
+  color: #1a1a1a;
+}
+
+.team-light .team-card--person .team-card__role {
+  color: #981B2F;
+}
+
+.team-light .team-card__avatar {
+  border-color: #981B2F;
+  background: #f5e6e8;
+}
+
+/* Проектных менеджеров трое, сетка .team__grid — в две колонки,
+   поэтому последняя карточка остаётся одна во втором ряду: она
+   встаёт по центру контейнера, а не прижимается к левому краю.
+   Правило самоотключается, когда людей станет чётное число
+   (:last-child:nth-child(odd)) — тогда ряды заполнены, как в верхнем
+   блоке, и ничего центрировать не нужно. */
+.team-people .team-card--person:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  width: min(100%, calc(50% - 1rem));
+  justify-self: center;
+}
+
+@media (max-width: 991px) {
+  .team-people .team-card--person:last-child:nth-child(odd) {
+    width: 100%;
+  }
+}
+
+/* ---------- Анкеты проектных менеджеров ---------- */
+
+/* В docx у каждого проектного менеджера шесть строк вида
+   «полужирная подпись: ответ». Строки набраны абзацами, поэтому
+   остаются абзацами и на странице; подпись — <strong> в начале
+   строки, как в документе. Интервал между строками анкеты меньше,
+   чем между абзацами прозы: это перечень, а не текст. */
+.team-facts p + p {
+  margin-top: 0.65rem;
+}
+
+.team-facts strong {
+  font-weight: 600;
+}
+
+/* ---------- Фирменная изогнутая линия между карточками ---------- */
+
+/* Та же линия, что у героя (hero_line_2.svg) и карточек
+   «Об Академии» (card_line_1..4.svg): контуры взяты из этих файлов
+   дословно и чередуются. Штрих 1.5px, на светлом #981B2F,
+   на тёмном #F6E9EB. Inline-svg, а не картинка, чтобы линия
+   тянулась на любую ширину блока без изменения толщины штриха.
+   Высота у вариантов разная — по своему viewBox, иначе волна
+   расплющивается. Линия стоит первым элементом карточки, поэтому
+   при выключенных линиях отступ между карточками не меняется. */
+.team-divider {
+  display: block;
+  width: 100%;
+  height: 36px;
+  margin: 0 0 2.5rem;
+}
+
+.team-divider--2 {
+  height: 18px;
+}
+
+.team-divider--3 {
+  height: 44px;
+}
+
+.team-divider__path {
+  fill: none;
+  stroke: #981B2F;
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.team-divider--light .team-divider__path {
+  stroke: #F6E9EB;
+}
+
+/* Линия-разделитель стоит под заголовком секции, на всю ширину
+   контейнера: карточки людей лежат в сетке .team__grid, и линия
+   внутри карточки попадала бы в середину ряда. */
+
+/* ---------- Узкие экраны ---------- */
+
+@media (max-width: 991px) {
+  .team-lead .team-card {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .team-people .team__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .team-lead .team-card__avatar {
+    width: 220px;
+    height: 220px;
+  }
+
+  /* Базовый .team-card на узком экране становится колонкой;
+     текст сотрудника читается влево. */
+  .team-card--person {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ---------- Переключатели раскладки (только макет) ----------
+   На сервер уходит принятый вариант: портрет руководителя слева
+   и текст целиком, карточки команды в две колонки с портретом
+   слева, линии между карточками включены. Правила ниже нужны,
+   чтобы в макете можно было посмотреть альтернативы,
+   не переписывая разметку. */
+
+/* Портреты в ряд, текст под портретом. */
+.team-page--cards-row .team__grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3rem 1.5rem;
+}
+
+.team-page--cards-row .team-people--musicians .team__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.team-page--cards-row .team-card--person {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.team-page--cards-row .team-card__avatar {
+  width: 160px;
+  height: 160px;
+}
+
+.team-page--cards-row .team-card__name {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 991px) {
+  .team-page--cards-row .team__grid,
+  .team-page--cards-row .team-people--musicians .team__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .team-page--cards-row .team__grid,
+  .team-page--cards-row .team-people--musicians .team__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Портрет руководителя крупно, текст в две колонки под ним. */
+.team-page--lead-wide .team-lead .team-card {
+  display: block;
+}
+
+.team-page--lead-wide .team-lead .team-card__avatar {
+  width: 360px;
+  height: 360px;
+  margin-bottom: 2.5rem;
+}
+
+.team-page--lead-wide .team-lead .team-text {
+  column-count: 2;
+  column-gap: 3rem;
+}
+
+.team-page--lead-wide .team-lead .team-text p {
+  break-inside: avoid-column;
+}
+
+@media (max-width: 991px) {
+  .team-page--lead-wide .team-lead .team-text {
+    column-count: 1;
+  }
+}
+
+/* Линии между карточками выключены. */
+.team-page--no-dividers .team-divider {
+  display: none;
+}

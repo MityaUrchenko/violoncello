@@ -1,0 +1,177 @@
+/* ============================================================
+   styles.auditions.css — НОВЫЕ классы для страницы
+   «Открытые прослушивания»
+   ------------------------------------------------------------
+   Подключается ПОСЛЕ styles.css и styles.about.css.
+   styles.css не правится. styles.about.css — общий для раздела,
+   тоже не правится: странице он нужен ради .about-lightbox*
+   (кадры полос открываются во весь экран).
+   Здесь только то, чего нет ни в styles.css, ни в styles.about.css.
+   ============================================================ */
+
+/* ---------- Герой ---------- */
+
+/* Базовый .hero-secondary тянется по контенту; нужна высота первого
+   экрана — как на принятых страницах раздела.
+   Хлебная крошка не выводится: убрана как дубль H1. */
+.hero-secondary--auditions {
+  min-height: 620px;
+}
+
+/* Кадр героя — выступление участницы прослушиваний. Герой намного шире
+   исходных 3:2, поэтому при object-fit: cover остаётся средняя полоса
+   высоты: 42% оставляет в кадре музыканта и инструмент, базовый center
+   срезал верх кадра.
+   В макете поправку можно подвигать техническим ползунком
+   (он пишет inline-стиль и в серверную страницу не попадает). */
+.hero-secondary--auditions .hero-secondary__bg-img {
+  object-position: center calc(42% - 0px);
+}
+
+/* Кадр героя контрастный, но со светлыми участками у левого края,
+   где стоит заголовок; базового затемнения
+   .hero-secondary__bg::after (0.5 → 0.1) для белого H1 не хватало. */
+.hero-secondary--auditions .hero-secondary__bg::after {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.28) 100%);
+}
+
+/* Кнопка на сайт прослушивания в герое — по заданию источника
+   («и в целом у нас есть отдельный cello-audition, и я бы дала его
+   в начале страницы и в конце кнопками»). Своего контейнера
+   для кнопок у .hero-secondary__content в styles.css нет. */
+.auditions-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* ---------- Проза страницы ---------- */
+
+/* Текст блока — на всю ширину своей колонки. */
+.auditions-text {
+  max-width: none;
+}
+
+/* Между абзацами в styles.css отступа нет ни у .academy-mission__text
+   (светлые секции), ни у .about-directions__card-text (тёмные). */
+.auditions-text p + p {
+  margin-top: 1.25rem;
+}
+
+/* Проза на тёмном фоне — существующий .about-directions__card-text.
+   Он рассчитан на 2–3 строки внутри карточки: сброшены растяжка
+   по флексу и нижний отступ, интерлиньяж свободнее для длинного
+   текста. */
+.auditions-text .about-directions__card-text {
+  flex-grow: 0;
+  margin-bottom: 0;
+  line-height: 1.65;
+}
+
+/* ---------- Светлые секции с заголовком ---------- */
+
+/* Секции «Как проходят прослушивания» и «Первые открытые
+   прослушивания» стоят на существующей .about-intro (фон #fff,
+   padding 5rem 0); её .section__header по умолчанию не отделён
+   от контента настолько, насколько нужно при заголовке над текстом. */
+.auditions-how .section__header,
+.auditions-first .section__header {
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- Полосы кадров ---------- */
+
+/* Полоса живёт внутри своей смысловой секции, а не отдельной секцией
+   .mission-life: кадры относятся к тексту, рядом с которым стоят,
+   и между текстом и его кадрами не должен вставать фон другой секции.
+   Сама сетка — существующие .mission-life__grid / __item. */
+.auditions-gallery {
+  margin-top: 3rem;
+}
+
+/* Кадры открываются во весь экран (классы .about-lightbox*
+   из styles.about.css). */
+.auditions-gallery .mission-life__item {
+  cursor: zoom-in;
+}
+
+/* ---------- Вступление ---------- */
+
+/* Абзацев во вступлении два, поэтому кадр стоит рядом с текстом
+   (существующий .about-intro__grid). Своей пропорции
+   у .about-intro__image нет. */
+.about-intro--auditions .about-intro__image img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* ---------- Кнопка в конце страницы ---------- */
+
+/* Вторая кнопка на сайт прослушивания — по заданию источника
+   («! ВНИЗУ КНОПКА „ПЕРЕЙТИ НА САЙТ ОТКРЫТОГО ПРОСЛУШИВАНИЯ“»).
+   Секция тёмная (существующая .about-directions), но без заголовка
+   и текста, поэтому её отступы меньше стандартных 5rem,
+   а кнопка стоит по центру. */
+.auditions-cta {
+  padding: 3.5rem 0;
+}
+
+.auditions-cta .section__container {
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- Лайтбокс ---------- */
+
+/* Только для макета: в .dc.html кадр лайтбокса выводится фоном на div
+   (литерал src с холом браузер грузит ещё при разборе файла и получает
+   404), а фон на div не наследует размеры <img>.
+   На сервере лайтбокс собирает assets/js/about.js — там обычный <img>,
+   и это правило не используется. */
+.auditions-lightbox__shot {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* ---------- Переключатели раскладки (тот же HTML) ---------- */
+
+/* Полоса кадров — над текстом секции, а не под ним. */
+.auditions-page--gallery-top .auditions-open .section__container,
+.auditions-page--gallery-top .auditions-how .section__container,
+.auditions-page--gallery-top .auditions-future .section__container,
+.auditions-page--gallery-top .auditions-first .section__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.auditions-page--gallery-top .section__header {
+  order: 0;
+}
+
+.auditions-page--gallery-top .auditions-text {
+  order: 2;
+}
+
+.auditions-page--gallery-top .auditions-gallery {
+  order: 1;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+/* Кадр вступления — полосой под текстом, а не слева от него. */
+.auditions-page--intro-below .about-intro__grid {
+  grid-template-columns: 1fr;
+}
+
+.auditions-page--intro-below .about-intro__image {
+  order: 2;
+}
+
+/* Кнопка только в конце страницы: в герое она скрывается. */
+.auditions-page--cta-end .auditions-hero__actions {
+  display: none;
+}

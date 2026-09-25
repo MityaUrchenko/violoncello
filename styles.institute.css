@@ -1,0 +1,709 @@
+/* ============================================================
+   styles.institute.css — НОВЫЕ классы для страницы
+   «Институт исследований и методологии виолончельного искусства»
+   ------------------------------------------------------------
+   Подключается ПОСЛЕ styles.css и styles.about.css.
+   styles.css не правится. styles.about.css — общий для раздела,
+   тоже не правится: странице он нужен ради .about-lightbox*
+   (кадры проектов открываются во весь экран).
+   Здесь только то, чего нет ни в styles.css, ни в styles.about.css.
+   ============================================================ */
+
+/* ---------- Герой ---------- */
+
+/* Базовый .hero-secondary тянется по контенту; нужна высота первого
+   экрана — как на принятых страницах раздела («Об Академии»,
+   «Миссия и ценности», «История Академии»). Хлебная крошка
+   не выводится: убрана как дубль H1. */
+.hero-secondary--institute {
+  min-height: 620px;
+}
+
+/* Люди в кадре героя сидят в верхней трети снимка: базовый
+   `object-position: center` у .hero-secondary__bg-img обрезал макушку,
+   а `center top` срезал лица снизу. 30% — середина между ними,
+   минус 30px — принятая поправка «поднять фото выше».
+   В макете эту поправку можно подвигать техническим ползунком
+   (он пишет inline-стиль и в серверную страницу не попадает). */
+.hero-secondary--institute .hero-secondary__bg-img {
+  object-position: center calc(30% - 30px);
+}
+
+/* Фирменная кривая под героем (`hero_line_2.svg` в `.hero-secondary:after`)
+   отражена по горизонтали: та же линия, другой поворот —
+   страница не повторяет дословно герой соседних разделов. */
+.hero-secondary--institute:after {
+  transform: scaleX(-1);
+}
+
+/* ---------- Вводный блок ---------- */
+
+/* В docx до первой «Рубрики» три абзаца — по правилу раздела фото
+   ставится рядом с текстом (до 3 абзацев), работает базовый
+   .about-intro__grid. Своих правил блоку не нужно, кроме стыка
+   с идущей сразу за ним светлой секцией «Миссия и задачи»:
+   5rem снизу + 5rem сверху давали двойную паузу внутри одного
+   вступления. */
+.about-intro--institute + .academy-mission--institute {
+  padding-top: 1.5rem;
+}
+
+/* У .academy-mission в styles.css асимметричный отступ 5rem/3rem;
+   перед тёмной секцией «Реализуемые проекты» нужен обычный ритм. */
+.academy-mission--institute {
+  padding-bottom: 5rem;
+}
+
+/* ---------- Проза страницы ---------- */
+
+/* Текст блока — на всю ширину контейнера. */
+.institute-text {
+  max-width: none;
+}
+
+/* Между абзацами в styles.css отступа нет ни у .academy-mission__text
+   (светлые секции), ни у .about-directions__card-text (тёмные). */
+.institute-text p + p {
+  margin-top: 1.25rem;
+}
+
+/* Проза на тёмном фоне — существующий .about-directions__card-text.
+   Он рассчитан на 2–3 строки внутри карточки: сброшены растяжка
+   по флексу и нижний отступ, интерлиньяж свободнее для длинного
+   текста. */
+.institute-text .about-directions__card-text {
+  flex-grow: 0;
+  margin-bottom: 0;
+  line-height: 1.65;
+}
+
+/* ---------- Перечни через тире ---------- */
+
+/* В docx перечни набраны абзацами, начинающимися с тире
+   («— сохранение и исследование…»). Маркер списка добавил бы
+   второй знак к тому, который уже есть в тексте, поэтому свой
+   маркер выключен, а тире остаётся частью строки. Висячий отступ
+   выравнивает перенос по первой букве, а не под тире.
+   В styles.css списков с такой разметкой нет. */
+.institute-list {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+}
+
+.institute-list li {
+  padding-left: 1.35em;
+  text-indent: -1.35em;
+}
+
+.institute-list li + li {
+  margin-top: 0.5rem;
+}
+
+/* Абзац после перечня отделяется так же, как абзацы между собой. */
+.institute-list + p {
+  margin-top: 1.25rem;
+}
+
+/* ---------- Оглавление ---------- */
+
+/* Страница длинная (4 раздела, 13 подразделов), поэтому перед
+   первым разделом стоит оглавление. Текста оно не добавляет:
+   в нём только заголовки из docx и нумерация разделов. В styles.css
+   навигации по странице нет. */
+.institute-toc {
+  padding: 0 0 4.5rem;
+  background: #fff;
+}
+
+.institute-toc__line {
+  margin: 0 0 2.75rem;
+}
+
+/* Колонки — многоколоночный поток, а не grid: разделы разной длины
+   (у «Миссии и задач» подразделов нет, у «Проектов» — пять),
+   и в сетке под коротким разделом оставалась дыра во всю
+   высоту ряда. */
+.institute-toc__grid {
+  column-count: 4;
+  column-gap: 2rem;
+}
+
+/* Раздел не разрывается между колонками. */
+.institute-toc__group {
+  break-inside: avoid;
+  margin-bottom: 2.5rem;
+}
+
+.institute-toc__group:last-child {
+  margin-bottom: 0;
+}
+
+/* Номер и заголовок раздела — одна ссылка. Набор тот же, что
+   у годов таймлайна в styles.css (.academy-history__year): Cormorant
+   Unicase, #981B2F. */
+.institute-toc__title {
+  display: block;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid #f0e0e3;
+  font-family: 'Cormorant Unicase', serif;
+  font-weight: 500;
+  font-size: 1.375rem;
+  line-height: 1.15;
+  color: #1a1a1a;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.institute-toc__num {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: 'Cormorant Unicase', serif;
+  font-size: 2.25rem;
+  line-height: 1;
+  color: #981B2F;
+  transition: color 0.3s ease;
+}
+
+.institute-toc__title:hover,
+.institute-toc__title:focus-visible {
+  color: #981B2F;
+  border-bottom-color: #981B2F;
+}
+
+.institute-toc__title:hover .institute-toc__num,
+.institute-toc__title:focus-visible .institute-toc__num {
+  color: #6A1321;
+}
+
+.institute-toc__list {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.institute-toc__list a {
+  display: block;
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+/* Маркер пункта — точка в фирменном цвете, того же размера,
+   что точки таймлайна в styles.css (9px). Вынесена в отступ,
+   чтобы перенос строки выравнивался по первой букве. */
+.institute-toc__list a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #981B2F;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.institute-toc__list a:hover::before,
+.institute-toc__list a:focus-visible::before {
+  background: #6A1321;
+  transform: scale(1.5);
+}
+
+.institute-toc__list a:hover,
+.institute-toc__list a:focus-visible {
+  color: #981B2F;
+}
+
+/* Воздух над целью перехода по ссылке оглавления. Шапка на сайте
+   не прилипает (position: absolute), поэтому достаточно 2rem. */
+
+[data-anchor] {
+  scroll-margin-top: 2rem;
+}
+
+
+/* ---------- Оглавление, свёрнутое в кружок ---------- */
+
+/* Страница длинная, и после прокрутки ниже оглавление должно
+   оставаться под рукой: та же разметка переезжает в фиксированную
+   панель справа по центру экрана и сворачивается в кружок.
+   Состояния ставит JS: `institute-page--toc-floating` и
+   `institute-page--toc-open`. */
+.institute-page--toc-floating .institute-toc {
+  position: fixed;
+  top: 50%;
+  right: 1.25rem;
+  transform: translateY(-50%);
+  z-index: 90;
+  padding: 0;
+  background: transparent;
+}
+
+.institute-page--toc-floating .institute-toc .section__container {
+  position: relative;
+  max-width: none;
+  padding: 0;
+  display: block;
+}
+
+.institute-page--toc-floating .institute-toc__line {
+  display: none;
+}
+
+/* Панель раскрывается влево от кружка и держит ту же горизонтальную
+   раскладку в четыре раздела, что и в потоке, — прокрутки внутри нет.
+   Позиционируется от контейнера кружка, поэтому центры панели и кружка
+   совпадают по высоте. */
+.institute-page--toc-floating .institute-toc__grid {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 1.5rem);
+  column-count: auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  width: min(1040px, calc(100vw - 144px - 4rem));
+  padding: 1.5rem 1.75rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 30px 70px rgba(17, 17, 17, 0.24), 0 2px 10px rgba(17, 17, 17, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* Анимации раскрытия нет: панель просто появляется и исчезает. */
+  transition: none;
+}
+
+.institute-page--toc-open .institute-toc__grid {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* В панели разделы стоят в ряд, отступы держит сетка. */
+.institute-page--toc-floating .institute-toc__group {
+  margin-bottom: 0;
+}
+
+/* В панели набор плотнее, чем в потоке: четыре раздела должны
+   укладываться в высоту экрана без прокрутки. */
+.institute-page--toc-floating .institute-toc__num {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.institute-page--toc-floating .institute-toc__title {
+  font-size: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.institute-page--toc-floating .institute-toc__list {
+  margin-top: 0.7rem;
+  gap: 0.5rem;
+}
+
+.institute-page--toc-floating .institute-toc__list a {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+/* Кружок. Цвет — тот же #981B2F, что у номеров 01—04; на широком экране
+   он крупный (144px), на телефоне остаётся маленьким. В обычном потоке
+   кнопки нет. */
+.institute-toc__fab {
+  display: none;
+}
+
+.institute-page--toc-floating .institute-toc__fab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 144px;
+  height: 144px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #981B2F;
+  box-shadow: 0 18px 44px rgba(17, 17, 17, 0.3), 0 2px 8px rgba(17, 17, 17, 0.14);
+  cursor: pointer;
+  transition: background-color 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.42s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.32s ease;
+}
+
+.institute-page--toc-floating .institute-toc__fab:hover {
+  background: #6A1321;
+  transform: scale(1.04);
+  box-shadow: 0 22px 52px rgba(17, 17, 17, 0.34), 0 2px 8px rgba(17, 17, 17, 0.16);
+}
+
+.institute-page--toc-floating .institute-toc__fab:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -8px;
+}
+
+.institute-toc__fab-line {
+  display: block;
+  width: 54px;
+  height: 2px;
+  background: #fff;
+}
+
+/* Открыто — три штриха складываются в крестик: середина гаснет,
+   крайние сходятся к центру (шаг 12px = линия 2px + зазор 10px). */
+.institute-page--toc-open .institute-toc__fab-line:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+}
+
+.institute-page--toc-open .institute-toc__fab-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0.4);
+}
+
+.institute-page--toc-open .institute-toc__fab-line:nth-child(3) {
+  transform: translateY(-12px) rotate(-45deg);
+}
+
+/* Кадр в лайтбоксе — div с фоном, а не <img src>: литерал `src`
+   с шаблонным холом браузер начинает грузить ещё на разборе файла
+   и получает 404. `.about-lightbox__img` в styles.about.css рассчитан
+   на <img> (`width/height: auto` + `object-fit`), поэтому div нужны свои
+   размеры и вписывание фона; styles.about.css не правится. */
+.institute-lightbox__shot {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* ---------- Блок «Рубрики 2» (подраздел с заголовком H3) ---------- */
+
+/* В docx внутри «Миссии и задач», «Реализуемых проектов»,
+   «Долгосрочной программы» и «Команды института» есть вложенный
+   уровень заголовков («Рубрика 2»). В styles.css есть готовые
+   заголовки этого уровня — .academy-mission__title на светлом
+   и .about-directions__subtitle на тёмном, — но нет обёртки
+   подраздела и отступа между подразделами. */
+.institute-block + .institute-block {
+  margin-top: 3.5rem;
+}
+
+/* Подраздел с фотографиями — сетка из двух колонок на всю
+   высоту блока: заголовок и текст стоят в левой колонке (заголовок
+   переносится по ширине текста, а не контейнера), кадры — в правой,
+   верхним краем по верхнему краю заголовка.
+   Сетка живёт на самой статье, а .institute-block__body прозрачен
+   (display: contents), чтобы заголовок, текст и кадры оказались
+   в одной сетке без лишнего уровня разметки. Кадры принадлежат
+   своему проекту, поэтому стоят внутри его блока, а не отдельной
+   фотополосой .mission-life. */
+.institute-block {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  column-gap: 3rem;
+  align-items: start;
+}
+
+.institute-block__body {
+  display: contents;
+}
+
+/* Линия-разделитель — на всю ширину блока над заголовком. */
+.institute-block > .institute-divider {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+/* У .about-directions__subtitle в styles.css margin-bottom: 0
+   (он там стоит над сеткой карточек), здесь под ним идёт текст. */
+.institute-block__title {
+  grid-column: 1;
+  grid-row: 2;
+  margin-bottom: 1.5rem;
+}
+
+.institute-block__body > .institute-text {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+/* Кадры занимают правую колонку от верха заголовка
+   до низа текста. */
+.institute-block__media {
+  grid-column: 2;
+  grid-row: 2 / 4;
+  display: grid;
+  gap: 1.25rem;
+  align-content: start;
+}
+
+/* Подраздел без фотографий — обычный поток на всю ширину. */
+.institute-block--text {
+  display: block;
+}
+
+/* Кадры выводятся в своих пропорциях: среди них есть и титульный
+   кадр видеоцикла 16:9, и горизонтальные фотографии 3:2 —
+   кроп по общей рамке (aspect-ratio, как у .mission-life__item)
+   обрезал бы надпись на одном и головы на другом. */
+.institute-block__shot {
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.institute-block__shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Кадры открываются во весь экран (классы .about-lightbox*
+   из styles.about.css). */
+.institute-projects .institute-block__shot {
+  cursor: zoom-in;
+}
+
+/* ---------- Фирменная изогнутая линия между подразделами ---------- */
+
+/* Та же изогнутая линия, что у героя (hero_line_2.svg) и карточек
+   (card_line_*.svg): штрих 1.5px, на светлом #981B2F, на тёмном
+   #F6E9EB. Inline-svg, а не картинка, потому что линия должна
+   тянуться на любую ширину блока без искажения толщины штриха
+   (vector-effect: non-scaling-stroke). Разделяет подразделы,
+   которых на странице по 4–5 в секции. Линия стоит первым
+   элементом подраздела, поэтому при выключенных линиях отступ
+   между подразделами не меняется. */
+/* Линии-разделители — те же четыре фирменные линии, что на карточках
+   «Об Академии» (card_line_1..4.svg): контуры взяты из этих файлов
+   дословно и чередуются, чтобы подразделы не шли под одну
+   и ту же линию. Высота разная — по высоте своего viewBox,
+   иначе волна расплющивается. Inline-svg, а не картинка,
+   чтобы линия тянулась на любую ширину блока без изменения
+   толщины штриха (vector-effect: non-scaling-stroke). Линия стоит
+   первым элементом подраздела, поэтому при выключенных линиях
+   отступ между подразделами не меняется. */
+.institute-divider {
+  display: block;
+  width: 100%;
+  height: 36px;
+  margin: 0 0 2.5rem;
+}
+
+.institute-divider--2 {
+  height: 18px;
+}
+
+.institute-divider--3 {
+  height: 44px;
+}
+
+.institute-divider__path {
+  fill: none;
+  stroke: #981B2F;
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.institute-divider--light .institute-divider__path {
+  stroke: #F6E9EB;
+}
+
+/* ---------- Команда института ---------- */
+
+/* Секция — существующая .team (тёмная, #111), карточка —
+   существующая .team-card с круглым портретом 220px.
+   Базовый .team-card центрирует портрет по высоте карточки
+   (align-items: center) — он рассчитан на контакты в две строки.
+   Здесь у каждого сотрудника 2–4 абзаца, и портрет должен стоять
+   у верхнего края: так макушки на всех портретах строки
+   оказываются на одной высоте. */
+.team-card--institute {
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* Текстовая колонка карточки — flex-элемент, которому нужен
+   min-width: 0, иначе длинные слова растягивают колонку. */
+.team-card__text {
+  min-width: 0;
+}
+
+/* У .team__grid в styles.css gap: 2rem — он рассчитан на карточки
+   с контактами в две строки. Здесь в карточке 2–4 абзаца,
+   и при таком отступе портрет нижнего ряда вставал вплотную
+   к тексту верхнего. */
+.institute-team .team__grid {
+  row-gap: 4.5rem;
+}
+
+/* Имя сотрудника — H3, у .team-card__name в styles.css
+   нижний отступ 0.5rem; должность идёт курсивом сразу под ним. */
+.team-card--institute .team-card__role {
+  color: #F6E9EB;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 899px) {
+  /* Только на узком экране панель переходит на две колонки —
+     четырём рядом с кружком уже не хватает ширины. */
+  .institute-page--toc-floating .institute-toc__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(620px, calc(100vw - 144px - 4rem));
+    /* в две колонки все четыре раздела могут не вместиться
+       в высоту экрана — только здесь разрешена прокрутка */
+    max-height: min(86vh, 720px);
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  /* Оглавление — в две колонки. */
+  .institute-toc__grid {
+    column-count: 2;
+  }
+
+  /* На одну колонку сетка подраздела распадается: заголовок,
+     текст, потом кадры. */
+  .institute-block {
+    display: block;
+  }
+
+  .institute-block__media {
+    margin-top: 2rem;
+  }
+
+  .institute-block__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  /* На двух колонках кадров рядом с текстом нет — полоса кадров
+     идёт под текстом. auto-fit, а не две жёсткие колонки: из пяти
+     проектов только у одного два кадра, и половина ряда
+     оставалась бы пустой. */
+  .institute-block__media {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  /* На телефоне кружок маленький, а панель раскрывается над ним
+     на всю ширину: слева места нет, и высоты тоже — здесь
+     прокрутка внутри панели уместна. */
+  .institute-page--toc-floating .institute-toc__fab {
+    gap: 4px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .institute-toc__fab-line {
+    width: 18px;
+    height: 1.5px;
+  }
+
+  .institute-page--toc-open .institute-toc__fab-line:nth-child(1) {
+    transform: translateY(5.5px) rotate(45deg);
+  }
+
+  .institute-page--toc-open .institute-toc__fab-line:nth-child(3) {
+    transform: translateY(-5.5px) rotate(-45deg);
+  }
+
+  .institute-page--toc-floating .institute-toc__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+    top: auto;
+    bottom: calc(100% + 0.75rem);
+    right: 0;
+    width: calc(100vw - 2.5rem);
+    max-height: 62vh;
+    overflow-y: auto;
+    padding: 1.5rem;
+    transform-origin: 100% 100%;
+    transform: translateY(1rem) scale(0.94);
+  }
+
+  .institute-page--toc-open .institute-toc__grid {
+    transform: none;
+  }
+
+  .institute-toc__grid {
+    column-count: 1;
+  }
+
+  .institute-block__media {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Базовый .team-card на узком экране становится колонкой
+     с центровкой; текст сотрудника читается влево. */
+  .team-card--institute {
+    align-items: center;
+    text-align: left;
+  }
+}
+
+/* ---------- Переключатели раскладки (только макет) ----------
+   На сервер уходит принятый вариант: кадры рядом с текстом,
+   команда в две колонки, линии между подразделами включены.
+   Правила ниже нужны, чтобы в макете можно было посмотреть
+   альтернативы, не переписывая разметку. */
+
+/* Кадры — полосой под текстом проекта, на всю ширину блока. */
+.institute-page--media-below .institute-block {
+  display: block;
+}
+
+.institute-page--media-below .institute-block__media {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: start;
+  margin-top: 2rem;
+}
+
+/* Команда — четыре портрета в один ряд, текст под портретом. */
+.institute-page--team-row .team__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.5rem 1.5rem;
+}
+
+.institute-page--team-row .team-card--institute {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.institute-page--team-row .team-card__avatar {
+  width: 160px;
+  height: 160px;
+}
+
+.institute-page--team-row .team-card__name {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 991px) {
+  .institute-page--team-row .team__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .institute-page--team-row .team__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Линии между подразделами выключены. */
+.institute-page--no-dividers .institute-divider {
+  display: none;
+}

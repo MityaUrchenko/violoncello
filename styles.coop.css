@@ -1,0 +1,268 @@
+/* ============================================================
+   styles.coop.css — НОВЫЕ классы для страницы «Сотрудничество»
+   ------------------------------------------------------------
+   Подключается ПОСЛЕ styles.css и styles.about.css.
+   styles.css не правится. styles.about.css — общий для раздела,
+   тоже не правится: странице он нужен ради .about-lightbox*
+   (кадры полосы открываются во весь экран) и
+   .mission-life__item--wide (пятый, лишний кадр полосой 21:9).
+   Здесь только то, чего нет ни в styles.css, ни в styles.about.css.
+   ============================================================ */
+
+/* ---------- Герой ---------- */
+
+/* Базовый .hero-secondary тянется по контенту; нужна высота первого
+   экрана — как на принятых страницах раздела. Хлебная крошка
+   не выводится: убрана как дубль H1. */
+.hero-secondary--coop {
+  min-height: 620px;
+}
+
+/* Кадр героя — зал и оркестр на сцене. Герой намного шире исходных
+   3:2, при object-fit: cover остаётся средняя полоса высоты:
+   46% держит сцену и первые ряды в кадре, базовый center срезал
+   верх зала. В макете поправку можно подвигать техническим
+   ползунком (он пишет inline-стиль и в серверную страницу
+   не попадает). */
+.hero-secondary--coop .hero-secondary__bg-img {
+  object-position: center calc(46% - 0px);
+}
+
+/* Кадр героя светлый (зал в тёплом свете), базового затемнения
+   .hero-secondary__bg::after (0.5 → 0.1) для белого заголовка
+   и белой кнопки не хватает. Тот же градиент, плотнее на 0.1. */
+.hero-secondary--coop .hero-secondary__bg::after {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.42) 50%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+/* Кнопка в раздел «Контакты» в герое — по заданию источника
+   («и несколько кнопок чтобы вели в раздел контакты»).
+   Своего контейнера для кнопок у .hero-secondary__content
+   в styles.css нет. */
+.coop-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* ---------- Проза страницы ---------- */
+
+/* Текст блока — на всю ширину своей колонки. */
+.coop-text {
+  max-width: none;
+}
+
+/* Между абзацами в styles.css отступа нет ни у .academy-mission__text
+   (светлые секции), ни у .about-directions__card-text (тёмные). */
+.coop-text p + p {
+  margin-top: 1.25rem;
+}
+
+/* ---------- Вводный блок ---------- */
+
+/* Абзацев во вводном блоке два, поэтому кадр стоит рядом с текстом
+   (существующая сетка .about-structure__grid), а не полосой над ним.
+   Кадр — горизонтальный 3:2, как снят. */
+.coop-intro__grid .about-structure__image img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* Контейнер вводного блока — флекс-колонка: полоса кадров идёт
+   под блоком «текст + кадр», и этот порядок нужен переключателю
+   раскладки (ниже). */
+.about-intro--coop .section__container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Полоса кадров ---------- */
+
+/* Полоса живёт внутри вводной секции, а не отдельной секцией
+   .mission-life: между текстом и его кадрами не должен вставать
+   фон другой секции. Сама сетка — существующие .mission-life__grid
+   / __item; пятый кадр — .mission-life__item--wide (21:9)
+   из styles.about.css. */
+.coop-gallery {
+  margin-top: 3rem;
+}
+
+/* Кадры открываются во весь экран (классы .about-lightbox*
+   из styles.about.css). */
+.coop-gallery .mission-life__item {
+  cursor: zoom-in;
+}
+
+/* ---------- Направления сотрудничества (тёмная секция) ---------- */
+
+/* Шесть карточек-адресатов. Базовая сетка .academy-sections__grid —
+   4 колонки под карточки в 2–3 строки текста; здесь в карточке
+   1–3 абзаца, в колонке 340 px они превращаются в узкий столбец.
+   Две колонки дают комфортную меру строки и ровные 3 ряда. */
+.coop-directions .academy-sections__grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 1rem;
+  margin-bottom: 0;
+}
+
+/* Карточка выше базовых 220 px: в ней целые абзацы, а не подпись. */
+.coop-directions .academy-section-card {
+  padding: 2rem;
+  gap: 1rem;
+}
+
+/* Заголовок карточки в двухколоночной сетке набирается крупно,
+   clamp(1rem, 5vw, 1.75rem) на широком экране даёт 1.75rem —
+   для самого длинного заголовка («Учреждениям культуры, учебным
+   заведениям и организаторам») это три строки; фиксируем размер. */
+.coop-directions .academy-section-card__title {
+  font-size: 1.5rem;
+}
+
+/* .about-directions__card-text рассчитан на 2–3 строки внутри
+   карточки: сброшена растяжка по флексу (иначе первый абзац
+   растягивается, а остальные жмутся), интерлиньяж свободнее. */
+.coop-directions .about-directions__card-text {
+  flex-grow: 0;
+  margin-bottom: 0;
+  line-height: 1.65;
+}
+
+/* Отступ между абзацами внутри карточки даёт gap самой карточки
+   (1rem) — своего margin у абзацев быть не должно, иначе
+   отступы складываются. */
+
+/* Фирменная кривая карточки прижимается к низу, а не встаёт
+   сразу под текстом разной длины.
+
+   Высота полоски в styles.css фиксированная (55 px), а кривая
+   вписывается в неё по `background-size: contain` — при узкой
+   колонке «Об Академии» (≈348 px) она упирается в края карточки
+   и кривые соседних карточек переходят одна в другую. В колонке
+   вдвое шире ограничением становится высота: кривая сжимается
+   до 367 px и висит посередине карточки, соседние не стыкуются.
+   Поэтому здесь высота задаётся не числом, а пропорцией самого
+   контура (400 × 60) — кривая всегда во всю ширину карточки,
+   и соседние продолжают друг друга, как на «Об Академии». */
+.coop-directions .academy-section-card__line {
+  margin-top: auto;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  width: calc(100% + 4rem);
+  height: auto;
+  aspect-ratio: 400 / 60;
+}
+
+/* Поправки по вертикали в styles.css заданы в пикселях под высоту
+   55 px (−7, −17, −10 px). Кривая теперь масштабируется вместе
+   с шириной карточки, поэтому те же поправки — в процентах
+   от собственной высоты полоски (−7/55, −17/55, −10/55). */
+.coop-directions .academy-section-card:nth-child(8n+1) .academy-section-card__line {
+  transform: translateY(-12.7%);
+}
+
+.coop-directions .academy-section-card:nth-child(8n+4) .academy-section-card__line {
+  transform: translateY(-12.7%);
+}
+
+.coop-directions .academy-section-card:nth-child(8n+5) .academy-section-card__line {
+  transform: scaleY(-1) scaleX(-1) translateY(-30.9%);
+}
+
+.coop-directions .academy-section-card:nth-child(8n+6) .academy-section-card__line {
+  transform: scaleY(-1) scaleX(-1) translateY(-18.2%);
+}
+
+@media (max-width: 767px) {
+  .coop-directions .academy-sections__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Ссылки в прозе ---------- */
+
+/* Отдельного класса для ссылки внутри абзаца прозы в проекте нет
+   (см. «Правила проекта - ссылки.md»), заводится по образцу
+   .faq-item__link: цвет #981B2F, подчёркивание бордюром, чтобы
+   подчёрк не резал выносные элементы букв. */
+.coop-link {
+  color: #981B2F;
+  border-bottom: 1px solid rgba(152, 27, 47, 0.45);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.coop-link:hover {
+  color: #981B2F;
+  border-bottom-color: #981B2F;
+}
+
+/* На тёмной карточке (#6A1321, при наведении #981B2F) бордовый
+   не читается — светлый фирменный #F6E9EB. */
+.coop-link--light {
+  color: #F6E9EB;
+  border-bottom-color: rgba(246, 233, 235, 0.45);
+}
+
+.coop-link--light:hover {
+  color: #F6E9EB;
+  border-bottom-color: #F6E9EB;
+}
+
+/* ---------- Как связаться ---------- */
+
+/* Секция стоит на существующей .about-intro (фон #fff, padding 5rem);
+   её .section__header по умолчанию не отделён от текста настолько,
+   насколько нужно при заголовке над одним абзацем. */
+.coop-contacts .section__header {
+  margin-bottom: 2.5rem;
+}
+
+/* Кнопка в раздел «Контакты» в конце страницы. */
+.coop-contacts__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* ---------- Лайтбокс ---------- */
+
+/* Только для макета: в .dc.html кадр лайтбокса выводится фоном на div
+   (литерал src с холом браузер грузит ещё при разборе файла и получает
+   404), а фон на div не наследует размеры <img>.
+   На сервере лайтбокс собирает assets/js/about.js — там обычный <img>,
+   и это правило не используется. */
+.coop-lightbox__shot {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* ---------- Переключатели раскладки (тот же HTML) ---------- */
+
+/* Карточки в три колонки. */
+.coop-page--cards-three .coop-directions .academy-sections__grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Кадр вводного блока — полосой над текстом, а не рядом с ним. */
+.coop-page--intro-stacked .coop-intro__grid {
+  grid-template-columns: 1fr;
+}
+
+.coop-page--intro-stacked .coop-intro__grid .about-structure__image {
+  order: -1;
+  margin-bottom: 0.5rem;
+}
+
+.coop-page--intro-stacked .coop-intro__grid .about-structure__image img {
+  aspect-ratio: 21 / 9;
+}
+
+/* Кнопка только в конце страницы: в герое она скрывается. */
+.coop-page--cta-end .coop-hero__actions {
+  display: none;
+}
