@@ -19,37 +19,45 @@ jobs:
             set -e
             cd ${{ secrets.DEPLOY_PATH }}
 
-            echo "=== Проверка состояния git ==="
+            echo "=== Проверка состояния ==="
             git fetch origin main
 
-            # Смотрим, есть ли изменения (учитывает .gitignore)
             CHANGES=$(git status --porcelain)
+            HAD_CHANGES=0
 
             if [ -n "$CHANGES" ]; then
-              echo "На сервере есть незакоммиченные изменения!"
+              echo "Найдены изменения, прячем в stash..."
               echo "$CHANGES"
-
-              # --- Уведомление в Telegram ---
-              MESSAGE="⚠️ Деплой остановлен!
-            На сервере появились новые/изменённые файлы:
-
-            \`\`\`
-            $CHANGES
-            \`\`\`
-
-            Репозиторий: ${{ github.repository }}
-            Коммит: ${{ github.sha }}"
-
-              curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
-                -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
-                -d text="$MESSAGE" \
-                -d parse_mode="Markdown"
-
-              echo "Деплой прерван. Нужно разобраться с файлами на сервере."
-              exit 1
+              git stash push -u -m "auto-stash before deploy $(date +%Y-%m-%d_%H:%M)"
+              HAD_CHANGES=1
+            else
+              echo "Рабочая директория чистая"
             fi
 
-            # Если изменений нет — деплоим
-            echo "Рабочая директория чистая. Выполняем reset..."
+            echo "=== Выполняем reset ==="
             git reset --hard origin/main
-            echo "=== Деплой успешно завершён ==="
+
+            if [ "$HAD_CHANGES" = "1" ]; then
+              echo "Возвращаем спрятанные файлы..."
+              if git stash pop; then
+                STATUS_MSG="✅ Деплой успешен, но на сервере есть новые/изменённые файлы (вернуты из stash)"
+              else
+                STATUS_MSG="⚠️ Деплой успешен, но при возврате stash возникли конфликты. Проверьте сервер!"
+              fi
+            else
+              STATUS_MSG="✅ Деплой успешен. Сервер чистый."
+            fi
+
+            # Уведомление в Telegram
+            MESSAGE="$STATUS_MSG
+
+            Репозиторий: ${{ github.repository }}
+            Коммит: ${{ github.sha }}
+            Ветка: main"
+
+            curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+              -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+              -d text="$MESSAGE" \
+              -d parse_mode="Markdown"
+
+            echo "=== Готово ==="
