@@ -1,42 +1,55 @@
 name: Deploy to server
 
-# Когда запускать
 on:
   push:
     branches:
-      - main          # только при пуше в main
-  workflow_dispatch:  # можно запустить вручную из вкладки Actions
+      - main
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest   # виртуальная машина GitHub
-
+    runs-on: ubuntu-latest
     steps:
       - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.2.0   # готовый action для SSH
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22                        # если SSH на другом порту — меняем
           script: |
-            set -e                        # остановиться при любой ошибке
+            set -e
             cd ${{ secrets.DEPLOY_PATH }}
-            
-            echo "=== Начало деплоя $(date) ==="
-            
-            # Получаем последние изменения
+
+            echo "=== Проверка состояния git ==="
             git fetch origin main
-            
-            # Жёстко приводим к состоянию main (удаляет локальные правки)
+
+            # Смотрим, есть ли изменения (учитывает .gitignore)
+            CHANGES=$(git status --porcelain)
+
+            if [ -n "$CHANGES" ]; then
+              echo "На сервере есть незакоммиченные изменения!"
+              echo "$CHANGES"
+
+              # --- Уведомление в Telegram ---
+              MESSAGE="⚠️ Деплой остановлен!
+            На сервере появились новые/изменённые файлы:
+
+            \`\`\`
+            $CHANGES
+            \`\`\`
+
+            Репозиторий: ${{ github.repository }}
+            Коммит: ${{ github.sha }}"
+
+              curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+                -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+                -d text="$MESSAGE" \
+                -d parse_mode="Markdown"
+
+              echo "Деплой прерван. Нужно разобраться с файлами на сервере."
+              exit 1
+            fi
+
+            # Если изменений нет — деплоим
+            echo "Рабочая директория чистая. Выполняем reset..."
             git reset --hard origin/main
-            
-            # Опционально: очистка кэша Bitrix
-            # if [ -d "bitrix/cache" ]; then
-            #   rm -rf bitrix/cache/*
-            #   rm -rf bitrix/managed_cache/*
-            #   echo "Кэш Bitrix очищен"
-            # fi
-            
-            echo "=== Деплой завершён ==="
-            git log -1 --oneline
+            echo "=== Деплой успешно завершён ==="
