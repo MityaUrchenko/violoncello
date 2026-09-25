@@ -3,6 +3,17 @@ require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
 $APPLICATION->SetTitle('Фотохроника');
 $APPLICATION->SetPageProperty('title', 'Фотохроника — Всероссийская виолончельная академия');
 ?>
+<!-- Hero -->
+<section class="hero-secondary">
+    <div class="hero-secondary__bg">
+        <img src="/assets/images/academy-hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
+    </div>
+    <div class="hero-secondary__content">
+        <p class="hero-secondary__breadcrumb">Академия</p>
+        <h1 class="hero-secondary__title">Фотоархив</h1>
+        <p class="hero-secondary__subtitle">Фотографии нашего сообщества</p>
+    </div>
+</section>
 
 <?php
 $APPLICATION->IncludeComponent(
