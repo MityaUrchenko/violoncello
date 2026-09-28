@@ -45,15 +45,23 @@ $gallery = 'album-' . (int)$arResult['ID'];
 
         <?php if ($photos): ?>
         <div class="photo-album__grid photo-album__grid--all">
-            <?php foreach ($photos as $photo):
+            <?php foreach ($photos as $i => $photo):
                 $alt = $photo['DESCRIPTION'] ?: $arResult['NAME'];
                 $src = $photo['SRC'];
+                $eager = $i < 4;
             ?>
             <a href="<?= htmlspecialcharsbx($src) ?>"
                class="photo-album__item"
                data-fancybox="<?= htmlspecialcharsbx($gallery) ?>"
                data-caption="<?= htmlspecialcharsbx($alt) ?>">
-                <img src="<?= htmlspecialcharsbx($src) ?>" alt="<?= htmlspecialcharsbx($alt) ?>">
+                <img src="<?= $eager ? htmlspecialcharsbx($src) : 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7' ?>"
+                     <?= $eager ? '' : 'data-src="' . htmlspecialcharsbx($src) . '"' ?>
+                     alt="<?= htmlspecialcharsbx($alt) ?>"
+                     class="<?= $eager ? '' : 'photo-album__img--lazy' ?>"
+                     <?= $eager ? '' : 'loading="lazy"' ?>
+                     decoding="async"
+                     <?= !empty($photo['WIDTH']) ? 'width="' . (int)$photo['WIDTH'] . '"' : '' ?>
+                     <?= !empty($photo['HEIGHT']) ? 'height="' . (int)$photo['HEIGHT'] . '"' : '' ?>>
             </a>
             <?php endforeach; ?>
         </div>

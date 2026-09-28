@@ -73,6 +73,7 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  background: #e8e2e3;
 }
 
 .photo-album__item:hover img {

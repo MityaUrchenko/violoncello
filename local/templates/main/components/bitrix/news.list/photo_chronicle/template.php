@@ -57,7 +57,7 @@ if ($previewLimit < 1) {
                 ?>
                 <?php if ($showMore): ?>
                 <a href="<?= htmlspecialcharsbx($detailUrl) ?>" class="<?= $itemClass ?>">
-                    <img src="<?= htmlspecialcharsbx($src) ?>" alt="<?= htmlspecialcharsbx($alt) ?>">
+                    <img src="<?= htmlspecialcharsbx($src) ?>" alt="<?= htmlspecialcharsbx($alt) ?>" loading="lazy" decoding="async"<?= !empty($photo['WIDTH']) ? ' width="' . (int)$photo['WIDTH'] . '"' : '' ?><?= !empty($photo['HEIGHT']) ? ' height="' . (int)$photo['HEIGHT'] . '"' : '' ?>>
                     <span class="photo-album__overlay">+<?= $rest ?></span>
                 </a>
                 <?php else: ?>
@@ -65,7 +65,7 @@ if ($previewLimit < 1) {
                    class="<?= $itemClass ?>"
                    data-fancybox="<?= htmlspecialcharsbx($gallery) ?>"
                    data-caption="<?= htmlspecialcharsbx($alt) ?>">
-                    <img src="<?= htmlspecialcharsbx($src) ?>" alt="<?= htmlspecialcharsbx($alt) ?>">
+                    <img src="<?= htmlspecialcharsbx($src) ?>" alt="<?= htmlspecialcharsbx($alt) ?>" loading="lazy" decoding="async"<?= !empty($photo['WIDTH']) ? ' width="' . (int)$photo['WIDTH'] . '"' : '' ?><?= !empty($photo['HEIGHT']) ? ' height="' . (int)$photo['HEIGHT'] . '"' : '' ?>>
                 </a>
                 <?php endif; ?>
                 <?php endforeach; ?>

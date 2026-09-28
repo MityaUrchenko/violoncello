@@ -46,6 +46,15 @@
   transition: transform 0.3s ease;
 }
 
+.photo-album__img--lazy {
+  background: #e8e2e3;
+}
+
+.photo-album__grid--all .photo-album__item {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 220px;
+}
+
 .photo-album__item:hover img {
   transform: scale(1.04);
 }
