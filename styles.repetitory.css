@@ -87,6 +87,14 @@
   margin-top: 3rem;
 }
 
+/* «Место встречи музыкантов» — единственная секция, где полоса
+   стоит сразу под заголовком, а блок «текст + кадр» — под ней:
+   четыре секции страницы с одинаковым порядком читались однообразно. */
+.repetitory-meet .repetitory-gallery {
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
 /* Кадры открываются во весь экран (классы .about-lightbox*
    из styles.about.css). */
 .repetitory-gallery .mission-life__item {
@@ -110,12 +118,27 @@
 /* Сетка «кадр + текст» — существующая .about-structure__grid.
    Кадры приходят в 3:2, сетка их не кадрирует, поэтому пропорция
    задаётся здесь: иначе в одной секции кадр выше текста,
-   в другой ниже. */
+   в другой ниже. В «Месте встречи музыкантов» кадр стоит справа
+   от текста (порядок задан разметкой) — зеркально остальным секциям. */
 .repetitory-meet .about-structure__image img,
-.repetitory-events .about-structure__image img,
 .repetitory-residency .about-structure__image img {
   aspect-ratio: 3 / 2;
   object-fit: cover;
+}
+
+/* «События и проекты»: кадр стоит полосой 21:9 над текстом
+   (существующий .about-people__photo из styles.about.css), а не рядом
+   с ним — чтобы секция не повторяла раскладку соседних.
+   Своего отступа снизу у класса нет — на «Инструментальном фонде»
+   он последний элемент секции. */
+.repetitory-events .about-people__photo {
+  margin-bottom: 2.5rem;
+}
+
+/* Текст этой секции идёт во всю ширину контейнера (кадр не забирает
+   колонку), поэтому здесь нужна мера строки — иначе строка 1440 px. */
+.repetitory-events .repetitory-text {
+  max-width: 76ch;
 }
 
 /* Вводный блок: два абзаца, поэтому кадр стоит рядом с текстом
@@ -143,21 +166,26 @@
 
 /* ---------- Переключатели раскладки (тот же HTML) ---------- */
 
-/* Полоса кадров — над текстом секции, а не под ним. */
+/* Полоса кадров — над текстом секции, а не под ним.
+   В «Месте встречи музыкантов» полоса стоит сверху всегда,
+   переключателю там менять нечего. */
 .repetitory-page--gallery-top .repetitory-work .repetitory-text,
-.repetitory-page--gallery-top .repetitory-meet .about-structure__grid,
-.repetitory-page--gallery-top .repetitory-events .about-structure__grid {
+.repetitory-page--gallery-top .repetitory-events .repetitory-text {
   order: 2;
 }
 
-.repetitory-page--gallery-top .repetitory-gallery {
+.repetitory-page--gallery-top .repetitory-events .about-people__photo {
+  order: 2;
+}
+
+.repetitory-page--gallery-top .repetitory-work .repetitory-gallery,
+.repetitory-page--gallery-top .repetitory-events .repetitory-gallery {
   order: 1;
   margin-top: 0;
   margin-bottom: 3rem;
 }
 
 .repetitory-page--gallery-top .repetitory-work .section__container,
-.repetitory-page--gallery-top .repetitory-meet .section__container,
 .repetitory-page--gallery-top .repetitory-events .section__container {
   display: flex;
   flex-direction: column;
