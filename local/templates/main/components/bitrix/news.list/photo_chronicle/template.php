@@ -4,11 +4,15 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 }
 /** @var array $arResult */
 /** @var array $arParams */
+/** @var CBitrixComponentTemplate $this */
 $this->setFrameMode(true);
 
 if (empty($arResult['ITEMS'])) {
     return;
 }
+
+$this->addExternalCss('https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.css');
+$this->addExternalJs('https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.umd.js');
 
 $previewLimit = (int)($arParams['PHOTOS_PREVIEW_COUNT'] ?? 4);
 if ($previewLimit < 1) {
@@ -33,6 +37,7 @@ if ($previewLimit < 1) {
             $preview = array_slice($photos, 0, $previewLimit);
             $rest = max(0, $total - $previewLimit);
             $detailUrl = $item['DETAIL_PAGE_URL'] ?: ('/photo_chronicle/detail.php?ID=' . (int)$item['ID']);
+            $gallery = 'album-' . (int)$item['ID'];
         ?>
         <article class="photo-album" id="<?= $this->GetEditAreaId($item['ID']) ?>">
             <h3 class="photo-album__title">
@@ -48,15 +53,21 @@ if ($previewLimit < 1) {
                     $showMore = $isLast && $rest > 0;
                     $alt = $photo['DESCRIPTION'] ?: $item['NAME'];
                     $src = $photo['SRC'];
-                    $href = $isLast ? $detailUrl : $src;
                     $itemClass = 'photo-album__item' . ($showMore ? ' photo-album__item--more' : '');
                 ?>
-                <a href="<?= htmlspecialcharsbx($href) ?>" class="<?= $itemClass ?>">
+                <?php if ($showMore): ?>
+                <a href="<?= htmlspecialcharsbx($detailUrl) ?>" class="<?= $itemClass ?>">
                     <img src="<?= htmlspecialcharsbx($src) ?>" alt="<?= htmlspecialcharsbx($alt) ?>">
-                    <?php if ($showMore): ?>
                     <span class="photo-album__overlay">+<?= $rest ?></span>
-                    <?php endif; ?>
                 </a>
+                <?php else: ?>
+                <a href="<?= htmlspecialcharsbx($src) ?>"
+                   class="<?= $itemClass ?>"
+                   data-fancybox="<?= htmlspecialcharsbx($gallery) ?>"
+                   data-caption="<?= htmlspecialcharsbx($alt) ?>">
+                    <img src="<?= htmlspecialcharsbx($src) ?>" alt="<?= htmlspecialcharsbx($alt) ?>">
+                </a>
+                <?php endif; ?>
                 <?php endforeach; ?>
             </div>
             <?php endif; ?>

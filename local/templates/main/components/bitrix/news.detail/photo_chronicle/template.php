@@ -4,7 +4,11 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 }
 /** @var array $arResult */
 /** @var array $arParams */
+/** @var CBitrixComponentTemplate $this */
 $this->setFrameMode(true);
+
+$this->addExternalCss('https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.css');
+$this->addExternalJs('https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.umd.js');
 
 $this->AddEditAction($arResult['ID'], $arResult['EDIT_LINK'], CIBlock::GetArrayByID($arResult['IBLOCK_ID'], 'ELEMENT_EDIT'));
 $this->AddDeleteAction($arResult['ID'], $arResult['DELETE_LINK'], CIBlock::GetArrayByID($arResult['IBLOCK_ID'], 'ELEMENT_DELETE'), ['CONFIRM' => 'Удалить?']);
@@ -13,6 +17,7 @@ $photos = $arResult['PHOTOS'] ?? [];
 $total = (int)($arResult['PHOTOS_COUNT'] ?? count($photos));
 $backUrl = $arParams['LIST_URL'] ?: '/photo_chronicle/';
 $cover = $arResult['DETAIL_PICTURE']['SRC'] ?? ($arResult['PREVIEW_PICTURE']['SRC'] ?? ($photos[0]['SRC'] ?? '/assets/images/academy-hero.jpg'));
+$gallery = 'album-' . (int)$arResult['ID'];
 ?>
 <section class="hero-secondary">
     <div class="hero-secondary__bg">
@@ -44,7 +49,10 @@ $cover = $arResult['DETAIL_PICTURE']['SRC'] ?? ($arResult['PREVIEW_PICTURE']['SR
                 $alt = $photo['DESCRIPTION'] ?: $arResult['NAME'];
                 $src = $photo['SRC'];
             ?>
-            <a href="<?= htmlspecialcharsbx($src) ?>" class="photo-album__item" target="_blank" rel="noopener">
+            <a href="<?= htmlspecialcharsbx($src) ?>"
+               class="photo-album__item"
+               data-fancybox="<?= htmlspecialcharsbx($gallery) ?>"
+               data-caption="<?= htmlspecialcharsbx($alt) ?>">
                 <img src="<?= htmlspecialcharsbx($src) ?>" alt="<?= htmlspecialcharsbx($alt) ?>">
             </a>
             <?php endforeach; ?>
