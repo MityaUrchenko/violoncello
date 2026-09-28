@@ -3,6 +3,10 @@
   background: #f7f5f5;
 }
 
+.photo-chronicle--detail {
+  padding-top: 4rem;
+}
+
 .photo-chronicle__heading {
   color: #981B2F;
   font-size: 2.5rem;
@@ -24,8 +28,30 @@
   margin-bottom: 1.25rem;
 }
 
+.photo-album__title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.photo-album__title-link:hover {
+  color: #981B2F;
+}
+
 .photo-album__count {
   color: #888;
+}
+
+.photo-album__lead {
+  margin: 0 0 2rem;
+  max-width: 46rem;
+  color: #444;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.photo-album__empty {
+  margin: 0;
+  color: #666;
 }
 
 .photo-album__grid {
@@ -67,6 +93,44 @@
   background: #6A132199;
 }
 
+.photo-chronicle__pager {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.photo-chronicle__pager a,
+.photo-chronicle__pager span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 0.5rem;
+  border: 1px solid #981B2F;
+  color: #981B2F;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 2px;
+}
+
+.photo-chronicle__pager span,
+.photo-chronicle__pager a:hover {
+  background: #981B2F;
+  color: #fff;
+}
+
+.hero-secondary__breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero-secondary__breadcrumb a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 991px) {
   .photo-album__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -84,5 +148,9 @@
 
   .photo-chronicle__heading {
     font-size: 2rem;
+  }
+
+  .photo-album__overlay {
+    font-size: 2.5rem;
   }
 }

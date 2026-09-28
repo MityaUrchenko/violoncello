@@ -22,7 +22,7 @@ $APPLICATION->IncludeComponent(
 	[
 		"IBLOCK_TYPE" => "content",
 		"IBLOCK_ID" => "6",
-		"NEWS_COUNT" => "120",
+		"NEWS_COUNT" => "6",
 		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_ORDER1" => "DESC",
 		"SORT_BY2" => "SORT",
@@ -42,7 +42,7 @@ $APPLICATION->IncludeComponent(
 			2 => "",
 		],
 		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "",
+		"DETAIL_URL" => "/photo_chronicle/detail.php?ID=#ELEMENT_ID#",
 		"AJAX_MODE" => "N",
 		"CACHE_TYPE" => "A",
 		"CACHE_TIME" => "3600",

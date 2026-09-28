@@ -32,11 +32,13 @@ if ($previewLimit < 1) {
             $total = (int)($item['PHOTOS_COUNT'] ?? count($photos));
             $preview = array_slice($photos, 0, $previewLimit);
             $rest = max(0, $total - $previewLimit);
-            $url = $item['DETAIL_PAGE_URL'] ?: '#';
+            $detailUrl = $item['DETAIL_PAGE_URL'] ?: ('/photo_chronicle/detail.php?ID=' . (int)$item['ID']);
         ?>
         <article class="photo-album" id="<?= $this->GetEditAreaId($item['ID']) ?>">
             <h3 class="photo-album__title">
-                <?= htmlspecialcharsbx($item['NAME']) ?>
+                <a href="<?= htmlspecialcharsbx($detailUrl) ?>" class="photo-album__title-link">
+                    <?= htmlspecialcharsbx($item['NAME']) ?>
+                </a>
                 <span class="photo-album__count">• <?= $total ?> фото</span>
             </h3>
             <?php if ($preview): ?>
@@ -46,9 +48,10 @@ if ($previewLimit < 1) {
                     $showMore = $isLast && $rest > 0;
                     $alt = $photo['DESCRIPTION'] ?: $item['NAME'];
                     $src = $photo['SRC'];
+                    $href = $isLast ? $detailUrl : $src;
                     $itemClass = 'photo-album__item' . ($showMore ? ' photo-album__item--more' : '');
                 ?>
-                <a href="<?= htmlspecialcharsbx($url) ?>" class="<?= $itemClass ?>">
+                <a href="<?= htmlspecialcharsbx($href) ?>" class="<?= $itemClass ?>">
                     <img src="<?= htmlspecialcharsbx($src) ?>" alt="<?= htmlspecialcharsbx($alt) ?>">
                     <?php if ($showMore): ?>
                     <span class="photo-album__overlay">+<?= $rest ?></span>
@@ -59,5 +62,11 @@ if ($previewLimit < 1) {
             <?php endif; ?>
         </article>
         <?php endforeach; ?>
+
+        <?php if ($arParams['DISPLAY_BOTTOM_PAGER'] !== 'N' && !empty($arResult['NAV_STRING'])): ?>
+        <nav class="photo-chronicle__pager" aria-label="Страницы альбомов">
+            <?= $arResult['NAV_STRING'] ?>
+        </nav>
+        <?php endif; ?>
     </div>
 </section>
