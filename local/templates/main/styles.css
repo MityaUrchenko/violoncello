@@ -580,6 +580,15 @@ ul {
   border-bottom-color: transparent!important;
 }
 
+.news-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.news-card__title a:hover {
+  color: #981B2F;
+}
+
 /* ===== Community ===== */
 .community {
   padding: 5rem 0;

@@ -112,6 +112,7 @@ $APPLICATION->IncludeComponent(
         'FIELD_CODE' => ['NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'DETAIL_PAGE_URL', 'DATE_ACTIVE_FROM'],
         'PROPERTY_CODE' => [],
         'CHECK_DATES' => 'Y',
+        'DETAIL_URL' => '/news/#ELEMENT_CODE#/',
         'CACHE_TYPE' => 'A',
         'CACHE_TIME' => 3600,
         'SET_TITLE' => 'N',
