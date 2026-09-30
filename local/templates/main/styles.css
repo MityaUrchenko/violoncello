@@ -503,6 +503,11 @@ ul {
   margin-bottom: 0.5rem;
 }
 
+.project-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .project-card__desc {
   line-height: 1.45;
 }
@@ -578,6 +583,15 @@ ul {
 
 .news-card__link a:hover {
   border-bottom-color: transparent!important;
+}
+
+.news-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.news-card__title a:hover {
+  color: #981B2F;
 }
 
 /* ===== Community ===== */
