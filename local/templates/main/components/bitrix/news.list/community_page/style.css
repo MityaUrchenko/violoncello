@@ -1,0 +1,127 @@
+.community-filters {
+  padding: 2.5rem 0 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.community-filters__types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.community-filters__tab {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #f5f0f1;
+  color: #981B2F;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.community-filters__tab--active {
+  background: #981B2F;
+  color: #fff;
+}
+
+.community-filters__tab:hover:not(.community-filters__tab--active) {
+  background: #ead9dc;
+}
+
+.community-filters__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.community-filters__dropdowns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.community-filters__dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  color: #888;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2px;
+}
+
+.community-filters__dropdown select {
+  border: none;
+  background: transparent;
+  color: #1a1a1a;
+  font-size: 0.875rem;
+  text-transform: none;
+  letter-spacing: 0;
+  padding: 0;
+  cursor: pointer;
+  min-width: 8rem;
+}
+
+.community-filters__reset {
+  color: #981B2F;
+  text-decoration: none;
+}
+
+.community-filters__reset:hover {
+  text-decoration: underline;
+}
+
+.community--page {
+  padding-top: 4rem;
+}
+
+.community--page .person-card {
+  text-align: center;
+}
+
+.community__empty {
+  margin: 0;
+  color: #ccc;
+  text-align: center;
+}
+
+.community__pager {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.community__pager a,
+.community__pager span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 0.5rem;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 2px;
+}
+
+.community__pager span,
+.community__pager a:hover {
+  background: #fff;
+  color: #1a1a1a;
+}

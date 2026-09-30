@@ -1,6 +1,13 @@
 <?php
 $arUrlRewrite = [
     [
+        'CONDITION' => '#^/community/(members|alumni|trustees)/#',
+        'RULE' => 'role=$1',
+        'ID' => '',
+        'PATH' => '/community/index.php',
+        'SORT' => 90,
+    ],
+    [
         'CONDITION' => '#^/news/#',
         'RULE' => '',
         'ID' => 'bitrix:news',
