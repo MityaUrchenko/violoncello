@@ -27,7 +27,7 @@ $gallery = 'album-' . (int)$arResult['ID'];
         <p class="hero-secondary__breadcrumb">
             <a href="<?= htmlspecialcharsbx($backUrl) ?>">Фотохроника</a>
         </p>
-        <h1 class="hero-secondary__title"><?= htmlspecialcharsbx($arResult['NAME']) ?></h1>
+        <h1 class="hero-secondary__title"><?= $arResult['NAME'] ?></h1>
         <p class="hero-secondary__subtitle"><?= $total ?> фото</p>
     </div>
 </section>
@@ -35,7 +35,7 @@ $gallery = 'album-' . (int)$arResult['ID'];
 <section class="photo-chronicle photo-chronicle--detail" id="<?= $this->GetEditAreaId($arResult['ID']) ?>">
     <div class="section__container">
         <div class="section__header photo-chronicle__header">
-            <h2 class="section__title photo-chronicle__heading"><?= htmlspecialcharsbx($arResult['NAME']) ?></h2>
+            <h2 class="section__title photo-chronicle__heading"><?= $arResult['NAME'] ?></h2>
             <a href="<?= htmlspecialcharsbx($backUrl) ?>" class="section__link">Все альбомы</a>
         </div>
 

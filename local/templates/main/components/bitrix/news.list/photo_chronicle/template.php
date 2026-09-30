@@ -22,7 +22,7 @@ if ($previewLimit < 1) {
 <section class="photo-chronicle">
     <div class="section__container">
         <div class="section__header photo-chronicle__header">
-            <h1 class="section__title photo-chronicle__heading"><?= htmlspecialcharsbx($arParams['SECTION_TITLE'] ?? 'Фотохроника') ?></h1>
+            <h1 class="section__title photo-chronicle__heading"><?= $arParams['SECTION_TITLE'] ?? 'Фотохроника' ?></h1>
             <?php if (!empty($arParams['SECTION_LINK'])): ?>
             <a href="<?= htmlspecialcharsbx($arParams['SECTION_LINK']) ?>" class="section__link"><?= htmlspecialcharsbx($arParams['SECTION_LINK_TEXT'] ?? 'Смотреть все альбомы') ?></a>
             <?php endif; ?>
@@ -42,7 +42,7 @@ if ($previewLimit < 1) {
         <article class="photo-album" id="<?= $this->GetEditAreaId($item['ID']) ?>">
             <h3 class="photo-album__title">
                 <a href="<?= htmlspecialcharsbx($detailUrl) ?>" class="photo-album__title-link">
-                    <?= htmlspecialcharsbx($item['NAME']) ?>
+                    <?= $item['NAME'] ?>
                 </a>
                 <span class="photo-album__count">• <?= $total ?> фото</span>
             </h3>
