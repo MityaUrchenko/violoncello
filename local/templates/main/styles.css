@@ -503,6 +503,11 @@ ul {
   margin-bottom: 0.5rem;
 }
 
+.project-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .project-card__desc {
   line-height: 1.45;
 }
