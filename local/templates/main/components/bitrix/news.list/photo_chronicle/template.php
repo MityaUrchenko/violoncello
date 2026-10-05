@@ -65,8 +65,8 @@ $base = $arResult['FILTER_BASE'] ?: '/mediacenter/photo/';
                 $photos = $item['PHOTOS'] ?? [];
                 $total = (int)($item['PHOTOS_COUNT'] ?? count($photos));
                 $cover = $item['PREVIEW_PICTURE']['SRC'] ?? ($photos[0]['SRC'] ?? '');
-                $detailUrl = $item['DETAIL_PAGE_URL'] ?: ('/mediacenter/photo/detail.php?ID=' . (int)$item['ID']);
-                $preview = trim((string)($item['PREVIEW_TEXT'] ?? ''));
+                $detailUrl = $item['DETAIL_PAGE_URL'];
+                $preview = trim($item['PREVIEW_TEXT']);
             ?>
             <article class="photo-album-card" id="<?= $this->GetEditAreaId($item['ID']) ?>">
                 <a href="<?= htmlspecialcharsbx($detailUrl) ?>" class="photo-album-card__link">
@@ -76,14 +76,10 @@ $base = $arResult['FILTER_BASE'] ?: '/mediacenter/photo/';
                         <?php endif; ?>
                         <span class="photo-album-card__count"><?= $total ?> фото</span>
                     </div>
-                    <h3 class="photo-album-card__title"><?= htmlspecialcharsbx($item['NAME']) ?></h3>
+                    <h3 class="photo-album-card__title"><?= $item['NAME'] ?></h3>
                     <?php if ($preview !== ''): ?>
                     <div class="photo-album-card__text">
-                        <?php if (($item['PREVIEW_TEXT_TYPE'] ?? 'text') === 'html'): ?>
-                            <?= $preview ?>
-                        <?php else: ?>
-                            <?= htmlspecialcharsbx($preview) ?>
-                        <?php endif; ?>
+                        <?= $preview ?>
                     </div>
                     <?php endif; ?>
                 </a>
