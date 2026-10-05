@@ -15,7 +15,7 @@ $this->AddDeleteAction($arResult['ID'], $arResult['DELETE_LINK'], CIBlock::GetAr
 
 $photos = $arResult['PHOTOS'] ?? [];
 $total = (int)($arResult['PHOTOS_COUNT'] ?? count($photos));
-$backUrl = $arParams['LIST_URL'] ?: '/photo_chronicle/';
+$backUrl = $arParams['LIST_URL'] ?: '/mediacenter/photo/';
 $cover = $arResult['DETAIL_PICTURE']['SRC'] ?? ($arResult['PREVIEW_PICTURE']['SRC'] ?? ($photos[0]['SRC'] ?? '/assets/images/academy-hero.jpg'));
 $gallery = 'album-' . (int)$arResult['ID'];
 ?>
@@ -25,7 +25,7 @@ $gallery = 'album-' . (int)$arResult['ID'];
     </div>
     <div class="hero-secondary__content">
         <p class="hero-secondary__breadcrumb">
-            <a href="<?= htmlspecialcharsbx($backUrl) ?>">Фотохроника</a>
+            <a href="<?= htmlspecialcharsbx($backUrl) ?>">Фотоархив</a>
         </p>
         <h1 class="hero-secondary__title"><?= $arResult['NAME'] ?></h1>
         <p class="hero-secondary__subtitle"><?= $total ?> фото</p>

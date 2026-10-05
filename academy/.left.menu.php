@@ -12,5 +12,5 @@ $aMenuLinks = [
     ['Партнёры', '/academy/partners/', [], [], ''],
     ['Частые вопросы', '/academy/faq/', [], [], ''],
     ['Контакты', '/contacts/', [], [], ''],
-    ['Фотоархив', '/photo_chronicle/', [], [], ''],
+    ['Фотоархив', '/mediacenter/photo/', [], [], ''],
 ];

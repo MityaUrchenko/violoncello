@@ -30,6 +30,6 @@ $aMenuLinks = [
     ['Медиацентр', '/news/', [], [], ''],
     ['Новости', '/news/', [], ['FROM_IBLOCK' => 1], ''],
     ['Статьи', '/articles/', [], ['FROM_IBLOCK' => 1], ''],
-    ['Фото', '/media/photo/', [], ['FROM_IBLOCK' => 1], ''],
+    ['Фото', '/mediacenter/photo/', [], ['FROM_IBLOCK' => 1], ''],
     ['Видео', '/media/video/', [], ['FROM_IBLOCK' => 1], ''],
 ];
