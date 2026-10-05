@@ -177,6 +177,12 @@
   margin-top: 3rem;
 }
 
+.photo-chronicle__pager font {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+}
+
 .photo-chronicle__pager a,
 .photo-chronicle__pager span {
   display: inline-flex;
