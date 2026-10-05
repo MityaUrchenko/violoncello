@@ -7,7 +7,6 @@ use Bitrix\Main\Page\Asset;
 
 $asset = Asset::getInstance();
 $asset->addCss('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
-$asset->addCss(SITE_TEMPLATE_PATH . '/styles.css');
 $asset->addJs('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js');
 $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 

@@ -47,8 +47,8 @@ $base = $arResult['FILTER_BASE'] ?: '/mediacenter/photo/';
             <a href="<?= htmlspecialcharsbx($base) ?>" class="photo-filters__reset">Сбросить фильтры</a>
         </form>
     </div>
-    <svg class="photo-filters__line" viewBox="0 0 1440 28" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M0 20 C 360 6, 820 26, 1440 10" fill="none" stroke="#981B2F" stroke-width="1.4"></path>
+    <svg width="1920" height="28" viewBox="0 0 1920 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 20.2858C104.542 13.1045 368.701 -0.827229 589.004 0.896286C864.382 3.05068 1124.46 26.75 1407.49 26.75C1633.91 26.75 1843.51 9.51419 1920 0.896286" stroke="#981B2F" stroke-width="1.5"/>
     </svg>
 </section>
 
