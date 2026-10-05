@@ -15,7 +15,7 @@ $this->AddDeleteAction($arResult['ID'], $arResult['DELETE_LINK'], CIBlock::GetAr
 
 $photos = $arResult['PHOTOS'] ?? [];
 $total = (int)($arResult['PHOTOS_COUNT'] ?? count($photos));
-$backUrl = $arParams['LIST_URL'] ?: '/mediacenter/photo/';
+$backUrl = $arParams['LIST_URL'];
 $cover = $arResult['DETAIL_PICTURE']['SRC'] ?? ($arResult['PREVIEW_PICTURE']['SRC'] ?? ($photos[0]['SRC'] ?? '/assets/images/academy-hero.jpg'));
 $gallery = 'album-' . (int)$arResult['ID'];
 ?>
@@ -34,14 +34,6 @@ $gallery = 'album-' . (int)$arResult['ID'];
 
 <section class="photo-chronicle photo-chronicle--detail" id="<?= $this->GetEditAreaId($arResult['ID']) ?>">
     <div class="section__container">
-        <div class="section__header photo-chronicle__header">
-            <h2 class="section__title photo-chronicle__heading"><?= $arResult['NAME'] ?></h2>
-            <a href="<?= htmlspecialcharsbx($backUrl) ?>" class="section__link">Все альбомы</a>
-        </div>
-
-        <?php if (!empty($arResult['PREVIEW_TEXT'])): ?>
-        <div class="photo-album__lead"><?= $arResult['PREVIEW_TEXT'] ?></div>
-        <?php endif; ?>
 
         <?php if ($photos): ?>
         <div class="photo-album__grid photo-album__grid--all">
