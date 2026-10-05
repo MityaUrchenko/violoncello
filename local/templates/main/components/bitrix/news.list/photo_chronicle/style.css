@@ -191,6 +191,18 @@
   font-weight: 500;
   border-radius: 2px;
 }
+.photo-chronicle__pager b {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 0.5rem;
+  color: #000;
+  text-decoration: 0;
+  font-weight: 500;
+  border-radius: 2px;
+}
 
 .photo-chronicle__pager span,
 .photo-chronicle__pager a:hover {
