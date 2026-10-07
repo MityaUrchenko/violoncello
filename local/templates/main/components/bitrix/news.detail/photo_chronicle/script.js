@@ -9,8 +9,9 @@
         return true;
     }
 
-    function lazyLoadImages() {
-        var imgs = document.querySelectorAll('img.photo-album__img--lazy[data-src]');
+    function lazyLoadImages(root) {
+        var scope = root || document;
+        var imgs = scope.querySelectorAll('img.photo-detail__img--lazy[data-src]');
         if (!imgs.length) {
             return;
         }
@@ -22,7 +23,7 @@
             }
             img.src = src;
             img.removeAttribute('data-src');
-            img.classList.remove('photo-album__img--lazy');
+            img.classList.remove('photo-detail__img--lazy');
         };
 
         if (!('IntersectionObserver' in window)) {
@@ -48,8 +49,39 @@
         });
     }
 
+    function bindShowMore() {
+        var grid = document.querySelector('.photo-detail__grid');
+        var btn = document.querySelector('.photo-detail__more');
+        if (!grid || !btn) {
+            return;
+        }
+
+        var step = parseInt(grid.getAttribute('data-step') || '24', 10);
+        if (step < 1) {
+            step = 24;
+        }
+
+        btn.addEventListener('click', function () {
+            var hidden = grid.querySelectorAll('.photo-detail__item.is-hidden');
+            var i;
+            for (i = 0; i < hidden.length && i < step; i++) {
+                hidden[i].classList.remove('is-hidden');
+            }
+            lazyLoadImages(grid);
+            if (!grid.querySelector('.photo-detail__item.is-hidden')) {
+                var wrap = btn.closest('.photo-detail__more-wrap');
+                if (wrap) {
+                    wrap.remove();
+                } else {
+                    btn.remove();
+                }
+            }
+        });
+    }
+
     function init() {
         lazyLoadImages();
+        bindShowMore();
         if (!bindFancybox()) {
             setTimeout(bindFancybox, 100);
         }
