@@ -38,11 +38,11 @@ $arResult['PHOTOS_STEP'] = 24;
 $arResult['OTHER_ALBUMS'] = [];
 $iblockId = (int)$arResult['IBLOCK_ID'];
 $currentId = (int)$arResult['ID'];
-$detailTpl = $arParams['DETAIL_URL'] ?: '/mediacenter/photo/detail.php?ID=#ELEMENT_ID#';
+$detailTpl = $arParams['DETAIL_URL'];
 
 if ($iblockId > 0 && $currentId > 0) {
     $res = CIBlockElement::GetList(
-        ['ACTIVE_FROM' => 'DESC', 'SORT' => 'ASC'],
+        ['ACTIVE_FROM' => 'DESC', 'RAND' => 'ASC'],
         ['IBLOCK_ID' => $iblockId, 'ACTIVE' => 'Y', '!ID' => $currentId],
         false,
         ['nTopCount' => 3],
