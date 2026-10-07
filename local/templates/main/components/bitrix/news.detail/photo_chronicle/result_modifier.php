@@ -42,7 +42,7 @@ $detailTpl = $arParams['DETAIL_URL'];
 
 if ($iblockId > 0 && $currentId > 0) {
     $res = CIBlockElement::GetList(
-        ['ACTIVE_FROM' => 'DESC', 'RAND' => 'ASC'],
+        ['RAND' => 'ASC'],
         ['IBLOCK_ID' => $iblockId, 'ACTIVE' => 'Y', '!ID' => $currentId],
         false,
         ['nTopCount' => 3],
