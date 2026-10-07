@@ -21,7 +21,6 @@ $backUrl = $arParams['LIST_URL'] ?: '/mediacenter/photo/';
 $cover = $arResult['DETAIL_PICTURE']['SRC'] ?? ($arResult['PREVIEW_PICTURE']['SRC'] ?? ($photos[0]['SRC'] ?? '/assets/images/photo-archive-hero.jpg'));
 $gallery = 'album-' . (int)$arResult['ID'];
 $preview = trim((string)($arResult['PREVIEW_TEXT'] ?? ''));
-$others = $arResult['OTHER_ALBUMS'] ?? [];
 ?>
 <section class="hero-secondary hero-secondary--photo">
     <div class="hero-secondary__bg">
@@ -86,38 +85,6 @@ $others = $arResult['OTHER_ALBUMS'] ?? [];
         <?php endif; ?>
         <?php else: ?>
         <p class="photo-detail__empty">В этом альбоме пока нет фотографий.</p>
-        <?php endif; ?>
-
-        <?php if ($others): ?>
-        <div class="photo-detail__others">
-            <h2 class="photo-detail__others-title">Другие альбомы</h2>
-            <div class="photo-detail__others-grid">
-                <?php foreach ($others as $album):
-                    $albumPreview = trim((string)($album['PREVIEW_TEXT'] ?? ''));
-                ?>
-                <article class="photo-album-card">
-                    <a href="<?= htmlspecialcharsbx($album['DETAIL_PAGE_URL']) ?>" class="photo-album-card__link">
-                        <div class="photo-album-card__image">
-                            <?php if (!empty($album['COVER'])): ?>
-                            <img src="<?= htmlspecialcharsbx($album['COVER']) ?>" alt="<?= htmlspecialcharsbx($album['NAME']) ?>" loading="lazy" decoding="async">
-                            <?php endif; ?>
-                            <span class="photo-album-card__count"><?= (int)$album['PHOTOS_COUNT'] ?> фото</span>
-                        </div>
-                        <h3 class="photo-album-card__title"><?= $album['NAME'] ?></h3>
-                        <?php if ($albumPreview !== ''): ?>
-                        <div class="photo-album-card__text">
-                            <?php if (($album['PREVIEW_TEXT_TYPE'] ?? 'text') === 'html'): ?>
-                                <?= $albumPreview ?>
-                            <?php else: ?>
-                                <?= htmlspecialcharsbx($albumPreview) ?>
-                            <?php endif; ?>
-                        </div>
-                        <?php endif; ?>
-                    </a>
-                </article>
-                <?php endforeach; ?>
-            </div>
-        </div>
         <?php endif; ?>
     </div>
 </section>

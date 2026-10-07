@@ -25,7 +25,7 @@
 }
 
 .photo-detail {
-  padding: 2.5rem 0 5rem;
+  padding: 2.5rem 0 2.5rem;
   background: #fff;
 }
 
@@ -98,8 +98,12 @@
   color: #981B2F;
 }
 
+.photo-detail--others {
+  padding: 1.5rem 0 5rem;
+}
+
 .photo-detail__others {
-  margin-top: 4rem;
+  margin-top: 0;
 }
 
 .photo-detail__others-title {
