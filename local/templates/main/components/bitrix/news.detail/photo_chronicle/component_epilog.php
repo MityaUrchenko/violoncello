@@ -2,6 +2,9 @@
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
+if (!\CModule::IncludeModule('iblock')) {
+    die('Не удалось подключить модуль iblock');
+}
 
 $iblockId = (int)($arResult['IBLOCK_ID'] ?? $arParams['IBLOCK_ID'] ?? 0);
 $currentId = (int)($arResult['ID'] ?? $arParams['ELEMENT_ID'] ?? 0);
