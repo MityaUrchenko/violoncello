@@ -269,6 +269,8 @@ window.initPhotoNav = function () {
                 num.textContent = numberOf(col);
                 title.appendChild(num);
             }
+            if(columnItems(col).length === 0) continue;
+
             title.appendChild(document.createTextNode(col.name));
             group.appendChild(title);
 
