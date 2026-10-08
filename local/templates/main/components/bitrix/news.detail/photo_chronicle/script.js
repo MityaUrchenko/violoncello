@@ -307,7 +307,9 @@ window.initPhotoNav = function () {
     });
 
     if (back) {
-        back.addEventListener('click', function () {
+        back.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
             stack = [];
             render();
         });
@@ -319,6 +321,10 @@ window.initPhotoNav = function () {
             return;
         }
         e.preventDefault();
+        // render() чистит grid.innerHTML и отцепляет кнопку от DOM.
+        // Без stopPropagation событие доходит до document, а closest
+        // на отцепленном e.target уже не находит [data-photo-nav] → closeNav().
+        e.stopPropagation();
         stack.push(parseInt(btn.getAttribute('data-section'), 10));
         render();
     });
@@ -341,4 +347,3 @@ window.initPhotoNav = function () {
 
     render();
 };
-
