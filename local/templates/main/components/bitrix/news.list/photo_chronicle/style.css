@@ -9,6 +9,9 @@
 .hero-secondary--photo .hero-secondary__breadcrumb {
   color: #981B2F;
 }
+.hero-secondary--photo .hero-secondary__breadcrumb a:hover {
+  text-decoration: underline;
+}
 
 .hero-secondary--photo .hero-secondary__subtitle {
   max-width: 28rem;

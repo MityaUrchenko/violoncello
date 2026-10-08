@@ -37,7 +37,7 @@ if ($event !== '') {
         <img src="/assets/images/photo-archive-hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
     </div>
     <div class="hero-secondary__content">
-        <p class="hero-secondary__breadcrumb">Медиацентр</p>
+        <p class="hero-secondary__breadcrumb"><a href="/news/">Медиацентр</a></p>
         <h1 class="hero-secondary__title">Фотоархив</h1>
         <p class="hero-secondary__subtitle">Фотографии концертов, мастер-классов и сезонов Академии, собранные по альбомам</p>
     </div>
