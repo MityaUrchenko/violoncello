@@ -17,11 +17,21 @@
 }
 
 .hero-secondary--photo .hero-secondary__subtitle {
-  max-width: 40rem;
+  max-width: 60rem;
 }
 
 .hero-secondary--photo .hero-secondary__subtitle p {
   margin: 0;
+}
+.hero-secondary--photo .hero-secondary__subtitle .photo-album-card__count {
+  position: relative;
+  display: flex;
+  justify-self: start;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin-top: 1rem;
 }
 
 .photo-detail {

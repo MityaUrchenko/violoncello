@@ -20,7 +20,7 @@ $step = (int)($arResult['PHOTOS_STEP'] ?? 24);
 $backUrl = $arParams['LIST_URL'] ?: '/mediacenter/photo/';
 $cover = $arResult['DETAIL_PICTURE']['SRC'] ?? ($arResult['PREVIEW_PICTURE']['SRC'] ?? ($photos[0]['SRC'] ?? '/assets/images/photo-archive-hero.jpg'));
 $gallery = 'album-' . (int)$arResult['ID'];
-$preview = trim((string)($arResult['PREVIEW_TEXT'] ?? ''));
+$description = trim((string)($arResult['DETAIL_TEXT'] ?? ''));
 ?>
 <section class="hero-secondary hero-secondary--photo">
     <div class="hero-secondary__bg">
@@ -31,15 +31,17 @@ $preview = trim((string)($arResult['PREVIEW_TEXT'] ?? ''));
             <a href="/news/">Медиацентр</a> / <a href="<?= htmlspecialcharsbx($backUrl) ?>">Фотоархив</a>
         </p>
         <h1 class="hero-secondary__title"><?= $arResult['NAME'] ?></h1>
-        <?php if ($preview !== ''): ?>
+        <?php if ($description !== ''): ?>
         <div class="hero-secondary__subtitle">
-            <?php if (($arResult['PREVIEW_TEXT_TYPE'] ?? 'text') === 'html'): ?>
-                <?= $preview ?>
-            <?php else: ?>
-                <?= htmlspecialcharsbx($preview) ?>
-            <?php endif; ?>
+            <?= $description ?>
         </div>
         <?php endif; ?>
+
+        <div class="hero-secondary__subtitle">
+        <div class="photo-album-card__count">
+            <?= $total ?> фото
+        </div>
+        </div>
     </div>
 </section>
 
