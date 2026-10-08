@@ -123,7 +123,7 @@ foreach ($navSections as $sid => $sec) {
 }
 
 $rsElements = CIBlockElement::GetList(
-    ['SORT' => 'ASC', 'NAME' => 'ASC'],
+    ['DATE_ACTIVE_FROM' => 'ASC', 'NAME' => 'ASC'],
     ['IBLOCK_ID' => $iblockId, 'ACTIVE' => 'Y'],
     false,
     false,
