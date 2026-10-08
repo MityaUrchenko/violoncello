@@ -127,14 +127,10 @@ $rsElements = CIBlockElement::GetList(
     ['IBLOCK_ID' => $iblockId, 'ACTIVE' => 'Y'],
     false,
     false,
-    ['ID', 'NAME', 'CODE', 'IBLOCK_SECTION_ID']
+    ['ID', 'NAME', 'CODE']
 );
 while ($row = $rsElements->Fetch()) {
-    $sid = (int)$row['IBLOCK_SECTION_ID'];
-    if (!$sid || !isset($navSections[$sid])) {
-        continue;
-    }
-    $navSections[$sid]['elements'][] = [
+    $item = [
         'id' => (int)$row['ID'],
         'name' => (string)$row['NAME'],
         'url' => str_replace(
@@ -143,6 +139,15 @@ while ($row = $rsElements->Fetch()) {
             $detailTpl
         ),
     ];
+    // Все привязки к разделам, не только IBLOCK_SECTION_ID
+    $rsGroups = CIBlockElement::GetElementGroups($row['ID'], true, ['ID']);
+    while ($group = $rsGroups->Fetch()) {
+        $sid = (int)$group['ID'];
+        if (!$sid || !isset($navSections[$sid])) {
+            continue;
+        }
+        $navSections[$sid]['elements'][] = $item;
+    }
 }
 
 if (!$navRoots) {
