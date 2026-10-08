@@ -54,9 +54,7 @@ while ($el = $res->GetNext()) {
     ];
 }
 
-if (!$others) {
-    return;
-}
+if ($others):
 ?>
 <section class="photo-detail photo-detail--others">
     <div class="section__container">
@@ -91,3 +89,88 @@ if (!$others) {
         </div>
     </div>
 </section>
+<?php
+endif;
+
+$navSections = [];
+$rsSections = CIBlockSection::GetList(
+    ['LEFT_MARGIN' => 'ASC'],
+    ['IBLOCK_ID' => $iblockId, 'ACTIVE' => 'Y', 'GLOBAL_ACTIVE' => 'Y'],
+    false,
+    ['ID', 'NAME', 'IBLOCK_SECTION_ID']
+);
+while ($row = $rsSections->Fetch()) {
+    $sid = (int)$row['ID'];
+    $navSections[$sid] = [
+        'id' => $sid,
+        'name' => (string)$row['NAME'],
+        'parent' => (int)$row['IBLOCK_SECTION_ID'],
+        'children' => [],
+        'elements' => [],
+    ];
+}
+foreach ($navSections as $sid => $sec) {
+    $parent = $sec['parent'];
+    if ($parent && isset($navSections[$parent])) {
+        $navSections[$parent]['children'][] = $sid;
+    }
+}
+$navRoots = [];
+foreach ($navSections as $sid => $sec) {
+    if (!$sec['parent'] || !isset($navSections[$sec['parent']])) {
+        $navRoots[] = $sid;
+    }
+}
+
+$rsElements = CIBlockElement::GetList(
+    ['SORT' => 'ASC', 'NAME' => 'ASC'],
+    ['IBLOCK_ID' => $iblockId, 'ACTIVE' => 'Y'],
+    false,
+    false,
+    ['ID', 'NAME', 'CODE', 'IBLOCK_SECTION_ID']
+);
+while ($row = $rsElements->Fetch()) {
+    $sid = (int)$row['IBLOCK_SECTION_ID'];
+    if (!$sid || !isset($navSections[$sid])) {
+        continue;
+    }
+    $navSections[$sid]['elements'][] = [
+        'id' => (int)$row['ID'],
+        'name' => (string)$row['NAME'],
+        'url' => str_replace(
+            ['#ELEMENT_ID#', '#ID#', '#ELEMENT_CODE#', '#CODE#'],
+            [$row['ID'], $row['ID'], $row['CODE'] ?? '', $row['CODE'] ?? ''],
+            $detailTpl
+        ),
+    ];
+}
+
+if (!$navRoots) {
+    return;
+}
+
+$navJson = json_encode(
+    [
+        'currentId' => $currentId,
+        'roots' => $navRoots,
+        'sections' => $navSections,
+    ],
+    JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT
+);
+?>
+<div class="photo-nav" data-photo-nav>
+    <div class="photo-nav__panel" hidden>
+        <div class="photo-nav__head">
+            <button type="button" class="photo-nav__back" hidden>← Все разделы</button>
+            <p class="photo-nav__crumb"></p>
+        </div>
+        <div class="photo-nav__grid"></div>
+    </div>
+    <button type="button" class="photo-nav__fab" aria-expanded="false" aria-label="Все альбомы">
+        <span class="photo-nav__fab-line"></span>
+        <span class="photo-nav__fab-line"></span>
+        <span class="photo-nav__fab-line"></span>
+    </button>
+    <script type="application/json" class="photo-nav__data"><?= $navJson ?></script>
+</div>
+<script>if (window.initPhotoNav) window.initPhotoNav();</script>
