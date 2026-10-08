@@ -269,14 +269,15 @@ window.initPhotoNav = function () {
                 num.textContent = numberOf(col);
                 title.appendChild(num);
             }
-            if(columnItems(col).length === 0) continue;
+
+            var items = columnItems(col);
+            if(items.length === 0) continue;
 
             title.appendChild(document.createTextNode(col.name));
             group.appendChild(title);
 
             var list = document.createElement('ul');
             list.className = 'photo-nav__list';
-            var items = columnItems(col);
             var n;
             for (n = 0; n < items.length; n++) {
                 addItem(list, items[n]);
