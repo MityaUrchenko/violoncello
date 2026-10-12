@@ -1,136 +1,135 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog_before.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
 $APPLICATION->SetTitle('Академия');
 $APPLICATION->SetPageProperty('title', 'Академия — Всероссийская виолончельная академия');
 ?>
 <!-- Hero -->
-    <section class="hero-secondary">
-        <div class="hero-secondary__bg">
-            <img src="/assets/images/academy-hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
-        </div>
-        <div class="hero-secondary__content">
-            <p class="hero-secondary__breadcrumb">Академия</p>
-            <h1 class="hero-secondary__title">Институция,<br>объединяющая виолончельное<br>сообщество России</h1>
-            <p class="hero-secondary__subtitle">Образование, концертная деятельность, исследования и поддержка молодых
-                музыкантов — единое пространство для профессионалов и слушателей.</p>
-        </div>
-    </section>
+<section class="hero-secondary">
+    <div class="hero-secondary__bg">
+        <img src="/assets/images/academy-hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
+    </div>
+    <div class="hero-secondary__content">
+        <p class="hero-secondary__breadcrumb">Академия</p>
+        <h1 class="hero-secondary__title">Институция,<br>объединяющая виолончельное<br>сообщество России</h1>
+        <p class="hero-secondary__subtitle">Образование, концертная деятельность, исследования и поддержка молодых
+            музыкантов — единое пространство для профессионалов и слушателей.</p>
+    </div>
+</section>
 
-    <!-- Mission & approach -->
-    <section class="academy-mission">
-        <div class="section__container">
-            <div class="academy-mission__grid">
-                <div class="academy-mission__col">
-                    <h2 class="academy-mission__title">Миссия и ценности</h2>
-                    <p class="academy-mission__text">Развивать виолончельное искусство в России, поддерживать молодых
-                        музыкантов на всех этапах становления и формировать профессиональное сообщество, открытое к
-                        сотрудничеству.</p>
-                </div>
-                <div class="academy-mission__col">
-                    <h2 class="academy-mission__title">Образовательный подход</h2>
-                    <p class="academy-mission__text">Индивидуальная работа с педагогами-солистами, ансамблевая практика
-                        и регулярное концертное выступление — с первого года обучения.</p>
-                </div>
+<!-- Mission & approach -->
+<section class="academy-mission">
+    <div class="section__container">
+        <div class="academy-mission__grid">
+            <div class="academy-mission__col">
+                <h2 class="academy-mission__title">Миссия и ценности</h2>
+                <p class="academy-mission__text">Развивать виолончельное искусство в России, поддерживать молодых
+                    музыкантов на всех этапах становления и формировать профессиональное сообщество, открытое к
+                    сотрудничеству.</p>
+            </div>
+            <div class="academy-mission__col">
+                <h2 class="academy-mission__title">Образовательный подход</h2>
+                <p class="academy-mission__text">Индивидуальная работа с педагогами-солистами, ансамблевая практика
+                    и регулярное концертное выступление — с первого года обучения.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- History -->
-    <section class="academy-history">
-        <div class="section__container">
-            <h2 class="academy-mission__title">История Академии</h2>
-            <div class="academy-history__timeline">
-                <div class="academy-history__item">
-                    <span class="academy-history__year">2019</span>
-                    <p class="academy-history__label">Основание Академии</p>
-                </div>
-                <div class="academy-history__item">
-                    <span class="academy-history__year">2021</span>
-                    <p class="academy-history__label">Первая летняя резиденция</p>
-                </div>
-                <div class="academy-history__item">
-                    <span class="academy-history__year">2023</span>
-                    <p class="academy-history__label">Запуск конкурса VIVACELLO</p>
-                </div>
-                <div class="academy-history__item">
-                    <span class="academy-history__year">2026</span>
-                    <p class="academy-history__label">Запуск единого сайта-портала</p>
-                </div>
+<!-- History -->
+<section class="academy-history">
+    <div class="section__container">
+        <h2 class="academy-mission__title">История Академии</h2>
+        <div class="academy-history__timeline">
+            <div class="academy-history__item">
+                <span class="academy-history__year">2019</span>
+                <p class="academy-history__label">Основание Академии</p>
+            </div>
+            <div class="academy-history__item">
+                <span class="academy-history__year">2021</span>
+                <p class="academy-history__label">Первая летняя резиденция</p>
+            </div>
+            <div class="academy-history__item">
+                <span class="academy-history__year">2023</span>
+                <p class="academy-history__label">Запуск конкурса VIVACELLO</p>
+            </div>
+            <div class="academy-history__item">
+                <span class="academy-history__year">2026</span>
+                <p class="academy-history__label">Запуск единого сайта-портала</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Leadership -->
-    <section class="academy-leadership">
-        <div class="section__container">
-            <div class="section__header section__header--light">
-                <h2 class="section__title section__title--light">Руководство и команда</h2>
-                <a href="/contacts/" class="section__link section__link--light">Вся команда</a>
-            </div>
-            <div class="academy-leadership__grid">
-                <article class="academy-person">
-                    <div class="academy-person__photo">
-                        <img src="/assets/images/academy-ushakova.jpg" alt="А. Ушакова">
-                    </div>
-                    <h3 class="academy-person__name"><a href="#">А. Ушакова <span class="academy-person__arrow"
-                                                                                  aria-hidden="true">↗</span></a></h3>
-                    <p class="academy-person__role">Основатель и худ. руководитель</p>
-                </article>
-                <article class="academy-person">
-                    <div class="academy-person__photo">
-                        <img src="/assets/images/academy-markevich.jpg" alt="А. Маркевич">
-                    </div>
-                    <h3 class="academy-person__name"><a href="#">А. Маркевич <span class="academy-person__arrow"
-                                                                                   aria-hidden="true">↗</span></a></h3>
-                    <p class="academy-person__role">Педагог</p>
-                </article>
-                <article class="academy-person">
-                    <div class="academy-person__photo">
-                        <img src="/assets/images/academy-andrianov.jpg" alt="Б. Андрианов">
-                    </div>
-                    <h3 class="academy-person__name"><a href="#">Б. Андрианов <span class="academy-person__arrow"
-                                                                                    aria-hidden="true">↗</span></a></h3>
-                    <p class="academy-person__role">Художественный совет</p>
-                </article>
-                <article class="academy-person">
-                    <div class="academy-person__photo">
-                        <img src="/assets/images/academy-evlanov.jpg" alt="Т. Евланов">
-                    </div>
-                    <h3 class="academy-person__name"><a href="#">Т. Евланов <span class="academy-person__arrow"
-                                                                                  aria-hidden="true">↗</span></a></h3>
-                    <p class="academy-person__role">Художественный совет</p>
-                </article>
-            </div>
+<!-- Leadership -->
+<section class="academy-leadership">
+    <div class="section__container">
+        <div class="section__header section__header--light">
+            <h2 class="section__title section__title--light">Руководство и команда</h2>
+            <a href="contacts.html" class="section__link section__link--light">Вся команда</a>
         </div>
-    </section>
+        <div class="academy-leadership__grid">
+            <article class="academy-person">
+                <div class="academy-person__photo">
+                    <img src="/assets/images/academy-ushakova.jpg" alt="А. Ушакова">
+                </div>
+                <h3 class="academy-person__name"><a href="#">А. Ушакова <span class="academy-person__arrow"
+                                                                              aria-hidden="true">↗</span></a></h3>
+                <p class="academy-person__role">Основатель и худ. руководитель</p>
+            </article>
+            <article class="academy-person">
+                <div class="academy-person__photo">
+                    <img src="/assets/images/academy-markevich.jpg" alt="А. Маркевич">
+                </div>
+                <h3 class="academy-person__name"><a href="#">А. Маркевич <span class="academy-person__arrow"
+                                                                               aria-hidden="true">↗</span></a></h3>
+                <p class="academy-person__role">Педагог</p>
+            </article>
+            <article class="academy-person">
+                <div class="academy-person__photo">
+                    <img src="/assets/images/academy-andrianov.jpg" alt="Б. Андрианов">
+                </div>
+                <h3 class="academy-person__name"><a href="#">Б. Андрианов <span class="academy-person__arrow"
+                                                                                aria-hidden="true">↗</span></a></h3>
+                <p class="academy-person__role">Художественный совет</p>
+            </article>
+            <article class="academy-person">
+                <div class="academy-person__photo">
+                    <img src="/assets/images/academy-evlanov.jpg" alt="Т. Евланов">
+                </div>
+                <h3 class="academy-person__name"><a href="#">Т. Евланов <span class="academy-person__arrow"
+                                                                              aria-hidden="true">↗</span></a></h3>
+                <p class="academy-person__role">Художественный совет</p>
+            </article>
+        </div>
+    </div>
+</section>
 
-    <!-- Sections -->
-    <section class="academy-sections">
-        <div class="section__container">
-            <h2 class="section__title">Разделы Академии</h2>
-            <div class="academy-sections__grid">
-                <a href="#" class="academy-section-card">
+<!-- Sections -->
+<section class="academy-sections">
+    <div class="section__container">
+        <h2 class="section__title">Разделы Академии</h2>
+        <div class="academy-sections__grid">
+            <a href="#" class="academy-section-card">
                     <span class="academy-section-card__icon" aria-hidden="true">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M23.4609 16.0088C28.199 16.192 32 19.1734 32 22.1543L31.9951 22.3516C31.8922 24.3837 30.212 25.9998 28.1543 26H21.4648C20.7731 27.1955 19.4805 28 18 28H4L3.79395 27.9951C1.7488 27.8913 0.108654 26.2512 0.00488281 24.2061L0 24V23.3848C0 19.6925 4.95 16 11 16L11.5635 16.0107C13.7106 16.0923 15.6997 16.6363 17.3535 17.4697C18.9005 16.5727 20.8664 16 23 16L23.4609 16.0088ZM11 17.5C8.26921 17.5 5.82005 18.3364 4.08691 19.54C2.31311 20.7719 1.5 22.2179 1.5 23.3848V24C1.5 25.3807 2.61929 26.5 4 26.5H18C18.5614 26.5 19.0778 26.3125 19.4951 26H19.4287L19.9883 25.5088C19.9921 25.5038 19.9962 25.4992 20 25.4941V24.5H20.4502C20.483 24.3385 20.5 24.1712 20.5 24V23.3848C20.5 22.2179 19.6869 20.7719 17.9131 19.54C16.18 18.3364 13.7308 17.5 11 17.5ZM23 17.5C21.4668 17.5 20.0474 17.8373 18.8633 18.376C20.801 19.7529 22 21.5682 22 23.3848V24L21.9951 24.2061C21.9901 24.3051 21.9799 24.403 21.9678 24.5H28.1543C29.4497 24.4998 30.4998 23.4497 30.5 22.1543C30.5 21.2825 29.8978 20.1431 28.4902 19.1475C27.1202 18.1784 25.1745 17.5 23 17.5ZM11.3086 3.00781C14.4789 3.16843 17 5.78979 17 9L16.9922 9.30859C16.8316 12.4789 14.2102 15 11 15L10.6914 14.9922C7.62332 14.8368 5.16325 12.3767 5.00781 9.30859L5 9C5 5.68629 7.68629 3 11 3L11.3086 3.00781ZM23.2568 5.00684C25.8989 5.14053 28 7.32472 28 10L27.9932 10.2568C27.8595 12.8989 25.6753 15 23 15L22.7432 14.9932C20.1862 14.8638 18.1362 12.8138 18.0068 10.2568L18 10C18 7.23858 20.2386 5 23 5L23.2568 5.00684ZM11 4.5C8.51472 4.5 6.5 6.51472 6.5 9C6.5 11.4853 8.51472 13.5 11 13.5C13.4853 13.5 15.5 11.4853 15.5 9C15.5 6.51472 13.4853 4.5 11 4.5ZM23 6.5C21.067 6.5 19.5 8.067 19.5 10C19.5 11.933 21.067 13.5 23 13.5C24.933 13.5 26.5 11.933 26.5 10C26.5 8.067 24.933 6.5 23 6.5Z"
                                   fill="white"/>
                             </svg>
                     </span>
-                    <span class="about-directions__card-text">Художественный совет</span>
-                    <span class="academy-section-card__line"></span>
-                </a>
-                <a href="#" class="academy-section-card">
+                <span class="about-directions__card-text">Художественный совет</span>
+                <span class="academy-section-card__line"></span>
+            </a>
+            <a href="#" class="academy-section-card">
                     <span class="academy-section-card__icon" aria-hidden="true">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16 1C20 1 20.5 3 20.5 4V10.7822C20.5001 10.9243 20.543 11.0633 20.623 11.1807L26.873 20.3477C27.6071 21.4243 28 22.697 28 24C28 28 22.6274 31 16 31C9.37258 31 4 28 4 24C4 22.697 4.3929 21.4243 5.12695 20.3477L11.377 11.1807C11.457 11.0633 11.4999 10.9243 11.5 10.7822V4C11.5 3.00001 12 1 16 1ZM19 5.14941C18.267 5.66925 17.1958 6 16 6C14.8042 6 13.733 5.66925 13 5.14941V10.7822C12.9999 11.2257 12.866 11.659 12.6162 12.0254L6.36621 21.1924C5.80199 22.0199 5.5 22.9984 5.5 24C5.5 25.2535 6.34012 26.5935 8.2627 27.7002C10.162 28.7935 12.8922 29.5 16 29.5C19.1078 29.5 21.838 28.7935 23.7373 27.7002C25.6599 26.5935 26.5 25.2535 26.5 24C26.5 22.9984 26.198 22.0199 25.6338 21.1924L19.3838 12.0254C19.134 11.659 19.0001 11.2257 19 10.7822V5.14941ZM16.584 16.876C16.9286 16.6462 17.3943 16.7393 17.624 17.084L20.624 21.584C20.8538 21.9286 20.7607 22.3943 20.416 22.624C20.0714 22.8538 19.6057 22.7607 19.376 22.416L16.376 17.916C16.1462 17.5714 16.2393 17.1057 16.584 16.876Z"
                                   fill="white"/>
                         </svg>
                     </span>
-                    <span class="about-directions__card-text">Институт исследований и методологии</span>
-                    <span class="academy-section-card__line"></span>
-                </a>
-                <a href="#" class="academy-section-card">
+                <span class="about-directions__card-text">Институт исследований и методологии</span>
+                <span class="academy-section-card__line"></span>
+            </a>
+            <a href="#" class="academy-section-card">
                     <span class="academy-section-card__icon" aria-hidden="true">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <mask id="path-1-inside-1_96_838" fill="white">
@@ -140,10 +139,10 @@ $APPLICATION->SetPageProperty('title', 'Академия — Всероссий�
                                   fill="white" mask="url(#path-1-inside-1_96_838)"/>
                         </svg>
                     </span>
-                    <span class="about-directions__card-text">Фонд музыкальных инструментов</span>
-                    <span class="academy-section-card__line"></span>
-                </a>
-                <a href="#" class="academy-section-card">
+                <span class="about-directions__card-text">Фонд музыкальных инструментов</span>
+                <span class="academy-section-card__line"></span>
+            </a>
+            <a href="#" class="academy-section-card">
                     <span class="academy-section-card__icon" aria-hidden="true">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_96_946)">
@@ -157,10 +156,10 @@ $APPLICATION->SetPageProperty('title', 'Академия — Всероссий�
                             </defs>
                         </svg>
                     </span>
-                    <span class="about-directions__card-text">Закрытый репетиторий</span>
-                    <span class="academy-section-card__line"></span>
-                </a>
-                <a href="#" class="academy-section-card">
+                <span class="about-directions__card-text">Закрытый репетиторий</span>
+                <span class="academy-section-card__line"></span>
+            </a>
+            <a href="#" class="academy-section-card">
                     <span class="academy-section-card__icon" aria-hidden="true">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_96_862)">
@@ -174,30 +173,30 @@ $APPLICATION->SetPageProperty('title', 'Академия — Всероссий�
                             </defs>
                         </svg>
                     </span>
-                    <span class="about-directions__card-text">База преподавателей</span>
-                    <span class="academy-section-card__line"></span>
-                </a>
-                <a href="#" class="academy-section-card">
+                <span class="about-directions__card-text">База преподавателей</span>
+                <span class="academy-section-card__line"></span>
+            </a>
+            <a href="#" class="academy-section-card">
                     <span class="academy-section-card__icon" aria-hidden="true">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16 2C23.732 2 30 8.26801 30 16V26C30 28.14 28.3194 29.8879 26.2061 29.9951L26 30H22C20.8954 30 20 29.1046 20 28V19C20 17.8954 20.8954 17 22 17H26C26.9461 17 27.8152 17.3288 28.5 17.8779V16C28.5 9.09644 22.9036 3.5 16 3.5C9.09644 3.5 3.5 9.09644 3.5 16V17.8779C4.18485 17.3288 5.05392 17 6 17H10C11.1046 17 12 17.8954 12 19V28C12 29.1046 11.1046 30 10 30H6L5.79395 29.9951C3.68056 29.8879 2 28.14 2 26V16C2 8.26801 8.26801 2 16 2ZM22 18.5C21.7239 18.5 21.5 18.7239 21.5 19V28C21.5 28.2761 21.7239 28.5 22 28.5H26C27.3807 28.5 28.5 27.3807 28.5 26V21C28.5 19.6193 27.3807 18.5 26 18.5H22ZM6 18.5C4.61929 18.5 3.5 19.6193 3.5 21V26C3.5 27.3807 4.61929 28.5 6 28.5H10C10.2761 28.5 10.5 28.2761 10.5 28V19C10.5 18.7239 10.2761 18.5 10 18.5H6Z"
                                   fill="white"/>
                         </svg>
                     </span>
-                    <span class="about-directions__card-text">Открытые прослушивания</span>
-                    <span class="academy-section-card__line"></span>
-                </a>
-                <a href="#" class="academy-section-card">
+                <span class="about-directions__card-text">Открытые прослушивания</span>
+                <span class="academy-section-card__line"></span>
+            </a>
+            <a href="#" class="academy-section-card">
                     <span class="academy-section-card__icon" aria-hidden="true">
                         <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M21 2C16.7938 2 13.0957 3.34489 10.9531 6.03027C4.81598 6.36623 0 9.68818 0 16C0 19.3257 1.33719 21.8216 3.5 23.4883L3.27734 26.3965C3.12783 28.3401 4.66488 30 6.61426 30C7.50165 29.9999 8.35298 29.647 8.98047 29.0195L12 26C15.8945 26 19.3537 24.8472 21.5459 22.5449L24.0195 25.0195C24.647 25.647 25.4983 25.9999 26.3857 26C28.3351 26 29.8722 24.3401 29.7227 22.3965L29.5 19.4883C31.6628 17.8216 33 15.3257 33 12C33 5.33333 27.6274 2 21 2ZM9.94531 7.62207C9.33708 8.8728 9 10.3319 9 12C9 18.3222 13.8318 21.644 19.9834 21.9707C19.8504 22.088 19.7138 22.2019 19.5723 22.3105C17.7328 23.7223 15.0843 24.5 12 24.5H11.3789L7.91992 27.959C7.57359 28.3053 7.10363 28.4999 6.61426 28.5C5.53875 28.5 4.6901 27.5841 4.77246 26.5117L4.77344 26.5107L4.99609 23.6025L5.05762 22.7949L4.41602 22.2998C2.6322 20.9252 1.5 18.8738 1.5 16C1.5 13.1197 2.6364 11.0643 4.42773 9.68945C5.84405 8.60247 7.74007 7.89175 9.94531 7.62207ZM21 3.5C24.0843 3.5 26.7328 4.27773 28.5723 5.68945C30.3636 7.06429 31.5 9.11975 31.5 12C31.5 14.8738 30.3678 16.9252 28.584 18.2998L27.9424 18.7949L28.0039 19.6025L28.2266 22.5107L28.2275 22.5117C28.3099 23.5841 27.4613 24.5 26.3857 24.5C25.8964 24.4999 25.4264 24.3053 25.0801 23.959L21.6211 20.5H21.375L21.3154 20.4199C21.2982 20.4471 21.2793 20.4731 21.2617 20.5H21C17.9157 20.5 15.2672 19.7223 13.4277 18.3105C11.6364 16.9357 10.5 14.8803 10.5 12C10.5 9.11975 11.6364 7.06429 13.4277 5.68945C15.2672 4.27773 17.9157 3.5 21 3.5Z"
                                   fill="white"/>
                         </svg>
                     </span>
-                    <span class="about-directions__card-text">Партнёры и сотрудничество</span>
-                    <span class="academy-section-card__line"></span>
-                </a>
-                <a href="#" class="academy-section-card">
+                <span class="about-directions__card-text">Партнёры и сотрудничество</span>
+                <span class="academy-section-card__line"></span>
+            </a>
+            <a href="#" class="academy-section-card">
                     <span class="academy-section-card__icon" aria-hidden="true">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_96_886)">
@@ -211,24 +210,24 @@ $APPLICATION->SetPageProperty('title', 'Академия — Всероссий�
                             </defs>
                         </svg>
                     </span>
-                    <span class="about-directions__card-text">Частые вопросы (FAQ)</span>
-                    <span class="academy-section-card__line"></span>
-                </a>
+                <span class="about-directions__card-text">Частые вопросы (FAQ)</span>
+                <span class="academy-section-card__line"></span>
+            </a>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <section class="academy-sections">
+        <div class="section__container">
+            <div class="academy-cta">
+                <div class="academy-cta__text">
+                    <p class="academy-cta__label">Набор 2026/2027</p>
+                    <h3 class="academy-cta__title">Открытые прослушивания в Академию</h3>
+                </div>
+                <a href="#" class="btn btn--primary">УСЛОВИЯ УЧАСТИЯ</a>
             </div>
         </div>
-
-        <!-- CTA -->
-        <section class="academy-sections">
-            <div class="section__container">
-                <div class="academy-cta">
-                    <div class="academy-cta__text">
-                        <p class="academy-cta__label">Набор 2026/2027</p>
-                        <h3 class="academy-cta__title">Открытые прослушивания в Академию</h3>
-                    </div>
-                    <a href="#" class="btn btn--primary">УСЛОВИЯ УЧАСТИЯ</a>
-                </div>
-            </div>
-        </section>
     </section>
+</section>
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'; ?>
