@@ -1,10 +1,10 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog_before.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
 $APPLICATION->SetAdditionalCSS('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css');
 $APPLICATION->SetAdditionalCSS('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css');
 $APPLICATION->AddHeadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js');
 $APPLICATION->AddHeadScript('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js');
-require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
+
 $APPLICATION->SetTitle('Контакты');
 $APPLICATION->SetPageProperty('title', 'Контакты — Всероссийская виолончельная академия');
 ?>

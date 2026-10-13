@@ -1,12 +1,11 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog_before.php';
-$APPLICATION->SetAdditionalCSS('/styles.about.css');
-$APPLICATION->SetAdditionalCSS('/styles.about-page.css');
-$APPLICATION->AddHeadScript('/assets/js/about.js');
 require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
+$APPLICATION->AddHeadScript('/assets/js/about.js');
 $APPLICATION->SetTitle('Об Академии');
 $APPLICATION->SetPageProperty('title', 'Об Академии — Всероссийская виолончельная академия');
 ?>
+<link rel="stylesheet" href="/styles.about.css">
+<link rel="stylesheet" href="/styles.about-page.css">
 <section class="hero-secondary hero-secondary--about">
       <div class="hero-secondary__bg">
         <img src="/assets/images/about-hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true" />
