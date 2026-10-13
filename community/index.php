@@ -3,6 +3,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
 $APPLICATION->SetTitle('Сообщество');
 $APPLICATION->SetPageProperty('title', 'Сообщество — Всероссийская виолончельная академия');
 ?>
+<link rel="stylesheet" href="/local/templates/main/css/community-page.css">
 
 <section class="hero-secondary hero-secondary--community">
     <div class="hero-secondary__bg">
