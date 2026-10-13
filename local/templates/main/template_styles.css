@@ -1260,10 +1260,10 @@ ul {
 }
 
 .socials__grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  display: flex;
   gap: 1.5rem;
-  justify-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .socials__item {
@@ -1274,6 +1274,7 @@ ul {
   text-align: center;
   color: #1a1a1a;
   transition: color 0.3s ease;
+  flex: 1 1 0;
 }
 
 .socials__item:hover {
@@ -1328,7 +1329,6 @@ ul {
   }
 
   .socials__grid {
-    grid-template-columns: repeat(3, 1fr);
     gap: 2rem 1rem;
   }
 

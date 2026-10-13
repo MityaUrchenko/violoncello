@@ -170,13 +170,6 @@ $APPLICATION->SetPageProperty('title', 'Контакты — Всероссий�
             </span>
                     <span class="socials__name">Telegram</span>
                 </a>
-                <a href="#" class="socials__item socials__item--restricted" target="_blank" rel="noopener">
-            <span class="socials__icon">
-              <img src="/assets/images/instagram.svg" alt="">
-            </span>
-                    <span class="socials__name">Instagram</span>
-                    <span class="socials__note">*деятельность META запрещена в РФ</span>
-                </a>
             </div>
         </div>
     </section>

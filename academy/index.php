@@ -1,4 +1,5 @@
 <?php
+header('Location: /academy/about');
 require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
 $APPLICATION->SetTitle('Академия');
 $APPLICATION->SetPageProperty('title', 'Академия — Всероссийская виолончельная академия');
