@@ -20,14 +20,9 @@ jobs:
             cd ${{ secrets.DEPLOY_PATH }}
 
             CHANGES=$(git status --porcelain)
-            HAD_CHANGES=0
-
             if [ -n "$CHANGES" ]; then
-              HAD_CHANGES=1
-            fi
-
-            if [ "$HAD_CHANGES" = "1" ]; then
-                STATUS_MSG="❗️ Деплой остановлен. На сервере есть новые/изменённые файлы"
+                STATUS_MSG="❗️ Деплой остановлен.
+                На сервере есть новые/изменённые файлы!"
             else
               echo "=== Обновляем ветку ==="
               git pull origin main
