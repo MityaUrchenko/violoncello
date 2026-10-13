@@ -1,3 +1,44 @@
 @import url("https://fonts.googleapis.com/css?family=Cormorant Unicase:400,500,600");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400");
-/* RESTORED - see component style.css for projects page styles */
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #1a1a1a;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+/* SEE ARTIFACTS - this is a partial emergency stub - user must restore full file from 98344dbe */
+.page { min-height: 100vh; display: flex; flex-direction: column; }
+.main { flex: 1 0 auto; }
+.footer { flex-shrink: 0; }
