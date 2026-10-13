@@ -11,12 +11,12 @@ $filter = $arResult['FILTER'] ?? [];
 $opts = $arResult['FILTER_OPTIONS'] ?? [];
 $base = $arResult['FILTER_BASE'] ?: '/mediacenter/photo/';
 ?>
-<section class="photo-filters">
+<section class="filter-block">
     <div class="section__container">
-        <form class="photo-filters__row" method="get" action="<?= htmlspecialcharsbx($base) ?>">
-            <div class="photo-filters__left">
-                <a href="<?= htmlspecialcharsbx($base) ?>" class="photo-filters__all">Все альбомы</a>
-                <label class="photo-filters__dropdown">
+        <form class="filter-block__row" method="get" action="<?= htmlspecialcharsbx($base) ?>">
+            <div class="filter-block__left">
+                <a href="<?= htmlspecialcharsbx($base) ?>" class="btn btn--primary">Все альбомы</a>
+                <label class="filter-block__dropdown">
                     Год
                     <select name="year" onchange="this.form.submit()">
                         <option value="">Все</option>
@@ -25,7 +25,7 @@ $base = $arResult['FILTER_BASE'] ?: '/mediacenter/photo/';
                         <?php endforeach; ?>
                     </select>
                 </label>
-                <label class="photo-filters__dropdown">
+                <label class="filter-block__dropdown">
                     Проект
                     <select name="project" onchange="this.form.submit()">
                         <option value="">Все</option>
@@ -34,7 +34,7 @@ $base = $arResult['FILTER_BASE'] ?: '/mediacenter/photo/';
                         <?php endforeach; ?>
                     </select>
                 </label>
-                <label class="photo-filters__dropdown">
+                <label class="filter-block__dropdown">
                     Мероприятие
                     <select name="event" onchange="this.form.submit()">
                         <option value="">Все</option>
@@ -44,7 +44,7 @@ $base = $arResult['FILTER_BASE'] ?: '/mediacenter/photo/';
                     </select>
                 </label>
             </div>
-            <a href="<?= htmlspecialcharsbx($base) ?>" class="photo-filters__reset">Сбросить фильтры</a>
+            <a href="<?= htmlspecialcharsbx($base) ?>" class="filter-block__reset">Сбросить фильтры</a>
         </form>
     </div>
     <svg width="100%" height="" viewBox="0 0 1920 28" fill="none" xmlns="http://www.w3.org/2000/svg">
