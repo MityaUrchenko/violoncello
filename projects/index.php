@@ -2,80 +2,121 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
 $APPLICATION->SetTitle('Проекты');
 $APPLICATION->SetPageProperty('title', 'Проекты — Всероссийская виолончельная академия');
+?>
 
-$APPLICATION->IncludeComponent(
-    'bitrix:news',
-    'projects',
-    [
-        'IBLOCK_TYPE' => 'content',
-        'IBLOCK_ID' => '2',
-        'NEWS_COUNT' => '20',
-        'USE_SEARCH' => 'N',
-        'USE_RSS' => 'N',
-        'USE_RATING' => 'N',
-        'USE_CATEGORIES' => 'N',
-        'USE_REVIEW' => 'N',
-        'USE_FILTER' => 'N',
-        'SORT_BY1' => 'ACTIVE_FROM',
-        'SORT_ORDER1' => 'DESC',
-        'SORT_BY2' => 'SORT',
-        'SORT_ORDER2' => 'ASC',
-        'CHECK_DATES' => 'Y',
-        'SEF_MODE' => 'Y',
-        'SEF_FOLDER' => '/projects/',
-        'SEF_URL_TEMPLATES' => [
-            'news' => '',
-            'section' => '',
-            'detail' => '#ELEMENT_CODE#/',
-        ],
-        'AJAX_MODE' => 'N',
-        'AJAX_OPTION_JUMP' => 'N',
-        'AJAX_OPTION_STYLE' => 'Y',
-        'AJAX_OPTION_HISTORY' => 'N',
-        'CACHE_TYPE' => 'A',
-        'CACHE_TIME' => '3600',
-        'CACHE_FILTER' => 'N',
-        'CACHE_GROUPS' => 'Y',
-        'SET_LAST_MODIFIED' => 'N',
-        'SET_TITLE' => 'Y',
-        'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
-        'ADD_SECTIONS_CHAIN' => 'N',
-        'ADD_ELEMENT_CHAIN' => 'N',
-        'USE_PERMISSIONS' => 'N',
-        'STRICT_SECTION_CHECK' => 'N',
-        'PREVIEW_TRUNCATE_LEN' => '',
-        'LIST_ACTIVE_DATE_FORMAT' => 'j F Y',
-        'LIST_FIELD_CODE' => ['NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'DETAIL_PICTURE', 'DETAIL_PAGE_URL'],
-        'LIST_PROPERTY_CODE' => ['CATEGORY', 'TYPE'],
-        'HIDE_LINK_WHEN_NO_DETAIL' => 'N',
-        'DISPLAY_NAME' => 'Y',
-        'META_KEYWORDS' => '-',
-        'META_DESCRIPTION' => '-',
-        'BROWSER_TITLE' => '-',
-        'DETAIL_SET_CANONICAL_URL' => 'N',
-        'DETAIL_ACTIVE_DATE_FORMAT' => 'j F Y',
-        'DETAIL_FIELD_CODE' => ['NAME', 'PREVIEW_TEXT', 'DETAIL_TEXT', 'PREVIEW_PICTURE', 'DETAIL_PICTURE', 'DATE_ACTIVE_FROM'],
-        'DETAIL_PROPERTY_CODE' => [''],
-        'DETAIL_DISPLAY_TOP_PAGER' => 'N',
-        'DETAIL_DISPLAY_BOTTOM_PAGER' => 'N',
-        'DETAIL_PAGER_TITLE' => 'Страница',
-        'DETAIL_PAGER_TEMPLATE' => '',
-        'DETAIL_PAGER_SHOW_ALL' => 'N',
-        'PAGER_TEMPLATE' => '.default',
-        'DISPLAY_TOP_PAGER' => 'N',
-        'DISPLAY_BOTTOM_PAGER' => 'Y',
-        'PAGER_TITLE' => 'Проекты',
-        'PAGER_SHOW_ALWAYS' => 'N',
-        'PAGER_DESC_NUMBERING' => 'N',
-        'PAGER_DESC_NUMBERING_CACHE_TIME' => '36000',
-        'PAGER_SHOW_ALL' => 'N',
-        'PAGER_BASE_LINK_ENABLE' => 'N',
-        'SET_STATUS_404' => 'Y',
-        'SHOW_404' => 'Y',
-        'MESSAGE_404' => '',
-        'SECTION_TITLE' => 'Проекты',
-    ],
-    false
-);
+<section class="hero-secondary hero-secondary--projects">
+    <div class="hero-secondary__bg">
+        <img src="/assets/images/about-hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
+    </div>
+    <div class="hero-secondary__content">
+        <h1 class="hero-secondary__title">Проекты</h1>
+        <p class="hero-secondary__subtitle">Образовательные, концертные и региональные инициативы Академии — от резиденций для молодых музыкантов до лаборатории свободного творчества</p>
+    </div>
+</section>
 
-require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php';
+<section class="projects-page">
+    <div class="section__container">
+        <div class="projects-page__grid">
+
+            <article class="project-tile">
+                <a href="/projects/zvezdy-vva/" class="project-tile__link">
+                    <div class="project-tile__image">
+                        <img src="/assets/images/project1.jpg" alt="Звёзды Всероссийской виолончельной академии" loading="lazy">
+                    </div>
+                    <div class="project-tile__content">
+                        <h2 class="project-tile__title">Звёзды Всероссийской виолончельной академии</h2>
+                        <p class="project-tile__category">Концертный цикл</p>
+                        <p class="project-tile__desc">Серия концертов с участием ведущих виолончелистов и молодых талантов.</p>
+                        <span class="project-tile__more">Подробнее</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-tile">
+                <a href="/projects/v-regionah/" class="project-tile__link">
+                    <div class="project-tile__image">
+                        <img src="/assets/images/about-space.jpg" alt="Всероссийская виолончельная академия в регионах" loading="lazy">
+                    </div>
+                    <div class="project-tile__content">
+                        <h2 class="project-tile__title">Всероссийская виолончельная академия в регионах</h2>
+                        <p class="project-tile__category">Региональная программа</p>
+                        <p class="project-tile__desc">Гастроли, мастер-классы и образовательные проекты в городах России.</p>
+                        <span class="project-tile__more">Подробнее</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-tile">
+                <a href="/projects/mezhdunarodnye-obmeny/" class="project-tile__link">
+                    <div class="project-tile__image">
+                        <img src="/assets/images/project2.jpg" alt="Международные обмены" loading="lazy">
+                    </div>
+                    <div class="project-tile__content">
+                        <h2 class="project-tile__title">Международные обмены</h2>
+                        <p class="project-tile__category">Международный проект</p>
+                        <p class="project-tile__desc">Партнёрства с зарубежными школами и совместные резиденции.</p>
+                        <span class="project-tile__more">Подробнее</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-tile">
+                <a href="/projects/letniy-festival/" class="project-tile__link">
+                    <div class="project-tile__image">
+                        <img src="/assets/images/project3.jpg" alt="Летний виолончельный фестиваль" loading="lazy">
+                    </div>
+                    <div class="project-tile__content">
+                        <h2 class="project-tile__title">Летний виолончельный фестиваль</h2>
+                        <p class="project-tile__category">Фестиваль</p>
+                        <p class="project-tile__desc">Концерты, резиденция и завершающий гала-вечер.</p>
+                        <span class="project-tile__more">Подробнее</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-tile">
+                <a href="/projects/novaya-shkola/" class="project-tile__link">
+                    <div class="project-tile__image">
+                        <img src="/assets/images/about-ensemble.jpg" alt="Новая школа" loading="lazy">
+                    </div>
+                    <div class="project-tile__content">
+                        <h2 class="project-tile__title">Новая школа</h2>
+                        <p class="project-tile__category">Образовательная программа</p>
+                        <p class="project-tile__desc">Современный образовательный подход для юных виолончелистов.</p>
+                        <span class="project-tile__more">Подробнее</span>
+                    </div>
+                </a>
+            </article>
+
+            <article class="project-tile">
+                <a href="/projects/secret-room/" class="project-tile__link">
+                    <div class="project-tile__image">
+                        <img src="/assets/images/academy_people.jpg" alt="Secret Room" loading="lazy">
+                    </div>
+                    <div class="project-tile__content">
+                        <h2 class="project-tile__title">Secret Room</h2>
+                        <p class="project-tile__category">Камерный формат</p>
+                        <p class="project-tile__desc">Закрытые концерты в нестандартных пространствах.</p>
+                        <span class="project-tile__more">Подробнее</span>
+                    </div>
+                </a>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<section class="projects-banner">
+    <div class="section__container">
+        <div class="projects-banner__inner">
+            <div class="projects-banner__text">
+                <p class="projects-banner__label">Лаборатория свободного творчества</p>
+                <h2 class="projects-banner__title">VIVACELLO</h2>
+            </div>
+            <div class="projects-banner__line" aria-hidden="true"></div>
+            <a href="/projects/vivacello/" class="projects-banner__link">Подробнее</a>
+        </div>
+    </div>
+</section>
+
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'; ?>
