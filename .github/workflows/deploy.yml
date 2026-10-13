@@ -26,24 +26,11 @@ jobs:
             HAD_CHANGES=0
 
             if [ -n "$CHANGES" ]; then
-              echo "Найдены изменения, прячем в stash..."
-              echo "$CHANGES"
-              git stash push -u -m "auto-stash before deploy $(date +%Y-%m-%d_%H:%M)"
               HAD_CHANGES=1
-            else
-              echo "Рабочая директория чистая"
             fi
 
-            echo "=== Выполняем reset ==="
-            git reset --hard origin/main
-
             if [ "$HAD_CHANGES" = "1" ]; then
-              echo "Возвращаем спрятанные файлы..."
-              if git stash pop; then
-                STATUS_MSG="✅ Деплой успешен, но на сервере есть новые/изменённые файлы (вернуты из stash)"
-              else
-                STATUS_MSG="⚠️ Деплой успешен, но при возврате stash возникли конфликты. Проверьте сервер!"
-              fi
+                STATUS_MSG="❗️ Деплой остановлен. На сервере есть новые/изменённые файлы"
             else
               STATUS_MSG="✅ Деплой успешен."
             fi
