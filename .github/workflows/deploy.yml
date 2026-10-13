@@ -32,6 +32,9 @@ jobs:
             if [ "$HAD_CHANGES" = "1" ]; then
                 STATUS_MSG="❗️ Деплой остановлен. На сервере есть новые/изменённые файлы"
             else
+              # Сбрасываем HEAD
+              git reset --hard HEAD
+            
               STATUS_MSG="✅ Деплой успешен."
             fi
 
