@@ -24,7 +24,6 @@
   padding: 0.65rem 1rem;
   border: 1px solid #981B2F;
   border-radius: 2px 2px 2px 0;
-  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 50%, calc(100% - 14px) 100%, 0 100%);
   background: #fff;
 }
 
