@@ -19,9 +19,6 @@ jobs:
             set -e
             cd ${{ secrets.DEPLOY_PATH }}
 
-            echo "=== Проверка состояния ==="
-            git fetch origin main
-
             CHANGES=$(git status --porcelain)
             HAD_CHANGES=0
 
@@ -32,8 +29,8 @@ jobs:
             if [ "$HAD_CHANGES" = "1" ]; then
                 STATUS_MSG="❗️ Деплой остановлен. На сервере есть новые/изменённые файлы"
             else
-              # Жёстко приводим к состоянию main (удаляет локальные правки)
-              git reset --hard origin/main
+              echo "=== Обновляем ветку ==="
+              git pull origin main
             
               STATUS_MSG="✅ Деплой успешен."
             fi
