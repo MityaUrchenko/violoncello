@@ -90,7 +90,7 @@ $APPLICATION->SetPageProperty('title', 'Сообщество — Всеросс�
         <path d="M0 20.2858C104.542 13.1045 368.701 -0.827229 589.004 0.896286C864.382 3.05068 1124.46 26.75 1407.49 26.75C1633.91 26.75 1843.51 9.51419 1920 0.896286"
               stroke="#981B2F" stroke-width="1.5"></path>
     </svg>
-    <div class="section_container">
+    <div class="section__container">
         <div class="community-page__grid">
             <article class="community-card">
                 <a href="/community/ramm/" class="community-card__link">
