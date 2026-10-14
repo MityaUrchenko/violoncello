@@ -15,7 +15,7 @@ $APPLICATION->SetPageProperty('title', 'Всероссийская виолон�
             Поддерживаем профессиональное сообщество и развиваем культуру
             виолончельного искусства в России.</p>
         <div class="hero__buttons">
-            <a href="<?= SITE_DIR ?>events/" class="btn btn--primary">Ближайшие события</a>
+            <a href="<?= SITE_DIR ?>afisha/" class="btn btn--primary">Ближайшие события</a>
             <a href="<?= SITE_DIR ?>academy/" class="btn btn--outline">Об Академии</a>
         </div>
     </div>
@@ -62,7 +62,7 @@ $APPLICATION->IncludeComponent(
         'DISPLAY_TOP_PAGER' => 'N',
         'DISPLAY_BOTTOM_PAGER' => 'N',
         'SECTION_TITLE' => 'Ближайшие события',
-        'SECTION_LINK' => SITE_DIR . 'events/',
+        'SECTION_LINK' => SITE_DIR . 'afisha/',
         'SECTION_LINK_TEXT' => 'Смотреть все события',
     ],
     false
