@@ -2,192 +2,115 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
 $APPLICATION->SetTitle('Сообщество');
 $APPLICATION->SetPageProperty('title', 'Сообщество — Всероссийская виолончельная академия');
+
+global $arrFilterCommunity;
+$arrFilterCommunity = [];
+
+$q = isset($_GET['q']) ? trim((string)$_GET['q']) : '';
+$category = isset($_GET['category']) ? trim((string)$_GET['category']) : '';
+$country = isset($_GET['country']) ? trim((string)$_GET['country']) : '';
+$city = isset($_GET['city']) ? trim((string)$_GET['city']) : '';
+$spec = isset($_GET['spec']) ? trim((string)$_GET['spec']) : '';
+$project = isset($_GET['project']) ? trim((string)$_GET['project']) : '';
+
+if ($q !== '') {
+    $arrFilterCommunity['%NAME'] = $q;
+}
+
+$propFilter = [
+    'CATEGORY' => $category,
+    'COUNTRY' => $country,
+    'CITY' => $city,
+    'SPECIALIZATION' => $spec,
+    'PROJECT' => $project,
+];
+foreach ($propFilter as $code => $value) {
+    if ($value === '') {
+        continue;
+    }
+    $arrFilterCommunity[] = [
+        'LOGIC' => 'OR',
+        ['PROPERTY_' . $code => $value],
+        ['PROPERTY_' . $code . '_VALUE' => $value],
+    ];
+}
 ?>
 <link rel="stylesheet" href="/local/templates/main/css/community-page.css">
 
-<section class="hero-secondary hero-secondary--community">
-    <div class="hero-secondary__bg">
-        <img src="/assets/images/academy_people.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
-    </div>
-    <div class="hero-secondary__content">
-        <h1 class="hero-secondary__title">Сообщество</h1>
-        <p class="hero-secondary__subtitle">Педагоги, студенты, выпускники и приглашённые артисты Академии.</p>
-    </div>
-</section>
+<?php
+$APPLICATION->IncludeComponent(
+    'bitrix:news',
+    'community',
+    [
+        'IBLOCK_TYPE' => 'content',
+        'IBLOCK_ID' => '4',
+        'NEWS_COUNT' => '8',
+        'USE_SEARCH' => 'N',
+        'USE_RSS' => 'N',
+        'USE_RATING' => 'N',
+        'USE_CATEGORIES' => 'N',
+        'USE_REVIEW' => 'N',
+        'USE_FILTER' => 'N',
+        'SORT_BY1' => 'SORT',
+        'SORT_ORDER1' => 'ASC',
+        'SORT_BY2' => 'NAME',
+        'SORT_ORDER2' => 'ASC',
+        'CHECK_DATES' => 'Y',
+        'SEF_MODE' => 'Y',
+        'SEF_FOLDER' => '/community/',
+        'SEF_URL_TEMPLATES' => [
+            'news' => '',
+            'section' => '',
+            'detail' => '#ELEMENT_CODE#/',
+        ],
+        'AJAX_MODE' => 'N',
+        'AJAX_OPTION_JUMP' => 'N',
+        'AJAX_OPTION_STYLE' => 'Y',
+        'AJAX_OPTION_HISTORY' => 'N',
+        'CACHE_TYPE' => 'A',
+        'CACHE_TIME' => '3600',
+        'CACHE_FILTER' => 'Y',
+        'CACHE_GROUPS' => 'Y',
+        'FILTER_NAME' => 'arrFilterCommunity',
+        'SET_LAST_MODIFIED' => 'N',
+        'SET_TITLE' => 'N',
+        'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
+        'ADD_SECTIONS_CHAIN' => 'N',
+        'ADD_ELEMENT_CHAIN' => 'N',
+        'USE_PERMISSIONS' => 'N',
+        'STRICT_SECTION_CHECK' => 'N',
+        'PREVIEW_TRUNCATE_LEN' => '',
+        'LIST_ACTIVE_DATE_FORMAT' => 'j F Y',
+        'LIST_FIELD_CODE' => ['NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'DETAIL_PICTURE', 'DETAIL_PAGE_URL'],
+        'LIST_PROPERTY_CODE' => ['CATEGORY', 'COUNTRY', 'CITY', 'SPECIALIZATION', 'PROJECT'],
+        'HIDE_LINK_WHEN_NO_DETAIL' => 'N',
+        'DISPLAY_NAME' => 'Y',
+        'META_KEYWORDS' => '-',
+        'META_DESCRIPTION' => '-',
+        'BROWSER_TITLE' => '-',
+        'DETAIL_SET_CANONICAL_URL' => 'N',
+        'DETAIL_ACTIVE_DATE_FORMAT' => 'j F Y',
+        'DETAIL_FIELD_CODE' => ['NAME', 'PREVIEW_TEXT', 'DETAIL_TEXT', 'PREVIEW_PICTURE', 'DETAIL_PICTURE'],
+        'DETAIL_PROPERTY_CODE' => ['CATEGORY', 'COUNTRY', 'CITY', 'SPECIALIZATION', 'PROJECT'],
+        'DETAIL_DISPLAY_TOP_PAGER' => 'N',
+        'DETAIL_DISPLAY_BOTTOM_PAGER' => 'N',
+        'DETAIL_PAGER_TITLE' => 'Страница',
+        'DETAIL_PAGER_TEMPLATE' => '',
+        'DETAIL_PAGER_SHOW_ALL' => 'N',
+        'PAGER_TEMPLATE' => '.default',
+        'DISPLAY_TOP_PAGER' => 'N',
+        'DISPLAY_BOTTOM_PAGER' => 'Y',
+        'PAGER_TITLE' => 'Сообщество',
+        'PAGER_SHOW_ALWAYS' => 'N',
+        'PAGER_DESC_NUMBERING' => 'N',
+        'PAGER_DESC_NUMBERING_CACHE_TIME' => '36000',
+        'PAGER_SHOW_ALL' => 'N',
+        'PAGER_BASE_LINK_ENABLE' => 'N',
+        'SET_STATUS_404' => 'Y',
+        'SHOW_404' => 'Y',
+        'MESSAGE_404' => '',
+    ],
+    false
+);
 
-<section class="community-page">
-    <div class="section__container">
-
-        <form class="filter-block" action="/community/" method="get">
-            <div class="filter-block__search">
-                <label class="filter-block__search-label" for="community-search">
-                    <span class="filter-block__search-icon" aria-hidden="true">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                        </svg>
-                    </span>
-                    <input
-                            type="search"
-                            id="community-search"
-                            name="q"
-                            class="filter-block__search-input"
-                            placeholder="Поиск по имени"
-                            autocomplete="off"
-                    >
-                </label>
-            </div>
-
-            <div class="filter-block__roles">
-                <a href="/community/" class="btn btn--primary">Все роли</a>
-                <a href="/community/?role=teachers" class="btn btn--outline">Педагоги</a>
-                <a href="/community/?role=students" class="btn btn--outline">Студенты</a>
-                <a href="/community/?role=alumni" class="btn btn--outline">Выпускники</a>
-                <a href="/community/?role=artists" class="btn btn--outline">Приглашённые артисты</a>
-                <a href="/community/?role=conductors" class="btn btn--outline">Дирижёры</a>
-            </div>
-
-            <div class="filter-block__row">
-                <div class="filter-block__dropdowns">
-                    <label class="filter-block__dropdown">
-                        <span class="filter-block__dropdown-label">Страна</span>
-                        <select name="country" class="filter-block__select">
-                            <option value="">Страна</option>
-                            <option value="ru">Россия</option>
-                            <option value="other">Другие</option>
-                        </select>
-                    </label>
-                    <label class="filter-block__dropdown">
-                        <span class="filter-block__dropdown-label">Город</span>
-                        <select name="city" class="filter-block__select">
-                            <option value="">Город</option>
-                            <option value="moscow">Москва</option>
-                            <option value="spb">Санкт-Петербург</option>
-                        </select>
-                    </label>
-                    <label class="filter-block__dropdown">
-                        <span class="filter-block__dropdown-label">Специализация</span>
-                        <select name="spec" class="filter-block__select">
-                            <option value="">Специализация</option>
-                            <option value="cello">Виолончель</option>
-                            <option value="ensemble">Ансамбль</option>
-                        </select>
-                    </label>
-                    <label class="filter-block__dropdown">
-                        <span class="filter-block__dropdown-label">Проект</span>
-                        <select name="project" class="filter-block__select">
-                            <option value="">Проект</option>
-                            <option value="vva">ВВА</option>
-                            <option value="stars">Звёзды ВВА</option>
-                        </select>
-                    </label>
-                </div>
-                <a href="/community/" class="filter-block__reset">Сбросить фильтры</a>
-            </div>
-        </form>
-    </div>
-    <svg width="100%" height="" viewBox="0 0 1920 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 20.2858C104.542 13.1045 368.701 -0.827229 589.004 0.896286C864.382 3.05068 1124.46 26.75 1407.49 26.75C1633.91 26.75 1843.51 9.51419 1920 0.896286"
-              stroke="#981B2F" stroke-width="1.5"></path>
-    </svg>
-    <div class="section__container">
-        <div class="community-page__grid">
-            <article class="community-card">
-                <a href="/community/ramm/" class="community-card__link">
-                    <div class="community-card__photo">
-                        <img src="/assets/images/academy-ushakova.jpg" alt="А. Рамм" loading="lazy">
-                    </div>
-                    <h2 class="community-card__name">А. Рамм <span class="community-card__arrow"
-                                                                   aria-hidden="true">↗</span></h2>
-                    <p class="community-card__meta">Педагог · Виолончель</p>
-                </a>
-            </article>
-
-            <article class="community-card">
-                <a href="/community/markevich/" class="community-card__link">
-                    <div class="community-card__photo">
-                        <img src="/assets/images/academy-markevich.jpg" alt="А. Маркевич" loading="lazy">
-                    </div>
-                    <h2 class="community-card__name">А. Маркевич <span class="community-card__arrow" aria-hidden="true">↗</span>
-                    </h2>
-                    <p class="community-card__meta">Педагог · Виолончель</p>
-                </a>
-            </article>
-
-            <article class="community-card">
-                <a href="/community/andrianov/" class="community-card__link">
-                    <div class="community-card__photo">
-                        <img src="/assets/images/academy-andrianov.jpg" alt="Б. Андрианов" loading="lazy">
-                    </div>
-                    <h2 class="community-card__name">Б. Андрианов <span class="community-card__arrow"
-                                                                        aria-hidden="true">↗</span></h2>
-                    <p class="community-card__meta">Педагог · Ансамбль</p>
-                </a>
-            </article>
-
-            <article class="community-card">
-                <a href="/community/evlanov/" class="community-card__link">
-                    <div class="community-card__photo">
-                        <img src="/assets/images/academy-evlanov.jpg" alt="Т. Евланов" loading="lazy">
-                    </div>
-                    <h2 class="community-card__name">Т. Евланов <span class="community-card__arrow"
-                                                                      aria-hidden="true">↗</span></h2>
-                    <p class="community-card__meta">Дирижёр</p>
-                </a>
-            </article>
-
-            <article class="community-card">
-                <a href="/community/markevich-2/" class="community-card__link">
-                    <div class="community-card__photo">
-                        <img src="/assets/images/person1.jpg" alt="А. Маркевич" loading="lazy">
-                    </div>
-                    <h2 class="community-card__name">А. Маркевич <span class="community-card__arrow" aria-hidden="true">↗</span>
-                    </h2>
-                    <p class="community-card__meta">Выпускник · Москва</p>
-                </a>
-            </article>
-
-            <article class="community-card">
-                <a href="/community/andrianov-2/" class="community-card__link">
-                    <div class="community-card__photo">
-                        <img src="/assets/images/person2.jpg" alt="Б. Андрианов" loading="lazy">
-                    </div>
-                    <h2 class="community-card__name">Б. Андрианов <span class="community-card__arrow"
-                                                                        aria-hidden="true">↗</span></h2>
-                    <p class="community-card__meta">Студент · Москва</p>
-                </a>
-            </article>
-
-            <article class="community-card">
-                <a href="/community/evlanov-2/" class="community-card__link">
-                    <div class="community-card__photo">
-                        <img src="/assets/images/person3.jpg" alt="Т. Евланов" loading="lazy">
-                    </div>
-                    <h2 class="community-card__name">Т. Евланов <span class="community-card__arrow"
-                                                                      aria-hidden="true">↗</span></h2>
-                    <p class="community-card__meta">Студент · Москва</p>
-                </a>
-            </article>
-
-            <article class="community-card">
-                <a href="/community/ramm-2/" class="community-card__link">
-                    <div class="community-card__photo">
-                        <img src="/assets/images/person4.jpg" alt="А. Рамм" loading="lazy">
-                    </div>
-                    <h2 class="community-card__name">А. Рамм <span class="community-card__arrow"
-                                                                   aria-hidden="true">↗</span></h2>
-                    <p class="community-card__meta">Выпускник · Москва</p>
-                </a>
-            </article>
-        </div>
-
-        <nav class="community-pagination" aria-label="Страницы">
-            <a href="/community/?page=1" class="community-pagination__item community-pagination__item--active">1</a>
-            <a href="/community/?page=2" class="community-pagination__item">2</a>
-            <a href="/community/?page=3" class="community-pagination__item">3</a>
-        </nav>
-
-    </div>
-</section>
-
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'; ?>
+require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php';

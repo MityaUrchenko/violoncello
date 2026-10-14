@@ -266,3 +266,63 @@
     height: 10rem;
   }
 }
+
+
+.community-page__empty {
+  margin: 2rem 0 3rem;
+  color: #666;
+}
+
+.community-detail {
+  padding: 3rem 0 4rem;
+  background: #fff;
+}
+
+.community-detail__back {
+  margin: 0 0 1.5rem;
+}
+
+.community-detail__back a {
+  color: #981B2F;
+  border-bottom: 1px solid #981B2F;
+}
+
+.community-detail__grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.community-detail__media img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.community-detail__title {
+  font-family: 'Cormorant Unicase', serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+.community-detail__meta {
+  margin: 0 0 1.25rem;
+  color: #666;
+}
+
+.community-detail__text {
+  line-height: 1.65;
+}
+
+.community-detail__text p + p {
+  margin-top: 1rem;
+}
+
+@media (max-width: 767px) {
+  .community-detail__grid {
+    grid-template-columns: 1fr;
+  }
+}
