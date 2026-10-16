@@ -2,10 +2,10 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
 $APPLICATION->SetTitle('Виолончельная академия и VIVACELLO');
 $APPLICATION->SetPageProperty('title', 'Виолончельная академия и VIVACELLO — Проекты');
-$img = '/projects/vivacello/images';
+$img = '/projects/violonchelnaya-akademiya-i-vivacello/images';
 ?>
 <link rel="stylesheet" href="/local/templates/main/template_styles.css">
-<link rel="stylesheet" href="/projects/vivacello/style.css">
+<link rel="stylesheet" href="/projects/violonchelnaya-akademiya-i-vivacello/style.css">
 
 <section class="hero-secondary viva-hero">
     <div class="hero-secondary__bg">
