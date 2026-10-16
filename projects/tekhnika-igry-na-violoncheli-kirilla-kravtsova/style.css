@@ -1,0 +1,297 @@
+.tech-hero .hero-secondary__title {
+  max-width: 18ch;
+  margin-bottom: 0.85rem;
+}
+
+.tech-hero .hero-secondary__subtitle {
+  max-width: 34rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.tech-intro,
+.tech-lessons,
+.tech-watch {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+.tech-intro__grid,
+.tech-author__grid,
+.tech-follow__grid,
+.tech-lessons__grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.tech-intro__grid,
+.tech-follow__grid {
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.tech-intro p,
+.tech-author p,
+.tech-who__note {
+  margin: 0 0 1rem;
+  line-height: 1.65;
+}
+
+.tech-focus__title {
+  margin: 0 0 0.8rem;
+  color: #981B2F;
+  font-family: 'Cormorant Unicase', serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.tech-tags span,
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #981B2F;
+  color: #981B2F;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.tech-chip {
+  margin: 0 0.55rem 0.55rem 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+}
+
+.tech-muted,
+.tech-follow__label,
+.tech-author__label,
+.tech-manager__label {
+  margin: 0.9rem 0 0;
+  color: #888;
+  font-size: 0.92rem;
+}
+
+.tech-who,
+.tech-follow {
+  padding: 3.5rem 0;
+  background: #f8eef0;
+}
+
+.tech-who__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.25rem 0 1.25rem;
+}
+
+.tech-who__grid article {
+  background: #fff;
+  padding: 1.2rem 1.2rem 1.4rem;
+  min-height: 7rem;
+}
+
+.tech-who__num {
+  margin: 0 0 0.7rem;
+  color: #981B2F;
+  font-family: 'Cormorant Unicase', serif;
+  font-size: 1.4rem;
+}
+
+.tech-who__note {
+  margin-bottom: 0;
+}
+
+.tech-lessons__grid {
+  grid-template-columns: 1.6fr 1fr;
+  margin-bottom: 1.5rem;
+}
+
+.tech-lesson__media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 0.55rem;
+}
+
+.tech-lesson--main .tech-lesson__media {
+  aspect-ratio: 16 / 10;
+}
+
+.tech-lessons__side {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.tech-lessons__side .tech-lesson {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.tech-lessons__side .tech-lesson__media {
+  margin: 0;
+  aspect-ratio: 16 / 10;
+}
+
+.tech-lesson__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tech-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.tech-play::after {
+  content: '';
+  position: absolute;
+  left: 0.9rem;
+  top: 0.6rem;
+  border-style: solid;
+  border-width: 0.45rem 0 0.45rem 0.7rem;
+  border-color: transparent transparent transparent #fff;
+}
+
+.tech-lesson__caption {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.tech-lesson__caption span {
+  display: block;
+  color: #981B2F;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tech-watch__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  margin-top: 1.25rem;
+}
+
+.tech-watch__grid a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  border: 1px solid #1a1a1a;
+  color: inherit;
+  text-decoration: none;
+}
+
+.tech-author {
+  padding: 4rem 0;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.tech-author__grid {
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: center;
+}
+
+.tech-author__grid img {
+  width: 100%;
+  max-height: 28rem;
+  object-fit: cover;
+}
+
+.tech-author__label {
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.tech-author p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.tech-author__bio {
+  max-width: 28rem;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.tech-manager {
+  background: #fff;
+  padding: 1.25rem 1.4rem 1.4rem;
+}
+
+.tech-manager__label {
+  color: #888;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tech-manager__row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tech-manager__avatar {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: #f3dfe3;
+  flex-shrink: 0;
+}
+
+.tech-manager__name {
+  color: #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.tech-manager__role {
+  margin: 0.35rem 0 0.8rem 5.5rem;
+  color: #981B2F;
+}
+
+@media (max-width: 991px) {
+  .tech-intro__grid,
+  .tech-follow__grid,
+  .tech-author__grid,
+  .tech-lessons__grid,
+  .tech-who__grid,
+  .tech-watch__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .tech-intro__grid,
+  .tech-follow__grid,
+  .tech-author__grid,
+  .tech-lessons__grid,
+  .tech-who__grid,
+  .tech-watch__grid,
+  .tech-lessons__side .tech-lesson {
+    grid-template-columns: 1fr;
+  }
+}
