@@ -3,10 +3,10 @@ require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
 $APPLICATION->SetTitle('Новая школа');
 $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты');
 ?>
-<link rel="stylesheet" href="/local/templates/main/te">
+<link rel="stylesheet" href="/local/templates/main/template_styles.css">
 <link rel="stylesheet" href="/projects/novaya-shkola/style.css">
 
-<section class="hero-secondary hero-secondary--community">
+<section class="hero-secondary">
     <div class="hero-secondary__bg">
         <img src="/projects/novaya-shkola/images/hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
     </div>

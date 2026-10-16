@@ -4,6 +4,7 @@ $APPLICATION->SetTitle('Виолончельная академия в реги�
 $APPLICATION->SetPageProperty('title', 'Виолончельная академия в регионах России — Проекты');
 $img = '/projects/vserossiyskaya-violonchelnaya-akademiya-v-regionakh/images';
 ?>
+<link rel="stylesheet" href="/local/templates/main/template_styles.css">
 <link rel="stylesheet" href="/projects/vserossiyskaya-violonchelnaya-akademiya-v-regionakh/style.css">
 
 <section class="hero-secondary reg-hero">
@@ -11,7 +12,7 @@ $img = '/projects/vserossiyskaya-violonchelnaya-akademiya-v-regionakh/images';
         <img src="<?= $img ?>/hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
     </div>
     <div class="hero-secondary__content">
-        <p class="reg-hero__kind">Концертно-образовательный проект</p>
+        <p class="hero-secondary__breadcrumb">Концертно-образовательный проект</p>
         <h1 class="hero-secondary__title">Виолончельная академия<br>в регионах России</h1>
         <p class="hero-secondary__subtitle">Мастер-классы, лекции и концерты с приглашёнными педагогами — в вашем городе.</p>
         <a href="#organize" class="btn btn--primary">Организовать мероприятие</a>
