@@ -6,7 +6,7 @@ $this->setFrameMode(true);
 ?>
 <section class="hero-secondary hero-secondary--projects">
     <div class="hero-secondary__bg">
-        <img src="/assets/images/academy-hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
+        <img src="/assets/images/about-hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
     </div>
     <div class="hero-secondary__content">
         <h1 class="hero-secondary__title">Проекты</h1>
