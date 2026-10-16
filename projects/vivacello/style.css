@@ -1,0 +1,363 @@
+.viva-hero .hero-secondary__title {
+  max-width: 16ch;
+  margin-bottom: 0.85rem;
+}
+
+.viva-hero .hero-secondary__subtitle {
+  max-width: 32rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.viva-intro,
+.viva-lab,
+.viva-media {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+.viva-intro__grid,
+.viva-fest__grid,
+.viva-lab__grid,
+.viva-lists,
+.viva-roles,
+.viva-film__grid,
+.viva-master,
+.viva-dates,
+.viva-follow__grid {
+  display: grid;
+  gap: 2rem;
+  align-items: start;
+}
+
+.viva-intro__grid,
+.viva-lab__grid,
+.viva-lists,
+.viva-roles,
+.viva-film__grid,
+.viva-master,
+.viva-dates,
+.viva-follow__grid {
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+.viva-lead {
+  font-size: 1.2rem;
+  line-height: 1.45;
+  margin: 0 0 1.25rem;
+}
+
+.viva-intro p,
+.viva-fest p,
+.viva-lab p,
+.viva-film p,
+.viva-media p,
+.viva-open p {
+  margin: 0 0 1rem;
+  line-height: 1.65;
+}
+
+.viva-years {
+  display: grid;
+  gap: 1rem;
+}
+
+.viva-years article {
+  background: #7a1a2a;
+  color: #fff;
+  padding: 1.4rem 1.25rem 1.2rem;
+}
+
+.viva-years__num {
+  margin: 0;
+  font-family: 'Cormorant Unicase', serif;
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.viva-years article p:last-child {
+  margin: 0.7rem 0 0;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.viva-fest,
+.viva-open {
+  padding: 4rem 0;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.viva-fest__label,
+.viva-date,
+.viva-muted,
+.viva-manager__label {
+  margin: 0 0 0.75rem;
+  color: #981B2F;
+  font-size: 0.92rem;
+}
+
+.viva-fest__label,
+.viva-manager__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.viva-fest__logo {
+  width: 100%;
+  max-width: 16rem;
+  background: #fff;
+  object-fit: contain;
+}
+
+.viva-fest .btn {
+  margin-top: 0.5rem;
+}
+
+.viva-note {
+  background: #f8eef0;
+  padding: 1.3rem 1.4rem;
+}
+
+.viva-note h3,
+.viva-lists h3,
+.viva-note__title,
+.viva-dates__day {
+  margin: 0 0 0.5rem;
+  color: #981B2F;
+  font-family: 'Cormorant Unicase', serif;
+  font-weight: 500;
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+
+.viva-note p:last-child {
+  margin-bottom: 0;
+}
+
+.viva-lists {
+  margin-top: 2rem;
+}
+
+.viva-lists h3 {
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid #1a1a1a;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+}
+
+.viva-lists ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.viva-lists li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.viva-roles {
+  margin-top: 1.5rem;
+}
+
+.viva-film,
+.viva-follow {
+  padding: 3.5rem 0;
+  background: #f8eef0;
+}
+
+.viva-film__media,
+.viva-videos__media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.viva-film__media {
+  aspect-ratio: 16 / 10;
+}
+
+.viva-film__media img,
+.viva-videos__media img,
+.viva-photos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.viva-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.viva-play::after {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0.7rem;
+  border-style: solid;
+  border-width: 0.5rem 0 0.5rem 0.75rem;
+  border-color: transparent transparent transparent #fff;
+}
+
+.viva-videos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.viva-videos__media {
+  aspect-ratio: 16 / 10;
+  margin-bottom: 0.55rem;
+}
+
+.viva-videos__caption {
+  margin: 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.viva-videos__caption span {
+  display: block;
+  color: #888;
+  font-size: 0.68rem;
+}
+
+.viva-photos {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.viva-photos--top {
+  grid-template-columns: 1.6fr 1fr 1fr;
+}
+
+.viva-photos--bottom {
+  grid-template-columns: 1.15fr 0.85fr 1.5fr;
+  margin-bottom: 3rem;
+}
+
+.viva-photos img {
+  height: 14rem;
+}
+
+.viva-master {
+  margin-top: 1.25rem;
+}
+
+.viva-master__placeholder {
+  min-height: 12rem;
+  background: #d9d9d9;
+}
+
+.viva-dates {
+  margin-top: 2rem;
+}
+
+.viva-dates article {
+  border: 1px solid #e7c5cb;
+  padding: 1.4rem 1.4rem 1.2rem;
+}
+
+.viva-dates__city {
+  margin: 0 0 0.4rem;
+  color: #981B2F;
+}
+
+.viva-chip {
+  display: inline-flex;
+  margin: 0 0.6rem 0.6rem 0;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid #981B2F;
+  color: #981B2F;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+}
+
+.viva-manager {
+  background: #fff;
+  padding: 1.25rem 1.4rem 1.4rem;
+}
+
+.viva-manager__label {
+  color: #888;
+}
+
+.viva-manager__row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.viva-manager__avatar {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: #f3dfe3;
+  flex-shrink: 0;
+}
+
+.viva-manager__name {
+  color: #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.viva-manager__role {
+  margin: 0.35rem 0 0.8rem 5.5rem;
+  color: #981B2F;
+}
+
+@media (max-width: 991px) {
+  .viva-intro__grid,
+  .viva-lab__grid,
+  .viva-lists,
+  .viva-roles,
+  .viva-film__grid,
+  .viva-master,
+  .viva-dates,
+  .viva-follow__grid,
+  .viva-videos,
+  .viva-photos--top,
+  .viva-photos--bottom {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .viva-intro__grid,
+  .viva-fest__grid,
+  .viva-lab__grid,
+  .viva-lists,
+  .viva-roles,
+  .viva-film__grid,
+  .viva-master,
+  .viva-dates,
+  .viva-follow__grid,
+  .viva-videos,
+  .viva-photos--top,
+  .viva-photos--bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .viva-photos img {
+    height: 12rem;
+  }
+}
