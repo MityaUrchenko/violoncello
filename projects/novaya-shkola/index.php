@@ -15,9 +15,7 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
         <h1 class="hero-secondary__title">Новая школа</h1>
         <p class="hero-secondary__subtitle">Проект Виолончельной академии о новом поколении исполнителей и педагогов.
             Открытые мастер-классы музыкантов в возрасте от 20 до 35 лет.</p>
-        <div class="d-flex">
-            <a href="#" class="btn btn--primary">Перейти на сайт проекта</a>
-        </div>
+        <a href="#" class="btn btn--primary">Перейти на сайт проекта</a>
     </div>
 </section>
 
