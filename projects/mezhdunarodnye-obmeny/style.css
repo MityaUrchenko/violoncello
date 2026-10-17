@@ -56,11 +56,10 @@
 .intl-note h2,
 .intl-case__title,
 .intl-card h3 {
-  margin: 0 0 0.6rem;
-  font-family: 'Cormorant Unicase', serif;
+  margin: 0 0 0.5rem;
   font-weight: 500;
   color: #981B2F;
-  font-size: 1.7rem;
+  font-size: 2rem;
   line-height: 1.2;
 }
 

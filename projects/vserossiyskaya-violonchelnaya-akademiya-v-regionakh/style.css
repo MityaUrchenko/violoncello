@@ -63,7 +63,7 @@
 .reg-format h3,
 .reg-trip__title,
 .reg-prizes__cases h3 {
-  margin: 0 0 1rem;
+  margin: 0 0 .5rem;
   font-weight: 500;
   color: #981B2F;
   font-size: 2rem;

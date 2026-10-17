@@ -46,11 +46,10 @@
 .aud-note h2,
 .aud-cards h3,
 .aud-commission h3 {
-  margin: 0 0 0.5rem;
+  margin: 0 0 .5rem;
   color: #981B2F;
-  font-family: 'Cormorant Unicase', serif;
   font-weight: 500;
-  font-size: 1.55rem;
+  font-size: 2rem;
   line-height: 1.2;
 }
 
