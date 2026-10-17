@@ -25,7 +25,8 @@ jobs:
                 На сервере есть новые/изменённые файлы!"
             else
               echo "=== Обновляем ветку ==="
-              git pull origin main
+              git fetch
+              git reset --hard HEAD
             
               STATUS_MSG="✅ Деплой успешен."
             fi
