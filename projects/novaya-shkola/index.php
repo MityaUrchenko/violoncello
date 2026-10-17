@@ -172,7 +172,7 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
             <p class="ns-more__note">Ещё 10 педагогов · скрипка, альт, фортепиано, кларнет</p>
             <p class="ns-more__title">Остальных педагогов первого сезона <br>смотрите на сайте проекта</p>
         </div>
-        <a href="#" class="btn btn--primary">Все педагоги</a>
+        <a href="/community/" class="btn btn--primary">Все педагоги</a>
     </div>
 </section>
 
@@ -183,7 +183,7 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
                 <h2 class="section__title">Фотографии с мастер-классов первого сезона</h2>
                 <p class="ns-photos__place">Камерный зал Виолончельной академии</p>
             </div>
-            <a href="#" class="section__link">Смотреть все</a>
+            <a href="/mediacenter/photo/?year=2023&project=&event=7" class="section__link">Смотреть все</a>
         </div>
         <div class="ns-photos__grid">
             <a href="/projects/novaya-shkola/images/photo-main.jpg" data-fancybox="novaya-shkola-photos" data-caption="Фотографии с мастер-классов первого сезона">

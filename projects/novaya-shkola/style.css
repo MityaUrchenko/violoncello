@@ -28,7 +28,6 @@
   text-decoration: none;
   font-size: 0.78rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
   text-transform: uppercase;
   clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
 }
@@ -149,7 +148,6 @@
 .ns-video__caption {
   margin: 0;
   font-size: 0.8rem;
-  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.85);
 }
@@ -221,7 +219,6 @@
 .ns-more__note {
   margin: 0 0 0.4rem;
   font-size: 0.72rem;
-  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.55);
 }
@@ -326,7 +323,6 @@
 .ns-manager__label {
   margin: 0 0 0.9rem;
   font-size: 0.72rem;
-  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #888;
 }

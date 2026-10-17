@@ -201,7 +201,6 @@
   transform: translateX(-50%);
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.8125rem;
-  letter-spacing: 0.03em;
 }
 
 /* Последний кадр полосы — панорамой на всю ширину сетки:
