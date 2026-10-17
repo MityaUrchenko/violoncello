@@ -59,6 +59,7 @@ ul {
     font-weight: 500;
     font-size: clamp(1.75rem, 5vw, 4rem);
     color: #1a1a1a;
+    line-height: 1;
 }
 
 .section__title--light {
