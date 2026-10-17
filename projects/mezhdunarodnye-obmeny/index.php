@@ -40,7 +40,7 @@ $img = '/projects/mezhdunarodnye-obmeny/images';
         </aside>
     </div>
 </section>
-<section class="section__container my-5">
+<section class="section__container">
     <div class="academy-sections__grid">
         <div class="academy-section-card">
             <span class="academy-section-card__title">Италия</span>
