@@ -23,23 +23,23 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
     <div class="academy-sections__grid">
         <a href="#" class="academy-section-card">
             <span class="academy-section-card__title">20 — 35 лет</span>
-            <span class="academy-section-card__line"></span>
             <span class="about-directions__card-text">возраст педагогов</span>
+            <span class="academy-section-card__line"></span>
         </a>
         <a href="#" class="academy-section-card">
             <span class="academy-section-card__title">15</span>
-            <span class="academy-section-card__line"></span>
             <span class="about-directions__card-text">исполнителей и педагогов</span>
+            <span class="academy-section-card__line"></span>
         </a>
         <a href="#" class="academy-section-card">
             <span class="academy-section-card__title">5</span>
-            <span class="academy-section-card__line"></span>
             <span class="about-directions__card-text">специальностей</span>
+            <span class="academy-section-card__line"></span>
         </a>
         <a href="#" class="academy-section-card">
             <span class="academy-section-card__title">2025-2026</span>
-            <span class="academy-section-card__line"></span>
             <span class="about-directions__card-text">первый сезон</span>
+            <span class="academy-section-card__line"></span>
         </a>
     </div>
 </section>
