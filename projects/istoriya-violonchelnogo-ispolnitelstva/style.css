@@ -1,0 +1,300 @@
+.hist-hero .hero-secondary__title {
+  max-width: 18ch;
+  margin-bottom: 0.85rem;
+}
+
+.hist-hero .hero-secondary__subtitle {
+  max-width: 32rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hist-intro,
+.hist-lectures,
+.hist-photos {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+.hist-intro__grid,
+.hist-author__grid,
+.hist-follow__grid,
+.hist-lectures__grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.hist-intro__grid,
+.hist-follow__grid {
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.hist-lead {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  margin: 0 0 1.1rem;
+}
+
+.hist-intro p,
+.hist-who p,
+.hist-author p,
+.hist-follow p {
+  margin: 0 0 1rem;
+  line-height: 1.65;
+}
+
+.hist-seasons {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.hist-season {
+  padding: 1.15rem 1.2rem;
+  border: 1px solid #981B2F;
+  background: #fff;
+}
+
+.hist-season--done {
+  background: #f8eef0;
+  border-color: transparent;
+}
+
+.hist-season h2 {
+  margin: 0 0 0.25rem;
+  color: #981B2F;
+  font-family: 'Cormorant Unicase', serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.hist-season p,
+.hist-muted,
+.hist-follow__label,
+.hist-author__label,
+.hist-manager__label {
+  margin: 0;
+  color: #888;
+  font-size: 0.92rem;
+}
+
+.hist-who,
+.hist-follow {
+  padding: 3.5rem 0;
+  background: #f8eef0;
+}
+
+.hist-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.hist-tags span {
+  padding: 0.55rem 1rem;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.hist-tags__wide {
+  flex: 1 1 100%;
+  text-align: center;
+  color: #981B2F;
+  border-color: #e7c5cb;
+}
+
+.hist-lectures__grid {
+  grid-template-columns: 1.6fr 1fr;
+  margin-bottom: 1.5rem;
+}
+
+.hist-lecture__media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 0.55rem;
+}
+
+.hist-lecture--main .hist-lecture__media {
+  aspect-ratio: 16 / 10;
+}
+
+.hist-lectures__side {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.hist-lectures__side .hist-lecture {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.hist-lectures__side .hist-lecture__media {
+  margin: 0;
+  aspect-ratio: 16 / 10;
+}
+
+.hist-lecture__media img,
+.hist-photos__grid img,
+.hist-author__grid > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hist-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.hist-play::after {
+  content: '';
+  position: absolute;
+  left: 0.9rem;
+  top: 0.6rem;
+  border-style: solid;
+  border-width: 0.45rem 0 0.45rem 0.7rem;
+  border-color: transparent transparent transparent #fff;
+}
+
+.hist-lecture__caption {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.hist-lecture__caption span {
+  display: block;
+  color: #981B2F;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hist-author {
+  padding: 4rem 0;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.hist-author__grid {
+  grid-template-columns: 0.75fr 1.25fr;
+  align-items: center;
+}
+
+.hist-author__grid > img {
+  max-height: 28rem;
+  object-fit: cover;
+  object-position: top;
+}
+
+.hist-author__label {
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  margin-bottom: 0.5rem;
+}
+
+.hist-author p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hist-author__bio {
+  max-width: 28rem;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hist-photos__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 0.85fr;
+  gap: 0.75rem;
+}
+
+.hist-photos__grid img {
+  height: 16rem;
+}
+
+.hist-follow__label,
+.hist-manager__label {
+  color: #981B2F;
+  font-size: 0.85rem;
+}
+
+.hist-manager__label {
+  color: #888;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hist-manager {
+  background: #fff;
+  padding: 1.25rem 1.4rem 1.4rem;
+}
+
+.hist-manager__row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hist-manager__avatar {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: #f3dfe3;
+  flex-shrink: 0;
+}
+
+.hist-manager__name {
+  color: #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.hist-manager__role {
+  margin: 0.35rem 0 0.8rem 5.5rem;
+  color: #981B2F;
+}
+
+@media (max-width: 991px) {
+  .hist-intro__grid,
+  .hist-follow__grid,
+  .hist-author__grid,
+  .hist-lectures__grid,
+  .hist-photos__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hist-tags__wide {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .hist-intro__grid,
+  .hist-follow__grid,
+  .hist-author__grid,
+  .hist-lectures__grid,
+  .hist-photos__grid,
+  .hist-lectures__side .hist-lecture {
+    grid-template-columns: 1fr;
+  }
+
+  .hist-photos__grid img {
+    height: 12rem;
+  }
+}
