@@ -30,6 +30,75 @@ if ($event !== '') {
         ['PROPERTY_EVENT_VALUE' => $event],
     ];
 }
+
+
+$iblockId = 6;
+
+$collectFilterOptions = static function (int $iblockId, string $code): array {
+    if ($iblockId <= 0 || $code === '') {
+        return [];
+    }
+
+    $values = [];
+    $res = CIBlockElement::GetList(
+        [],
+        ['IBLOCK_ID' => $iblockId, 'ACTIVE' => 'Y'],
+        false,
+        false,
+        ['ID', 'PROPERTY_' . $code]
+    );
+
+    while ($row = $res->Fetch()) {
+        $val = $row['PROPERTY_' . $code . '_VALUE'] ?? '';
+        $enum = $row['PROPERTY_' . $code . '_ENUM_ID'] ?? '';
+        $xml = $row['PROPERTY_' . $code . '_XML_ID'] ?? '';
+
+        if (is_array($val)) {
+            $val = reset($val);
+        }
+
+        $val = trim((string)$val);
+        if ($val === '') {
+            continue;
+        }
+
+        $key = $xml !== '' && $xml !== null
+            ? (string)$xml
+            : ((string)$enum !== '' ? (string)$enum : $val);
+
+        $values[$key] = $val;
+    }
+
+    asort($values, SORT_NATURAL | SORT_FLAG_CASE);
+    return $values;
+};
+
+$filterYears = [];
+$res = CIBlockElement::GetList(
+    ['ACTIVE_FROM' => 'DESC'],
+    ['IBLOCK_ID' => $iblockId, 'ACTIVE' => 'Y', '!DATE_ACTIVE_FROM' => false],
+    false,
+    false,
+    ['ID', 'ACTIVE_FROM', 'DATE_ACTIVE_FROM']
+);
+while ($row = $res->Fetch()) {
+    $raw = $row['ACTIVE_FROM'] ?: ($row['DATE_ACTIVE_FROM'] ?? '');
+    $timestamp = $raw ? MakeTimeStamp($raw) : 0;
+    if (!$timestamp) {
+        continue;
+    }
+
+    $filterYear = date('Y', $timestamp);
+    $filterYears[$filterYear] = $filterYear;
+}
+krsort($filterYears, SORT_NUMERIC);
+
+$filterOptions = [
+    'year' => $filterYears,
+    'project' => $collectFilterOptions($iblockId, 'PROJECT'),
+    'event' => $collectFilterOptions($iblockId, 'EVENT'),
+];
+
 ?>
 <section class="hero-secondary hero-secondary--photo">
     <div class="hero-secondary__bg">
@@ -40,6 +109,48 @@ if ($event !== '') {
         <h1 class="hero-secondary__title">Фотоархив</h1>
         <p class="hero-secondary__subtitle">Фотографии концертов, мастер-классов и сезонов Академии, собранные по альбомам</p>
     </div>
+</section>
+
+
+<section class="filter-block">
+    <div class="section__container">
+        <form class="filter-block__row" method="get" action="/mediacenter/photo/">
+            <div class="filter-block__left">
+                <a href="/mediacenter/photo/" class="btn btn--primary">Все альбомы</a>
+                <label class="filter-block__dropdown">
+                    Год
+                    <select name="year" onchange="this.form.submit()">
+                        <option value="">Все</option>
+                        <?php foreach ($filterOptions['year'] as $val => $label): ?>
+                        <option value="<?= htmlspecialcharsbx($val) ?>"<?= $year === (string)$val ? ' selected' : '' ?>><?= htmlspecialcharsbx($label) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </label>
+                <label class="filter-block__dropdown">
+                    Проект
+                    <select name="project" onchange="this.form.submit()">
+                        <option value="">Все</option>
+                        <?php foreach ($filterOptions['project'] as $val => $label): ?>
+                        <option value="<?= htmlspecialcharsbx($val) ?>"<?= $project === (string)$val ? ' selected' : '' ?>><?= htmlspecialcharsbx($label) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </label>
+                <label class="filter-block__dropdown">
+                    Мероприятие
+                    <select name="event" onchange="this.form.submit()">
+                        <option value="">Все</option>
+                        <?php foreach ($filterOptions['event'] as $val => $label): ?>
+                        <option value="<?= htmlspecialcharsbx($val) ?>"<?= $event === (string)$val ? ' selected' : '' ?>><?= htmlspecialcharsbx($label) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </label>
+            </div>
+            <a href="/mediacenter/photo/" class="filter-block__reset">Сбросить фильтры</a>
+        </form>
+    </div>
+    <svg class="filter-block__line" viewBox="0 0 1920 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M0 20.2858C104.542 13.1045 368.701 -0.827229 589.004 0.896286C864.382 3.05068 1124.46 26.75 1407.49 26.75C1633.91 26.75 1843.51 9.51419 1920 0.896286" stroke="#981B2F" stroke-width="1.5"/>
+    </svg>
 </section>
 
 <?php
