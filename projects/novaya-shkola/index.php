@@ -209,35 +209,77 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
     <div class="section__container">
         <div class="section__header">
             <h2 class="section__title">Альбомы мастер-классов</h2>
-            <a href="#" class="section__link">Смотреть все</a>
-        </div>
-        <div class="ns-albums__grid">
-            <article class="ns-album">
-                <a href="#" class="ns-album__media">
-                    <img src="/projects/novaya-shkola/images/album-1.jpg" alt="">
-                    <span class="ns-album__count">452 фото</span>
-                </a>
-                <p class="ns-album__meta">Мастер-класс · 2025</p>
-                <h3 class="ns-album__title">Мастер-класс Равиля Ислямова</h3>
-            </article>
-            <article class="ns-album">
-                <a href="#" class="ns-album__media">
-                    <img src="/projects/novaya-shkola/images/album-2.jpg" alt="">
-                    <span class="ns-album__count">452 фото</span>
-                </a>
-                <p class="ns-album__meta">Мастер-класс · 2026</p>
-                <h3 class="ns-album__title">Мастер-класс Павла Романенко</h3>
-            </article>
-            <article class="ns-album">
-                <a href="#" class="ns-album__media">
-                    <img src="/projects/novaya-shkola/images/album-3.jpg" alt="">
-                    <span class="ns-album__count">452 фото</span>
-                </a>
-                <p class="ns-album__meta">Мастер-класс · 2025 — 2026</p>
-                <h3 class="ns-album__title">Другие мастер-классы проекта</h3>
-            </article>
+            <a href="/mediacenter/photo/?project=3&amp;event=7" class="section__link">Смотреть все</a>
         </div>
     </div>
+    <?php
+    global $arrFilterNovayaShkolaAlbums;
+    $arrFilterNovayaShkolaAlbums = [
+        [
+            'LOGIC' => 'OR',
+            ['PROPERTY_PROJECT' => '3'],
+            ['PROPERTY_PROJECT_VALUE' => '3'],
+        ],
+        [
+            'LOGIC' => 'OR',
+            ['PROPERTY_EVENT' => '7'],
+            ['PROPERTY_EVENT_VALUE' => '7'],
+        ],
+    ];
+
+    $APPLICATION->IncludeComponent(
+        'bitrix:news.list',
+        'photo_chronicle',
+        [
+            'IBLOCK_TYPE' => 'content',
+            'IBLOCK_ID' => '6',
+            'NEWS_COUNT' => '3',
+            'SORT_BY1' => 'ACTIVE_FROM',
+            'SORT_ORDER1' => 'DESC',
+            'SORT_BY2' => 'SORT',
+            'SORT_ORDER2' => 'ASC',
+            'FILTER_NAME' => 'arrFilterNovayaShkolaAlbums',
+            'FIELD_CODE' => ['NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'DATE_ACTIVE_FROM', 'DETAIL_PAGE_URL'],
+            'PROPERTY_CODE' => ['PHOTOS', 'PROJECT', 'EVENT'],
+            'CHECK_DATES' => 'Y',
+            'DETAIL_URL' => '/mediacenter/photo/detail.php?ID=#ELEMENT_ID#',
+            'AJAX_MODE' => 'N',
+            'CACHE_TYPE' => 'A',
+            'CACHE_TIME' => '3600',
+            'CACHE_FILTER' => 'Y',
+            'CACHE_GROUPS' => 'Y',
+            'PREVIEW_TRUNCATE_LEN' => '',
+            'ACTIVE_DATE_FORMAT' => 'j F Y',
+            'SET_TITLE' => 'N',
+            'SET_BROWSER_TITLE' => 'N',
+            'SET_META_KEYWORDS' => 'N',
+            'SET_META_DESCRIPTION' => 'N',
+            'SET_LAST_MODIFIED' => 'N',
+            'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
+            'ADD_SECTIONS_CHAIN' => 'N',
+            'HIDE_LINK_WHEN_NO_DETAIL' => 'N',
+            'PARENT_SECTION' => '',
+            'PARENT_SECTION_CODE' => '',
+            'INCLUDE_SUBSECTIONS' => 'Y',
+            'STRICT_SECTION_CHECK' => 'N',
+            'PAGER_TEMPLATE' => '.default',
+            'DISPLAY_TOP_PAGER' => 'N',
+            'DISPLAY_BOTTOM_PAGER' => 'N',
+            'PAGER_TITLE' => 'Альбомы',
+            'PAGER_SHOW_ALWAYS' => 'N',
+            'PAGER_DESC_NUMBERING' => 'N',
+            'PAGER_DESC_NUMBERING_CACHE_TIME' => '36000',
+            'PAGER_SHOW_ALL' => 'N',
+            'PHOTO_PROPERTY' => 'PHOTOS',
+            'PROJECT_PROPERTY' => 'PROJECT',
+            'EVENT_PROPERTY' => 'EVENT',
+            'SET_STATUS_404' => 'N',
+            'SHOW_404' => 'N',
+            'MESSAGE_404' => '',
+        ],
+        false
+    );
+    ?>
 </section>
 
 <section class="ns-next">
