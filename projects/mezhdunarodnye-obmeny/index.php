@@ -6,6 +6,7 @@ $img = '/projects/mezhdunarodnye-obmeny/images';
 ?>
 <link rel="stylesheet" href="/local/templates/main/template_styles.css">
 <link rel="stylesheet" href="/projects/mezhdunarodnye-obmeny/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.css">
 
 <section class="hero-secondary intl-hero">
     <div class="hero-secondary__bg">
@@ -72,11 +73,21 @@ $img = '/projects/mezhdunarodnye-obmeny/images';
 
         <article class="intl-case">
             <div class="intl-mosaic">
-                <img src="<?= $img ?>/mosaic-1.jpg" alt="">
-                <img src="<?= $img ?>/mosaic-2.jpg" alt="">
-                <img src="<?= $img ?>/mosaic-3.jpg" alt="">
-                <img src="<?= $img ?>/mosaic-4.jpg" alt="">
-                <img src="<?= $img ?>/mosaic-5.jpg" alt="">
+                <a href="<?= $img ?>/mosaic-1.jpg" data-fancybox="intl-mosaic" data-caption="Фотографии международных проектов">
+                    <img src="<?= $img ?>/mosaic-1.jpg" alt="">
+                </a>
+                <a href="<?= $img ?>/mosaic-2.jpg" data-fancybox="intl-mosaic" data-caption="Фотографии международных проектов">
+                    <img src="<?= $img ?>/mosaic-2.jpg" alt="">
+                </a>
+                <a href="<?= $img ?>/mosaic-3.jpg" data-fancybox="intl-mosaic" data-caption="Фотографии международных проектов">
+                    <img src="<?= $img ?>/mosaic-3.jpg" alt="">
+                </a>
+                <a href="<?= $img ?>/mosaic-4.jpg" data-fancybox="intl-mosaic" data-caption="Фотографии международных проектов">
+                    <img src="<?= $img ?>/mosaic-4.jpg" alt="">
+                </a>
+                <a href="<?= $img ?>/mosaic-5.jpg" data-fancybox="intl-mosaic" data-caption="Фотографии международных проектов">
+                    <img src="<?= $img ?>/mosaic-5.jpg" alt="">
+                </a>
             </div>
             <div>
                 <p class="intl-case__place">Трани, Италия · 2025</p>
@@ -121,11 +132,21 @@ $img = '/projects/mezhdunarodnye-obmeny/images';
                 <a href="#" class="section__link">Смотреть фотоальбом</a>
             </div>
             <div class="intl-mosaic">
-                <img src="<?= $img ?>/mosaic-1.jpg" alt="">
-                <img src="<?= $img ?>/mosaic-2.jpg" alt="">
-                <img src="<?= $img ?>/mosaic-3.jpg" alt="">
-                <img src="<?= $img ?>/mosaic-4.jpg" alt="">
-                <img src="<?= $img ?>/mosaic-5.jpg" alt="">
+                <a href="<?= $img ?>/mosaic-1.jpg" data-fancybox="intl-mosaic" data-caption="Фотографии международных проектов">
+                    <img src="<?= $img ?>/mosaic-1.jpg" alt="">
+                </a>
+                <a href="<?= $img ?>/mosaic-2.jpg" data-fancybox="intl-mosaic" data-caption="Фотографии международных проектов">
+                    <img src="<?= $img ?>/mosaic-2.jpg" alt="">
+                </a>
+                <a href="<?= $img ?>/mosaic-3.jpg" data-fancybox="intl-mosaic" data-caption="Фотографии международных проектов">
+                    <img src="<?= $img ?>/mosaic-3.jpg" alt="">
+                </a>
+                <a href="<?= $img ?>/mosaic-4.jpg" data-fancybox="intl-mosaic" data-caption="Фотографии международных проектов">
+                    <img src="<?= $img ?>/mosaic-4.jpg" alt="">
+                </a>
+                <a href="<?= $img ?>/mosaic-5.jpg" data-fancybox="intl-mosaic" data-caption="Фотографии международных проектов">
+                    <img src="<?= $img ?>/mosaic-5.jpg" alt="">
+                </a>
             </div>
         </article>
     </div>
@@ -167,10 +188,18 @@ $img = '/projects/mezhdunarodnye-obmeny/images';
             </div>
         </div>
         <div class="intl-strip">
-            <img src="<?= $img ?>/strip-1.jpg" alt="">
-            <img src="<?= $img ?>/strip-2.jpg" alt="">
-            <img src="<?= $img ?>/strip-3.jpg" alt="">
-            <img src="<?= $img ?>/strip-4.jpg" alt="">
+            <a href="<?= $img ?>/strip-1.jpg" data-fancybox="intl-strip" data-caption="Фотографии международного педагогического обмена">
+                    <img src="<?= $img ?>/strip-1.jpg" alt="">
+                </a>
+            <a href="<?= $img ?>/strip-2.jpg" data-fancybox="intl-strip" data-caption="Фотографии международного педагогического обмена">
+                    <img src="<?= $img ?>/strip-2.jpg" alt="">
+                </a>
+            <a href="<?= $img ?>/strip-3.jpg" data-fancybox="intl-strip" data-caption="Фотографии международного педагогического обмена">
+                    <img src="<?= $img ?>/strip-3.jpg" alt="">
+                </a>
+            <a href="<?= $img ?>/strip-4.jpg" data-fancybox="intl-strip" data-caption="Фотографии международного педагогического обмена">
+                    <img src="<?= $img ?>/strip-4.jpg" alt="">
+                </a>
         </div>
     </div>
 </section>
@@ -185,10 +214,18 @@ $img = '/projects/mezhdunarodnye-obmeny/images';
                 <p>представителей Казахстана за три последних сезона</p>
             </div>
             <div class="intl-kz__photos">
-                <img src="<?= $img ?>/mosaic-2.jpg" alt="">
-                <img src="<?= $img ?>/mosaic-3.jpg" alt="">
-                <img src="<?= $img ?>/mosaic-4.jpg" alt="">
-                <img src="<?= $img ?>/mosaic-5.jpg" alt="">
+                <a href="<?= $img ?>/mosaic-2.jpg" data-fancybox="intl-mosaic" data-caption="Фотографии международных проектов">
+                    <img src="<?= $img ?>/mosaic-2.jpg" alt="">
+                </a>
+                <a href="<?= $img ?>/mosaic-3.jpg" data-fancybox="intl-mosaic" data-caption="Фотографии международных проектов">
+                    <img src="<?= $img ?>/mosaic-3.jpg" alt="">
+                </a>
+                <a href="<?= $img ?>/mosaic-4.jpg" data-fancybox="intl-mosaic" data-caption="Фотографии международных проектов">
+                    <img src="<?= $img ?>/mosaic-4.jpg" alt="">
+                </a>
+                <a href="<?= $img ?>/mosaic-5.jpg" data-fancybox="intl-mosaic" data-caption="Фотографии международных проектов">
+                    <img src="<?= $img ?>/mosaic-5.jpg" alt="">
+                </a>
             </div>
         </div>
         <div>
@@ -249,5 +286,15 @@ $img = '/projects/mezhdunarodnye-obmeny/images';
         </article>
     </div>
 </section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.umd.js"></script>
+<script>
+    if (window.Fancybox) {
+        Fancybox.bind('[data-fancybox="intl-mosaic"], [data-fancybox="intl-strip"]', {
+            Hash: false
+        });
+    }
+</script>
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'; ?>
