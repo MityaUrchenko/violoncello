@@ -3,6 +3,8 @@ require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
 $APPLICATION->SetTitle('Фотоархив');
 $APPLICATION->SetPageProperty('title', 'Фотоархив — Всероссийская виолончельная академия');
 
+CModule::IncludeModule("iblock");
+
 global $arrFilterPhoto;
 $arrFilterPhoto = [];
 
