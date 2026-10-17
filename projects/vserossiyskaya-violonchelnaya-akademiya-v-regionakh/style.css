@@ -97,6 +97,11 @@
   height: 100%;
   object-fit: cover;
 }
+@media (max-width: 767px) {
+  .reg-collage *:first-child {
+    grid-row: span 2;
+  }
+}
 
 .reg-collage img:first-child {
   grid-row: 1 / span 2;
