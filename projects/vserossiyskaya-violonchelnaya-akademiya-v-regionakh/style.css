@@ -290,3 +290,258 @@
 .aud-manager__name { color: #1a1a1a; border-bottom: 1px solid #1a1a1a; text-decoration: none; font-size: 1.25rem; }
 .aud-manager__role { margin: 0.35rem 0 0.8rem 5.5rem; color: #981B2F; }
 @media (max-width: 767px) { .aud-follow__grid { grid-template-columns: 1fr; } }
+
+
+/* Выравнивание страницы «Виолончельная академия в регионах России» */
+.reg-about__grid {
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.reg-about__lead {
+  max-width: 48rem;
+}
+
+.reg-note {
+  padding: 1.5rem 1.6rem;
+}
+
+.reg-past .section__header {
+  align-items: end;
+  margin-bottom: 2rem;
+}
+
+.reg-past__grid,
+.reg-prizes__cases {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.reg-trip {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.reg-collage {
+  width: 100%;
+  aspect-ratio: 1.95 / 1;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  overflow: hidden;
+}
+
+.reg-collage img:first-child {
+  min-height: 0;
+}
+
+.reg-trip__date {
+  margin-top: 0.15rem;
+  margin-bottom: 0.45rem;
+  color: #981B2F;
+  font-size: 0.78rem;
+}
+
+.reg-trip__title {
+  margin-bottom: 0.65rem;
+}
+
+.reg-trip__place {
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.reg-trip > .section__link {
+  margin-top: auto;
+}
+
+.reg-soon__grid {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.reg-soon__grid > div:last-child {
+  min-width: 0;
+}
+
+.reg-tags {
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 0 0 1.2rem;
+}
+
+.reg-tags span,
+.reg-chip {
+  min-height: 1.8rem;
+  padding: 0.38rem 0.8rem;
+  line-height: 1.1;
+  white-space: nowrap;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+}
+
+.reg-formats .section__title,
+.reg-prizes .section__title {
+  margin-bottom: 0.5rem;
+}
+
+.reg-formats > .section__container > .reg-muted,
+.reg-prizes > .section__container > .reg-muted {
+  margin-top: 0;
+}
+
+.reg-formats__grid {
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
+.reg-format {
+  min-height: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.reg-format__num {
+  margin-bottom: 0.6rem;
+}
+
+.reg-format h3 {
+  margin-bottom: 0.7rem;
+}
+
+.reg-format p {
+  line-height: 1.55;
+}
+
+.reg-prizes__text {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  margin-top: 1.75rem;
+}
+
+.reg-prizes__side {
+  padding-left: 1.75rem;
+}
+
+.reg-prizes__photos {
+  aspect-ratio: 2.15 / 1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.reg-prizes__photos img {
+  height: 100%;
+  min-height: 0;
+}
+
+.reg-prizes__cases article {
+  min-width: 0;
+}
+
+.reg-organize__grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.reg-organize .section__title {
+  margin-bottom: 1.25rem;
+  line-height: 1.05;
+}
+
+.reg-organize p {
+  line-height: 1.6;
+}
+
+.reg-follow .aud-follow__grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.reg-follow .aud-manager {
+  align-self: stretch;
+}
+
+.reg-follow .aud-manager__label {
+  margin-bottom: 1rem;
+}
+
+.reg-follow .aud-manager__role {
+  margin-left: 5.5rem;
+}
+
+@media (max-width: 991px) {
+  .reg-about__grid,
+  .reg-soon__grid,
+  .reg-organize__grid,
+  .reg-follow .aud-follow__grid,
+  .reg-past__grid,
+  .reg-prizes__text,
+  .reg-prizes__cases,
+  .reg-formats__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reg-about__grid,
+  .reg-soon__grid,
+  .reg-organize__grid,
+  .reg-follow .aud-follow__grid {
+    gap: 2rem;
+  }
+
+  .reg-past__grid,
+  .reg-prizes__cases {
+    gap: 2.5rem;
+  }
+
+  .reg-prizes__side {
+    padding-left: 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid #f0d5d8;
+  }
+}
+
+@media (max-width: 767px) {
+  .reg-about,
+  .reg-past,
+  .reg-formats,
+  .reg-prizes,
+  .reg-organize {
+    padding: 2.5rem 0;
+  }
+
+  .reg-soon,
+  .reg-follow {
+    padding: 2.5rem 0;
+  }
+
+  .reg-about__grid,
+  .reg-soon__grid,
+  .reg-organize__grid,
+  .reg-follow .aud-follow__grid,
+  .reg-past__grid,
+  .reg-prizes__text,
+  .reg-prizes__cases,
+  .reg-formats__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reg-collage {
+    aspect-ratio: 1.45 / 1;
+  }
+
+  .reg-tags {
+    gap: 0.5rem;
+  }
+
+  .reg-format {
+    min-height: 0;
+  }
+
+  .reg-prizes__photos {
+    aspect-ratio: 1.8 / 1;
+  }
+
+  .reg-follow .aud-manager {
+    padding: 1.25rem;
+  }
+}

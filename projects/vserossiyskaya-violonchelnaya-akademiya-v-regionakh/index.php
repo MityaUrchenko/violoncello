@@ -189,9 +189,9 @@ $img = '/projects/vserossiyskaya-violonchelnaya-akademiya-v-regionakh/images';
             <p class="aud-manager__label">Менеджер проекта</p>
             <div class="aud-manager__row">
                 <span class="aud-manager__avatar" aria-hidden="true"></span>
-                <a href="#" class="aud-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
+                <a href="/about/" class="aud-manager__name">Дарья Котова <span aria-hidden="true">↗</span></a>
             </div>
-            <p class="aud-manager__role">Менеджер проекта</p>
+            <p class="aud-manager__role">Менеджер регионального направления</p>
             <a href="#" class="section__link">Руководство и команда Академии</a>
         </article>
     </div>
