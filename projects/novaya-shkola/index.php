@@ -283,19 +283,19 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
 </section>
 
 <section class="ns-next">
-    <div class="section__container ns-next__grid">
+    <div class="section__container aud-follow__grid">
         <div>
             <p class="ns-next__label">Продолжение следует</p>
             <h2 class="ns-next__title">Второй сезон «Новой школы»</h2>
             <p>Проект получит продолжение. Сроки проведения и программа будут объявлены позднее.</p>
         </div>
-        <article class="ns-manager">
-            <p class="ns-manager__label">Менеджер проекта</p>
-            <div class="ns-manager__row">
-                <span class="ns-manager__avatar" aria-hidden="true"></span>
-                <a href="#" class="ns-manager__name">Злата Ларина <span aria-hidden="true">↗</span></a>
+        <article class="aud-manager">
+            <p class="aud-manager__label">Менеджер проекта</p>
+            <div class="aud-manager__row">
+                <span class="aud-manager__avatar" aria-hidden="true"></span>
+                <a href="#" class="aud-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
             </div>
-            <p class="ns-manager__role">Проектный менеджер</p>
+            <p class="aud-manager__role">Менеджер проекта</p>
             <a href="#" class="section__link">Руководство и команда Академии</a>
         </article>
     </div>
