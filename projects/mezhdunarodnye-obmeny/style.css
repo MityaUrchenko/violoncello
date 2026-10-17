@@ -310,6 +310,10 @@
 }
 
 @media (max-width: 767px) {
+  .intl-about .academy-sections__grid {
+    grid-template-columns: 1fr;
+  }
+
   .intl-about__grid,
   .intl-case,
   .intl-case--reverse,
