@@ -23,9 +23,9 @@
 .aud-first__grid,
 .aud-follow__grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 2.5rem;
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
 }
 
 .aud-intro p,
