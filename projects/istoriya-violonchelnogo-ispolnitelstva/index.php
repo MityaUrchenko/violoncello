@@ -117,20 +117,20 @@ $img = '/projects/istoriya-violonchelnogo-ispolnitelstva/images';
 </section>
 
 <section class="hist-follow">
-    <div class="section__container hist-follow__grid">
+    <div class="section__container aud-follow__grid">
         <div>
             <p class="hist-follow__label">Институт исследований и методологии</p>
             <h2 class="section__title">Проект Института виолончельного искусства</h2>
             <p>Проект реализуется в рамках деятельности Института исследований и методологии виолончельного искусства Виолончельной академии. Узнать больше об институте, его задачах и проектах можно на отдельной странице.</p>
             <a href="/academy/institute/" class="btn btn--primary">Подробнее об институте</a>
         </div>
-        <article class="hist-manager">
-            <p class="hist-manager__label">Менеджер проекта</p>
-            <div class="hist-manager__row">
-                <span class="hist-manager__avatar" aria-hidden="true"></span>
-                <a href="#" class="hist-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
+        <article class="aud-manager">
+            <p class="aud-manager__label">Менеджер проекта</p>
+            <div class="aud-manager__row">
+                <span class="aud-manager__avatar" aria-hidden="true"></span>
+                <a href="#" class="aud-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
             </div>
-            <p class="hist-manager__role">Менеджер проекта</p>
+            <p class="aud-manager__role">Менеджер проекта</p>
             <a href="#" class="section__link">Руководство и команда Академии</a>
         </article>
     </div>
