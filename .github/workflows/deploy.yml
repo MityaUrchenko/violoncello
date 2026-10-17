@@ -26,7 +26,7 @@ jobs:
             else
               echo "=== Обновляем ветку ==="
               git fetch
-              git reset --hard HEAD
+              git reset --hard origin/main
             
               STATUS_MSG="✅ Деплой успешен."
             fi
