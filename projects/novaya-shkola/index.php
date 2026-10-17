@@ -20,7 +20,7 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
     </div>
 </section>
 
-<section class="section__container my-5">
+<section class="section__container mt-5">
     <div class="academy-sections__grid">
         <div class="academy-section-card">
             <span class="academy-section-card__title">20 — 35 лет</span>
@@ -44,8 +44,8 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
         </div>
     </div>
 </section>
-<section class="ns-about">
-    <div class="section__container ns-about__grid">
+<section class="section__container">
+    <div class=" ns-about__grid">
         <div class="ns-about__text">
             <p class="ns-about__lead">«Новая школа» объединяет музыкантов, которые уже заявили о себе на концертной
                 сцене и в преподавании, и предоставляет им площадку для передачи профессионального опыта в формате
