@@ -178,19 +178,19 @@ $img = '/projects/vserossiyskaya-violonchelnaya-akademiya-v-regionakh/images';
 </section>
 
 <section class="reg-follow">
-    <div class="section__container reg-follow__grid">
+    <div class="section__container aud-follow__grid">
         <div>
             <h2 class="reg-follow__title">Следите за новостями</h2>
             <p>Следите за предстоящими региональными мероприятиями в разделах «Новости» и «Афиша».</p>
             <a href="/afisha/" class="reg-chip">Афиша</a>
         </div>
-        <article class="reg-manager">
-            <p class="reg-manager__label">Менеджер проекта</p>
-            <div class="reg-manager__row">
-                <span class="reg-manager__avatar" aria-hidden="true"></span>
-                <a href="#" class="reg-manager__name">Дарья Котова <span aria-hidden="true">↗</span></a>
+        <article class="aud-manager">
+            <p class="aud-manager__label">Менеджер проекта</p>
+            <div class="aud-manager__row">
+                <span class="aud-manager__avatar" aria-hidden="true"></span>
+                <a href="#" class="aud-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
             </div>
-            <p class="reg-manager__role">Менеджер регионального направления</p>
+            <p class="aud-manager__role">Менеджер проекта</p>
             <a href="#" class="section__link">Руководство и команда Академии</a>
         </article>
     </div>
