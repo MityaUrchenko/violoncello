@@ -7,9 +7,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 /** @var CBitrixComponentTemplate $this */
 $this->setFrameMode(true);
 
-$filter = $arResult['FILTER'] ?? [];
-$opts = $arResult['FILTER_OPTIONS'] ?? [];
-$base = $arResult['FILTER_BASE'] ?: '/mediacenter/photo/';
 ?>
 <section class="photo-chronicle">
     <div class="section__container">
