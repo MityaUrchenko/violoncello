@@ -45,7 +45,7 @@ $img = '/projects/vserossiyskaya-violonchelnaya-akademiya-v-regionakh/images';
         <div class="reg-past__grid">
             <article class="reg-trip">
                 <div class="reg-collage">
-                    <img src="<?= $img ?>/event-main.jpg" alt="">
+                    <img src="<?= $img ?>/event-main.jpg" alt="" style="grid-row: span 2">
                     <img src="<?= $img ?>/event-top.jpg" alt="">
                     <img src="<?= $img ?>/event-bottom.jpg" alt="">
                 </div>
@@ -57,7 +57,7 @@ $img = '/projects/vserossiyskaya-violonchelnaya-akademiya-v-regionakh/images';
             </article>
             <article class="reg-trip">
                 <div class="reg-collage">
-                    <img src="<?= $img ?>/event-main.jpg" alt="">
+                    <img src="<?= $img ?>/event-main.jpg" alt="" style="grid-row: span 2">
                     <img src="<?= $img ?>/event-top.jpg" alt="">
                     <img src="<?= $img ?>/event-bottom.jpg" alt="">
                 </div>
