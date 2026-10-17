@@ -1,0 +1,429 @@
+.vva-hero .hero-secondary__title {
+  max-width: 16ch;
+  margin-bottom: 0.35rem;
+}
+
+.vva-hero__name,
+.vva-hero .hero-secondary__subtitle {
+  max-width: 34rem;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.vva-hero__name {
+  margin: 0 0 0.75rem;
+  font-size: 1.15rem;
+}
+
+.vva-hero .hero-secondary__subtitle {
+  margin-bottom: 1.5rem;
+}
+
+.vva-intro,
+.vva-program,
+.vva-people,
+.vva-join,
+.vva-partners {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+.vva-intro__grid,
+.vva-name__grid,
+.vva-gala__grid,
+.vva-stream__grid,
+.vva-follow__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.vva-intro p,
+.vva-name p,
+.vva-gala p,
+.vva-join p,
+.vva-stream p,
+.vva-next p {
+  margin: 0 0 1rem;
+  line-height: 1.65;
+}
+
+.vva-focus__title {
+  margin: 0 0 0.8rem;
+  color: #981B2F;
+  font-family: 'Cormorant Unicase', serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+
+.vva-tags,
+.vva-partners__list,
+.vva-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.vva-tags span,
+.vva-chip,
+.vva-partners__list span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #981B2F;
+  color: #981B2F;
+  text-decoration: none;
+}
+
+.vva-partners__list span {
+  border-color: #ddd;
+  color: inherit;
+}
+
+.vva-chip {
+  margin: 0 0.55rem 0.55rem 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+}
+
+.vva-muted,
+.vva-kicker,
+.vva-follow__label,
+.vva-manager__label {
+  margin: 0.85rem 0 0;
+  color: #888;
+  font-size: 0.92rem;
+}
+
+.vva-kicker {
+  margin: 0 0 0.45rem;
+  color: #981B2F;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.vva-stats,
+.vva-days,
+.vva-join__grid,
+.vva-venues__grid,
+.vva-people__cols {
+  display: grid;
+  gap: 1rem;
+}
+
+.vva-stats {
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 2.5rem;
+}
+
+.vva-stats article {
+  background: #7a1a2a;
+  color: #fff;
+  padding: 1.3rem 1.15rem 1.05rem;
+  min-height: 7.2rem;
+}
+
+.vva-stats__value {
+  margin: 0;
+  font-family: 'Cormorant Unicase', serif;
+  font-size: clamp(1.6rem, 2.2vw, 2.1rem);
+  line-height: 1.1;
+}
+
+.vva-stats article p:last-child {
+  margin: 0.75rem 0 0;
+  padding-top: 0.55rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+}
+
+.vva-name,
+.vva-stream,
+.vva-venues,
+.vva-next {
+  padding: 4rem 0;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.vva-name p,
+.vva-stream p,
+.vva-next p,
+.vva-venues p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.vva-placeholder {
+  min-height: 16rem;
+  background: #d5d5d5;
+}
+
+.vva-days {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1.5rem;
+}
+
+.vva-days article {
+  border: 1px solid #e7c5cb;
+  padding: 1.4rem 1.4rem 1.2rem;
+}
+
+.vva-days__num {
+  margin: 0;
+  color: #981B2F;
+  font-family: 'Cormorant Unicase', serif;
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.vva-days__when,
+.vva-days__sub {
+  margin: 0.2rem 0 0.8rem;
+  color: #981B2F;
+  font-size: 0.9rem;
+}
+
+.vva-days h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.vva-days ul,
+.vva-people__cols ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vva-days li,
+.vva-people__cols li {
+  position: relative;
+  padding: 0.35rem 0 0.35rem 0.9rem;
+  line-height: 1.45;
+}
+
+.vva-days li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: #981B2F;
+}
+
+.vva-gala,
+.vva-follow {
+  padding: 3.5rem 0;
+  background: #f8eef0;
+}
+
+.vva-gala__time {
+  margin: 0 0 0.35rem;
+  font-weight: 500;
+}
+
+.vva-gala__photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 8rem 5rem;
+  gap: 0.6rem;
+}
+
+.vva-gala__photos span {
+  background: #d5d5d5;
+}
+
+.vva-gala__photos span:first-child {
+  grid-row: 1 / span 2;
+}
+
+.vva-people__cols {
+  grid-template-columns: repeat(3, 1fr);
+  margin: 1.25rem 0 1.5rem;
+}
+
+.vva-people__cols li {
+  border-bottom: 1px solid #eee;
+  padding-left: 0;
+}
+
+.vva-people__notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.vva-people__notes article,
+.vva-join__grid article {
+  background: #f8eef0;
+  padding: 1.15rem 1.2rem;
+}
+
+.vva-people__notes h3,
+.vva-join__grid h3,
+.vva-venues h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.vva-people__notes p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.vva-venues__grid {
+  grid-template-columns: 1fr 1fr;
+  margin-top: 1.25rem;
+}
+
+.vva-venues article {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 1.4rem;
+}
+
+.vva-venues h3 {
+  font-family: 'Cormorant Unicase', serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.vva-venues .vva-kicker {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.vva-join__grid {
+  grid-template-columns: repeat(3, 1fr);
+  margin: 1.25rem 0;
+}
+
+.vva-stream__media {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.vva-stream__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vva-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.vva-play::after {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0.7rem;
+  border-style: solid;
+  border-width: 0.5rem 0 0.5rem 0.75rem;
+  border-color: transparent transparent transparent #fff;
+}
+
+.vva-platforms a,
+.vva-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  color: #fff;
+  text-decoration: none;
+}
+
+.vva-outline {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.vva-next__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.vva-manager {
+  background: #fff;
+  padding: 1.25rem 1.4rem 1.4rem;
+}
+
+.vva-manager__label {
+  color: #888;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.vva-manager__row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vva-manager__avatar {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: #f3dfe3;
+  flex-shrink: 0;
+}
+
+.vva-manager__name {
+  color: #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+.vva-manager__role {
+  margin: 0.35rem 0 0.8rem 5.5rem;
+  color: #981B2F;
+}
+
+@media (max-width: 991px) {
+  .vva-intro__grid,
+  .vva-name__grid,
+  .vva-gala__grid,
+  .vva-stream__grid,
+  .vva-follow__grid,
+  .vva-stats,
+  .vva-days,
+  .vva-venues__grid,
+  .vva-join__grid,
+  .vva-people__cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .vva-intro__grid,
+  .vva-name__grid,
+  .vva-gala__grid,
+  .vva-stream__grid,
+  .vva-follow__grid,
+  .vva-stats,
+  .vva-days,
+  .vva-venues__grid,
+  .vva-join__grid,
+  .vva-people__cols,
+  .vva-people__notes {
+    grid-template-columns: 1fr;
+  }
+}
