@@ -6,6 +6,7 @@ $img = '/projects/violonchelnaya-akademiya-i-vivacello/images';
 ?>
 <link rel="stylesheet" href="/local/templates/main/template_styles.css">
 <link rel="stylesheet" href="/projects/violonchelnaya-akademiya-i-vivacello/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.css">
 
 
 <section class="hero-secondary viva-hero">
@@ -210,5 +211,31 @@ $img = '/projects/violonchelnaya-akademiya-i-vivacello/images';
         </article>
     </div>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.umd.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('img:not(.hero-secondary__bg-img):not([aria-hidden="true"])').forEach(function (img) {
+        const existingLink = img.closest('a');
+        if (existingLink) {
+            if (existingLink.hasAttribute('data-fancybox')) return;
+            const href = existingLink.getAttribute('href');
+            if (href && href !== '#') return;
+            existingLink.href = img.currentSrc || img.src;
+            existingLink.setAttribute('data-fancybox', 'project-gallery');
+            if (img.alt) existingLink.setAttribute('data-caption', img.alt);
+            return;
+        }
+        const link = document.createElement('a');
+        link.href = img.currentSrc || img.src;
+        link.setAttribute('data-fancybox', 'project-gallery');
+        link.style.cursor = 'zoom-in';
+        if (img.alt) link.setAttribute('data-caption', img.alt);
+        img.parentNode.insertBefore(link, img);
+        link.appendChild(img);
+    });
+    if (window.Fancybox) Fancybox.bind('[data-fancybox="project-gallery"]', { Hash: false });
+});
+</script>
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'; ?>
