@@ -30,23 +30,27 @@ $img = '/projects/mezhdunarodnye-obmeny/images';
             <p>Международные проекты строятся вместе с партнёрами: в зависимости от программы Академия участвует в её разработке, приглашении педагогов и исполнителей, подготовке концертов и организации участия музыкантов. Каждый проект имеет собственный формат, объединённый общей целью — поддерживать профессиональный и культурный диалог.</p>
         </aside>
     </div>
-    <div class="section__container intl-stats">
-        <article class="intl-stat">
-            <p class="intl-stat__value">Италия</p>
-            <p class="intl-stat__label">Трани · 2025</p>
-        </article>
-        <article class="intl-stat">
-            <p class="intl-stat__value">Франция</p>
-            <p class="intl-stat__label">Париж · 2 сезона</p>
-        </article>
-        <article class="intl-stat">
-            <p class="intl-stat__value">Казахстан</p>
-            <p class="intl-stat__label">свыше 100 участников</p>
-        </article>
-        <article class="intl-stat">
-            <p class="intl-stat__value">4 страны</p>
-            <p class="intl-stat__label">педагоги из Италии, Катара, Испании, Китая</p>
-        </article>
+    <div class="academy-sections__grid">
+        <div class="academy-section-card">
+            <span class="academy-section-card__title">Италия</span>
+            <span class="about-directions__card-text">Трани · 2025</span>
+            <span class="academy-section-card__line"></span>
+        </div>
+        <div class="academy-section-card">
+            <span class="academy-section-card__title">Франция</span>
+            <span class="about-directions__card-text">Париж · 2 сезона</span>
+            <span class="academy-section-card__line"></span>
+        </div>
+        <div class="academy-section-card">
+            <span class="academy-section-card__title">Казахстан</span>
+            <span class="about-directions__card-text">свыше 100 участников</span>
+            <span class="academy-section-card__line"></span>
+        </div>
+        <div class="academy-section-card">
+            <span class="academy-section-card__title">4 страны</span>
+            <span class="about-directions__card-text">педагоги из Италии, Катара, Испании, Китая</span>
+            <span class="academy-section-card__line"></span>
+        </div>
     </div>
 </section>
 
