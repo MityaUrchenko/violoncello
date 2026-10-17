@@ -155,20 +155,20 @@ $program = [
 </section>
 
 <section class="stars-follow">
-    <div class="section__container stars-follow__grid">
+    <div class="section__container aud-follow__grid">
         <div>
             <p class="stars-follow__label">Смотрите также</p>
             <a href="#" class="stars-chip">Видеоархив</a>
             <a href="#" class="stars-chip">Медиацентр</a>
             <a href="/afisha/" class="stars-chip">Афиша</a>
         </div>
-        <article class="stars-manager">
-            <p class="stars-manager__label">Менеджер проекта</p>
-            <div class="stars-manager__row">
-                <span class="stars-manager__avatar" aria-hidden="true"></span>
-                <a href="#" class="stars-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
+        <article class="aud-manager">
+            <p class="aud-manager__label">Менеджер проекта</p>
+            <div class="aud-manager__row">
+                <span class="aud-manager__avatar" aria-hidden="true"></span>
+                <a href="#" class="aud-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
             </div>
-            <p class="stars-manager__role">Менеджер проекта</p>
+            <p class="aud-manager__role">Менеджер проекта</p>
             <a href="#" class="section__link">Руководство и команда Академии</a>
         </article>
     </div>
