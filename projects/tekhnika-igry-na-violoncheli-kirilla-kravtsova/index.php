@@ -120,20 +120,20 @@ $img = '/projects/tekhnika-igry-na-violoncheli-kirilla-kravtsova/images';
 </section>
 
 <section class="tech-follow">
-    <div class="section__container tech-follow__grid">
+    <div class="section__container aud-follow__grid">
         <div>
             <p class="tech-follow__label">Смотрите также</p>
             <a href="#" class="tech-chip">Видеоархив</a>
             <a href="#" class="tech-chip">Медиацентр</a>
             <a href="/afisha/" class="tech-chip">Афиша</a>
         </div>
-        <article class="tech-manager">
-            <p class="tech-manager__label">Менеджер проекта</p>
-            <div class="tech-manager__row">
-                <span class="tech-manager__avatar" aria-hidden="true"></span>
-                <a href="#" class="tech-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
+        <article class="aud-manager">
+            <p class="aud-manager__label">Менеджер проекта</p>
+            <div class="aud-manager__row">
+                <span class="aud-manager__avatar" aria-hidden="true"></span>
+                <a href="#" class="aud-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
             </div>
-            <p class="tech-manager__role">Менеджер проекта</p>
+            <p class="aud-manager__role">Менеджер проекта</p>
             <a href="#" class="section__link">Руководство и команда Академии</a>
         </article>
     </div>
