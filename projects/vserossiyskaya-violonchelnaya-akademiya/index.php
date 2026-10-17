@@ -276,20 +276,20 @@ $img = '/projects/vserossiyskaya-violonchelnaya-akademiya/images';
 </section>
 
 <section class="vva-follow">
-    <div class="section__container vva-follow__grid">
+    <div class="section__container aud-follow__grid">
         <div>
             <p class="vva-follow__label">Смотрите также</p>
             <a href="#" class="vva-chip">Видеоархив</a>
             <a href="#" class="vva-chip">Медиацентр</a>
             <a href="/afisha/" class="vva-chip">Афиша</a>
         </div>
-        <article class="vva-manager">
-            <p class="vva-manager__label">Менеджер проекта</p>
-            <div class="vva-manager__row">
-                <span class="vva-manager__avatar" aria-hidden="true"></span>
-                <a href="#" class="vva-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
+        <article class="aud-manager">
+            <p class="aud-manager__label">Менеджер проекта</p>
+            <div class="aud-manager__row">
+                <span class="aud-manager__avatar" aria-hidden="true"></span>
+                <a href="#" class="aud-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
             </div>
-            <p class="vva-manager__role">Менеджер проекта</p>
+            <p class="aud-manager__role">Менеджер проекта</p>
             <a href="#" class="section__link">Руководство и команда Академии</a>
         </article>
     </div>
