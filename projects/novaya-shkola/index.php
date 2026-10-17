@@ -44,8 +44,8 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
         </div>
     </div>
 </section>
-<section class="section__container">
-    <div class=" ns-about__grid">
+<section class="ns-about">
+    <div class="section__container ns-about__grid">
         <div class="ns-about__text">
             <p class="ns-about__lead">«Новая школа» объединяет музыкантов, которые уже заявили о себе на концертной
                 сцене и в преподавании, и предоставляет им площадку для передачи профессионального опыта в формате
