@@ -268,20 +268,20 @@ $img = '/projects/mezhdunarodnye-obmeny/images';
 </section>
 
 <section class="intl-follow">
-    <div class="section__container intl-follow__grid">
+    <div class="section__container aud-follow__grid">
         <div>
             <p class="intl-muted">Смотрите также</p>
             <p>Проект «Звёзды Виолончельной академии»</p>
             <p>Проект «BA & VIVACELLO»</p>
             <a href="/afisha/" class="intl-chip">Афиша</a>
         </div>
-        <article class="intl-manager">
-            <p class="intl-manager__label">Менеджер проекта</p>
-            <div class="intl-manager__row">
-                <span class="intl-manager__avatar" aria-hidden="true"></span>
-                <a href="#" class="intl-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
+        <article class="aud-manager">
+            <p class="aud-manager__label">Менеджер проекта</p>
+            <div class="aud-manager__row">
+                <span class="aud-manager__avatar" aria-hidden="true"></span>
+                <a href="#" class="aud-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
             </div>
-            <p class="intl-manager__role">Менеджер проекта</p>
+            <p class="aud-manager__role">Менеджер проекта</p>
             <a href="#" class="section__link">Руководство и команда Академии</a>
         </article>
     </div>
