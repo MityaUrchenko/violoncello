@@ -5,6 +5,7 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
 ?>
 <link rel="stylesheet" href="/local/templates/main/template_styles.css">
 <link rel="stylesheet" href="/projects/novaya-shkola/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.css">
 
 <section class="hero-secondary">
     <div class="hero-secondary__bg">
@@ -185,11 +186,21 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
             <a href="#" class="section__link">Смотреть все</a>
         </div>
         <div class="ns-photos__grid">
-            <img src="/projects/novaya-shkola/images/photo-main.jpg" alt="">
-            <img src="/projects/novaya-shkola/images/photo-2.jpg" alt="">
-            <img src="/projects/novaya-shkola/images/photo-3.jpg" alt="">
-            <img src="/projects/novaya-shkola/images/photo-4.jpg" alt="">
-            <img src="/projects/novaya-shkola/images/photo-5.jpg" alt="">
+            <a href="/projects/novaya-shkola/images/photo-main.jpg" data-fancybox="novaya-shkola-photos" data-caption="Фотографии с мастер-классов первого сезона">
+                <img src="/projects/novaya-shkola/images/photo-main.jpg" alt="Фотографии с мастер-классов первого сезона">
+            </a>
+            <a href="/projects/novaya-shkola/images/photo-2.jpg" data-fancybox="novaya-shkola-photos" data-caption="Мастер-класс первого сезона">
+                <img src="/projects/novaya-shkola/images/photo-2.jpg" alt="Мастер-класс первого сезона">
+            </a>
+            <a href="/projects/novaya-shkola/images/photo-3.jpg" data-fancybox="novaya-shkola-photos" data-caption="Мастер-класс первого сезона">
+                <img src="/projects/novaya-shkola/images/photo-3.jpg" alt="Мастер-класс первого сезона">
+            </a>
+            <a href="/projects/novaya-shkola/images/photo-4.jpg" data-fancybox="novaya-shkola-photos" data-caption="Мастер-класс первого сезона">
+                <img src="/projects/novaya-shkola/images/photo-4.jpg" alt="Мастер-класс первого сезона">
+            </a>
+            <a href="/projects/novaya-shkola/images/photo-5.jpg" data-fancybox="novaya-shkola-photos" data-caption="Мастер-класс первого сезона">
+                <img src="/projects/novaya-shkola/images/photo-5.jpg" alt="Мастер-класс первого сезона">
+            </a>
         </div>
     </div>
 </section>
@@ -247,5 +258,14 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
         </article>
     </div>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.umd.js"></script>
+<script>
+    if (window.Fancybox) {
+        Fancybox.bind('[data-fancybox="novaya-shkola-photos"]', {
+            Hash: false
+        });
+    }
+</script>
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'; ?>
