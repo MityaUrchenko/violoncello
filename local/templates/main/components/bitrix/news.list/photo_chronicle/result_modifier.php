@@ -3,11 +3,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 
-global $APPLICATION;
-
 $photoProp = $arParams['PHOTO_PROPERTY'] ?: 'PHOTOS';
-$projectProp = $arParams['PROJECT_PROPERTY'] ?: 'PROJECT';
-$eventProp = $arParams['EVENT_PROPERTY'] ?: 'EVENT';
 
 foreach ($arResult['ITEMS'] as &$item) {
     $photos = [];
