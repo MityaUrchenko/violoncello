@@ -33,7 +33,7 @@ $program = [
         <img src="<?= $img ?>/hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
     </div>
     <div class="hero-secondary__content">
-        <p class="hero-secondary__breadcrumb">Цикл концертов</p>
+        <p class="hero-secondary__breadcrumb"><a href="/projects/">Наши проекты</a> / Цикл концертов</p>
         <h1 class="hero-secondary__title">Звёзды Всероссийской<br>виолончельной академии</h1>
         <p class="hero-secondary__subtitle">Известные виолончелисты с мировым именем и молодые таланты — на одной сцене.</p>
         <a href="#concert" class="btn btn--primary">Финальный концерт сезона</a>

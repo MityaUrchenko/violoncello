@@ -12,7 +12,7 @@ $img = '/projects/vserossiyskaya-violonchelnaya-akademiya/images';
         <img src="<?= $img ?>/hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
     </div>
     <div class="hero-secondary__content">
-        <p class="hero-secondary__breadcrumb">IV выпуск · 26–29 марта 2026 · Москва</p>
+        <p class="hero-secondary__breadcrumb"><a href="/projects/">Наши проекты</a> / IV выпуск · 26–29 марта 2026 · Москва</p>
         <h1 class="hero-secondary__title">Всероссийская виолончельная<br>академия</h1>
         <p class="vva-hero__name">имени А. П. Никитина</p>
         <p class="hero-secondary__subtitle">Главное образовательное событие для виолончелистов в России — ежегодный интенсив, объединяющий исполнителей, преподавателей и студентов.</p>

@@ -12,7 +12,7 @@ $img = '/projects/istoriya-violonchelnogo-ispolnitelstva/images';
         <img src="<?= $img ?>/hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
     </div>
     <div class="hero-secondary__content">
-        <p class="hero-secondary__breadcrumb">Авторский цикл лекций Татьяны Лукашиной</p>
+        <p class="hero-secondary__breadcrumb"><a href="/projects/">Наши проекты</a> / Авторский цикл лекций Татьяны Лукашиной</p>
         <h1 class="hero-secondary__title">История виолончельного<br>исполнительства</h1>
         <p class="hero-secondary__subtitle">От эпохи виолы да гамба и первых виолончелистов до современных музыкальных традиций.</p>
         <a href="#lectures" class="btn btn--primary">Смотреть лекции</a>

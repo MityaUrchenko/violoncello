@@ -13,7 +13,7 @@ $img = '/projects/violonchelnaya-akademiya-i-vivacello/images';
         <img src="<?= $img ?>/hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
     </div>
     <div class="hero-secondary__content">
-        <p class="hero-secondary__breadcrumb">Партнёрский проект · с 2025 года</p>
+        <p class="hero-secondary__breadcrumb"><a href="/projects/">Наши проекты</a> / Партнёрский проект · с 2025 года</p>
         <h1 class="hero-secondary__title">Виолончельная академия<br>и VIVACELLO</h1>
         <p class="hero-secondary__subtitle">Совместные проекты молодых исполнителей и опытных музыкантов.</p>
         <a href="#" class="btn btn--primary">Сайт фестиваля</a>

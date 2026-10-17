@@ -13,7 +13,7 @@ $img = '/projects/mezhdunarodnye-obmeny/images';
         <img src="<?= $img ?>/hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
     </div>
     <div class="hero-secondary__content">
-        <p class="hero-secondary__breadcrumb">Международное сотрудничество</p>
+        <p class="hero-secondary__breadcrumb"><a href="/projects/">Наши проекты</a> / Международное сотрудничество</p>
         <h1 class="hero-secondary__title">Международные проекты</h1>
         <p class="hero-secondary__subtitle">Исполнители, педагоги и музыкальные учреждения разных стран — вместе.</p>
         <a href="#cooperation" class="btn btn--primary">Предложить сотрудничество</a>

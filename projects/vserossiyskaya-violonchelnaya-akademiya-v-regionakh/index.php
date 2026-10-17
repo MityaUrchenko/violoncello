@@ -12,7 +12,7 @@ $img = '/projects/vserossiyskaya-violonchelnaya-akademiya-v-regionakh/images';
         <img src="<?= $img ?>/hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
     </div>
     <div class="hero-secondary__content">
-        <p class="hero-secondary__breadcrumb">Концертно-образовательный проект</p>
+        <p class="hero-secondary__breadcrumb"><a href="/projects/">Наши проекты</a> / Концертно-образовательный проект</p>
         <h1 class="hero-secondary__title">Виолончельная академия<br>в регионах России</h1>
         <p class="hero-secondary__subtitle">Мастер-классы, лекции и концерты с приглашёнными педагогами — в вашем городе.</p>
         <a href="#organize" class="btn btn--primary">Организовать мероприятие</a>

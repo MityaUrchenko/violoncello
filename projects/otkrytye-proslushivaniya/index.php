@@ -12,7 +12,7 @@ $img = '/projects/otkrytye-proslushivaniya/images';
         <img src="<?= $img ?>/hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
     </div>
     <div class="hero-secondary__content">
-        <p class="hero-secondary__breadcrumb">Ежегодно · перед началом каждого сезона</p>
+        <p class="hero-secondary__breadcrumb"><a href="/projects/">Наши проекты</a> / Ежегодно · перед началом каждого сезона</p>
         <h1 class="hero-secondary__title">Открытые прослушивания</h1>
         <p class="hero-secondary__subtitle">Возможность заявить о себе, получить профессиональную обратную связь и открыть новые перспективы участия в проектах Академии.</p>
         <a href="https://cello-audition.ru" class="btn btn--primary">Перейти на сайт открытого прослушивания</a>

@@ -12,7 +12,7 @@ $img = '/projects/tekhnika-igry-na-violoncheli-kirilla-kravtsova/images';
         <img src="<?= $img ?>/hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
     </div>
     <div class="hero-secondary__content">
-        <p class="hero-secondary__breadcrumb">Медиапроект · 2025</p>
+        <p class="hero-secondary__breadcrumb"><a href="/projects/">Наши проекты</a> / Медиапроект · 2025</p>
         <h1 class="hero-secondary__title">Техника игры на виолончели<br>Кирилла Кравцова</h1>
         <p class="hero-secondary__subtitle">Короткие видеоуроки о технических приёмах и основах работы правой и левой руки.</p>
         <a href="#lessons" class="btn btn--primary">Смотреть видеоуроки</a>
