@@ -63,11 +63,10 @@
 .reg-format h3,
 .reg-trip__title,
 .reg-prizes__cases h3 {
-  margin: 0 0 0.6rem;
-  font-family: 'Cormorant Unicase', serif;
+  margin: 0 0 1rem;
   font-weight: 500;
   color: #981B2F;
-  font-size: 1.7rem;
+  font-size: 2rem;
   line-height: 1.2;
 }
 
