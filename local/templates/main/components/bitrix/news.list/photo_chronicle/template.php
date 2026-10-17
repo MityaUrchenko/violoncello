@@ -11,47 +11,6 @@ $filter = $arResult['FILTER'] ?? [];
 $opts = $arResult['FILTER_OPTIONS'] ?? [];
 $base = $arResult['FILTER_BASE'] ?: '/mediacenter/photo/';
 ?>
-<section class="filter-block">
-    <div class="section__container">
-        <form class="filter-block__row" method="get" action="<?= htmlspecialcharsbx($base) ?>">
-            <div class="filter-block__left">
-                <a href="<?= htmlspecialcharsbx($base) ?>" class="btn btn--primary">Все альбомы</a>
-                <label class="filter-block__dropdown">
-                    Год
-                    <select name="year" onchange="this.form.submit()">
-                        <option value="">Все</option>
-                        <?php foreach ($opts['year'] ?? [] as $val => $label): ?>
-                        <option value="<?= htmlspecialcharsbx($val) ?>"<?= ($filter['year'] ?? '') === (string)$val ? ' selected' : '' ?>><?= htmlspecialcharsbx($label) ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </label>
-                <label class="filter-block__dropdown">
-                    Проект
-                    <select name="project" onchange="this.form.submit()">
-                        <option value="">Все</option>
-                        <?php foreach ($opts['project'] ?? [] as $val => $label): ?>
-                        <option value="<?= htmlspecialcharsbx($val) ?>"<?= ($filter['project'] ?? '') === (string)$val ? ' selected' : '' ?>><?= htmlspecialcharsbx($label) ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </label>
-                <label class="filter-block__dropdown">
-                    Мероприятие
-                    <select name="event" onchange="this.form.submit()">
-                        <option value="">Все</option>
-                        <?php foreach ($opts['event'] ?? [] as $val => $label): ?>
-                        <option value="<?= htmlspecialcharsbx($val) ?>"<?= ($filter['event'] ?? '') === (string)$val ? ' selected' : '' ?>><?= htmlspecialcharsbx($label) ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </label>
-            </div>
-            <a href="<?= htmlspecialcharsbx($base) ?>" class="filter-block__reset">Сбросить фильтры</a>
-        </form>
-    </div>
-    <svg width="100%" height="" viewBox="0 0 1920 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 20.2858C104.542 13.1045 368.701 -0.827229 589.004 0.896286C864.382 3.05068 1124.46 26.75 1407.49 26.75C1633.91 26.75 1843.51 9.51419 1920 0.896286" stroke="#981B2F" stroke-width="1.5"/>
-    </svg>
-</section>
-
 <section class="photo-chronicle">
     <div class="section__container">
         <?php if (empty($arResult['ITEMS'])): ?>
