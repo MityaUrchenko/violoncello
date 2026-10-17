@@ -358,3 +358,13 @@
     height: 12rem;
   }
 }
+
+/* Единый блок ссылок и менеджера проекта */
+.aud-follow__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: stretch; }
+.aud-manager { background: #fff; padding: 1.25rem 1.4rem 1.4rem; }
+.aud-manager__label { color: #888; font-size: 0.72rem; text-transform: uppercase; }
+.aud-manager__row { display: flex; align-items: center; gap: 1rem; }
+.aud-manager__avatar { width: 4.5rem; height: 4.5rem; border-radius: 50%; background: #f3dfe3; flex-shrink: 0; }
+.aud-manager__name { color: #1a1a1a; border-bottom: 1px solid #1a1a1a; text-decoration: none; font-size: 1.25rem; }
+.aud-manager__role { margin: 0.35rem 0 0.8rem 5.5rem; color: #981B2F; }
+@media (max-width: 767px) { .aud-follow__grid { grid-template-columns: 1fr; } }

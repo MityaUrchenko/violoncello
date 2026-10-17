@@ -192,20 +192,20 @@ $img = '/projects/violonchelnaya-akademiya-i-vivacello/images';
 </section>
 
 <section class="viva-follow">
-    <div class="section__container viva-follow__grid">
+    <div class="section__container aud-follow__grid">
         <div>
             <p class="viva-muted">Смотрите также</p>
             <a href="/afisha/" class="viva-chip">Афиша</a>
             <a href="#" class="viva-chip">Медиатека</a>
             <a href="/projects/mezhdunarodnye-obmeny/" class="viva-chip">Международные проекты</a>
         </div>
-        <article class="viva-manager">
-            <p class="viva-manager__label">Менеджер проекта</p>
-            <div class="viva-manager__row">
-                <span class="viva-manager__avatar" aria-hidden="true"></span>
-                <a href="#" class="viva-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
+        <article class="aud-manager">
+            <p class="aud-manager__label">Менеджер проекта</p>
+            <div class="aud-manager__row">
+                <span class="aud-manager__avatar" aria-hidden="true"></span>
+                <a href="#" class="aud-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
             </div>
-            <p class="viva-manager__role">Менеджер проекта</p>
+            <p class="aud-manager__role">Менеджер проекта</p>
             <a href="#" class="section__link">Руководство и команда Академии</a>
         </article>
     </div>
