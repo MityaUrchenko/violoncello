@@ -120,7 +120,7 @@ $program = [
                 <h2 class="section__title">Фото и видео концерта</h2>
                 <p class="stars-muted">Большой зал Московской консерватории, 2 июня 2026</p>
             </div>
-            <a href="#" class="section__link">Весь альбом</a>
+            <a href="/mediacenter/photo/detail.php?ID=19" class="section__link">Весь альбом</a>
         </div>
         <div class="stars-media__grid">
             <a href="#" class="stars-media__video">
