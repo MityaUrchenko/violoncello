@@ -27,6 +27,7 @@ $program = [
 ?>
 <link rel="stylesheet" href="/local/templates/main/template_styles.css">
 <link rel="stylesheet" href="/projects/zvyezdy-vserossiyskoy-violonchelnoy-akademii/style.css">
+<link rel="stylesheet" href="/projects/otkrytye-proslushivaniya/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.css">
 
 <section class="hero-secondary stars-hero">
