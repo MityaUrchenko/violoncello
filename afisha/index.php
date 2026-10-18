@@ -1,114 +1,89 @@
-<?php
-require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
-$APPLICATION->SetTitle('Афиша');
-$APPLICATION->SetPageProperty('title', 'Афиша — Всероссийская виолончельная академия');
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Афиша");
+$APPLICATION->SetAdditionalCSS("/assets/css/styles.afisha.css");
+$APPLICATION->AddHeadScript("/assets/js/afisha.js");
 
-global $arrFilterAfisha;
-$arrFilterAfisha = [];
+const AFISHA_IBLOCK_ID = 1;
 
-$type = isset($_GET['type']) ? trim((string)$_GET['type']) : '';
-$date = isset($_GET['date']) ? trim((string)$_GET['date']) : '';
-$city = isset($_GET['city']) ? trim((string)$_GET['city']) : '';
-$project = isset($_GET['project']) ? trim((string)$_GET['project']) : '';
-$participants = isset($_GET['participants']) ? trim((string)$_GET['participants']) : '';
-
-if ($type !== '') {
-    $arrFilterAfisha[] = [
-        'LOGIC' => 'OR',
-        ['PROPERTY_TYPE' => $type],
-        ['PROPERTY_TYPE_VALUE' => $type],
-    ];
-}
-if (preg_match('/^\d{4}-\d{2}$/', $date)) {
-    $fromTs = strtotime($date . '-01 00:00:00');
-    $toTs = strtotime('last day of this month 23:59:59', $fromTs);
-    $arrFilterAfisha['>=DATE_ACTIVE_FROM'] = ConvertTimeStamp($fromTs, 'FULL');
-    $arrFilterAfisha['<=DATE_ACTIVE_FROM'] = ConvertTimeStamp($toTs, 'FULL');
-}
-if ($city !== '') {
-    $arrFilterAfisha[] = [
-        'LOGIC' => 'OR',
-        ['PROPERTY_CITY' => $city],
-        ['PROPERTY_CITY_VALUE' => $city],
-    ];
-}
-if ($project !== '') {
-    $arrFilterAfisha[] = [
-        'LOGIC' => 'OR',
-        ['PROPERTY_PROJECT' => $project],
-        ['PROPERTY_PROJECT_VALUE' => $project],
-    ];
-}
-if ($participants !== '') {
-    $arrFilterAfisha[] = [
-        'LOGIC' => 'OR',
-        ['PROPERTY_PARTICIPANTS' => $participants],
-        ['PROPERTY_PARTICIPANTS_VALUE' => $participants],
-    ];
+// Серверный фильтр по GET (без JS): ?type=concert|masterclass|special
+$type = isset($_GET["type"]) ? preg_replace("/[^a-z]/", "", $_GET["type"]) : "";
+global $arrAfishaFilter;
+$arrAfishaFilter = [">=PROPERTY_DATE_EVENT" => date("Y-m-d 00:00:00")];
+if ($type !== "" && CModule::IncludeModule("iblock")) {
+    $enum = CIBlockPropertyEnum::GetList([], ["IBLOCK_ID" => AFISHA_IBLOCK_ID, "CODE" => "TYPE", "XML_ID" => $type])->Fetch();
+    $arrAfishaFilter["PROPERTY_TYPE"] = $enum ? $enum["ID"] : -1;
 }
 ?>
-
-<section class="hero-secondary">
+<section class="hero-secondary hero-secondary--afisha">
     <div class="hero-secondary__bg">
-        <img src="/assets/images/afisha-hero.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
+        <img src="/assets/images/news/otkrytie-sezona.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
     </div>
     <div class="hero-secondary__content">
         <h1 class="hero-secondary__title">Афиша</h1>
-        <p class="hero-secondary__subtitle">Концерты, мастер-классы, лекции, конкурсы и специальные мероприятия Академии</p>
     </div>
 </section>
-
-<?php
-$APPLICATION->IncludeComponent(
-    'bitrix:news.list',
-    'afisha',
+<section class="afisha-filters">
+    <div class="section__container">
+        <div class="afisha-filters__types">
+            <a href="?type=" class="afisha-filters__tab<?=($type===''?' afisha-filters__tab--active':'')?>" data-type="">Все события</a>
+            <a href="?type=concert" class="afisha-filters__tab<?=($type==='concert'?' afisha-filters__tab--active':'')?>" data-type="concert">Концерты</a>
+            <a href="?type=masterclass" class="afisha-filters__tab<?=($type==='masterclass'?' afisha-filters__tab--active':'')?>" data-type="masterclass">Мастер-классы</a>
+            <a href="?type=special" class="afisha-filters__tab<?=($type==='special'?' afisha-filters__tab--active':'')?>" data-type="special">Специальные мероприятия</a>
+        </div>
+        <div class="afisha-filters__row">
+            <div class="afisha-filters__dropdowns">
+                <label class="afisha-filters__dropdown">Месяц
+                    <select name="month">
+                        <option value="">Все месяцы</option>
+                        <option value="2026-10">Октябрь 2026</option>
+                        <option value="2026-11">Ноябрь 2026</option>
+                        <option value="2026-12">Декабрь 2026</option>
+                    </select>
+                </label>
+                <label class="afisha-filters__dropdown">Город
+                    <select name="city">
+                        <option value="">Все города</option>
+                        <option value="msk">Москва</option>
+                        <option value="spb">Санкт-Петербург</option>
+                        <option value="klin">Клин</option>
+                        <option value="kaliningrad">Калининград</option>
+                    </select>
+                </label>
+                <label class="afisha-filters__dropdown">Проект
+                    <select name="project">
+                        <option value="">Все проекты</option>
+                        <option value="stars">Звёзды Виолончельной академии</option>
+                        <option value="regions">Виолончельная академия в регионах</option>
+                        <option value="vivacello">Виолончельная академия и VIVACELLO</option>
+                    </select>
+                </label>
+            </div>
+            <a href="?" class="afisha-filters__reset">Сбросить фильтры</a>
+        </div>
+    </div>
+</section>
+<?$APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "afisha",
     [
-        'IBLOCK_TYPE' => 'content',
-        'IBLOCK_ID' => 1,
-        'NEWS_COUNT' => 9,
-        'SORT_BY1' => 'ACTIVE_FROM',
-        'SORT_ORDER1' => 'ASC',
-        'SORT_BY2' => 'SORT',
-        'SORT_ORDER2' => 'ASC',
-        'FILTER_NAME' => 'arrFilterAfisha',
-        'FIELD_CODE' => ['NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'DETAIL_PAGE_URL', 'DATE_ACTIVE_FROM'],
-        'PROPERTY_CODE' => ['PLACE', 'TICKETS_URL', 'TYPE', 'CITY', 'PROJECT', 'PARTICIPANTS'],
-        'CHECK_DATES' => 'Y',
-        'DETAIL_URL' => '',
-        'AJAX_MODE' => 'N',
-        'CACHE_TYPE' => 'A',
-        'CACHE_TIME' => 3600,
-        'CACHE_FILTER' => 'Y',
-        'CACHE_GROUPS' => 'Y',
-        'PREVIEW_TRUNCATE_LEN' => '',
-        'ACTIVE_DATE_FORMAT' => 'j F Y',
-        'SET_TITLE' => 'N',
-        'SET_BROWSER_TITLE' => 'N',
-        'SET_META_KEYWORDS' => 'N',
-        'SET_META_DESCRIPTION' => 'N',
-        'SET_LAST_MODIFIED' => 'N',
-        'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
-        'ADD_SECTIONS_CHAIN' => 'N',
-        'HIDE_LINK_WHEN_NO_DETAIL' => 'N',
-        'PARENT_SECTION' => '',
-        'PARENT_SECTION_CODE' => '',
-        'INCLUDE_SUBSECTIONS' => 'Y',
-        'STRICT_SECTION_CHECK' => 'N',
-        'DISPLAY_TOP_PAGER' => 'N',
-        'DISPLAY_BOTTOM_PAGER' => 'Y',
-        'PAGER_TITLE' => 'События',
-        'PAGER_SHOW_ALWAYS' => 'N',
-        'PAGER_TEMPLATE' => '.default',
-        'PAGER_DESC_NUMBERING' => 'N',
-        'PAGER_DESC_NUMBERING_CACHE_TIME' => 36000,
-        'PAGER_SHOW_ALL' => 'N',
-        'TYPE_PROPERTY' => 'TYPE',
-        'CITY_PROPERTY' => 'CITY',
-        'PROJECT_PROPERTY' => 'PROJECT',
-        'PARTICIPANTS_PROPERTY' => 'PARTICIPANTS',
-    ],
-    false
-);
-?>
-
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'; ?>
+        "IBLOCK_TYPE" => "content",
+        "IBLOCK_ID" => AFISHA_IBLOCK_ID,
+        "NEWS_COUNT" => "12",
+        "SORT_BY1" => "PROPERTY_DATE_EVENT",
+        "SORT_ORDER1" => "ASC",
+        "FILTER_NAME" => "arrAfishaFilter",
+        "FIELD_CODE" => ["PREVIEW_TEXT", "PREVIEW_PICTURE"],
+        "PROPERTY_CODE" => ["DATE_EVENT", "TIME", "DATE_LABEL", "CITY", "TYPE", "PROJECT", "BUY_URL", "MORE_URL", "POSTER"],
+        "CHECK_DATES" => "N",
+        "DETAIL_URL" => "/afisha/#ELEMENT_CODE#/",
+        "SET_TITLE" => "N",
+        "DISPLAY_TOP_PAGER" => "N",
+        "DISPLAY_BOTTOM_PAGER" => "Y",
+        "PAGER_TEMPLATE" => "academy",
+        "CACHE_TYPE" => "A",
+        "CACHE_TIME" => "3600",
+        "CACHE_FILTER" => "Y",
+    ]
+);?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
