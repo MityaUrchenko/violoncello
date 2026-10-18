@@ -27,7 +27,6 @@ $program = [
 ?>
 <link rel="stylesheet" href="/local/templates/main/template_styles.css">
 <link rel="stylesheet" href="/projects/zvyezdy-vserossiyskoy-violonchelnoy-akademii/style.css">
-<link rel="stylesheet" href="/projects/otkrytye-proslushivaniya/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.css">
 
 <section class="hero-secondary stars-hero">
@@ -156,7 +155,6 @@ $program = [
     </div>
 </section>
 
-
 <section class="aud-follow">
     <div class="section__container aud-follow__grid">
         <div>
@@ -178,8 +176,6 @@ $program = [
             </div>
             <a href="/academy/team/" class="section__link">Руководство и команда Академии</a>
         </article>
-    </div>
-</section>rticle>
     </div>
 </section>
 
