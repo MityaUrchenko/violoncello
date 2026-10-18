@@ -159,11 +159,13 @@ $img = '/projects/otkrytye-proslushivaniya/images';
 
 <section class="aud-follow">
     <div class="section__container aud-follow__grid">
-        <p class="aud-follow__label">Смотрите также</p>
-        <div class="aud-chips">
-            <a href="/media/video/" class="aud-chip">Видеоархив</a>
-            <a href="/mediacenter/" class="aud-chip">Медиацентр</a>
-            <a href="/afisha/" class="aud-chip">Афиша</a>
+        <div>
+            <p class="aud-follow__label">Смотрите также</p>
+            <div class="aud-chips">
+                <a href="/media/video/" class="aud-chip">Видеоархив</a>
+                <a href="/mediacenter/" class="aud-chip">Медиацентр</a>
+                <a href="/afisha/" class="aud-chip">Афиша</a>
+            </div>
         </div>
         <article class="aud-manager">
             <p class="aud-manager__label">Менеджер проекта</p>
