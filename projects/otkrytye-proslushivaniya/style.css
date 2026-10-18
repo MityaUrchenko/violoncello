@@ -164,6 +164,7 @@
 .aud-chips {
   display: flex;
   flex-direction: column;
+  align-items: start;
 }
 .aud-chip {
   margin: 0 0.55rem 1rem 0;
@@ -226,7 +227,7 @@
 
 .aud-manager {
   background: #fff;
-  padding: 1.25rem 1.4rem 1.4rem;
+  padding: 2rem 3rem;
 }
 
 .aud-manager__label {
@@ -239,14 +240,16 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin: 1rem 0;
 }
 
 .aud-manager__avatar {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   background: #f3dfe3;
   flex-shrink: 0;
+  border: 1px solid #1A1A1A;
 }
 
 .aud-manager__name {
@@ -257,7 +260,7 @@
 }
 
 .aud-manager__role {
-  margin: 0.35rem 0 0.8rem 5.5rem;
+  margin: 1rem 0 0 0;
   color: #981B2F;
 }
 
