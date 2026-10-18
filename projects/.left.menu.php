@@ -1,7 +1,7 @@
 <?php
 $aMenuLinks = [
     ['Новая школа', '/projects/novaya-shkola//', [], [], ''],
-    ['Международные обмены', '/projects/international/', [], [], ''],
+    ['Международные проекты', '/projects/international/', [], [], ''],
     ['Всероссийская виолончельная академия в регионах', '/projects/regions/', [], [], ''],
     ['Звёзды Всероссийской виолончельной академии', '/projects/zvyezdy-vserossiyskoy-violonchelnoy-akademii/', [], [], ''],
     ['Виолончельная академия и VIVACELLO', '/projects/vivacello/', [], [], ''],
