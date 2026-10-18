@@ -75,7 +75,7 @@
   line-height: 1;
   text-transform: uppercase;
 }
-.stars-concert__date .section__title {
+.stars-concert__head .section__title {
   font-family: 'Cormorant Unicase', serif;
   font-weight: 600;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
