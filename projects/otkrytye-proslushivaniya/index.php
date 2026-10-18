@@ -75,7 +75,7 @@ $img = '/projects/otkrytye-proslushivaniya/images';
                 <h2>Что учесть</h2>
                 <p>Можно играть по нотам. Комиссия может остановить выступление в любой момент. Отдельных репетиций с концертмейстером Академии не предусмотрено — договориться можно заранее. Иногородние участники организуют проезд и проживание самостоятельно.</p>
             </article>
-            <a href="#" class="section__link">Частые вопросы</a>
+            <a href="/academy/faq/" class="section__link">Частые вопросы</a>
         </aside>
     </div>
 </section>
@@ -116,8 +116,8 @@ $img = '/projects/otkrytye-proslushivaniya/images';
             </article>
         </div>
         <p class="aud-offers__links">
-            <a href="#" class="section__link">Репетиторий</a>
-            <a href="#" class="section__link">Инструментальный фонд</a>
+            <a href="/academy/repetitory/" class="section__link">Репетиторий</a>
+            <a href="/academy/fond/" class="section__link">Инструментальный фонд</a>
         </p>
     </div>
 </section>
@@ -159,10 +159,10 @@ $img = '/projects/otkrytye-proslushivaniya/images';
 
 <section class="aud-follow">
     <div class="section__container aud-follow__grid">
-        <div>
-            <p class="aud-follow__label">Смотрите также</p>
-            <a href="#" class="aud-chip">Видеоархив</a>
-            <a href="#" class="aud-chip">Медиацентр</a>
+        <p class="aud-follow__label">Смотрите также</p>
+        <div class="aud-chips">
+            <a href="/media/video/" class="aud-chip">Видеоархив</a>
+            <a href="/mediacenter/" class="aud-chip">Медиацентр</a>
             <a href="/afisha/" class="aud-chip">Афиша</a>
         </div>
         <article class="aud-manager">

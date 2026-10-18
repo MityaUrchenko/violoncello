@@ -161,13 +161,16 @@
   text-decoration: none;
 }
 
+.aud-chips {
+  display: flex;
+  flex-direction: column;
+}
 .aud-chip {
-  margin: 0 0.55rem 0.55rem 0;
+  margin: 0 0.55rem 1rem 0;
   border-color: #981B2F;
   color: #981B2F;
-  font-size: 0.75rem;
+  font-size: 16px;
   text-transform: uppercase;
-  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
 }
 
 .aud-offers__links {
