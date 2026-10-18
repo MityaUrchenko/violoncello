@@ -5,6 +5,7 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
 ?>
 <link rel="stylesheet" href="/local/templates/main/template_styles.css">
 <link rel="stylesheet" href="/projects/novaya-shkola/style.css">
+<link rel="stylesheet" href="/projects/otkrytye-proslushivaniya/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.css">
 
 <section class="hero-secondary">
@@ -282,7 +283,7 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
     ?>
 </section>
 
-<section class="ns-next">
+<section class="aud-follow">
     <div class="section__container aud-follow__grid">
         <div>
             <p class="ns-next__label">Продолжение следует</p>
@@ -293,10 +294,12 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
             <p class="aud-manager__label">Менеджер проекта</p>
             <div class="aud-manager__row">
                 <span class="aud-manager__avatar" aria-hidden="true"></span>
-                <a href="#" class="aud-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
+                <div>
+                    <a href="#" class="aud-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
+                    <p class="aud-manager__role">Менеджер проекта</p>
+                </div>
             </div>
-            <p class="aud-manager__role">Менеджер проекта</p>
-            <a href="#" class="section__link">Руководство и команда Академии</a>
+            <a href="/academy/team/" class="section__link">Руководство и команда Академии</a>
         </article>
     </div>
 </section>
