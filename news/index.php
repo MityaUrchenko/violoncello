@@ -1,81 +1,35 @@
-<?php
-require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
-$APPLICATION->SetTitle('Новости');
-$APPLICATION->SetPageProperty('title', 'Новости — Всероссийская виолончельная академия');
-
-$APPLICATION->IncludeComponent(
-    'bitrix:news',
-    'media',
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("Новости");
+$APPLICATION->SetAdditionalCSS("/assets/css/styles.afisha.css");
+?>
+<section class="hero-secondary hero-secondary--news">
+    <div class="hero-secondary__bg">
+        <img src="/assets/images/regions/kazan-2.jpg" alt="" class="hero-secondary__bg-img" aria-hidden="true">
+    </div>
+    <div class="hero-secondary__content">
+        <h1 class="hero-secondary__title">Новости</h1>
+    </div>
+</section>
+<?$APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "news",
     [
-        'IBLOCK_TYPE' => 'news',
-        'IBLOCK_ID' => '3',
-        'NEWS_COUNT' => '12',
-        'USE_SEARCH' => 'N',
-        'USE_RSS' => 'N',
-        'USE_RATING' => 'N',
-        'USE_CATEGORIES' => 'N',
-        'USE_REVIEW' => 'N',
-        'USE_FILTER' => 'N',
-        'SORT_BY1' => 'ACTIVE_FROM',
-        'SORT_ORDER1' => 'DESC',
-        'SORT_BY2' => 'SORT',
-        'SORT_ORDER2' => 'ASC',
-        'CHECK_DATES' => 'Y',
-        'SEF_MODE' => 'Y',
-        'SEF_FOLDER' => '/news/',
-        'SEF_URL_TEMPLATES' => [
-            'news' => '',
-            'section' => '',
-            'detail' => '#ELEMENT_CODE#/',
-        ],
-        'AJAX_MODE' => 'N',
-        'AJAX_OPTION_JUMP' => 'N',
-        'AJAX_OPTION_STYLE' => 'Y',
-        'AJAX_OPTION_HISTORY' => 'N',
-        'CACHE_TYPE' => 'A',
-        'CACHE_TIME' => '3600',
-        'CACHE_FILTER' => 'N',
-        'CACHE_GROUPS' => 'Y',
-        'SET_LAST_MODIFIED' => 'N',
-        'SET_TITLE' => 'Y',
-        'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
-        'ADD_SECTIONS_CHAIN' => 'N',
-        'ADD_ELEMENT_CHAIN' => 'N',
-        'USE_PERMISSIONS' => 'N',
-        'STRICT_SECTION_CHECK' => 'N',
-        'PREVIEW_TRUNCATE_LEN' => '',
-        'LIST_ACTIVE_DATE_FORMAT' => 'j F Y',
-        'LIST_FIELD_CODE' => ['NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'DATE_ACTIVE_FROM', 'DETAIL_PAGE_URL'],
-        'LIST_PROPERTY_CODE' => [''],
-        'HIDE_LINK_WHEN_NO_DETAIL' => 'N',
-        'DISPLAY_NAME' => 'Y',
-        'META_KEYWORDS' => '-',
-        'META_DESCRIPTION' => '-',
-        'BROWSER_TITLE' => '-',
-        'DETAIL_SET_CANONICAL_URL' => 'N',
-        'DETAIL_ACTIVE_DATE_FORMAT' => 'j F Y',
-        'DETAIL_FIELD_CODE' => ['NAME', 'PREVIEW_TEXT', 'DETAIL_TEXT', 'PREVIEW_PICTURE', 'DETAIL_PICTURE', 'DATE_ACTIVE_FROM'],
-        'DETAIL_PROPERTY_CODE' => [''],
-        'DETAIL_DISPLAY_TOP_PAGER' => 'N',
-        'DETAIL_DISPLAY_BOTTOM_PAGER' => 'N',
-        'DETAIL_PAGER_TITLE' => 'Страница',
-        'DETAIL_PAGER_TEMPLATE' => '',
-        'DETAIL_PAGER_SHOW_ALL' => 'N',
-        'PAGER_TEMPLATE' => '.default',
-        'DISPLAY_TOP_PAGER' => 'N',
-        'DISPLAY_BOTTOM_PAGER' => 'Y',
-        'PAGER_TITLE' => 'Новости',
-        'PAGER_SHOW_ALWAYS' => 'N',
-        'PAGER_DESC_NUMBERING' => 'N',
-        'PAGER_DESC_NUMBERING_CACHE_TIME' => '36000',
-        'PAGER_SHOW_ALL' => 'N',
-        'PAGER_BASE_LINK_ENABLE' => 'N',
-        'SET_STATUS_404' => 'Y',
-        'SHOW_404' => 'Y',
-        'MESSAGE_404' => '',
-        'SECTION_TITLE' => 'Новости и медиа',
-    ],
-    false
-);
-
-require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php';
+        "IBLOCK_TYPE" => "content",
+        "IBLOCK_ID" => 3,
+        "NEWS_COUNT" => "12",
+        "SORT_BY1" => "ACTIVE_FROM",
+        "SORT_ORDER1" => "DESC",
+        "FIELD_CODE" => ["PREVIEW_PICTURE", "ACTIVE_FROM"],
+        "PROPERTY_CODE" => ["DATE_LABEL"],
+        "ACTIVE_DATE_FORMAT" => "j F Y",
+        "DETAIL_URL" => "/news/#ELEMENT_CODE#/",
+        "SET_TITLE" => "N",
+        "DISPLAY_TOP_PAGER" => "N",
+        "DISPLAY_BOTTOM_PAGER" => "Y",
+        "PAGER_TEMPLATE" => "academy",
+        "CACHE_TYPE" => "A",
+        "CACHE_TIME" => "3600",
+    ]
+);?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

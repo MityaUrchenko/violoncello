@@ -1,0 +1,128 @@
+{
+ "E": [
+  {
+   "iso": "2026-10-20",
+   "date": "20 октября 2026",
+   "time": "19:00",
+   "city": "msk",
+   "cityName": "Москва",
+   "types": [
+    "concert"
+   ],
+   "project": "stars",
+   "img": "afisha/navstrechu-20-oktyabrya.png",
+   "poster": 1,
+   "title": "Концерт “Навстречу Всероссийскому музыкальному конкурсу”",
+   "desc": "Концерт-марафон молодых исполнителей - участников предстоящего Всероссийского музыкального конкурса",
+   "buy": "https://www.mosconsv.ru/ru/concert/204095",
+   "more": ""
+  },
+  {
+   "iso": "2026-11-07",
+   "date": "7 ноября 2026",
+   "time": "17:00",
+   "city": "klin",
+   "cityName": "Клин",
+   "types": [
+    "concert"
+   ],
+   "project": "regions",
+   "img": "afisha/klin.jpg",
+   "poster": 1,
+   "title": "Виолончельная академия в Клину",
+   "desc": "Концерт в Государственном мемориальном музее-заповеднике П. И. Чайковского в День памяти композитора",
+   "buy": "https://tchaikovsky.house/event/violonchelnaya-akademiya-v-klinu-v-den-pamyati-p-i-chajkovskogo/",
+   "more": "/projects/regions/"
+  },
+  {
+   "iso": "2026-11-17",
+   "date": "17 ноября 2026",
+   "city": "spb",
+   "cityName": "Санкт-Петербург",
+   "types": [
+    "masterclass",
+    "special"
+   ],
+   "project": "vivacello",
+   "img": "afisha/pinkomb-spb.png",
+   "title": "Мастер-класс Стюарта Пинкомба в Санкт-Петербурге",
+   "desc": "Совместно с фестивалем VIVACELLO в стенах Санкт-Петербургской государственной консерватории имени Н. А. Римского-Корсакова",
+   "buy": "",
+   "more": "/projects/vivacello/"
+  },
+  {
+   "iso": "2026-11-19",
+   "date": "19 ноября 2026",
+   "city": "msk",
+   "cityName": "Москва",
+   "types": [
+    "masterclass",
+    "special"
+   ],
+   "project": "vivacello",
+   "img": "afisha/pinkomb-msk.webp",
+   "title": "Мастер-класс Стюарта Пинкомба в Москве",
+   "desc": "Совместно с фестивалем VIVACELLO в стенах Камерного зала Виолончельной академии",
+   "buy": "",
+   "more": "/projects/vivacello/"
+  },
+  {
+   "iso": "2026-12-13",
+   "date": "13 декабря 2026",
+   "time": "19:00",
+   "city": "msk",
+   "cityName": "Москва",
+   "types": [
+    "concert"
+   ],
+   "project": "stars",
+   "img": "afisha/znakomstvo-13-dekabrya.png",
+   "poster": 1,
+   "title": "Концерт “Знакомство с виолончелью: Традиции”",
+   "desc": "Самые известные произведения для виолончели. Концерт в рамках цикла “Звезды Виолончельной академии” в Рахманиновском зале Московской консерватории",
+   "buy": "",
+   "more": ""
+  },
+  {
+   "iso": "2026-12-19",
+   "date": "19–21 декабря 2026",
+   "city": "kaliningrad",
+   "cityName": "Калининград",
+   "types": [
+    "masterclass"
+   ],
+   "project": "regions",
+   "img": "afisha/kaliningrad.png",
+   "title": "Виолончельная академия в Калининграде",
+   "desc": "Мастер-класс Ольги Борисовны Галочкиной в Калининграде в рамках региональной программы ВА",
+   "buy": "",
+   "more": "/projects/regions/"
+  }
+ ],
+ "TYPES": {
+  "concert": "Концерты",
+  "masterclass": "Мастер-классы",
+  "special": "Специальные мероприятия"
+ },
+ "TYPE1": {
+  "concert": "Концерт",
+  "masterclass": "Мастер-класс",
+  "special": "Специальное мероприятие"
+ },
+ "PROJ": {
+  "stars": "Звёзды Виолончельной академии",
+  "regions": "Виолончельная академия в регионах",
+  "vivacello": "Виолончельная академия и VIVACELLO"
+ },
+ "MON": {
+  "2026-10": "Октябрь 2026",
+  "2026-11": "Ноябрь 2026",
+  "2026-12": "Декабрь 2026"
+ },
+ "CITY": {
+  "msk": "Москва",
+  "spb": "Санкт-Петербург",
+  "klin": "Клин",
+  "kaliningrad": "Калининград"
+ }
+}

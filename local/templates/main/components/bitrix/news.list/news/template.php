@@ -1,43 +1,27 @@
-<?php
-if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
-    die();
-}
-$this->setFrameMode(true);
-if (empty($arResult['ITEMS'])) {
-    return;
-}
+<?if(!defined("B_PROLOG_INCLUDED")||B_PROLOG_INCLUDED!==true)die();
+/** Шаблон списка «Новости». Дата — ACTIVE_FROM; если задано свойство
+ *  DATE_LABEL (строка, напр. «Январь 2026»), выводится оно. */
 ?>
-<section class="news" id="media">
+<section class="news-list">
     <div class="section__container">
-        <div class="section__header">
-            <h2 class="section__title"><?= htmlspecialcharsbx($arParams['SECTION_TITLE'] ?? 'Новости и медиа') ?></h2>
-            <?php if (!empty($arParams['SECTION_LINK'])): ?>
-            <a href="<?= htmlspecialcharsbx($arParams['SECTION_LINK']) ?>" class="section__link"><?= htmlspecialcharsbx($arParams['SECTION_LINK_TEXT'] ?? 'Все новости') ?></a>
-            <?php endif; ?>
-        </div>
         <div class="news__grid">
-            <?php foreach ($arResult['ITEMS'] as $item):
-                $this->AddEditAction($item['ID'], $item['EDIT_LINK'], CIBlock::GetArrayByID($item['IBLOCK_ID'], 'ELEMENT_EDIT'));
-                $this->AddDeleteAction($item['ID'], $item['DELETE_LINK'], CIBlock::GetArrayByID($item['IBLOCK_ID'], 'ELEMENT_DELETE'), ['CONFIRM' => 'Удалить?']);
-                $img = $item['PREVIEW_PICTURE']['SRC'] ?? '';
+            <?foreach($arResult["ITEMS"] as $arItem):
+                $this->AddEditAction($arItem["ID"], $arItem["EDIT_LINK"], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+                $this->AddDeleteAction($arItem["ID"], $arItem["DELETE_LINK"], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), ["CONFIRM" => "Удалить новость?"]);
+                $label = $arItem["PROPERTIES"]["DATE_LABEL"]["VALUE"] ?: $arItem["DISPLAY_ACTIVE_FROM"];
             ?>
-            <article class="news-card" id="<?= $this->GetEditAreaId($item['ID']) ?>">
-                <?php if ($img): ?>
-                <div class="news-card__image">
-                    <img src="<?= htmlspecialcharsbx($img) ?>" alt="<?= htmlspecialcharsbx($item['NAME']) ?>">
-                </div>
-                <?php endif; ?>
-                <div class="news-card__body">
-                    <?php if ($item['DISPLAY_ACTIVE_FROM']): ?>
-                    <p class="news-card__date"><?= htmlspecialcharsbx($item['DISPLAY_ACTIVE_FROM']) ?></p>
-                    <?php endif; ?>
-                    <h3 class="news-card__title"><?= htmlspecialcharsbx($item['NAME']) ?></h3>
-                </div>
-                <div class="news-card__link">
-                    <a href="<?= htmlspecialcharsbx($item['DETAIL_PAGE_URL']) ?>">Читать</a>
-                </div>
-            </article>
-            <?php endforeach; ?>
+            <div class="news-card" id="<?=$this->GetEditAreaId($arItem["ID"])?>">
+                <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="news-card__image">
+                    <?if($arItem["PREVIEW_PICTURE"]):?>
+                    <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=htmlspecialcharsbx($arItem["NAME"])?>">
+                    <?endif?>
+                </a>
+                <p class="news-card__date"><?=$label?></p>
+                <h3 class="news-card__title"><a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["NAME"]?></a></h3>
+                <p class="news-card__link"><a href="<?=$arItem["DETAIL_PAGE_URL"]?>">Читать</a></p>
+            </div>
+            <?endforeach?>
         </div>
+        <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?><?=$arResult["NAV_STRING"]?><?endif?>
     </div>
 </section>

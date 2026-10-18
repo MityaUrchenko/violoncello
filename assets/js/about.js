@@ -1,3 +1,5 @@
+
+; /* Start:"a:4:{s:4:"full";s:34:"/assets/js/about.js?17903301133300";s:6:"source";s:19:"/assets/js/about.js";s:3:"min";s:0:"";s:3:"map";s:0:"";}"*/
 /* Лайтбокс фотополос раздела «Академия».
    Подключается на academy_about.html, academy_mission.html,
    academy_history.html после script.js.
@@ -5,7 +7,9 @@
    в каждом слайде года): кадры берутся из той полосы, по которой
    кликнули, стрелки ‹ › ведут по ней. Один скрипт на все страницы
    раздела — лайтбокс не дублируется. */
-document.addEventListener('DOMContentLoaded', function () {
+(function (init) {
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+})(function () {
   var grids = Array.prototype.slice.call(document.querySelectorAll('.mission-life__grid'));
   if (!grids.length) return;
 
@@ -76,3 +80,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'ArrowRight') show(current + 1);
   });
 });
+
+/* End */
+;; /* /assets/js/about.js?17903301133300*/
