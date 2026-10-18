@@ -1,0 +1,218 @@
+/* ============================================================
+   styles.about.css — НОВЫЕ классы для страницы «Об Академии»
+   ------------------------------------------------------------
+   Подключается ПОСЛЕ styles.css. Здесь только то, чего
+   в styles.css нет. Всё остальное на странице использует
+   существующие классы сайта без изменений.
+   ============================================================ */
+
+/* Широкая карточка направления на всю ширину сетки
+   .academy-sections__grid / .about-directions__grid.
+   Нужна для «Образовательных программ»: в md это направление
+   описано тремя абзацами, и в обычной карточке 1/4 ширины
+   оно растягивает всю строку сетки.
+   Модификатор к существующему .academy-section-card. */
+.academy-section-card--wide {
+  grid-column: 1 / -1;
+}
+
+/* Сетка «Продолжить знакомство» на две карточки.
+   Базовый .about-more__grid — repeat(3, 1fr); в md соседних
+   разделов два (История, Миссия и ценности), поэтому третья
+   ячейка оставалась бы пустой. */
+.about-more__grid--two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 991px) {
+  .about-more__grid--two {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Герой страницы «Об Академии».
+   Базовый .hero-secondary тянется по контенту; здесь нужна высота
+   как на первом экране. Хлебная крошка убрана — дублировала H1. */
+.hero-secondary--about {
+  min-height: 620px;
+}
+
+/* Секция «Академия в цифрах».
+   Сама сетка показателей — существующие .about-structure__stats*.
+   Новый только фон-подложка: между двумя белыми секциями
+   («Ежегодный форум» и «Люди Академии») нужна пауза.
+   Цвет #f8ecee — тот же, что у .academy-cta. */
+.about-numbers {
+  padding: 4.5rem 0;
+  background: #f8ecee;
+}
+
+/* Заголовок «Академия в цифрах» — по центру, как и сами показатели. */
+.about-numbers .section__header {
+  justify-content: center;
+  text-align: center;
+}
+
+.about-numbers .about-structure__stats {
+  border-top-color: #e6cfd3;
+}
+
+/* Показатели центрируются как группа: 7 элементов не делятся на 4 колонки
+   базовой сетки. space-evenly раздаёт равные промежутки и по краям,
+   и между блоками — в том числе в неполном нижнем ряду. */
+.about-numbers .about-structure__stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: start;
+}
+
+.about-numbers .about-structure__stat {
+  flex: 0 1 240px;
+  max-width: 300px;
+}
+
+/* «Люди Академии»: фото полосой над текстом.
+   В базовом .about-structure__grid (две колонки) этот текст в 4 абзаца
+   оставлял ~500–1300 px пустой колонки рядом с фото. */
+.about-people__photo {
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.about-people__photo img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+/* Вводный абзац секции «Продолжить знакомство».
+   В md перед списком соседних разделов есть абзац, а в styles.css
+   для текста на тёмном фоне .about-more есть только .about-more__desc
+   (описание внутри карточки). */
+.about-more__lead {
+  color: #F6E9EB;
+  max-width: 70ch;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+/* Отступ между широкой карточкой и сеткой остальных направлений.
+   Широкая карточка живёт в отдельной сетке: иначе она сдвигала бы
+   нумерацию :nth-child(8n+…), по которой styles.css подбирает
+   card_line_1..4.svg, и линии перестали бы стыковаться в строке. */
+.about-directions__grid--lead {
+  margin-bottom: 1rem;
+}
+
+/* Текст широкой карточки — на всю её ширину (ограничения меры нет).
+
+   Линия широкой карточки — на всю её ширину: базовый
+   background-size: contain вписывает svg целиком, и на широком блоке
+   линия получается короче блока. */
+/* Линия широкой карточки — на всю её ширину.
+   background-size растянуть исходный card_line_1.svg не может: svg сам
+   сохраняет пропорции (preserveAspectRatio по умолчанию), поэтому для
+   широкого блока сделан вариант card_line_1_wide.svg
+   с preserveAspectRatio="none". */
+.about-directions .about-directions__grid--lead .academy-section-card--wide .academy-section-card__line {
+  background-image: url(assets/images/card_line_1_wide.svg);
+  background-size: 100% 100%;
+  background-position: center;
+  transform: none;
+}
+
+/* Фотополоса идёт сразу за «Людьми Академии» — убираем двойной отступ
+   (5rem снизу у .about-structure + 5rem сверху у .mission-life). */
+.mission-life--about {
+  padding-top: 0;
+}
+
+/* Фотополоса: кадры открываются во весь экран по клику.
+   В styles.css лайтбокса нет — это новые классы. */
+.mission-life--about .mission-life__item {
+  cursor: zoom-in;
+}
+
+.about-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.5rem;
+  background: rgba(13, 13, 13, 0.94);
+}
+
+.about-lightbox__img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.about-lightbox__btn {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.about-lightbox__btn:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.about-lightbox__btn--close {
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.about-lightbox__btn--prev {
+  top: 50%;
+  left: 1.5rem;
+  transform: translateY(-50%);
+}
+
+.about-lightbox__btn--next {
+  top: 50%;
+  right: 1.5rem;
+  transform: translateY(-50%);
+}
+
+.about-lightbox__counter {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8125rem;
+  letter-spacing: 0.03em;
+}
+
+/* Последний кадр полосы — панорамой на всю ширину сетки:
+   фотографий в папке раздела 13, на 4 колонки они не делятся. */
+.mission-life__item--wide {
+  grid-column: 1 / -1;
+  aspect-ratio: 21 / 9;
+}
+
+/* Панорамный кадр кропается по верхней части (иначе обрезаются головы),
+   со сдвигом на 35px вверх. */
+.mission-life__item--wide img {
+  object-position: center -35px;
+}

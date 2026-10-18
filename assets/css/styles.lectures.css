@@ -1,0 +1,107 @@
+/* ============================================================
+   styles.lectures.css — дополнения для страниц видеопроектов:
+   «История виолончельного исполнительства» и
+   «Техника игры на виолончели Кирилла Кравцова».
+   Подключается ПОСЛЕ template_styles.css.
+   template_styles.css не правится; здесь только то, чего в нём нет.
+   ============================================================ */
+
+.hero-secondary--lectures {
+  min-height: 620px;
+}
+
+.hero-secondary--kravtsov .hero-secondary__bg-img {
+  object-position: center 12%;
+}
+
+/* Лицо в кадре — в верхней трети: на широком экране не обрезать голову. */
+.hero-secondary--history .hero-secondary__bg-img {
+  object-position: center 30%;
+}
+
+.lecture-text {
+  max-width: 900px;
+}
+
+/* Об авторе цикла: фото и текст в тёмной секции. */
+.lecture-person .about-structure__grid {
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  align-items: center;
+}
+
+.lecture-person__photo {
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.lecture-person__photo img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.lecture-person__photo--portrait img {
+  aspect-ratio: 4 / 5;
+  object-position: center 20%;
+}
+
+.lecture-person__photo--landscape img {
+  aspect-ratio: 4 / 3;
+  object-position: center 30%;
+}
+
+.lecture-person .about-directions__card-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Плейлист выпусков. */
+.lecture-playlist {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #111;
+  margin-top: 2.5rem;
+}
+
+.lecture-playlist iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Завершающий блок — фон #f8ecee (как .about-numbers). */
+.lecture-outro {
+  padding: 4.5rem 0;
+  background: #f8ecee;
+}
+
+.lecture-outro .academy-mission__text {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 991px) {
+  .hero-secondary--lectures {
+    min-height: 420px;
+  }
+
+  .lecture-person .about-structure__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lecture-person__photo--portrait {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 767px) {
+  .lecture-playlist {
+    margin-top: 1.5rem;
+  }
+
+  .lecture-outro {
+    padding: 3rem 0;
+  }
+}

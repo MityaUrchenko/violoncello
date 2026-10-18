@@ -1,0 +1,113 @@
+/* ============================================================
+   styles.vivacello.css — дополнения для страницы
+   «Виолончельная академия и VIVACELLO».
+   Подключается ПОСЛЕ template_styles.css. template_styles.css
+   не правится; здесь только то, чего в нём нет.
+   Цвета — только из template_styles.css:
+   #111, #981B2F, #f8ecee, #F6E9EB.
+   ============================================================ */
+
+/* Герой без фото: фотографий к разделу нет, поэтому подложка —
+   тёмный фон секций сайта (#111, как у .about-directions). */
+.hero-secondary--vivacello {
+  min-height: 480px;
+  background: #111;
+}
+
+/* Текстовая колонка — ограничение меры строки. */
+.vivacello-text {
+  max-width: 900px;
+}
+
+/* Плашка о фестивале. Существующий .academy-cta (фон #f8ecee)
+   рассчитан на строку «текст + кнопка»; здесь текст длинный,
+   поэтому кнопка уходит под текст. */
+.academy-cta--column {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.academy-cta--column .academy-mission__text {
+  margin-bottom: 0;
+}
+
+/* Фильм и концертные записи — две колонки под текстом лаборатории. */
+.vivacello-media {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem 2rem;
+  margin-top: 3.5rem;
+}
+
+.vivacello-media__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vivacello-media__item .about-directions__card-text {
+  margin-bottom: 0;
+  flex-grow: 0;
+}
+
+.vivacello-video {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #000;
+  margin-top: auto;
+}
+
+.vivacello-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Фотополоса лаборатории внутри тёмной секции. */
+.vivacello-gallery {
+  margin-top: 3.5rem;
+}
+
+/* Завершающий абзац — пауза на фоне #f8ecee (как .about-numbers). */
+.vivacello-outro {
+  padding: 4.5rem 0;
+  background: #f8ecee;
+}
+
+.vivacello-outro .academy-mission__text {
+  margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  .hero-secondary--vivacello {
+    min-height: 360px;
+  }
+
+  .vivacello-media {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .vivacello-media,
+  .vivacello-gallery {
+    margin-top: 2.5rem;
+  }
+
+  .vivacello-outro {
+    padding: 3rem 0;
+  }
+
+  .academy-cta--column {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .academy-cta--column .btn {
+    width: 100%;
+  }
+}

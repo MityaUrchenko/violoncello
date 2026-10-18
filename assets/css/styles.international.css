@@ -1,0 +1,150 @@
+/* ============================================================
+   styles.international.css — дополнения для страницы
+   «Международные проекты».
+   Подключается ПОСЛЕ template_styles.css и styles.about.css
+   (лайтбокс .about-lightbox*, .mission-life__item--wide).
+   template_styles.css не правится; здесь только то, чего в нём нет.
+   ============================================================ */
+
+.hero-secondary--international {
+  min-height: 620px;
+}
+
+.hero-secondary--international .hero-secondary__bg-img {
+  object-position: center 65%;
+}
+
+/* Текстовая колонка — ограничение меры строки. */
+.intl-text {
+  max-width: 900px;
+}
+
+/* Проект внутри тёмной секции «Совместные проекты за рубежом». */
+.intl-project + .intl-project {
+  margin-top: 4.5rem;
+  padding-top: 4.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.intl-project__head {
+  margin-bottom: 1.5rem;
+}
+
+.intl-project__head .about-directions__subtitle {
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+/* Место и год проекта: тот же приглушённый белый,
+   что у .academy-person__role. */
+.intl-project__place {
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.intl-gallery {
+  margin-top: 2.5rem;
+}
+
+/* Три кадра: базовая сетка .mission-life__grid — 4 колонки. */
+.intl-gallery--three .mission-life__grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Вертикальный кадр в плитке 4:3 — кадрируем по верху, чтобы не резать головы. */
+.mission-life__item--portrait img {
+  object-position: center 15%;
+}
+
+.intl-gallery .mission-life__item {
+  cursor: zoom-in;
+}
+
+.intl-album {
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
+/* Список педагогов. */
+.intl-list {
+  padding: 0;
+  margin: 0 0 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.intl-list li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.intl-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #981B2F;
+}
+
+/* В about-structure__grid текст длиннее фото — фото сверху колонки. */
+.intl-exchange .about-structure__grid {
+  align-items: start;
+}
+
+/* Завершающий блок — фон #f8ecee (как .about-numbers). */
+.intl-outro {
+  padding: 4.5rem 0;
+  background: #f8ecee;
+}
+
+.intl-outro .academy-mission__text:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  .hero-secondary--international {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 767px) {
+  .intl-project + .intl-project {
+    margin-top: 3rem;
+    padding-top: 3rem;
+  }
+
+  .intl-project__head .about-directions__subtitle {
+    font-size: 1.5rem;
+  }
+
+  .intl-gallery {
+    margin-top: 2rem;
+  }
+
+  /* На телефоне кадры парами, а не столбцом из 16 фото. */
+  .intl-gallery .mission-life__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .intl-gallery--three .mission-life__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .intl-gallery--three .mission-life__item:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .intl-outro {
+    padding: 3rem 0;
+  }
+}

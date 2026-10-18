@@ -1,0 +1,131 @@
+/* ============================================================
+   styles.afisha.css — дополнения для разделов «Афиша» и «Новости».
+   Подключается ПОСЛЕ template_styles.css.
+   Фильтры, карточки и пагинация — существующие классы
+   .afisha-filters*, .event-card*, .news-card*, .afisha-pagination*.
+   Здесь только то, чего в template_styles.css нет.
+   ============================================================ */
+
+.hero-secondary--afisha,
+.hero-secondary--news {
+  min-height: 460px;
+}
+
+.hero-secondary--afisha .hero-secondary__bg-img,
+.hero-secondary--news .hero-secondary__bg-img {
+  object-position: center 38%;
+}
+
+/* Список событий / новостей. */
+.afisha-events,
+.news-list {
+  padding: 3rem 0 5rem;
+  background: #fff;
+}
+
+.news-list {
+  padding-top: 4rem;
+}
+
+/* Заголовок карточки новости: в template_styles.css размер не задан,
+   и h3 получает 1.75rem из bootstrap — для сетки в 4 колонки крупно. */
+.news-list .news-card__title {
+  font-size: 1.125rem;
+}
+
+/* Карточки новостей: кадрирование по верхней трети — головы в кадре
+   и у вертикальных фото (интервью, портреты). */
+.news-card__image img {
+  object-position: center 30%;
+}
+
+/* Проект события под описанием. */
+.event-card__place {
+  color: #981B2F;
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Афиша-постер (вертикальный макет): в кадре 3:2 — верхняя часть с датой. */
+.event-card__image--poster img {
+  object-position: center 12%;
+}
+
+.event-card:hover .event-card__image--poster img {
+  transform: none;
+}
+
+/* Плашка типа события на фото. */
+.event-card__image {
+  position: relative;
+}
+
+.event-card__type {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: #981B2F;
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Скрытие карточек фильтром (JS) — без перезагрузки страницы. */
+.event-card.is-hidden {
+  display: none;
+}
+
+.afisha-filters__dropdown select:focus {
+  outline: none;
+}
+
+@media (max-width: 991px) {
+  .hero-secondary--afisha,
+  .hero-secondary--news {
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 767px) {
+  .afisha-events,
+  .news-list {
+    padding: 2rem 0 3rem;
+  }
+
+  .afisha-filters__types {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-right: -1.5rem;
+    padding-right: 1.5rem;
+    scrollbar-width: none;
+  }
+
+  .afisha-filters__types::-webkit-scrollbar {
+    display: none;
+  }
+
+  .afisha-filters__tab {
+    white-space: nowrap;
+  }
+
+  .afisha-filters__dropdowns {
+    width: 100%;
+  }
+
+  .afisha-filters__dropdown {
+    flex: 1 1 140px;
+  }
+
+  .afisha-filters__dropdown select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .event-card__title {
+    font-size: 1.5rem;
+  }
+}

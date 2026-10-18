@@ -1,0 +1,98 @@
+/* ============================================================
+   styles.news.css — дополнения для детальной страницы новости.
+   Подключается ПОСЛЕ template_styles.css и styles.afisha.css.
+   template_styles.css не правится; здесь только то, чего в нём нет.
+   ============================================================ */
+
+/* Герой новости: заголовок длиннее, чем у разделов, — кегль меньше. */
+.hero-secondary--article {
+  min-height: 560px;
+}
+
+.hero-secondary--article .hero-secondary__title {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  line-height: 1.1;
+  max-width: 1100px;
+}
+
+.hero-secondary--article .hero-secondary__bg-img {
+  object-position: center 30%;
+}
+
+/* Дата над заголовком — приглушённый белый, как .academy-person__role. */
+.news-detail__date {
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.news-detail {
+  padding: 4rem 0 5rem;
+  background: #fff;
+}
+
+.news-detail__body {
+  max-width: 900px;
+}
+
+.news-detail__body .section__link {
+  word-break: break-word;
+}
+
+.news-detail__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 2rem;
+  margin-top: 2.5rem;
+}
+
+.news-detail__back {
+  margin-top: 3rem;
+}
+
+/* «Другие новости» — существующая сетка .news__grid на тёмном фоне. */
+.news-more {
+  padding: 5rem 0;
+  background: #111;
+  color: #fff;
+}
+
+.news-more .news-card__title {
+  font-size: 1.125rem;
+}
+
+.news-more .news-card__date {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.news-more .news-card__title a:hover {
+  color: #F6E9EB;
+}
+
+@media (max-width: 991px) {
+  .hero-secondary--article {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 767px) {
+  .news-detail {
+    padding: 2.5rem 0 3rem;
+  }
+
+  .news-detail__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .news-detail__actions .btn {
+    width: 100%;
+  }
+
+  .news-more {
+    padding: 3rem 0;
+  }
+}

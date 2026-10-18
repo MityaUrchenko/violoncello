@@ -1,0 +1,180 @@
+/* ============================================================
+   styles.regions.css — дополнения для страницы
+   «Виолончельная академия в регионах России».
+   Подключается ПОСЛЕ template_styles.css и styles.about.css
+   (лайтбокс .about-lightbox*).
+   template_styles.css не правится; здесь только то, чего в нём нет.
+   ============================================================ */
+
+.hero-secondary--regions {
+  min-height: 620px;
+}
+
+.hero-secondary--regions .hero-secondary__bg-img {
+  object-position: center 45%;
+}
+
+.region-text {
+  max-width: 900px;
+}
+
+/* Мероприятие внутри тёмной секции «Состоявшиеся мероприятия». */
+.region-event + .region-event {
+  margin-top: 4.5rem;
+  padding-top: 4.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.region-event__head {
+  margin-bottom: 1.5rem;
+}
+
+.region-event__head .about-directions__subtitle {
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+/* Дата: тот же приглушённый белый, что у .academy-person__role. */
+.region-event__date {
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.region-gallery {
+  margin-top: 2.5rem;
+}
+
+.region-gallery .mission-life__item {
+  cursor: zoom-in;
+}
+
+/* Шесть кадров — три колонки вместо базовых четырёх. */
+.region-gallery--three .mission-life__grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.region-album {
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
+/* Карточки форматов: в template_styles.css у .academy-section-card
+   строки сетки — subgrid на 4 строки; здесь в карточке 3 элемента. */
+.region-formats .academy-section-card {
+  min-height: 220px;
+}
+
+/* Конкурсы со спецпризами — подзаголовки на белом. */
+.region-prize {
+  margin-top: 3.5rem;
+}
+
+.region-prize .academy-mission__title {
+  line-height: 1.15;
+}
+
+.region-prize .about-structure__grid {
+  align-items: start;
+}
+
+.region-prize__image--portrait img {
+  object-position: center 30%;
+}
+
+.region-prize__single {
+  grid-template-columns: 1fr;
+}
+
+.region-prize__single .mission-life__item {
+  cursor: zoom-in;
+}
+
+.region-prize__stack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.region-prize__stack .mission-life__item {
+  cursor: zoom-in;
+}
+
+.region-prize__note {
+  margin-top: 3rem;
+}
+
+/* Блок обращения. */
+.region-cta .academy-cta {
+  padding: 2.5rem 2rem;
+  align-items: flex-end;
+}
+
+.region-cta__body {
+  max-width: 760px;
+}
+
+.region-cta__body .academy-cta__title {
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.region-cta__body .academy-mission__text:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+  .hero-secondary--regions {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 767px) {
+  .region-event + .region-event {
+    margin-top: 3rem;
+    padding-top: 3rem;
+  }
+
+  .region-event__head .about-directions__subtitle {
+    font-size: 1.5rem;
+  }
+
+  .region-gallery {
+    margin-top: 2rem;
+  }
+
+  /* На телефоне кадры парами, а не столбцом. */
+  .region-gallery .mission-life__grid,
+  .region-gallery--three .mission-life__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  /* Карточки форматов: в две колонки текст не помещается. */
+  .region-formats .academy-sections__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .region-formats .academy-section-card {
+    min-height: 0;
+  }
+
+  .region-prize {
+    margin-top: 2.5rem;
+  }
+
+  .region-prize__stack {
+    gap: 0.75rem;
+  }
+
+  .region-cta .academy-cta {
+    padding: 1.5rem 1.25rem;
+    align-items: flex-start;
+  }
+
+  .region-cta .academy-cta .btn {
+    width: 100%;
+  }
+}
