@@ -6,6 +6,7 @@ $img = '/projects/vserossiyskaya-violonchelnaya-akademiya/images';
 ?>
 <link rel="stylesheet" href="/local/templates/main/template_styles.css">
 <link rel="stylesheet" href="/projects/vserossiyskaya-violonchelnaya-akademiya/style.css">
+<link rel="stylesheet" href="/projects/otkrytye-proslushivaniya/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.css">
 
 <section class="hero-secondary vva-hero">
@@ -276,22 +277,26 @@ $img = '/projects/vserossiyskaya-violonchelnaya-akademiya/images';
     </div>
 </section>
 
-<section class="vva-follow">
+<section class="aud-follow">
     <div class="section__container aud-follow__grid">
         <div>
-            <p class="vva-follow__label">Смотрите также</p>
-            <a href="#" class="vva-chip">Видеоархив</a>
-            <a href="#" class="vva-chip">Медиацентр</a>
-            <a href="/afisha/" class="vva-chip">Афиша</a>
+            <p class="aud-follow__label">Смотрите также</p>
+            <div class="aud-chips">
+                <a href="/media/video/" class="aud-chip">Видеоархив</a>
+                <a href="/mediacenter/" class="aud-chip">Медиацентр</a>
+                <a href="/afisha/" class="aud-chip">Афиша</a>
+            </div>
         </div>
         <article class="aud-manager">
             <p class="aud-manager__label">Менеджер проекта</p>
             <div class="aud-manager__row">
                 <span class="aud-manager__avatar" aria-hidden="true"></span>
-                <a href="#" class="aud-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
+                <div>
+                    <a href="#" class="aud-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
+                    <p class="aud-manager__role">Менеджер проекта</p>
+                </div>
             </div>
-            <p class="aud-manager__role">Менеджер проекта</p>
-            <a href="#" class="section__link">Руководство и команда Академии</a>
+            <a href="/academy/team/" class="section__link">Руководство и команда Академии</a>
         </article>
     </div>
 </section>

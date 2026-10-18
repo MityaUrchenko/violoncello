@@ -176,7 +176,7 @@ $img = '/projects/otkrytye-proslushivaniya/images';
                     <p class="aud-manager__role">Менеджер проекта</p>
                 </div>
             </div>
-            <a href="#" class="section__link">Руководство и команда Академии</a>
+            <a href="/academy/team/" class="section__link">Руководство и команда Академии</a>
         </article>
     </div>
 </section>
