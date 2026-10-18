@@ -30,7 +30,13 @@ $typeOne = ["concert" => "Концерт", "masterclass" => "Мастер-кла
                     <?if($firstType):?><span class="event-card__type"><?=$firstType?></span><?endif?>
                 </div>
                 <p class="event-card__meta"><?=$date?><?=($p["CITY"]["VALUE"] ? " · ".$p["CITY"]["VALUE"] : "")?></p>
-                <h3 class="event-card__title"><a href="<?=$p["MORE_URL"]["VALUE"]?>"><?=$arItem["NAME"]?></a></h3>
+                <h3 class="event-card__title">
+                    <?if($p["MORE_URL"]["VALUE"]){?>
+                        <a href="<?=$p["MORE_URL"]["VALUE"]?>"><?=$arItem["NAME"]?></a>
+                    <?}else{?>
+                        <?=$arItem["NAME"]?>
+                    <?}?>
+                </h3>
                 <?if($arItem["PREVIEW_TEXT"]):?><p class="event-card__desc"><?=$arItem["PREVIEW_TEXT"]?></p><?endif?>
                 <?if($p["PROJECT"]["VALUE"]):?><p class="event-card__place"><?=$p["PROJECT"]["VALUE"]?></p><?endif?>
                 <?if($p["MORE_URL"]["VALUE"] || $p["BUY_URL"]["VALUE"]):?>
