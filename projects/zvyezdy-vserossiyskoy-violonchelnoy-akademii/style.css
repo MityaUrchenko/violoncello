@@ -83,6 +83,10 @@
   line-height: 1;
 }
 
+.stars-muted {
+  color: #981B2F;
+}
+
 .stars-muted,
 .stars-kicker,
 .stars-follow__label,
