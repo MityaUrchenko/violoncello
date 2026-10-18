@@ -51,7 +51,7 @@ $APPLICATION->AddHeadScript("/assets/js/about.js");
                     <div class="mission-life__item"><img src="/assets/images/regions/klin-7.jpg" alt="Участники и педагоги после концерта"></div>
                 </div>
             </div>
-            <a href="/mediacenter/photo/" class="section__link section__link--light region-album">Смотреть фотоальбом</a>
+            <a href="/mediacenter/photo/detail.php?ID=93" class="section__link section__link--light region-album">Смотреть фотоальбом</a>
         </div>
         <div class="region-event">
             <div class="region-event__head">
@@ -133,8 +133,8 @@ $APPLICATION->AddHeadScript("/assets/js/about.js");
                     <p class="academy-mission__text">На V Международном фестивале-конкурсе имени Григория Ильича Пеккера были вручены специальные призы Виолончельной академии участникам и педагогам.</p>
                     <p class="academy-mission__text">Участники получили право заниматься на мастер-классах Академии без предварительного отбора. Педагоги — возможность приехать на Академию вместе с учениками с оплатой проезда, проживания и питания за счёт Академии.</p>
                 </div>
-                <div class="mission-life__grid region-prize__single">
-                    <div class="mission-life__item region-prize__image--portrait"><img src="/assets/images/regions/pekker.jpg" alt="Вручение специального приза Виолончельной академии на конкурсе имени Г. И. Пеккера"></div>
+                <div class="region-prize__single">
+                    <div class="region-prize__image--portrait"><img src="/assets/images/regions/pekker.jpg" alt="Вручение специального приза Виолончельной академии на конкурсе имени Г. И. Пеккера"></div>
                 </div>
             </div>
         </div>
@@ -144,9 +144,9 @@ $APPLICATION->AddHeadScript("/assets/js/about.js");
                     <h3 class="academy-mission__title">Межрегиональный открытый конкурс исполнителей на струнно-смычковых инструментах имени В.Я.Шпета — 2026</h3>
                     <p class="academy-mission__text">На III Межрегиональном открытом конкурсе исполнителей на струнно-смычковых инструментах имени В. Я. Шпета был вручён специальный приз Виолончельной академии — право участия в мастер-классах без предварительного отбора.</p>
                 </div>
-                <div class="mission-life__grid region-prize__stack">
-                    <div class="mission-life__item"><img src="/assets/images/regions/shpet-1.jpg" alt="Выступление на конкурсе имени В. Я. Шпета"></div>
-                    <div class="mission-life__item"><img src="/assets/images/regions/shpet-2.jpg" alt="Вручение специального приза на конкурсе имени В. Я. Шпета"></div>
+                <div class="region-prize__stack">
+                    <div class=""><img src="/assets/images/regions/shpet-1.jpg" alt="Выступление на конкурсе имени В. Я. Шпета"></div>
+                    <div class=""><img src="/assets/images/regions/shpet-2.jpg" alt="Вручение специального приза на конкурсе имени В. Я. Шпета"></div>
                 </div>
             </div>
         </div>
