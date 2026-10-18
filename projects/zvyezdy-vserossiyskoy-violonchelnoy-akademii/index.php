@@ -27,7 +27,6 @@ $program = [
 ?>
 <link rel="stylesheet" href="/local/templates/main/template_styles.css">
 <link rel="stylesheet" href="/projects/zvyezdy-vserossiyskoy-violonchelnoy-akademii/style.css">
-<link rel="stylesheet" href="/projects/otkrytye-proslushivaniya/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.css">
 
 <section class="hero-secondary stars-hero">
@@ -153,30 +152,6 @@ $program = [
         <h2 class="section__title section__title--light">Следите за новыми концертами цикла</h2>
         <p>Анонсы концертов публикуются в разделах «Афиша» и «Новости».</p>
         <a href="/afisha/" class="btn btn--primary">Перейти в афишу</a>
-    </div>
-</section>
-
-<section class="aud-follow">
-    <div class="section__container aud-follow__grid">
-        <div>
-            <p class="aud-follow__label">Смотрите также</p>
-            <div class="aud-chips">
-                <a href="/media/video/" class="aud-chip">Видеоархив</a>
-                <a href="/mediacenter/" class="aud-chip">Медиацентр</a>
-                <a href="/afisha/" class="aud-chip">Афиша</a>
-            </div>
-        </div>
-        <article class="aud-manager">
-            <p class="aud-manager__label">Менеджер проекта</p>
-            <div class="aud-manager__row">
-                <span class="aud-manager__avatar" aria-hidden="true"></span>
-                <div>
-                    <a href="#" class="aud-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
-                    <p class="aud-manager__role">Менеджер проекта</p>
-                </div>
-            </div>
-            <a href="/academy/team/" class="section__link">Руководство и команда Академии</a>
-        </article>
     </div>
 </section>
 
