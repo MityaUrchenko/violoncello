@@ -72,7 +72,7 @@ $APPLICATION->AddHeadScript("/assets/js/about.js");
                     <div class="mission-life__item"><img src="/assets/images/regions/kazan-7.jpg" alt="Концерт Олега Бугаева и Марии Зайцевой"></div>
                 </div>
             </div>
-            <a href="/mediacenter/photo/" class="section__link section__link--light region-album">Смотреть фотоальбом</a>
+            <a href="/mediacenter/photo/detail.php?ID=134" class="section__link section__link--light region-album">Смотреть фотоальбом</a>
         </div>
     </div>
 </section>
