@@ -25,7 +25,15 @@ $typeOne = ["concert" => "Концерт", "masterclass" => "Мастер-кла
             <div class="event-card" id="<?=$this->GetEditAreaId($arItem["ID"])?>" data-type="<?=htmlspecialcharsbx(implode(" ", $types))?>" data-month="<?=date("Y-m", $ts)?>" data-city="<?=htmlspecialcharsbx($p["CITY"]["VALUE_XML_ID"])?>" data-project="<?=htmlspecialcharsbx($p["PROJECT"]["VALUE_XML_ID"])?>">
                 <div class="event-card__image<?=$poster?>">
                     <?if($arItem["PREVIEW_PICTURE"]):?>
-                    <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=htmlspecialcharsbx($arItem["NAME"])?>">
+
+                    <?if($p["MORE_URL"]["VALUE"]){?>
+                        <a href="<?=$p["MORE_URL"]["VALUE"]?>">
+                            <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=htmlspecialcharsbx($arItem["NAME"])?>">
+                        </a>
+                    <?}else{?>
+                        <img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=htmlspecialcharsbx($arItem["NAME"])?>">
+                    <?}?>
+
                     <?endif?>
                     <?if($firstType):?><span class="event-card__type"><?=$firstType?></span><?endif?>
                 </div>
