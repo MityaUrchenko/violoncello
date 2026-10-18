@@ -272,7 +272,7 @@ $img = '/projects/vserossiyskaya-violonchelnaya-akademiya/images';
         <p>Анонсы, открытые прослушивания и наборы публикуются на сайте, в «Новостях» и «Афише».</p>
         <div class="vva-next__actions">
             <a href="/afisha/" class="btn btn--primary">Афиша</a>
-            <a href="#" class="vva-outline">Открытые прослушивания</a>
+            <a href="/projects/otkrytye-proslushivaniya/" class="vva-outline">Открытые прослушивания</a>
         </div>
     </div>
 </section>

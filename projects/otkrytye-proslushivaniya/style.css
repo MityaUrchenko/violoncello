@@ -140,10 +140,6 @@
   text-transform: uppercase;
 }
 
-.aud-cta .section__title {
-  max-width: 18ch;
-}
-
 .aud-pills {
   display: flex;
   flex-wrap: wrap;
