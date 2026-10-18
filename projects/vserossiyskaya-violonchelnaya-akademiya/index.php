@@ -304,7 +304,7 @@ $img = '/projects/vserossiyskaya-violonchelnaya-akademiya/images';
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.umd.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('img:not(.hero-secondary__bg-img):not([aria-hidden="true"])').forEach(function (img) {
+    document.querySelectorAll('main img:not(.hero-secondary__bg-img):not([aria-hidden="true"])').forEach(function (img) {
         const existingLink = img.closest('a');
         if (existingLink) {
             if (existingLink.hasAttribute('data-fancybox')) return;
