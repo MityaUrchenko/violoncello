@@ -19,11 +19,19 @@ $APPLICATION->SetPageProperty('title', 'Всероссийская виолон�
     </div>
 </section>
 
+
+<section class="events">
+    <div class="section__container">
+        <div class="section__header">
+            <h2 class="section__title">Ближайшие события</h2>
+            <a href="/afisha/" class="section__link">Смотреть все события</a>
+        </div>
+    </div>
 <?php
-// События — инфоблок (укажите свой IBLOCK_ID)
+// События
 $APPLICATION->IncludeComponent(
     'bitrix:news.list',
-    'events',
+    'afisha',
     [
         'IBLOCK_TYPE' => 'content',
         'IBLOCK_ID' => 1,
@@ -65,7 +73,10 @@ $APPLICATION->IncludeComponent(
     ],
     false
 );
+?>
+</section>
 
+<?php
 $projectsFilter = ["ID" => [146,141,142]];
 // Проекты
 $APPLICATION->IncludeComponent(
@@ -93,11 +104,21 @@ $APPLICATION->IncludeComponent(
         'SECTION_TITLE' => 'Проекты',
         'SECTION_LINK' => SITE_DIR . 'projects/',
         'SECTION_LINK_TEXT' => 'Смотреть все проекты',
-        "FILTER" => "projectsFilter"
+        "FILTER_NAME" => "projectsFilter"
     ],
     false
 );
+?>
 
+
+<section class="news">
+    <div class="section__container">
+        <div class="section__header">
+            <h2 class="section__title">Новости Виолончельной академии</h2>
+            <a href="/news/" class="section__link">Смотреть все новости</a>
+        </div>
+    </div>
+<?php
 // Новости
 $APPLICATION->IncludeComponent(
     'bitrix:news.list',
@@ -128,7 +149,10 @@ $APPLICATION->IncludeComponent(
     ],
     false
 );
+?>
+</section>
 
+<?php
 // Сообщество
 $APPLICATION->IncludeComponent(
     'bitrix:news.list',
@@ -136,7 +160,7 @@ $APPLICATION->IncludeComponent(
     [
         'IBLOCK_TYPE' => 'content',
         'IBLOCK_ID' => 4,
-        'NEWS_COUNT' => 4,
+        'NEWS_COUNT' => 8,
         'SORT_BY1' => 'SORT',
         'SORT_ORDER1' => 'ASC',
         'FIELD_CODE' => ['NAME', 'PREVIEW_PICTURE', 'DETAIL_PAGE_URL'],
@@ -157,7 +181,8 @@ $APPLICATION->IncludeComponent(
 );
 ?>
 
-<!-- Подписка (можно вынести во включаемую область) -->
+<?php // Подписка
+?>
 <section class="subscribe" id="support">
     <div class="section__container">
         <div class="subscribe__inner">
