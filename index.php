@@ -11,9 +11,7 @@ $APPLICATION->SetPageProperty('title', 'Всероссийская виолон�
     </div>
     <div class="hero__content">
         <h1 class="hero__title">Развиваем<br>виолончельное<br>искусство</h1>
-        <p class="hero__text">Создаем возможности для роста молодых музыкантов. <br>
-            Поддерживаем профессиональное сообщество и развиваем культуру
-            виолончельного искусства в России.</p>
+        <p class="hero__text">Поддерживаем профессиональное сообщество, создаем возможности для роста молодых музыкантов и развиваем культуру виолончельного искусства в России.</p>
         <div class="hero__buttons">
             <a href="<?= SITE_DIR ?>afisha/" class="btn btn--primary">Ближайшие события</a>
             <a href="<?= SITE_DIR ?>academy/" class="btn btn--outline">Об Академии</a>
@@ -68,6 +66,7 @@ $APPLICATION->IncludeComponent(
     false
 );
 
+$projectsFilter = ["ID" => [146,141,142]];
 // Проекты
 $APPLICATION->IncludeComponent(
     'bitrix:news.list',
@@ -76,8 +75,8 @@ $APPLICATION->IncludeComponent(
         'IBLOCK_TYPE' => 'content',
         'IBLOCK_ID' => 2,
         'NEWS_COUNT' => 3,
-        'SORT_BY1' => 'ACTIVE_FROM',
-        'SORT_ORDER1' => 'DESC',
+        'SORT_BY1' => 'SORT',
+        'SORT_ORDER1' => 'ASC',
         'SORT_BY2' => 'SORT',
         'SORT_ORDER2' => 'ASC',
         'FIELD_CODE' => ['NAME', 'PREVIEW_TEXT', 'PREVIEW_PICTURE', 'DETAIL_PICTURE', 'DETAIL_PAGE_URL'],
@@ -94,6 +93,7 @@ $APPLICATION->IncludeComponent(
         'SECTION_TITLE' => 'Проекты',
         'SECTION_LINK' => SITE_DIR . 'projects/',
         'SECTION_LINK_TEXT' => 'Смотреть все проекты',
+        "FILTER" => "projectsFilter"
     ],
     false
 );
