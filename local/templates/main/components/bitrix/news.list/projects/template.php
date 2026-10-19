@@ -24,11 +24,17 @@ if (empty($arResult['ITEMS'])) {
             <article class="project-card" id="<?= $this->GetEditAreaId($item['ID']) ?>">
                 <?php if ($img): ?>
                 <div class="project-card__image">
-                    <img src="<?= htmlspecialcharsbx($img) ?>" alt="<?= htmlspecialcharsbx($item['NAME']) ?>">
+                    <a href="<?= htmlspecialcharsbx($item['DETAIL_PAGE_URL']) ?>">
+                        <img src="<?= htmlspecialcharsbx($img) ?>" alt="<?= htmlspecialcharsbx($item['NAME']) ?>">
+                    </a>
                 </div>
                 <?php endif; ?>
                 <div class="project-card__body">
-                    <h3 class="project-card__title"><?= htmlspecialcharsbx($item['NAME']) ?></h3>
+                    <h3 class="project-card__title">
+                        <a href="<?= htmlspecialcharsbx($item['DETAIL_PAGE_URL']) ?>">
+                            <?= htmlspecialcharsbx($item['NAME']) ?>
+                        </a>
+                    </h3>
                     <?php if ($item['PREVIEW_TEXT']): ?>
                     <p class="project-card__desc"><?= $item['PREVIEW_TEXT'] ?></p>
                     <?php endif; ?>
