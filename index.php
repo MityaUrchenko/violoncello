@@ -152,7 +152,7 @@ $APPLICATION->IncludeComponent(
 ?>
 </section>
 
-<?php
+<?php /*
 // Сообщество
 $APPLICATION->IncludeComponent(
     'bitrix:news.list',
@@ -179,6 +179,7 @@ $APPLICATION->IncludeComponent(
     ],
     false
 );
+ */
 ?>
 
 <?php // Подписка
