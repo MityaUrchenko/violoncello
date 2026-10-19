@@ -1,4 +1,10 @@
 <?php
+// 19.10.2026: страницу проекта временно заменили переходом на cello-academy.ru
+// (ссылки в меню, подвале, на /projects/ и на главной ведут сюда).
+// Чтобы вернуть лендинг, удалите строки с header() и exit.
+header('Location: https://cello-academy.ru/?utm_source=cello&utm_medium=menu', true, 302);
+exit;
+
 require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
 $APPLICATION->SetTitle('Всероссийская виолончельная академия');
 $APPLICATION->SetPageProperty('title', 'Всероссийская виолончельная академия — Проекты');

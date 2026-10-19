@@ -1,4 +1,7 @@
 <?php
+// 19.10.2026: страница проекта «Звёзды Всероссийской виолончельной академии» временно закрыта заглушкой /soon/. Чтобы вернуть страницу, удалите эти 3 строки.
+require $_SERVER['DOCUMENT_ROOT'] . '/soon/index.php';
+exit;
 require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
 $APPLICATION->SetTitle('Звёзды Всероссийской виолончельной академии');
 $APPLICATION->SetPageProperty('title', 'Звёзды Всероссийской виолончельной академии — Проекты');

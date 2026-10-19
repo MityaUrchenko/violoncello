@@ -140,31 +140,31 @@ $APPLICATION->SetPageProperty('title', 'Контакты — Всероссий�
         <div class="section__container">
             <h2 class="section__title">Мы в социальных сетях</h2>
             <div class="socials__grid">
-                <a href="#" class="socials__item" target="_blank" rel="noopener">
+                <a href="https://vk.ru/violoncello_music" class="socials__item" target="_blank" rel="noopener">
             <span class="socials__icon">
               <img src="/assets/images/vk.svg" alt="">
             </span>
                     <span class="socials__name">ВКонтакте</span>
                 </a>
-                <a href="#" class="socials__item" target="_blank" rel="noopener">
+                <a href="https://rutube.ru/channel/41795493/" class="socials__item" target="_blank" rel="noopener">
             <span class="socials__icon">
               <img src="/assets/images/rutube.svg" alt="">
             </span>
                     <span class="socials__name">Rutube</span>
                 </a>
-                <a href="#" class="socials__item" target="_blank" rel="noopener">
+                <a href="https://www.youtube.com/channel/UC7KOGBj1eLRIDCyS9Q9afpg" class="socials__item" target="_blank" rel="noopener">
             <span class="socials__icon">
               <img src="/assets/images/youtube.svg" alt="">
             </span>
                     <span class="socials__name">Youtube</span>
                 </a>
-                <a href="#" class="socials__item" target="_blank" rel="noopener">
+                <a href="https://dzen.ru/celloacademy" class="socials__item" target="_blank" rel="noopener">
             <span class="socials__icon">
               <img src="/assets/images/dzen.svg" alt="">
             </span>
                     <span class="socials__name">Яндекс Дзен</span>
                 </a>
-                <a href="#" class="socials__item" target="_blank" rel="noopener">
+                <a href="https://t.me/russiancelloacademy/" class="socials__item" target="_blank" rel="noopener">
             <span class="socials__icon">
               <img src="/assets/images/telegram.svg" alt="">
             </span>

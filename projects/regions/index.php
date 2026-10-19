@@ -3,6 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Виолончельная академия в регионах России");
 $APPLICATION->SetAdditionalCSS("/assets/css/styles.about.css");
 $APPLICATION->SetAdditionalCSS("/assets/css/styles.regions.css");
+$APPLICATION->SetAdditionalCSS("/projects/otkrytye-proslushivaniya/style.css");
 $APPLICATION->AddHeadScript("/assets/js/about.js");
 ?>
 <section class="hero-secondary hero-secondary--regions">
@@ -177,6 +178,26 @@ $APPLICATION->AddHeadScript("/assets/js/about.js");
             </div>
             <a href="/contacts/" class="btn btn--primary">Контакты</a>
         </div>
+    </div>
+</section>
+<section class="aud-follow">
+    <div class="section__container aud-follow__grid">
+        <div>
+            <p class="aud-follow__label">Контакты проекта</p>
+            <h2 class="academy-cta__title">Виолончельная академия в регионах</h2>
+            <p class="academy-mission__text">По вопросам организации мероприятий Академии в вашем городе обращайтесь к менеджеру направления.</p>
+        </div>
+        <article class="aud-manager">
+            <p class="aud-manager__label">Менеджер проекта</p>
+            <div class="aud-manager__row">
+                  <img src="/upload/dar_kot.jpg" alt="Дарья Котова" class="aud-manager__avatar" style="object-fit:cover">
+                <div>
+                    <a href="#" class="aud-manager__name">Дарья Котова <span aria-hidden="true">↗</span></a>
+                    <p class="aud-manager__role">Менеджер регионального направления</p>
+                </div>
+            </div>
+            <a href="/academy/team/" class="section__link">Руководство и команда Академии</a>
+        </article>
     </div>
 </section>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

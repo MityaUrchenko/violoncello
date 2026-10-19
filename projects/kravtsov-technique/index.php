@@ -1,4 +1,7 @@
 <?
+// 19.10.2026: страница проекта временно закрыта заглушкой /soon/. Чтобы вернуть страницу, удалите эти 3 строки.
+require $_SERVER['DOCUMENT_ROOT'] . '/soon/index.php';
+exit;
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Техника игры на виолончели Кирилла Кравцова");
 $APPLICATION->SetAdditionalCSS("/assets/css/styles.lectures.css");

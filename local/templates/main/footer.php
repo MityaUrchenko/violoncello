@@ -13,16 +13,16 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
                     <img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/logo.svg" alt="Всероссийская виолончельная академия" class="footer__logo-img">
                 </a>
                 <div class="footer__socials">
-                    <a href="#" class="footer__social" aria-label="VK">
+                    <a href="https://vk.ru/violoncello_music" class="footer__social" aria-label="VK">
                         <img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/vk2.svg" alt="">
                     </a>
-                    <a href="#" class="footer__social" aria-label="Rutube">
+                    <a href="https://rutube.ru/channel/41795493/" class="footer__social" aria-label="Rutube">
                         <img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/rutube2.svg" alt="">
                     </a>
-                    <a href="#" class="footer__social" aria-label="YouTube">
+                    <a href="https://www.youtube.com/channel/UC7KOGBj1eLRIDCyS9Q9afpg" class="footer__social" aria-label="YouTube">
                         <img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/youtube2.svg" alt="">
                     </a>
-                    <a href="#" class="footer__social" aria-label="Dzen">
+                    <a href="https://dzen.ru/celloacademy" class="footer__social" aria-label="Dzen">
                         <img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/dzen2.svg" alt="">
                     </a>
                 </div>
@@ -34,7 +34,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
                     'bitrix:menu',
                     'footer',
                     [
-                        'ROOT_MENU_TYPE' => 'bottom',
+                        'ROOT_MENU_TYPE' => 'top',
                         'MAX_LEVEL' => 2,
                         'CHILD_MENU_TYPE' => 'left',
                         'USE_EXT' => 'Y',

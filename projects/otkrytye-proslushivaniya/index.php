@@ -1,4 +1,7 @@
 <?php
+// 19.10.2026: страница перенесена в раздел Академии, ведём на /academy/auditions/. Чтобы вернуть страницу, удалите эти 3 строки.
+header('Location: /academy/auditions/', true, 301);
+exit;
 require $_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php';
 $APPLICATION->SetTitle('Открытые прослушивания');
 $APPLICATION->SetPageProperty('title', 'Открытые прослушивания — Проекты');
@@ -156,7 +159,7 @@ $img = '/projects/otkrytye-proslushivaniya/images';
         <a href="https://cello-audition.ru" class="btn btn--primary">Перейти на сайт открытого прослушивания</a>
     </div>
 </section>
-
+<?php if (false): // 19.10.2026: блок «Смотрите также / Менеджер проекта» скрыт. Чтобы вернуть, удалите эту строку и строку endif ниже. ?>
 <section class="aud-follow">
     <div class="section__container aud-follow__grid">
         <div>
@@ -180,7 +183,7 @@ $img = '/projects/otkrytye-proslushivaniya/images';
         </article>
     </div>
 </section>
-
+<?php endif; ?>
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1.15/dist/fancybox/fancybox.umd.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {

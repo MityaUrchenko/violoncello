@@ -173,7 +173,7 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
             <p class="ns-more__note">Ещё 10 педагогов · скрипка, альт, фортепиано, кларнет</p>
             <p class="ns-more__title">Остальных педагогов первого сезона <br>смотрите на сайте проекта</p>
         </div>
-        <a href="/community/" class="btn btn--primary">Все педагоги</a>
+                <a href="https://novayashkola.com/#teachers" class="btn btn--primary" target="_blank" rel="noopener">Все педагоги</a>
     </div>
 </section>
 
@@ -293,9 +293,9 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
         <article class="aud-manager">
             <p class="aud-manager__label">Менеджер проекта</p>
             <div class="aud-manager__row">
-                <span class="aud-manager__avatar" aria-hidden="true"></span>
+                   <img src="/upload/zlata.jpg" alt="Злата Леонова" class="aud-manager__avatar" style="object-fit:cover">
                 <div>
-                    <a href="#" class="aud-manager__name">Имя менеджера <span aria-hidden="true">↗</span></a>
+                                        <a href="#" class="aud-manager__name">Злата Леонова <span aria-hidden="true">↗</span></a>
                     <p class="aud-manager__role">Менеджер проекта</p>
                 </div>
             </div>

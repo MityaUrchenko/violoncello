@@ -26,7 +26,7 @@ foreach ($arResult as $item) {
 ?>
 <?php foreach ($columns as $col): ?>
 <div class="footer__col">
-    <h4 class="footer__col-title"><?= htmlspecialcharsbx($col['title']) ?></h4>
+    <h4 class="footer__col-title"><a href="<?= htmlspecialcharsbx($col['link']) ?>"><?= htmlspecialcharsbx($col['title']) ?></a></h4>
     <?php if (!empty($col['items'])): ?>
     <ul class="footer__list">
         <?php foreach ($col['items'] as $sub): ?>
