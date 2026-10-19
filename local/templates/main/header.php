@@ -58,7 +58,7 @@ $asset->addString('<link rel="preconnect" href="https://fonts.gstatic.com" cross
             ?>
             <div class="header__actions">
                 <a href="?lang=en" class="header__lang">EN</a>
-                <a href="<?= SITE_DIR ?>support/" class="header__support btn btn--primary">ПОДДЕРЖАТЬ АКАДЕМИЮ</a>
+                <a href="<?= SITE_DIR ?>news/" class="header__support btn btn--primary">Новости</a>
             </div>
         </nav>
     </div>
