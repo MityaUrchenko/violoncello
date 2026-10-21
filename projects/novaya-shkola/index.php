@@ -295,7 +295,7 @@ $APPLICATION->SetPageProperty('title', 'Новая школа — Проекты
             <div class="aud-manager__row">
                    <img src="/upload/zlata.jpg" alt="Злата Леонова" class="aud-manager__avatar" style="object-fit:cover">
                 <div>
-                                        <a href="#" class="aud-manager__name">Злата Леонова <span aria-hidden="true">↗</span></a>
+                                        <a href="#" class="aud-manager__name">Злата Ларина <span aria-hidden="true">↗</span></a>
                     <p class="aud-manager__role">Менеджер проекта</p>
                 </div>
             </div>
