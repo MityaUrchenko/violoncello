@@ -16,7 +16,7 @@ $typeOne = ["concert" => "Концерт", "masterclass" => "Мастер-кла
                 $this->AddDeleteAction($arItem["ID"], $arItem["DELETE_LINK"], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), ["CONFIRM" => "Удалить событие?"]);
                 $p = $arItem["PROPERTIES"];
                 $ts = MakeTimeStamp($p["DATE_EVENT"]["VALUE"]);
-                $date = $p["DATE_LABEL"]["VALUE"] ?: FormatDate("j F Y", $ts);
+                $date = implode(", ", $p["DATE_LABEL"]["VALUE"]) ?: FormatDate("j F Y", $ts);
                 if ($p["TIME"]["VALUE"]) $date .= ", ".$p["TIME"]["VALUE"];
                 $types = (array)$p["TYPE"]["VALUE_XML_ID"];
                 $firstType = $types ? $typeOne[$types[0]] : "";

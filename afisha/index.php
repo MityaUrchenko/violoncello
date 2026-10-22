@@ -9,7 +9,7 @@ const AFISHA_IBLOCK_ID = 1;
 // Серверный фильтр по GET (без JS): ?type=concert|masterclass|special
 $type = isset($_GET["type"]) ? preg_replace("/[^a-z]/", "", $_GET["type"]) : "";
 global $arrAfishaFilter;
-$arrAfishaFilter = [">=PROPERTY_DATE_EVENT" => date("Y-m-d 00:00:00")];
+//$arrAfishaFilter = [">=PROPERTY_DATE_EVENT" => date("Y-m-d 00:00:00")];
 if ($type !== "" && CModule::IncludeModule("iblock")) {
     $enum = CIBlockPropertyEnum::GetList([], ["IBLOCK_ID" => AFISHA_IBLOCK_ID, "CODE" => "TYPE", "XML_ID" => $type])->Fetch();
     $arrAfishaFilter["PROPERTY_TYPE"] = $enum ? $enum["ID"] : -1;
@@ -71,7 +71,7 @@ if ($type !== "" && CModule::IncludeModule("iblock")) {
         "IBLOCK_ID" => AFISHA_IBLOCK_ID,
         "NEWS_COUNT" => "12",
         "SORT_BY1" => "PROPERTY_DATE_EVENT",
-        "SORT_ORDER1" => "ASC",
+        "SORT_ORDER1" => "DESC",
         "FILTER_NAME" => "arrAfishaFilter",
         "FIELD_CODE" => ["PREVIEW_TEXT", "PREVIEW_PICTURE"],
         "PROPERTY_CODE" => ["DATE_EVENT", "TIME", "DATE_LABEL", "CITY", "TYPE", "PROJECT", "BUY_URL", "MORE_URL", "POSTER"],
