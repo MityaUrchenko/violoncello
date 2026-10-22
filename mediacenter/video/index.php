@@ -5,7 +5,7 @@ $APPLICATION->SetPageProperty('title', 'Видеоархив — Всеросс�
 
 CModule::IncludeModule('iblock');
 
-const VIDEO_IBLOCK_ID = 5;
+const VIDEO_IBLOCK_ID = 7;
 
 $videoTypes = [
     '' => 'Все видео',

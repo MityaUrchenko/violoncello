@@ -78,12 +78,14 @@ document.addEventListener('DOMContentLoaded', function () {
     if (typeof Playerjs !== 'function') {
         return;
     }
-    var items = <?= json_encode($players, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>;
+    var items = <?= json_encode($players, JSON_UNESCAPED_UNICODE) ?>;
     items.forEach(function (item) {
+        console.log(item)
         new Playerjs({
             id: item.id,
-            file: item.file,
-            poster: item.poster || ''
+            file: encodeURI(item.file),
+            poster: item.poster || '',
+            preload: true
         });
     });
 });

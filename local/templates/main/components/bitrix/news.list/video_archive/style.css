@@ -18,7 +18,6 @@
 .video-card__player {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 16 / 10;
   background: #1a1a1a;
   margin-bottom: 0.75rem;
 }
