@@ -80,7 +80,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     var items = <?= json_encode($players, JSON_UNESCAPED_UNICODE) ?>;
     items.forEach(function (item) {
-        console.log(item)
         new Playerjs({
             id: item.id,
             file: encodeURI(item.file),
