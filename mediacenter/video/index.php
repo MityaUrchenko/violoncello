@@ -121,7 +121,7 @@ $videoUrl = static function (array $overrides = []) use ($type, $year, $project,
     $query = array_filter($query, static function ($value) {
         return $value !== '' && $value !== null;
     });
-    return '/media/video/' . ($query ? '?' . http_build_query($query) : '');
+    return '/mediacenter/video/' . ($query ? '?' . http_build_query($query) : '');
 };
 
 $playlists = [];
@@ -153,7 +153,7 @@ while ($row = $sections->GetNext()) {
             <a href="<?= htmlspecialcharsbx($videoUrl(['type' => $code])) ?>" class="video-filters__tab<?= $type === $code ? ' video-filters__tab--active' : '' ?>"><?= htmlspecialcharsbx($label) ?></a>
             <?php endforeach; ?>
         </div>
-        <form class="filter-block__row" method="get" action="/media/video/">
+        <form class="filter-block__row" method="get" action="/mediacenter/video/">
             <?php if ($type !== ''): ?><input type="hidden" name="type" value="<?= htmlspecialcharsbx($type) ?>"><?php endif; ?>
             <?php if ($section !== ''): ?><input type="hidden" name="section" value="<?= htmlspecialcharsbx($section) ?>"><?php endif; ?>
             <div class="filter-block__left">
@@ -185,7 +185,7 @@ while ($row = $sections->GetNext()) {
                     </select>
                 </label>
             </div>
-            <a href="/media/video/" class="filter-block__reset">Сбросить фильтры</a>
+            <a href="/mediacenter/video/" class="filter-block__reset">Сбросить фильтры</a>
         </form>
     </div>
     <svg class="filter-block__line" viewBox="0 0 1920 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -245,7 +245,7 @@ if ($playlists):
     <div class="section__container">
         <div class="section__header">
             <h2 class="section__title">Плейлисты</h2>
-            <a href="/media/video/" class="section__link">Смотреть все</a>
+            <a href="/mediacenter/video/" class="section__link">Смотреть все</a>
         </div>
         <div class="video-playlists__grid">
             <?php foreach ($playlists as $playlist):
