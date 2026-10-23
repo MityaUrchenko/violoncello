@@ -149,8 +149,16 @@ while ($row = $sections->GetNext()) {
 <section class="filter-block">
     <div class="section__container">
         <div class="video-filters__tabs">
-            <?php foreach ($videoTypes as $code => $label): ?>
-            <a href="<?= htmlspecialcharsbx($videoUrl(['type' => $code])) ?>" class="video-filters__tab<?= $type === $code ? ' video-filters__tab--active' : '' ?>"><?= htmlspecialcharsbx($label) ?></a>
+            <?php foreach ($videoTypes as $code => $label):
+                if ($code === '') {
+                    $href = '/mediacenter/video/';
+                    $btnClass = 'btn';
+                } else {
+                    $href = $videoUrl(['type' => $code]);
+                    $btnClass = 'btn btn--outline';
+                }
+            ?>
+            <a href="<?= htmlspecialcharsbx($href) ?>" class="<?= $btnClass ?>"><?= htmlspecialcharsbx($label) ?></a>
             <?php endforeach; ?>
         </div>
         <form class="filter-block__row" method="get" action="/mediacenter/video/">
