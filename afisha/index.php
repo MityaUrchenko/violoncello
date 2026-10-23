@@ -6,14 +6,29 @@ $APPLICATION->AddHeadScript("/assets/js/afisha.js");
 
 const AFISHA_IBLOCK_ID = 1;
 
-// Серверный фильтр по GET (без JS): ?type=concert|masterclass|special
+// Серверный фильтр по GET: ?type=concert|masterclass|special, ?past=1
 $type = isset($_GET["type"]) ? preg_replace("/[^a-z]/", "", $_GET["type"]) : "";
+$past = isset($_GET["past"]) && (string)$_GET["past"] === "1";
+
 global $arrAfishaFilter;
-//$arrAfishaFilter = [">=PROPERTY_DATE_EVENT" => date("Y-m-d 00:00:00")];
+$arrAfishaFilter = [];
+
+if ($past) {
+    // Прошедшие: DATE_EVENT строго меньше текущей даты
+    $arrAfishaFilter["<PROPERTY_DATE_EVENT"] = date("Y-m-d 00:00:00");
+}
+
 if ($type !== "" && CModule::IncludeModule("iblock")) {
     $enum = CIBlockPropertyEnum::GetList([], ["IBLOCK_ID" => AFISHA_IBLOCK_ID, "CODE" => "TYPE", "XML_ID" => $type])->Fetch();
     $arrAfishaFilter["PROPERTY_TYPE"] = $enum ? $enum["ID"] : -1;
 }
+
+$afishaQuery = static function (array $params): string {
+    $query = array_filter($params, static function ($value) {
+        return $value !== "" && $value !== null && $value !== false;
+    });
+    return $query ? "?" . http_build_query($query) : "?";
+};
 ?>
 <section class="hero-secondary hero-secondary--afisha">
     <div class="hero-secondary__bg">
@@ -26,10 +41,11 @@ if ($type !== "" && CModule::IncludeModule("iblock")) {
 <section class="afisha-filters">
     <div class="section__container">
         <div class="afisha-filters__types">
-            <a href="?type=" class="afisha-filters__tab<?=($type===''?' afisha-filters__tab--active':'')?>" data-type="">Все события</a>
-            <a href="?type=concert" class="afisha-filters__tab<?=($type==='concert'?' afisha-filters__tab--active':'')?>" data-type="concert">Концерты</a>
-            <a href="?type=masterclass" class="afisha-filters__tab<?=($type==='masterclass'?' afisha-filters__tab--active':'')?>" data-type="masterclass">Мастер-классы</a>
-            <a href="?type=special" class="afisha-filters__tab<?=($type==='special'?' afisha-filters__tab--active':'')?>" data-type="special">Специальные мероприятия</a>
+            <a href="<?=$afishaQuery(["type" => "", "past" => $past ? "1" : ""])?>" class="afisha-filters__tab<?=($type===''?' afisha-filters__tab--active':'')?>" data-type="">Все события</a>
+            <a href="<?=$afishaQuery(["type" => "concert", "past" => $past ? "1" : ""])?>" class="afisha-filters__tab<?=($type==='concert'?' afisha-filters__tab--active':'')?>" data-type="concert">Концерты</a>
+            <a href="<?=$afishaQuery(["type" => "masterclass", "past" => $past ? "1" : ""])?>" class="afisha-filters__tab<?=($type==='masterclass'?' afisha-filters__tab--active':'')?>" data-type="masterclass">Мастер-классы</a>
+            <a href="<?=$afishaQuery(["type" => "special", "past" => $past ? "1" : ""])?>" class="afisha-filters__tab<?=($type==='special'?' afisha-filters__tab--active':'')?>" data-type="special">Специальные мероприятия</a>
+            <a href="<?=$afishaQuery(["type" => $type, "past" => $past ? "" : "1"])?>" class="afisha-filters__tab<?=($past?' afisha-filters__tab--active':'')?>" data-past="1">Прошедшие мероприятия</a>
         </div>
         <div class="afisha-filters__row">
             <div class="afisha-filters__dropdowns">
