@@ -151,17 +151,21 @@ while ($row = $sections->GetNext()) {
         <div class="video-filters__tabs">
             <?php foreach ($videoTypes as $code => $label):
                 $isActive = $type === $code;
-                if ($code === '') {
-                    $href = '/mediacenter/video/';
-                } else {
-                    $href = $videoUrl(['type' => $code]);
-                }
                 $btnClass = $isActive ? 'btn btn--primary' : 'btn btn--outline';
+
+                // «Все видео» всегда ссылка на корневую страницу без фильтров
+                if ($code === '') {
+                    ?>
+            <a href="/mediacenter/video/" class="<?= $btnClass ?>"><?= htmlspecialcharsbx($label) ?></a>
+                    <?php
+                    continue;
+                }
+
                 if ($isActive):
             ?>
             <span class="<?= $btnClass ?>" aria-current="page"><?= htmlspecialcharsbx($label) ?></span>
             <?php else: ?>
-            <a href="<?= htmlspecialcharsbx($href) ?>" class="<?= $btnClass ?>"><?= htmlspecialcharsbx($label) ?></a>
+            <a href="<?= htmlspecialcharsbx($videoUrl(['type' => $code])) ?>" class="<?= $btnClass ?>"><?= htmlspecialcharsbx($label) ?></a>
             <?php endif; endforeach; ?>
         </div>
         <form class="filter-block__row" method="get" action="/mediacenter/video/">
