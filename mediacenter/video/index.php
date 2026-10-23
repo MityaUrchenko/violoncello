@@ -152,7 +152,7 @@ while ($row = $sections->GetNext()) {
             <?php foreach ($videoTypes as $code => $label):
                 if ($code === '') {
                     $href = '/mediacenter/video/';
-                    $btnClass = 'btn';
+                    $btnClass = 'btn btn--primary';
                 } else {
                     $href = $videoUrl(['type' => $code]);
                     $btnClass = 'btn btn--outline';
