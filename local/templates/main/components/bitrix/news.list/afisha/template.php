@@ -5,6 +5,7 @@
  *  PROJECT (список, XML_ID: stars | regions | vivacello), BUY_URL (ссылка на билеты), MORE_URL (ссылка «Подробнее»),
  *  POSTER (флажок Y — вертикальный макет афиши). Анонс — PREVIEW_TEXT, картинка — PREVIEW_PICTURE. */
 $typeOne = ["concert" => "Концерт", "masterclass" => "Мастер-класс", "special" => "Специальное мероприятие"];
+$todayStart = strtotime(date("Y-m-d 00:00:00"));
 ?>
 <section class="afisha-events">
     <div class="section__container">
@@ -21,8 +22,9 @@ $typeOne = ["concert" => "Концерт", "masterclass" => "Мастер-кла
                 $types = (array)$p["TYPE"]["VALUE_XML_ID"];
                 $firstType = $types ? $typeOne[$types[0]] : "";
                 $poster = $p["POSTER"]["VALUE"] ? " event-card__image--poster" : "";
+                $isPast = $ts && $ts < $todayStart ? "1" : "0";
             ?>
-            <div class="event-card" id="<?=$this->GetEditAreaId($arItem["ID"])?>" data-type="<?=htmlspecialcharsbx(implode(" ", $types))?>" data-month="<?=date("Y-m", $ts)?>" data-city="<?=htmlspecialcharsbx($p["CITY"]["VALUE_XML_ID"])?>" data-project="<?=htmlspecialcharsbx($p["PROJECT"]["VALUE_XML_ID"])?>">
+            <div class="event-card" id="<?=$this->GetEditAreaId($arItem["ID"])?>" data-type="<?=htmlspecialcharsbx(implode(" ", $types))?>" data-month="<?=date("Y-m", $ts)?>" data-city="<?=htmlspecialcharsbx($p["CITY"]["VALUE_XML_ID"])?>" data-project="<?=htmlspecialcharsbx($p["PROJECT"]["VALUE_XML_ID"])?>" data-past="<?=$isPast?>">
                 <div class="event-card__image<?=$poster?>">
                     <?if($arItem["PREVIEW_PICTURE"]):?>
 
