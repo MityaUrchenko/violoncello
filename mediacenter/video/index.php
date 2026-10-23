@@ -150,16 +150,19 @@ while ($row = $sections->GetNext()) {
     <div class="section__container">
         <div class="video-filters__tabs">
             <?php foreach ($videoTypes as $code => $label):
+                $isActive = $type === $code;
                 if ($code === '') {
                     $href = '/mediacenter/video/';
-                    $btnClass = 'btn btn--primary';
                 } else {
                     $href = $videoUrl(['type' => $code]);
-                    $btnClass = 'btn btn--outline';
                 }
+                $btnClass = $isActive ? 'btn btn--primary' : 'btn btn--outline';
+                if ($isActive):
             ?>
+            <span class="<?= $btnClass ?>" aria-current="page"><?= htmlspecialcharsbx($label) ?></span>
+            <?php else: ?>
             <a href="<?= htmlspecialcharsbx($href) ?>" class="<?= $btnClass ?>"><?= htmlspecialcharsbx($label) ?></a>
-            <?php endforeach; ?>
+            <?php endif; endforeach; ?>
         </div>
         <form class="filter-block__row" method="get" action="/mediacenter/video/">
             <?php if ($type !== ''): ?><input type="hidden" name="type" value="<?= htmlspecialcharsbx($type) ?>"><?php endif; ?>
